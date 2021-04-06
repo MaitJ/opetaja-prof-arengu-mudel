@@ -1,4 +1,4 @@
-#Opetaja professionaalse arengu mudel (Suvepraktika)
+Opetaja professionaalse arengu mudel (Suvepraktika)
 
 Mida kasutatakse:
  React
