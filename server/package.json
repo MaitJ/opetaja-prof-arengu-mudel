@@ -1,0 +1,25 @@
+{
+  "name": "op_prof_mudel_server",
+  "version": "0.0.1",
+  "description": "Opetaja professionaalse arengu mudeli server (Suvepraktika)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaitJ/opetaja-prof-arengu-mudel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaitJ/opetaja-prof-arengu-mudel/issues"
+  },
+  "homepage": "https://github.com/MaitJ/opetaja-prof-arengu-mudel#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
