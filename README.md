@@ -1,4 +1,4 @@
-Opetaja professionaalse arengu mudel (Suvepraktika)
+#Opetaja professionaalse arengu mudel (Suvepraktika)
 
 Mida kasutatakse:
  React
@@ -6,10 +6,10 @@ Mida kasutatakse:
  Express
 
 Kuidas dev environment pysti panna:
- client:
-  cd client/
-  npm install
-  npm start
+1.client:
+-cd client/
+-npm install
+-npm start
 
  server:
   cd server/
