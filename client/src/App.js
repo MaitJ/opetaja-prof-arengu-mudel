@@ -1,11 +1,17 @@
 import React from 'react';
+import Main from './Main';
+import Navbar from './Navbar';
+import Kysimustik from './Kysimustik';
 
 function App() {
   return (
     <React.Fragment>
-      <main>
-        <h1>Opetaja professionaalse arengu mudel</h1>
-      </main>
+      <Navbar>
+        <h1>Navbar container</h1>
+      </Navbar>
+      <Main>
+        <Kysimustik/>
+      </Main>
     </React.Fragment>
   );
 }
