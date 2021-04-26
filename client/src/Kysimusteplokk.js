@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Kysimus from './Kysimus';
 
-const kuvamiseLimit = 10;
+const kuvamiseLimit = 5;
 
 const Kysimusteplokk = ({kysimused}) => {
     const [kasOnAlamPlokke, setKasOnAlamPlokke] = useState(false);
@@ -40,36 +40,42 @@ const Kysimusteplokk = ({kysimused}) => {
                 }
             }
             if (tempKysimused.length > kuvamiseLimit) {
-                tempKysimused.splice(0, 10);
+                tempKysimused.splice(0, kuvamiseLimit);
             }
         }
         return kuvatavadKysimused;
     }
 
+    //Lisa checkimine, et iga kysimus oleks taidetud
+    //Kui alamplokkide lopus muuda nupp submitiks ja muuda selectedplokki
+
+    //Kas veebilehel peaks olema voimalus liikuda edasi ja tagasi kysimusteplokkide vahel, kui hindamine toimub peale ploki l2bimist siis t2hendab, et opetajal ei saa koiki oma vastuseid yle vaadata
+
+
     const displayButtons = () => {
         if (selectedAlamPlokk === 0) {
-            return <button onClick={() => setSelectedAlamPlokk(selectedAlamPlokk + 1)}>Jargmine alamplokk</button>;
+            return <button type="button" onClick={() => setSelectedAlamPlokk(selectedAlamPlokk + 1)}>Jargmine alamplokk</button>;
         } else if (selectedAlamPlokk === mituAlamPlokki - 1) {
-            return <button onClick={() => setSelectedAlamPlokk(selectedAlamPlokk - 1)}>Eelmine alamplokk</button>;
+            return <button type="button" onClick={() => setSelectedAlamPlokk(selectedAlamPlokk - 1)}>Eelmine alamplokk</button>;
         } else {
             return(
                 <React.Fragment>
-                    <button onClick={() => setSelectedAlamPlokk(selectedAlamPlokk - 1)}>Eelmine alamplokk</button>
-                    <button onClick={() => setSelectedAlamPlokk(selectedAlamPlokk + 1)}>Jargmine alamplokk</button>
+                    <button type="button" onClick={() => setSelectedAlamPlokk(selectedAlamPlokk - 1)}>Eelmine alamplokk</button>
+                    <button type="button" onClick={() => setSelectedAlamPlokk(selectedAlamPlokk + 1)}>Jargmine alamplokk</button>
                 </React.Fragment>
             );
         }
     };
 
     return(
-        <div className="kysimusteplokk-container">
+        <React.Fragment>
             {kuvatavadKysimused.map((kysimus, index) => {
                 return(
                     <Kysimus kysimus={kysimus} key={kysimus.id}/>
                 );
             })}
             {kasOnAlamPlokke && displayButtons()}
-        </div>
+        </React.Fragment>
     );
 }
 

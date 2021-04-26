@@ -136,4 +136,28 @@ const kysimused = [
 
 ];
 
+const soovitused = [
+    {
+        id:0,
+        kysimus_id: 1,
+        soovitus_tekst: "See on soovitus kysimusele: 2"
+    },
+    {
+        id:0,
+        kysimus_id: 1,
+        soovitus_tekst: "See on soovitus kysimusele: 2"
+    },
+    {
+        id:0,
+        kysimus_id: 4,
+        soovitus_tekst: "See on soovitus kysimusele: 5"
+    },
+    {
+        id:0,
+        kysimus_id: 4,
+        soovitus_tekst: "See on soovitus kysimusele: 5"
+    }
+];
+
 exports.kysimused = kysimused;
+exports.soovitused = soovitused;
