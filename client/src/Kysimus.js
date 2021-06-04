@@ -3,7 +3,20 @@ import axios from 'axios';
 
 const soovitusAPI = "http://localhost:3001/getSoovitused/";
 
-const Kysimus = ({kysimus}) => {
+const kysimusteValikud = [{
+    valik_tekst: "Halvasti",
+    value: 1
+},
+{
+    valik_tekst: "Keskmiselt",
+    value: 2
+},
+{
+    valik_tekst: "Hasti",
+    value: 3
+}];
+
+const Kysimus = ({kysimus, setKysimusteVastused, kysimusteVastused}) => {
     const [soovitused, setSoovitused] = useState([]);
 
     useEffect(() => {
@@ -28,17 +41,46 @@ const Kysimus = ({kysimus}) => {
         );
     }
 
+    const setVastus = (e) => {
+        const vastus = {
+            kysimus_id: kysimus.id,
+            vastus: e.target.value
+        };
+        setKysimusteVastused(prevState => {
+            let newState = [...prevState];
+            if (prevState[kysimus.id]) {
+                newState[kysimus.id].vastus = vastus.vastus;
+            } else {
+                newState[kysimus.id] = vastus;
+            }
+            return newState;
+        });
+    };
+
+    const kasOnTaidetud = (valik) => {
+        if (kysimusteVastused !== undefined) {
+            if (kysimusteVastused[kysimus.id].vastus == valik) {
+                return true;
+            }
+        }
+        return false;
+    };
+
     return(
         <article className="kysimus">
             <p>{kysimus.kysimus_tekst}</p>
             <label>Vastus:</label>
-            <div className="vastuse-valik-container">
-                <label>Halvasti</label>
-                <input type="radio" value="1" name="vastus"/>
-                <label>Keskmiselt</label>
-                <input type="radio" value="2" name="vastus"/>
-                <label>Hästi</label>
-                <input type="radio" value="3" name="vastus"/>
+            <div className="vastuse-valik-container" onChange={(e) => setVastus(e)}>
+                {
+                    kysimusteValikud.map((valik) => {
+                        return (
+                            <React.Fragment>
+                                <label>{valik.valik_tekst}</label>
+                                <input type="radio" value={valik.value} name={`vastus${kysimus.id}`} defaultChecked={kasOnTaidetud(valik.value)}/>
+                            </React.Fragment>
+                        );
+                    })
+                }
             </div>
             {soovitused.length > 0 && kuvaSoovitused()}
         </article>

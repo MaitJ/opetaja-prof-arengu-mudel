@@ -1,8 +1,13 @@
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import Profile from "./Profile";
+import Kysimustik from "./Kysimustik";
 
 const Main = (props) => {
     return(
         <main className="content-container">
-            {props.children}
+            <Router>
+                {props.children}
+            </Router>
         </main>
     );
 };

@@ -9,6 +9,8 @@ const Kysimustik = () => {
     const [kysimusedList, setKysimusedList] = useState([]);
     const [loading, isLoading] = useState(false);
     const [selectedPlokk, setKysimustePlokk] = useState(0);
+    const [mituPlokki, setMituPlokki] = useState(0);
+    const [kysimusteVastused, setKysimusteVastused] = useState([]);
 
     useEffect(() => {
         isLoading(true);
@@ -24,6 +26,29 @@ const Kysimustik = () => {
     }, [selectedPlokk])
 
 
+    useEffect(() => {
+        const countSelection = "?count=true";
+        axios.get(kysimused_url + countSelection)
+        .then((response) => {
+            setMituPlokki(response.data);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    }, []);
+
+    useEffect(() => {
+        kysimusedList.map((kysimus) => {
+            setKysimusteVastused((prevState) => {
+                return [...prevState, {id: kysimus.id, vastus: null}];
+            })
+        });
+    }, [kysimusedList])
+
+    useEffect(() => {
+        console.log(kysimusteVastused);
+    }, [kysimusteVastused])
+
     if (loading) {
         return (
             <section className="kysimuse-container">
@@ -32,27 +57,38 @@ const Kysimustik = () => {
         );
     }
 
-    const displayButtons = () => {
-        if (selectedPlokk === 0) {
-            return <button onClick={() => setKysimustePlokk(selectedPlokk + 1)}>Jargmine leht</button>;
-        } else if (selectedPlokk === kysimusedList.length - 1) {
-            return <button onClick={() => setKysimustePlokk(selectedPlokk - 1)}>Eelmine leht</button>;
-        } else {
-            return (
-                <React.Fragment>
-                    <button onClick={() => setKysimustePlokk(selectedPlokk - 1)}>Eelmine leht</button>
-                    <button onClick={() => setKysimustePlokk(selectedPlokk + 1)}>Jargmine leht</button>
-                </React.Fragment>
-            );
+    const displayPlokkButtons = () => {
+        if (selectedPlokk < mituPlokki - 1) {
+            return <button type="button" onClick={() => liiguEdasi()}>Jargmine leht</button>
         }
     };
+
+    const kasOnTaidetud = () => {
+        kysimusteVastused.forEach(kysimus => {
+            if (kysimus.vastus == null) {
+                return false;
+            }
+        })
+        return true;
+    };
+
+    const liiguEdasi = () => {
+        if (kasOnTaidetud()) {
+            setKysimustePlokk(selectedPlokk + 1);
+        } else {
+            console.log("Sul ei ole kysimused taidetud");
+        }
+
+    }
+
+
 
 
     return(
         <section className="kysimused-container">
             <h3>Kysimused</h3>
             <form>
-                <Kysimusteplokk kysimused={kysimusedList}/>
+                <Kysimusteplokk kysimused={kysimusedList} displayPlokkButtons={displayPlokkButtons} setKysimusteVastused={setKysimusteVastused} kysimusteVastused={kysimusteVastused}/>
             </form>
         </section>
     );

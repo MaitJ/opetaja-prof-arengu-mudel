@@ -1,12 +1,19 @@
 import React from 'react';
+import {BrowserRouter as Router, Link} from "react-router-dom";
+
 const Navbar = (props) => {
     return(
         <React.Fragment>
-            <section className="navbar-logo">
-                <img src="" alt="Logo"></img>
-            </section>
             <section className="navbar-content-container">
-                {props.children}
+                <article className="navbar-logo">
+                    <img src="" alt="Logo"></img>
+                </article>
+                <nav>
+                    <Link to="/">Profile</Link>
+                    <Link to="/kysimustikud">Kysimustikud</Link>
+                    <Link to="/teated">Teated</Link>
+                    <Link to="/kontakt">Kontakt</Link>
+                </nav>
             </section>
         </React.Fragment>
     );

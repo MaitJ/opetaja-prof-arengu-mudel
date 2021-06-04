@@ -2,15 +2,15 @@ import React from 'react';
 import Main from './Main';
 import Navbar from './Navbar';
 import Kysimustik from './Kysimustik';
+import Profile from './Profile.js';
+import {BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 function App() {
   return (
     <React.Fragment>
-      <Navbar>
-        <h1>Navbar container</h1>
-      </Navbar>
       <Main>
-        <Kysimustik/>
+        <Navbar/>
+        <Profile/>
       </Main>
     </React.Fragment>
   );

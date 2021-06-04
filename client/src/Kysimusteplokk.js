@@ -3,7 +3,7 @@ import Kysimus from './Kysimus';
 
 const kuvamiseLimit = 5;
 
-const Kysimusteplokk = ({kysimused}) => {
+const Kysimusteplokk = ({kysimused, displayPlokkButtons, setKysimusteVastused, kysimusteVastused}) => {
     const [kasOnAlamPlokke, setKasOnAlamPlokke] = useState(false);
     const [kuvatavadKysimused, setKuvatavadKysimused] = useState([]);
     const [selectedAlamPlokk, setSelectedAlamPlokk] = useState(0);
@@ -67,14 +67,26 @@ const Kysimusteplokk = ({kysimused}) => {
         }
     };
 
+    const displayJargminePlokk = () => {
+        if (selectedAlamPlokk === mituAlamPlokki - 1) {
+            return displayPlokkButtons();
+        }
+        if (mituAlamPlokki === 0) {
+            return displayPlokkButtons();
+        }
+    };
+    
+
     return(
         <React.Fragment>
             {kuvatavadKysimused.map((kysimus, index) => {
                 return(
-                    <Kysimus kysimus={kysimus} key={kysimus.id}/>
+                    <Kysimus kysimus={kysimus} key={kysimus.id} setKysimusteVastused={setKysimusteVastused}
+                    kysimusteVastused={kysimusteVastused}/>
                 );
             })}
             {kasOnAlamPlokke && displayButtons()}
+            {displayJargminePlokk()}
         </React.Fragment>
     );
 }
