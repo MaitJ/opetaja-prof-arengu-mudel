@@ -1,0 +1,19 @@
+INSERT INTO AutentimiseTyyp (autentimise_tyyp) VALUES ("ParooliAuth"), ("IDAuth");
+INSERT INTO Kasutaja (kasutaja_nimi) VALUES ("maitjurask"), ("martinkilgi"), ("testopetaja");
+INSERT INTO AutentimiseTyyp_Kasutaja (kasutaja_id, autentimise_tyyp_id) VALUES (1, 1), (2, 1), (3, 1);
+INSERT INTO ParooliAuth (kasutaja_id, parool) VALUES (1, "testparool1"), (2, "testparool1"), (3, "testparool1");
+INSERT INTO Kasutajaroll (rolli_nimi) VALUES ("Õpetaja"), ("Juhtkond");
+INSERT INTO Profiil (eesnimi, perenimi, kasutaja_id, kasutajaroll_id) VALUES ("Mait", "Jurask", 1, 2), ("Martin", "Kilgi", 2, 2), ("Test", "Opetaja", 3, 1);
+INSERT INTO Oppematerjal (oppematerjal_nimi, oppematerjal_failinimi) VALUES ("hulgateooria test 1", "hulgateooria_test_1.pdf"), ("lineaarsed võrrandid", "linearequations.pdf");
+INSERT INTO Oppematerjal_profiil (profiil_id, oppmaterjal_id) VALUES (3, 1), (3, 2);
+INSERT INTO Kysimustik (kysimustik_pealkiri) VALUES ("KS Tegevustnäitajad");
+INSERT INTO KysimustePlokk (kysimusteplokk_nimi, kysimustik_id) VALUES ("Õppija toetamine", 1), ("Õpi- ja õpetamistegevuse kavandamine", 1), ("Õpetamine", 1), ("Refleksioon ja professionaalne enesearendamine", 1), ("Koostöö ja juhendamine", 1), ("Arendus, loome- ja teadustegevus", 1);
+INSERT INTO Kysimus (kysimus_tekst, kysimusteplokk_id) VALUES ("1.1. Olen teadlik õppija füüsilise, kognitiivse, emotsionaalse ja sotsiaalse arengu alustest ning kultuurilistest eripäradest", 1), ("1.2. Olen teadlik õppimist mõjutavatest teguritest ja seaduspärasustest (üldpädevustest, grupiprotsessidest ja õppija toetamise tõenduspõhistest võimalustest, sh refleksioonimudelite kasutamise vajalikkusest)", 1), ("2.1. Sean  lähtuvalt õppijatest pika- ja lühiajalised õpieesmärgid (valides sisu ning kavandades tegevused, arvestades õppekavaga)", 2);
+INSERT INTO Soovitus (soovitus_tekst, kysimus_id) VALUES ("Lisalugemine: http://oppekava.innove.ee/wp-content/uploads/2015/07/Lapse_areng_Alusharidus.pdf", 1), ("Analüüsi oma teadmisi õppimist toetavate võimaluste kasutamisest, lisades tõenduspõhist materjali. Lisalugemine: https://www.riigiteataja.ee/akt/129082014020", 2), ("Analüüsi õpieesmärkide kavandamise protsessi/vajalikkust, lisades tõenduspõhist materjali ning näiteid. Lisalugemine:  https://www.tlu.ee/opmat/ka/opiobjekt/t66pedagoogika/t66_ja_ettev6ttepedagoogika/pieesmrgid.html", 3);
+
+
+
+
+//Kysimustiku kysimustik_autom_tagasiside tuleks kuhugile mujale liigutada, sest iga tyhja kysimustiku kyljes ei ole kohe tagasisidet
+//Kas me teeme opetaja ja juhtkonna vahelise sonumi vahetus systeemi?
+//
