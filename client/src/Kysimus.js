@@ -20,21 +20,29 @@ const Kysimus = ({kysimus, setKysimusteVastused, kysimusteVastused}) => {
     const [soovitused, setSoovitused] = useState([]);
 
     useEffect(() => {
-        const kysimusSelector = "?kysimus=" + kysimus.id;
+        const kysimusSelector = "?kysimusid=" + kysimus.kysimus_id;
         axios.get(soovitusAPI + kysimusSelector).then((response) => {
-            setSoovitused(response.data);
+            setSoovitused((prevState) => {
+                return [...prevState, response.data]});
         })
         .catch((err) => {
             console.log(err);
         })
     }, []);
 
+    useEffect(() => {
+        console.log(soovitused);
+        console.log(soovitused.length);
+    }, [soovitused]);
+
     const kuvaSoovitused = () => {
         return(
             <div className="soovitused-container">
                 {
                     soovitused.map((soovitus, index) => {
-                    return <p className="soovitus">{index}. {soovitus.soovitus_tekst}</p>;
+                        if (soovitus.soovitus_tekst) {
+                            return <p className="soovitus">{index + 1}. {soovitus.soovitus_tekst}</p>;
+                        }
                     })
                 }
             </div>
@@ -43,15 +51,15 @@ const Kysimus = ({kysimus, setKysimusteVastused, kysimusteVastused}) => {
 
     const setVastus = (e) => {
         const vastus = {
-            kysimus_id: kysimus.id,
+            kysimus_id: kysimus.kysimus_id,
             vastus: e.target.value
         };
         setKysimusteVastused(prevState => {
             let newState = [...prevState];
-            if (prevState[kysimus.id]) {
-                newState[kysimus.id].vastus = vastus.vastus;
+            if (prevState[kysimus.kysimus_id - 1]) {
+                newState[kysimus.kysimus_id - 1].vastus = vastus.vastus;
             } else {
-                newState[kysimus.id] = vastus;
+                newState[kysimus.kysimus_id - 1] = vastus;
             }
             return newState;
         });
@@ -59,7 +67,7 @@ const Kysimus = ({kysimus, setKysimusteVastused, kysimusteVastused}) => {
 
     const kasOnTaidetud = (valik) => {
         if (kysimusteVastused !== undefined) {
-            if (kysimusteVastused[kysimus.id].vastus == valik) {
+            if (kysimusteVastused[kysimus.kysimus_id - 1].vastus == valik) {
                 return true;
             }
         }
@@ -70,13 +78,13 @@ const Kysimus = ({kysimus, setKysimusteVastused, kysimusteVastused}) => {
         <article className="kysimus">
             <p>{kysimus.kysimus_tekst}</p>
             <label>Vastus:</label>
-            <div className="vastuse-valik-container" onChange={(e) => setVastus(e)}>
+            <div className="vastuse-valik-container" /*onChange={(e) => setVastus(e)}*/>
                 {
-                    kysimusteValikud.map((valik) => {
+                    kysimusteValikud.map((valik, index) => {
                         return (
-                            <React.Fragment>
+                            <React.Fragment key={index}>
                                 <label>{valik.valik_tekst}</label>
-                                <input type="radio" value={valik.value} name={`vastus${kysimus.id}`} defaultChecked={kasOnTaidetud(valik.value)}/>
+                                <input type="radio" value={valik.value} name={`vastus${kysimus.kysimus_id}`} onChange={(e) => setVastus(e)} checked={kasOnTaidetud(valik.value)}/>
                             </React.Fragment>
                         );
                     })
