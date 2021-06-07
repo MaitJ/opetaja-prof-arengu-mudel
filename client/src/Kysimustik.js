@@ -3,18 +3,18 @@ import {useState} from 'react';
 import axios from 'axios';
 import Kysimusteplokk from './Kysimusteplokk';
 
-const kysimused_url = "http://localhost:3001/getkysimused";
+const kysimused_url = "http://localhost:3001/getKysimused";
 
 const Kysimustik = () => {
     const [kysimusedList, setKysimusedList] = useState([]);
     const [loading, isLoading] = useState(false);
-    const [selectedPlokk, setKysimustePlokk] = useState(0);
+    const [selectedPlokk, setKysimustePlokk] = useState(1);
     const [mituPlokki, setMituPlokki] = useState(0);
     const [kysimusteVastused, setKysimusteVastused] = useState([]);
 
     useEffect(() => {
         isLoading(true);
-        const plokkSelection = "?plokk=";
+        const plokkSelection = "?kysimusteplokk=";
         axios.get(kysimused_url + plokkSelection + selectedPlokk)
         .then((response) => {
             setKysimusedList(response.data);
@@ -25,6 +25,9 @@ const Kysimustik = () => {
         })
     }, [selectedPlokk])
 
+    useEffect(() => {
+        console.log(kysimusedList);
+    }, [kysimusedList]);
 
     useEffect(() => {
         const countSelection = "?count=true";
@@ -40,7 +43,7 @@ const Kysimustik = () => {
     useEffect(() => {
         kysimusedList.map((kysimus) => {
             setKysimusteVastused((prevState) => {
-                return [...prevState, {id: kysimus.id, vastus: null}];
+                return [...prevState, {id: kysimus.kysimus_id, vastus: null}];
             })
         });
     }, [kysimusedList])
@@ -88,7 +91,8 @@ const Kysimustik = () => {
         <section className="kysimused-container">
             <h3>Kysimused</h3>
             <form>
-                <Kysimusteplokk kysimused={kysimusedList} displayPlokkButtons={displayPlokkButtons} setKysimusteVastused={setKysimusteVastused} kysimusteVastused={kysimusteVastused}/>
+                <Kysimusteplokk kysimused={kysimusedList} key={selectedPlokk} displayPlokkButtons={displayPlokkButtons} setKysimusteVastused={setKysimusteVastused} kysimusteVastused={kysimusteVastused}/>
+    
             </form>
         </section>
     );

@@ -81,7 +81,7 @@ const Kysimusteplokk = ({kysimused, displayPlokkButtons, setKysimusteVastused, k
         <React.Fragment>
             {kuvatavadKysimused.map((kysimus, index) => {
                 return(
-                    <Kysimus kysimus={kysimus} key={kysimus.id} setKysimusteVastused={setKysimusteVastused}
+                    <Kysimus kysimus={kysimus} key={kysimus.kysimus_id} setKysimusteVastused={setKysimusteVastused}
                     kysimusteVastused={kysimusteVastused}/>
                 );
             })}
