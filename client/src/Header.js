@@ -45,7 +45,7 @@ const Header = () => {
 
 
     return (
-        <header>
+        <header className='header-bar'>
             <div>
                 <Link to="/">Home</Link>
             </div>
@@ -63,6 +63,9 @@ const Header = () => {
             </div>
             <div>
                 <Link to="/kysimustikud">Kysimustik</Link>
+            </div>
+            <div>
+                <Link to="/Contact">Kontakt</Link>
             </div>
             <div>
                 {getAccessToken() != "" ? (<button onClick={async () => {await logout(); setAccessToken(""); setUserEmail(""); console.log(getAccessToken() + "See on getaccestoken")}}>Logi valja</button>) : null}
