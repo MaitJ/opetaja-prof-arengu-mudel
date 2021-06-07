@@ -1,12 +1,3 @@
-
-//Sellega merge
-//import React from 'react';
-import Main from './Main';
-import Navbar from './Navbar';
-import Kysimustik from './Kysimustik';
-import MainWRoutes from './MainWRoutes';
-import Profile from './Profile.js';
-//import {BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import React, {useState, useEffect} from 'react';
 import {BrowserRouter as Router, Switch, Route, Link, useHistory} from 'react-router-dom';
 import Login from './Login.js';
@@ -18,8 +9,12 @@ import { getAccessToken } from "./accessToken";
 import jwtDecode from "jwt-decode";
 import Routes from "./Routes";
 import axios from 'axios';
+//import useLoginToken from './components/useLoginToken';
 
-function App() {
+//Manual merge see App() ja alumine() koos depidega
+
+
+function MainWRoutes() {
 
   const history = useHistory();
   const [error, setError] = useState("");
@@ -76,17 +71,17 @@ function App() {
     // }
   }, []);
 
-  // if (loading) {
-  //   return <div>loading...</div>;
-  // }
+  if (loading) {
+    return <div>loading...</div>;
+  }
 
-  return (
-    <React.Fragment>
-      <Main>
-        <Routes />
-      </Main>
-    </React.Fragment>
-  );
+  return(
+    <div className="main">
+      <Routes />
+      <p> {Error} </p>
+    </div>
+    
+  ) 
 }
-
-export default App;
+  
+export default MainWRoutes;
