@@ -1,14 +1,20 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import validator from 'validator';
+import {useHistory} from 'react-router-dom';
 
 const Register = () => {
 
+    const history = useHistory();
 
     const [emailErr, setEmailErr] = useState("");
     const [passwordErr, setPasswordErr] = useState("");
     const [emailReg, setEmailReg] = useState("");
     const [passwordReg, setPasswordReg] = useState("");
+    const [phoneReg, setPhoneReg] = useState();
+    const [jobReg, setJobReg] = useState();
+    const [firstNameReg, setFirstNameReg] = useState();
+    const [lastNameReg, setLastNameReg] = useState();
     const [regStatus, setRegStatus] = useState("");
 
 
@@ -17,10 +23,17 @@ const Register = () => {
             axios.post('http://localhost:3001/register', {
                 email: emailReg,
                 password: passwordReg,
+                phone: phoneReg,
+                job: jobReg,
+                firstName: firstNameReg,
+                lastName: lastNameReg
             }).then((response) => {
                 setRegStatus("Registreerimine õnnestus!");
-                console.log(response.data);
+                history.push("/login");
+                window.location.reload();
+                //console.log(response.data);
             }, (error) => {
+                console.log(error);
                 setRegStatus("Midagi läks valesti!");
             })
         }
@@ -51,6 +64,16 @@ const Register = () => {
     return (
         <section className='register'>
             <label>
+                <h3>Eesnimi</h3>
+                <input type="text" id="firstName" name="firstName" onChange={e => setFirstNameReg(e)}/>
+                <br/>
+            </label>
+            <label>
+                <h3>Perekonnanimi</h3>
+                <input type="text" id="lastName" name="lastName" onChange={e => setLastNameReg(e)}/>
+                <br/>
+            </label>
+            <label>
                 <h3>E-mail</h3>
                 <input type="email" name="email" id="email" onChange={e => validateEmail(e)}/>
                 <br/>
@@ -62,8 +85,18 @@ const Register = () => {
                 <br/>
                 <span style={{fontWeight: 'bold',color: 'red'}}>{passwordErr}</span>
             </label>
+            <label>
+                <h3>Telefon</h3>
+                <input type="tel" id="phone" name="phone" onChange={e => setPhoneReg(e)}/>
+                <br/>
+            </label>
+            <label>
+                <h3>Töökoht</h3>
+                <input type="text" id="job" name="job" onChange={e => setJobReg(e)}/>
+                <br/>
+            </label>
             <div>
-                <button type='submit' onClick={register} disabled={passwordErr || emailErr}>Registreeru</button>
+                <button type='submit' onClick={register} disabled={passwordErr || emailErr || emailReg == "" || passwordReg == "" || phoneReg == "" || jobReg == ""}>Registreeru</button>
             </div>
             <div>
                 <span style={{fontWeight: 'bold',color: 'green'}}>{regStatus}</span>
