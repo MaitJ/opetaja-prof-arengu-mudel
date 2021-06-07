@@ -131,39 +131,62 @@ app.get('/getKasutaja', (req, res) => {
 });
 
 
+//select kysimus_id, kysimus_tekst FROM Kysimus JOIN KysimustePlokk ON Kysimus.kysimusteplokk_id=KysimustePlokk.kysimusteplokk_id WHERE Kysimus.kysimusteplokk_id=2;
 
 app.get('/getKysimused', (req, res, next) => {
-    if (req.query.plokk !== undefined) {
-        req.data = testandmed.kysimused.filter((kysimus) => kysimus.kysimusteplokk_id == req.query.plokk);
-    } else if (req.query.count !== true) {
-        let plokid = [];
-        for (let i = 0; i < testandmed.kysimused.length; ++i) {
-            if (!plokid.includes(testandmed.kysimused[i].kysimusteplokk_id)) {
-                plokid = [...plokid, testandmed.kysimused[i].kysimusteplokk_id];
-            }
-        }
 
-        req.data = plokid.length;
-    }
-    else {
-        req.data = testandmed.kysimused;
+    if (req.query.kysimusteplokk !== undefined) {
+        const kysimusteplokk_id = req.query.kysimusteplokk;
+        connection.query(`SELECT kysimus_id, kysimus_tekst FROM Kysimus JOIN KysimustePlokk ON Kysimus.kysimusteplokk_id=KysimustePlokk.kysimusteplokk_id WHERE Kysimus.kysimusteplokk_id=${kysimusteplokk_id}`, (error, results, fields) => {
+            if (error) throw error;
+            const resultsJson = results.map((result) => {
+                return Object.assign({}, result);
+            })
+            req.data = resultsJson;
+            next();
+        });
+
+    } else if (req.query.count === "true") {
+        connection.query('SELECT COUNT(kysimusteplokk_id) AS plokkidecount FROM KysimustePlokk;', (error, results, fields) => {
+            req.data = results[0].plokkidecount;
+            next();
+        })
     }
     
-    next();
 }, (req, res) => {
     res.json(req.data);
 });
 
 
+//SELECT soovitus_tekst FROM Soovitus JOIN Kysimus ON Soovitus.kysimus_id = Kysimus.kysimus_id WHERE Kysimus.kysimus_id=3;
 app.get('/getSoovitused', (req, res, next) => {
+    /*
     if (req.query.kysimus !== undefined) {
         req.data = testandmed.soovitused.filter((soovitus) => soovitus.kysimus_id == req.query.kysimus);
     } else {
         req.data = null
     }
     next();
+    */
+
+    if (req.query.kysimusid != undefined || req.query.kysimusid != 0) {
+        const kysimus_id = req.query.kysimusid;
+        connection.query(`SELECT soovitus_tekst FROM Soovitus JOIN Kysimus ON Soovitus.kysimus_id = Kysimus.kysimus_id WHERE Soovitus.kysimus_id=${kysimus_id};`, (error, results, fields) => {
+            if (error) throw error;
+            if (results.length > 1) {
+                const soovitused = results.map((result) => {
+                    return Object.assign({}, result);
+                })
+                req.data = soovitused;
+            } else 
+            {
+                req.data = results[0];
+            }
+            next();
+        })
+    }
 }, (req, res) => {
-    res.send(req.data);
+    res.json(req.data);
 });
 
 app.get('/', (req, res) => {
