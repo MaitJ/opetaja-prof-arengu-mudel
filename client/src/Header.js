@@ -11,6 +11,7 @@ const Header = () => {
     const history = useHistory();
 
     const [userEmail, setUserEmail] = useState("");
+    const [userId, setUserId] = useState();
     const [lastlogged, setLastLogged] = useState("");
     const [loggedIn, setLoggedIn] = useState(false);
     const [body, setBody] = useState();
@@ -39,6 +40,8 @@ const Header = () => {
             return true
         } else {
             const {email} = jwtDecode(token);
+            const {id} = jwtDecode(token);
+            setUserId(id);
             setUserEmail(email);
             console.log(getAccessToken() + "accesstoken");
         }
@@ -46,7 +49,7 @@ const Header = () => {
         console.log(userEmail + " on kasutaja email");
         
         
-    },[])
+    })
 
 
     return (
@@ -78,6 +81,8 @@ const Header = () => {
             </div>
             <div>
                 {userEmail}
+                <br />
+                {userId}
             </div>
         </header>
     )

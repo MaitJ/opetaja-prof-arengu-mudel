@@ -21,15 +21,15 @@ const port = 3001;
 
 const testandmed = require('./testandmed/testandmed');
 
-const connection = mysql.createConnection({
-    host:'localhost',
-    user:'opprofmudel',
-    password:'0pProfMudel10!',
-    database:'opprofmudeldb'
-});
+// const connection = mysql.createConnection({
+//     host:'localhost',
+//     user:'opprofmudel',
+//     password:'0pProfMudel10!',
+//     database:'opprofmudeldb'
+// });
 
 
-connection.connect();
+//connection.connect();
 
 app.use(cors());
 app.use(respond);
@@ -37,8 +37,8 @@ app.use(respond);
 const db = mysql.createConnection({
   user: "root",
   host: "localhost",
-  password: "password",
-  database: "opetajaprof",
+  password: "admin",
+  database: "opetajaprofareng",
 });
 
 function auth (req, res) {
@@ -114,14 +114,14 @@ function comparePassword (dbpassword, encrypted) {
 
 app.get('/getKasutaja', (req, res) => {
     const kasutajaid = req.query.kasutaja_id;
-    connection.query(`SELECT * FROM Profiil WHERE kasutaja_id=${kasutajaid}`, (error, results, fields) => {
+    db.query(`SELECT * FROM Profiil WHERE kasutaja_id=${kasutajaid}`, (error, results, fields) => {
         if (error) throw error;
         let andmed = {};
         andmed.eesnimi = results[0].eesnimi;
         andmed.perenimi = results[0].perenimi;
         const kasutajaroll_id = results[0].kasutajaroll_id;
 
-        connection.query(`SELECT rolli_nimi FROM Kasutajaroll WHERE kasutajaroll_id=${kasutajaroll_id}`, (error, results, fields) => {
+        db.query(`SELECT rolli_nimi FROM Kasutajaroll WHERE kasutajaroll_id=${kasutajaroll_id}`, (error, results, fields) => {
             if (error) throw error;
             andmed.kasutajaroll = results[0].rolli_nimi;
             res.send(andmed);
@@ -131,39 +131,62 @@ app.get('/getKasutaja', (req, res) => {
 });
 
 
+//select kysimus_id, kysimus_tekst FROM Kysimus JOIN KysimustePlokk ON Kysimus.kysimusteplokk_id=KysimustePlokk.kysimusteplokk_id WHERE Kysimus.kysimusteplokk_id=2;
 
 app.get('/getKysimused', (req, res, next) => {
-    if (req.query.plokk !== undefined) {
-        req.data = testandmed.kysimused.filter((kysimus) => kysimus.kysimusteplokk_id == req.query.plokk);
-    } else if (req.query.count !== true) {
-        let plokid = [];
-        for (let i = 0; i < testandmed.kysimused.length; ++i) {
-            if (!plokid.includes(testandmed.kysimused[i].kysimusteplokk_id)) {
-                plokid = [...plokid, testandmed.kysimused[i].kysimusteplokk_id];
-            }
-        }
 
-        req.data = plokid.length;
-    }
-    else {
-        req.data = testandmed.kysimused;
+    if (req.query.kysimusteplokk !== undefined) {
+        const kysimusteplokk_id = req.query.kysimusteplokk;
+        connection.query(`SELECT kysimus_id, kysimus_tekst FROM Kysimus JOIN KysimustePlokk ON Kysimus.kysimusteplokk_id=KysimustePlokk.kysimusteplokk_id WHERE Kysimus.kysimusteplokk_id=${kysimusteplokk_id}`, (error, results, fields) => {
+            if (error) throw error;
+            const resultsJson = results.map((result) => {
+                return Object.assign({}, result);
+            })
+            req.data = resultsJson;
+            next();
+        });
+
+    } else if (req.query.count === "true") {
+        connection.query('SELECT COUNT(kysimusteplokk_id) AS plokkidecount FROM KysimustePlokk;', (error, results, fields) => {
+            req.data = results[0].plokkidecount;
+            next();
+        })
     }
     
-    next();
 }, (req, res) => {
     res.json(req.data);
 });
 
 
+//SELECT soovitus_tekst FROM Soovitus JOIN Kysimus ON Soovitus.kysimus_id = Kysimus.kysimus_id WHERE Kysimus.kysimus_id=3;
 app.get('/getSoovitused', (req, res, next) => {
+    /*
     if (req.query.kysimus !== undefined) {
         req.data = testandmed.soovitused.filter((soovitus) => soovitus.kysimus_id == req.query.kysimus);
     } else {
         req.data = null
     }
     next();
+    */
+
+    if (req.query.kysimusid != undefined || req.query.kysimusid != 0) {
+        const kysimus_id = req.query.kysimusid;
+        connection.query(`SELECT soovitus_tekst FROM Soovitus JOIN Kysimus ON Soovitus.kysimus_id = Kysimus.kysimus_id WHERE Soovitus.kysimus_id=${kysimus_id};`, (error, results, fields) => {
+            if (error) throw error;
+            if (results.length > 1) {
+                const soovitused = results.map((result) => {
+                    return Object.assign({}, result);
+                })
+                req.data = soovitused;
+            } else 
+            {
+                req.data = results[0];
+            }
+            next();
+        })
+    }
 }, (req, res) => {
-    res.send(req.data);
+    res.json(req.data);
 });
 
 app.get('/', (req, res) => {
@@ -176,20 +199,20 @@ app.post('/login', async (req, res) => {
 
   const hash = await hashPassword(password);
 
-  db.query("SELECT * FROM users WHERE email = ?",
+  db.query("SELECT * FROM kasutaja WHERE email = ?",
   [email], (err, results) => {
     if (results.length === 0) {
       return res.status(400).json({msg: "Kasutajat ei leitud"});
     }
     try {
-       bcrypt.compare(password, results[0].password, (err, data) => {
+       bcrypt.compare(password, results[0].salasona, (err, data) => {
          if (err) {
            throw err;
          }
          if (data) {
-           sendRefreshToken(res, createRefreshToken(results[0].email, results[0].users_id));
-           const accToken = generateAccessToken(results[0].email, results[0].users_id);
-           console.log("touken: " + results[0].users_id);
+          sendRefreshToken(res, createRefreshToken(results[0].email, results[0].kasutaja_id));
+          const accToken = generateAccessToken(results[0].email, results[0].kasutaja_id);
+           console.log("touken: " + results[0].kasutaja_id);
            sendToken(res, accToken);
            sendTokentoLogout(res, accToken);
            return res.status(200).json({ msg: "Login success", accessToken: accToken })
@@ -223,7 +246,7 @@ app.post('/refresh_token', (req, res) => {
   console.log("email: " + email[0]);
   console.log(JSON.stringify(email));
 
-  db.query("SELECT * FROM users WHERE email = ?",
+  db.query("SELECT * FROM kasutaja WHERE email = ?",
   [email], (err, results) => {
     if (err) {
       throw err;
@@ -240,8 +263,8 @@ app.post('/refresh_token', (req, res) => {
       if(!user) {
         return res.send({ok: false, accessToken: ''});
       }
-      sendRefreshToken(res, createRefreshToken(results[0].email, results[0].users_id));
-      const accToken = generateAccessToken(results[0].email, results[0].users_id);
+      sendRefreshToken(res, createRefreshToken(results[0].email, results[0].kasutaja_id));
+      const accToken = generateAccessToken(results[0].email, results[0].kasutaja_id);
       sendToken(res, accToken);
       sendTokentoLogout(res, accToken);
       return res.send({ok: true, user: user, accessToken: accToken});
@@ -334,10 +357,14 @@ app.post('/register', async (req, res) => {
 
     const email = req.body.email;
     const password = req.body.password;
+    const phone = req.body.phone;
+    const job = req.body.job;
+    const firstName = req.body.firstName;
+    const lastName = req.body.lastName;
 
     const hash = await hashPassword(password);
 
-    db.query("INSERT INTO users (email, password) VALUES (?, ?)", [email, hash], (err, result) => {
+    db.query("INSERT INTO kasutaja (email, salasona) VALUES (?, ?)", [email, hash], (err, result) => {
       check('email', 'Email on sisestamata!').notEmpty();
       check('email', 'Email ei ole korralik!').isEmail();
       check('password', 'Salasona vali on tyhi!').notEmpty();
@@ -352,6 +379,25 @@ app.post('/register', async (req, res) => {
         res.send(result);
       } else {
         res.send({message: "Vale email / salasona!"});
+      }
+    })
+
+    db.query("INSERT INTO profiil (eesnimi, perenimi, telefon, tookoht, kasutajaroll_id) VALUES (?, ?, ?)", [firstName, lastName, phone, job, 1], (err, result) => {
+      check('eesnimi', 'Eesnimi on sisestamata!').notEmpty();
+      check('perenimi', 'Perekonnanimi ei ole korralik!').notEmpty();
+      check('telefon', 'Telefoninumber on sisestamata!').notEmpty();
+      check('tookoht', 'Tookoht on sisestamata!').notEmpty();
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+      }
+      if(err) {
+        res.send({err: err});
+      }
+      if (result != null) {
+        res.send(result);
+      } else {
+        res.send({message: result});
       }
     })
 })
