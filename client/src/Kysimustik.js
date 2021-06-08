@@ -5,7 +5,7 @@ import Kysimusteplokk from './Kysimusteplokk';
 
 const kysimused_url = "http://localhost:3001/getKysimused";
 
-const Kysimustik = () => {
+const Kysimustik = ({kysimustik_id}) => {
     const [kysimusedList, setKysimusedList] = useState([]);
     const [loading, isLoading] = useState(false);
     const [selectedPlokk, setKysimustePlokk] = useState(1);
@@ -14,8 +14,19 @@ const Kysimustik = () => {
 
     useEffect(() => {
         isLoading(true);
+        /*
         const plokkSelection = "?kysimusteplokk=";
-        axios.get(kysimused_url + plokkSelection + selectedPlokk)
+        const kysimustikSelection = `&kysimustik=${kysimustik_id}`;
+        axios.get(kysimused_url + plokkSelection + selectedPlokk + kysimustikSelection)
+        .then((response) => {
+            setKysimusedList(response.data);
+            isLoading(false);
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+        */
+        axios.post(kysimused_url, {kysimusteplokk_id: selectedPlokk, kysimustik_id: kysimustik_id})
         .then((response) => {
             setKysimusedList(response.data);
             isLoading(false);
@@ -25,11 +36,9 @@ const Kysimustik = () => {
         })
     }, [selectedPlokk])
 
-    useEffect(() => {
-        console.log(kysimusedList);
-    }, [kysimusedList]);
 
     useEffect(() => {
+        /*
         const countSelection = "?count=true";
         axios.get(kysimused_url + countSelection)
         .then((response) => {
@@ -38,12 +47,19 @@ const Kysimustik = () => {
         .catch((err) => {
             console.log(err);
         });
+        */
+        axios.post(kysimused_url, {count: true})
+        .then((response) => {
+            setMituPlokki(response.data);
+        }).catch((error) => {
+            console.log(error);
+        })
     }, []);
 
     useEffect(() => {
         kysimusedList.map((kysimus) => {
             setKysimusteVastused((prevState) => {
-                return [...prevState, {id: kysimus.kysimus_id, vastus: null}];
+                return [...prevState, {id: kysimus.kysimus_id, vastus: null, enesehinnang: null}];
             })
         });
     }, [kysimusedList])
@@ -67,11 +83,18 @@ const Kysimustik = () => {
     };
 
     const kasOnTaidetud = () => {
+        for (let i = 0; i < kysimusteVastused.length; ++i) {
+            if (kysimusteVastused[i].vastus == null || kysimusteVastused[i].enesehinnang == null) {
+                return false;
+            }
+        }
+        /*
         kysimusteVastused.forEach(kysimus => {
-            if (kysimus.vastus == null) {
+            if (kysimus.vastus === null) {
                 return false;
             }
         })
+        */
         return true;
     };
 

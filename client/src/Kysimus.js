@@ -17,9 +17,10 @@ const kysimusteValikud = [{
 }];
 
 const Kysimus = ({kysimus, setKysimusteVastused, kysimusteVastused}) => {
-    const [soovitused, setSoovitused] = useState([]);
+    const [soovitused, setSoovitused] = useState([]);;
 
     useEffect(() => {
+        /*
         const kysimusSelector = "?kysimusid=" + kysimus.kysimus_id;
         axios.get(soovitusAPI + kysimusSelector).then((response) => {
             setSoovitused((prevState) => {
@@ -28,12 +29,13 @@ const Kysimus = ({kysimus, setKysimusteVastused, kysimusteVastused}) => {
         .catch((err) => {
             console.log(err);
         })
+        */
+        axios.post(soovitusAPI, {kysimusid: kysimus.kysimus_id}).then((response) => {
+            setSoovitused((prevState) => {
+                return [...prevState, response.data]});
+        })
+        .catch((error) => console.log(error));
     }, []);
-
-    useEffect(() => {
-        console.log(soovitused);
-        console.log(soovitused.length);
-    }, [soovitused]);
 
     const kuvaSoovitused = () => {
         return(
@@ -56,14 +58,30 @@ const Kysimus = ({kysimus, setKysimusteVastused, kysimusteVastused}) => {
         };
         setKysimusteVastused(prevState => {
             let newState = [...prevState];
+            /*
             if (prevState[kysimus.kysimus_id - 1]) {
                 newState[kysimus.kysimus_id - 1].vastus = vastus.vastus;
             } else {
                 newState[kysimus.kysimus_id - 1] = vastus;
             }
+            */
+            newState[kysimus.kysimus_id  - 1].vastus = vastus.vastus;
             return newState;
         });
     };
+
+    const setEnesehinnang = (e) => {
+        const enesehinnang = {
+            kysimus_id: kysimus.kysimus_id,
+            enesehinnang: e.target.value
+        }
+
+        setKysimusteVastused(prevState => {
+            let newState = [...prevState];
+            newState[kysimus.kysimus_id - 1].enesehinnang = enesehinnang.enesehinnang;
+            return newState;
+        })
+    }
 
     const kasOnTaidetud = (valik) => {
         if (kysimusteVastused !== undefined) {
@@ -91,6 +109,8 @@ const Kysimus = ({kysimus, setKysimusteVastused, kysimusteVastused}) => {
                 }
             </div>
             {soovitused.length > 0 && kuvaSoovitused()}
+            <label>Enesehinnang:</label>
+            <textarea id="enesehinnangText" className="enesehinnangText" onChange={(e) => setEnesehinnang(e)} rows="4" cols="50"></textarea>
         </article>
     );
 }

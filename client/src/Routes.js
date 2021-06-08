@@ -5,8 +5,9 @@ import Login from './Login.js';
 import About from './About';
 import Register from './Register';
 import Header from './Header';
-import Kysimustik from "./Kysimustik.js";
+import KysimustikuValik from "./KysimustikuValik.js";
 import Profile from "./Profile.js";
+import Contact from "./Contact.js";
 
 const Routes = () => {
 
@@ -18,9 +19,10 @@ const Routes = () => {
                 <Route exact path="/" component={Home} />
                 <Route exact path="/about" component={About} />
                 <Route exact path="/profile" component={Profile} />
-                <Route exact path="/kysimustikud" component={Kysimustik} />
+                <Route exact path="/kysimustikud" component={KysimustikuValik} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path='/register' component={Register} />
+                <Route exact path='/contact' component={Contact} />
                 </Switch>
             </div>
         </BrowserRouter>
