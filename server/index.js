@@ -9,7 +9,6 @@ const mysql = require('mysql');
 const respond = require('express-respond');
 const jwt = require('jsonwebtoken');
 const jwtdecode = require('jwt-decode');
-//const sendRefreshToken = require('./sendRefreshTokens.js');
 const bcrypt = require('bcrypt');
 const { check, validationResult } = require('express-validator');
 const cookieParser = require('cookie-parser');
@@ -20,16 +19,6 @@ app.use(express.json());
 const port = 3001;
 
 const testandmed = require('./testandmed/testandmed');
-
-// const connection = mysql.createConnection({
-//     host:'localhost',
-//     user:'opprofmudel',
-//     password:'0pProfMudel10!',
-//     database:'opprofmudeldb'
-// });
-
-
-//connection.connect();
 
 app.use(cors());
 app.use(respond);
@@ -44,18 +33,6 @@ const db = mysql.createConnection({
 function auth (req, res) {
   const token = req.cookies.jid;
 }
-
-// function ensureToken(req, res, next) {
-//   const bearerHeader = req.headers["authorization"];
-//   if(typeof bearerHeader !== "undefined") {
-//     const bearer = bearerHeader.split(" ");
-//     const bearerToken = bearer[1];
-//     req.token = bearerToken;
-//     next();
-//   } else {
-//     res.sendStatus(403);
-//   }
-// }
 
 function sendRefreshToken (res, token) {
   res.cookie("jid", token, {httpOnly: true, path: "/refresh_token"});
@@ -72,6 +49,10 @@ function sendToken (res, token) {
 function sendTokentoLogout (res, token) {
   res.cookie("jid", token, {httpOnly: true, path: "/logout"});
 }
+
+// function sendTokentoGetKasutaja (res, token) {
+//   res.cookie("jid", token, {httpOnly: true, path: "/getKasutaja"});
+// }
 
 function createRefreshToken (emailInput, idInput) {
   return jwt.sign({email: emailInput, id: idInput}, process.env.REFRESH_TOKEN_SECRET, {expiresIn: '7d'});
@@ -94,38 +75,33 @@ function comparePassword (dbpassword, encrypted) {
   })
 }
 
-// const checkExistingEmail = (existingEmail) => {
-
-//   db.query("SELECT * FROM users WHERE email = ?",
-//   [existingEmail], (err, results) => {
-//     if(err) {
-//       console.log(err);
-//     }
-//     if(results.length > 0) {
-//       res.send("Selline email on juba registreeritud!");
-//       return true;
-//     } else {
-//       res.send("Korras");
-//       return false;
-//     }
-//   })
-
-// }
-
-app.get('/getKasutaja', (req, res) => {
-    const kasutajaid = req.query.kasutaja_id;
-    db.query(`SELECT * FROM Profiil WHERE kasutaja_id=${kasutajaid}`, (error, results, fields) => {
-        if (error) throw error;
+app.post('/getKasutaja', (req, res) => {  
+    const kasutajaid = req.body.kasutajaid;
+    db.query(`SELECT * FROM profiil WHERE kasutaja_id=${kasutajaid}`, (error, results, fields) => {
+        if (error) {
+          console.log("ERROR: " + error);
+          throw error;
+        } 
         let andmed = {};
         andmed.eesnimi = results[0].eesnimi;
         andmed.perenimi = results[0].perenimi;
+        andmed.telefon = results[0].telefon;
+        andmed.tookoht = results[0].tookoht;
         const kasutajaroll_id = results[0].kasutajaroll_id;
 
         db.query(`SELECT rolli_nimi FROM Kasutajaroll WHERE kasutajaroll_id=${kasutajaroll_id}`, (error, results, fields) => {
             if (error) throw error;
             andmed.kasutajaroll = results[0].rolli_nimi;
-            res.send(andmed);
         });
+
+        db.query(`SELECT email FROM kasutaja WHERE kasutaja_id=${kasutajaid}`, (error, results) => {
+          if (error) {
+            console.log(error);
+            throw error;
+          }
+          andmed.email = results[0].email;
+          res.send(andmed);
+        })
     });
 
 });
@@ -339,22 +315,6 @@ app.get('/jwt', (req, res) => {
 
 app.post('/logout', (req, res) => {
   const token = req.cookies.jid;
-  //console.log("See on token" + token);
-  //const date = Date.now();
-  //const {email} = jwtdecode(token);
-  //console.log("SEE ON EMAIL" + email);
-  // db.query("UPDATE users SET last_active = ? WHERE email = ?", [date, email], (err, result) => {
-    
-  //   console.log("SEE ON RESULT: " + result);
-  //   // if(err) {
-  //   //   console.log("ERROR" + err);
-  //   // }
-  //   // if (result != null) {
-  //   //   return res.send(result);
-  //   // } else {
-  //   //   return res.send({message: "Tekkis mingi viga!"});
-  //   // }
-  // })
   res.clearCookie("jid");
   sendRefreshToken(res, "");
   sendToken(res, "");
@@ -366,7 +326,6 @@ app.get('/about', function(req, res) {
   jwt.verify(req.token, process.env.ACCESS_TOKEN_SECRET, function(err, data) { 
     if (err) {
       res.json({err: err})
-      //res.sendStatus(403);
     } else {
       res.json({ text: 'see on kaitstud', data: data})
     }
@@ -408,42 +367,61 @@ app.post('/register', async (req, res) => {
 
     const hash = await hashPassword(password);
 
-    db.query("INSERT INTO kasutaja (email, salasona) VALUES (?, ?)", [email, hash], (err, result) => {
-      check('email', 'Email on sisestamata!').notEmpty();
-      check('email', 'Email ei ole korralik!').isEmail();
-      check('password', 'Salasona vali on tyhi!').notEmpty();
-      const errors = validationResult(req);
-      if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
-      }
-      if(err) {
-        res.send({err: err});
-      }
-      if (result != null) {
-        res.send(result);
-      } else {
-        res.send({message: "Vale email / salasona!"});
-      }
+    db.beginTransaction(function(err) {
+      if(err) {throw err; }
     })
+      db.query("INSERT INTO kasutaja (email, salasona) VALUES (?, ?)", [email, hash], (err, result) => {
+        check('email', 'Email on sisestamata!').notEmpty();
+        check('email', 'Email ei ole korralik!').isEmail();
+        check('password', 'Salasona vali on tyhi!').notEmpty();
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+          return res.status(400).json({ errors: errors.array() });
+        }
+        if(err) {
+          res.send({err: err});
+        }
+        if (result != null) {
+          res.send(result);
+        } else {
+          res.send({message: "Vale email / salasona!"});
+        }
+      
 
-    db.query("INSERT INTO profiil (eesnimi, perenimi, telefon, tookoht, kasutajaroll_id) VALUES (?, ?, ?)", [firstName, lastName, phone, job, 1], (err, result) => {
-      check('eesnimi', 'Eesnimi on sisestamata!').notEmpty();
-      check('perenimi', 'Perekonnanimi ei ole korralik!').notEmpty();
-      check('telefon', 'Telefoninumber on sisestamata!').notEmpty();
-      check('tookoht', 'Tookoht on sisestamata!').notEmpty();
-      const errors = validationResult(req);
-      if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
-      }
-      if(err) {
-        res.send({err: err});
-      }
-      if (result != null) {
-        res.send(result);
-      } else {
-        res.send({message: result});
-      }
-    })
+      var kasutajaID = result.insertId;
+
+      db.query("INSERT INTO profiil (eesnimi, perenimi, kasutaja_id, telefon, tookoht, kasutajaroll_id) VALUES (?, ?, ?, ?, ?, ?)", [firstName, lastName, kasutajaID, phone, job, 1], (err, result) => {
+        check('eesnimi', 'Eesnimi on sisestamata!').notEmpty();
+        check('perenimi', 'Perekonnanimi ei ole korralik!').notEmpty();
+        check('telefon', 'Telefoninumber on sisestamata!').notEmpty();
+        check('tookoht', 'Tookoht on sisestamata!').notEmpty();
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+          return res.status(400).json({ errors: errors.array() });
+        }
+        if(err) {
+          //res.send({err: err});
+          console.log("ERROR: " + err);
+        }
+        if (result != null) {
+          console.log(result);
+          //res.send(result);
+        } else {
+          console.log(result);
+          //res.send({message: result});
+        }
+      
+
+      db.commit(function(err) {
+        if (err) {
+          return db.rollback(function() {
+            throw err;
+          });
+        }
+        console.log('success!');
+      });
+    });
+  });
 })
 
 app.listen(port, () => {
