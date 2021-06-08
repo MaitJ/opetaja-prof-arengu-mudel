@@ -6,6 +6,9 @@ import axios from 'axios';
 import jwtDecode from 'jwt-decode';
 import {useHistory} from 'react-router-dom';
 
+import { NavLink } from "react-router-dom";
+import {BrowserRouter as Router} from "react-router-dom";
+
 const Header = () => {
 
     const history = useHistory();
@@ -18,9 +21,18 @@ const Header = () => {
 
     const buttonStyle = {
         textDecoration: "none",
+        color: "rgba(255, 255, 255, 0.7)"
+    };
+
+    const buttonStyleSecondary = {
+        textDecoration: "none",
         color: "white"
     };
 
+    const activePage = {
+        color: '#fff',
+        textDecoration: 'underline'
+    }
 
     function logout () {
         axios.post('/logout').then((response) => {
@@ -51,24 +63,26 @@ const Header = () => {
         
     })
 
-
     return (
         <header>
             <div className="navbar-content">
-                <h1><Link to="/" style={buttonStyle}>Logo</Link></h1>
+                <h1><NavLink to="/" style={buttonStyleSecondary}>Logo</NavLink></h1>
                 <div>
-                    <Link to="/" style={buttonStyle}>Home</Link>
+                    <NavLink activeStyle={activePage} exact to="/" style={buttonStyle}>Home</NavLink>
                 </div>
                 <div>
-                    <Link to="/profile" style={buttonStyle}>Profiil</Link>
+                    <NavLink activeStyle={activePage} to="/profile" style={buttonStyle}>Profiil</NavLink>
                 </div>
                 <div>
-                    <Link to="/kysimustikud" style={buttonStyle}>Kysimustik</Link>
+                    <NavLink activeStyle={activePage} to="/kysimustikud" style={buttonStyle}>Kysimustik</NavLink>
                 </div>
                 <div>
-                    <Link to="/about" style={buttonStyle}>About</Link>
+                    <NavLink activeStyle={activePage} to="/about" style={buttonStyle}>About</NavLink>
                 </div>
-                <h3><Link to="/profile" style={buttonStyle}>Minu profiil</Link></h3>
+                <h3><NavLink to="/profile" style={buttonStyleSecondary}>Minu profiil</NavLink></h3>
+            </div>
+            <div className="profile-dropdown">
+                    <Link to="/">Logi välja</Link>
             </div>
             <div>
                 <Link to="/register">Register</Link>

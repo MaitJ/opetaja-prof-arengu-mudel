@@ -5,7 +5,7 @@ body {
     padding: 0;
     font-family: 'Roboto', sans-serif;
 }
-/* Navigation bar styles */
+/* Navigation bar */
 .navbar-content {
     background-color: rgb(33, 143, 33);
     display: flex;
@@ -13,19 +13,21 @@ body {
     justify-content: space-between;
     align-items: center;
 }
-.navbar-content h1, .navbar-content h3 {
+.navbar-content > h1, .navbar-content > h3 {
     margin-left: 20px;
     margin-right: 20px;
     color: white;
 }
-.navbar-content div {
-    opacity: 0.8;
+.navbar-content > div {
     margin-left: 20px;
     font-size: 20px;
     transition: 0.5s;
 }
-.navbar-content div:hover {
-    opacity: 1;
+.navbar-content > div:hover {
     transform: translateY(-3px);
     text-decoration: underline;
+}
+/* My profile dropdown menu */
+.profile-dropdown {
+    display: none;
 }
