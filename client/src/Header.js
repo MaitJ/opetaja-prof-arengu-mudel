@@ -11,9 +11,15 @@ const Header = () => {
     const history = useHistory();
 
     const [userEmail, setUserEmail] = useState("");
+    const [userId, setUserId] = useState();
     const [lastlogged, setLastLogged] = useState("");
     const [loggedIn, setLoggedIn] = useState(false);
     const [body, setBody] = useState();
+
+    const buttonStyle = {
+        textDecoration: "none",
+        color: "white"
+    };
 
 
     function logout () {
@@ -34,6 +40,8 @@ const Header = () => {
             return true
         } else {
             const {email} = jwtDecode(token);
+            const {id} = jwtDecode(token);
+            setUserId(id);
             setUserEmail(email);
             console.log(getAccessToken() + "accesstoken");
         }
@@ -41,28 +49,32 @@ const Header = () => {
         console.log(userEmail + " on kasutaja email");
         
         
-    },[])
+    })
 
 
     return (
-        <header className='header-bar'>
-            <div>
-                <Link to="/">Home</Link>
-            </div>
-            <div>
-                <Link to="/login">Login</Link>
-            </div>
-            <div>
-                <Link to="/about">About</Link>
+        <header>
+            <div className="navbar-content">
+                <h1><Link to="/" style={buttonStyle}>Logo</Link></h1>
+                <div>
+                    <Link to="/" style={buttonStyle}>Home</Link>
+                </div>
+                <div>
+                    <Link to="/profile" style={buttonStyle}>Profiil</Link>
+                </div>
+                <div>
+                    <Link to="/kysimustikud" style={buttonStyle}>Kysimustik</Link>
+                </div>
+                <div>
+                    <Link to="/about" style={buttonStyle}>About</Link>
+                </div>
+                <h3><Link to="/profile" style={buttonStyle}>Minu profiil</Link></h3>
             </div>
             <div>
                 <Link to="/register">Register</Link>
             </div>
             <div>
-                <Link to="/profile">Profiil</Link>
-            </div>
-            <div>
-                <Link to="/kysimustikud">Kysimustik</Link>
+                <Link to="/login">Login</Link>
             </div>
             <div>
                 <Link to="/Contact">Kontakt</Link>
@@ -72,6 +84,8 @@ const Header = () => {
             </div>
             <div>
                 {userEmail}
+                <br />
+                {userId}
             </div>
         </header>
     )

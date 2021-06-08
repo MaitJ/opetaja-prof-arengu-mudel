@@ -20,6 +20,7 @@ import { getAccessToken } from "./accessToken";
 import jwtDecode from "jwt-decode";
 import Routes from "./Routes";
 import axios from 'axios';
+import './css/style.css';
 
 function App() {
 
