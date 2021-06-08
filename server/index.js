@@ -24,10 +24,10 @@ app.use(cors());
 app.use(respond);
 
 const db = mysql.createConnection({
-  user: "root",
+  user: "opprofmudel",
   host: "localhost",
-  password: "admin",
-  database: "opetajaprofareng",
+  password: "0pProfMudel10!",
+  database: "opprofmudeldb"
 });
 
 function auth (req, res) {
@@ -106,14 +106,47 @@ app.post('/getKasutaja', (req, res) => {
 
 });
 
+//Vaata, kas kysimustik on pooleli, olenevalt sellest tekita profiil_kysimustikku
+//kirje voi uuenda olemasolevat kirjet
+
+app.post('/tekitaKysimustik', (req, res, next) => {
+  if (req.body.kasutaja_id !== undefined && req.body.kysimustik_id !== undefined) {
+    const profiil_id = req.body.kasutaja_id;
+    const kysimustik_id = req.body.kysimustik_id;
+    db.query(`SELECT * FROM profiil_kysimustik WHERE profiil_id=${profiil_id} AND kysimustik_id=${kysimustik_id}`, (error, results, fields) => {
+      if (error) throw error;
+
+      if (results[0] == undefined) {
+          //INESRT INTO profiil_kysimustik (kysimustik_id, profiil_id) VALUES (1, 1);
+        db.query(`INSERT INTO profiil_kysimustik (kysimustik_id, profiil_id) VALUES (${kysimustik_id}, ${profiil_id})`, (error, results, fields) => {
+          if (error) throw error;
+          req.status = 1;
+          next();
+        });
+      }
+
+      else {
+        req.status = 1;
+        next();
+      }
+
+    });
+  }
+}, (req, res) => {
+  res.json(req.status);
+
+});
 
 //select kysimus_id, kysimus_tekst FROM Kysimus JOIN KysimustePlokk ON Kysimus.kysimusteplokk_id=KysimustePlokk.kysimusteplokk_id WHERE Kysimus.kysimusteplokk_id=2;
 
-app.get('/getKysimused', (req, res, next) => {
-
-    if (req.query.kysimusteplokk !== undefined) {
-        const kysimusteplokk_id = req.query.kysimusteplokk;
-        db.query(`SELECT kysimus_id, kysimus_tekst FROM Kysimus JOIN KysimustePlokk ON Kysimus.kysimusteplokk_id=KysimustePlokk.kysimusteplokk_id WHERE Kysimus.kysimusteplokk_id=${kysimusteplokk_id}`, (error, results, fields) => {
+app.post('/getKysimused', (req, res, next) => {
+    if (req.body.kysimusteplokk_id !== undefined && req.body.kysimustik_id !== undefined) {
+        const kysimusteplokk_id = req.body.kysimusteplokk_id;
+        const kysimustik_id = req.body.kysimustik_id;
+        db.query(`SELECT kysimus_id, kysimus_tekst FROM Kysimus 
+        JOIN KysimustePlokk ON Kysimus.kysimusteplokk_id=KysimustePlokk.kysimusteplokk_id 
+        WHERE Kysimus.kysimusteplokk_id=${kysimusteplokk_id}
+        AND KysimustePlokk.kysimustik_id=${kysimustik_id}`, (error, results, fields) => {
             if (error) throw error;
             const resultsJson = results.map((result) => {
                 return Object.assign({}, result);
@@ -122,11 +155,22 @@ app.get('/getKysimused', (req, res, next) => {
             next();
         });
 
-    } else if (req.query.count === "true") {
+    } else if (req.body.count) {
         db.query('SELECT COUNT(kysimusteplokk_id) AS plokkidecount FROM KysimustePlokk;', (error, results, fields) => {
             req.data = results[0].plokkidecount;
             next();
         })
+    } else if (req.body.kysimustik !== undefined) {
+      //Fix pls
+    } else if (req.body.kysimustikud) {
+      db.query('SELECT kysimustik_id, kysimustik_pealkiri FROM Kysimustik;', (error, results, fields) => {
+        if (error) throw error;
+        const resultsJson = results.map((result) => {
+          return Object.assign({}, result);
+        })
+        req.data = resultsJson;
+        next();
+      });
     }
     
 }, (req, res) => {
@@ -135,7 +179,7 @@ app.get('/getKysimused', (req, res, next) => {
 
 
 //SELECT soovitus_tekst FROM Soovitus JOIN Kysimus ON Soovitus.kysimus_id = Kysimus.kysimus_id WHERE Kysimus.kysimus_id=3;
-app.get('/getSoovitused', (req, res, next) => {
+app.post('/getSoovitused', (req, res, next) => {
     /*
     if (req.query.kysimus !== undefined) {
         req.data = testandmed.soovitused.filter((soovitus) => soovitus.kysimus_id == req.query.kysimus);
@@ -145,8 +189,8 @@ app.get('/getSoovitused', (req, res, next) => {
     next();
     */
 
-    if (req.query.kysimusid != undefined || req.query.kysimusid != 0) {
-        const kysimus_id = req.query.kysimusid;
+    if (req.body.kysimusid != undefined || req.body.kysimusid != 0) {
+        const kysimus_id = req.body.kysimusid;
         db.query(`SELECT soovitus_tekst FROM Soovitus JOIN Kysimus ON Soovitus.kysimus_id = Kysimus.kysimus_id WHERE Soovitus.kysimus_id=${kysimus_id};`, (error, results, fields) => {
             if (error) throw error;
             if (results.length > 1) {
