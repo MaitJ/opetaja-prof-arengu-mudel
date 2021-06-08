@@ -55,20 +55,19 @@ const Header = () => {
     return (
         <header>
             <div className="navbar-content">
-                <h1><Link to="/" style={buttonStyle}>Logo</Link></h1>
-                <div>
-                    <Link to="/" style={buttonStyle}>Home</Link>
-                </div>
+                <h1><Link to="/profile" style={buttonStyle}>Logo</Link></h1>
                 <div>
                     <Link to="/profile" style={buttonStyle}>Profiil</Link>
                 </div>
                 <div>
-                    <Link to="/kysimustikud" style={buttonStyle}>Kysimustik</Link>
+                    <Link to="/kysimustikud" style={buttonStyle}>Küsimustikud</Link>
                 </div>
                 <div>
                     <Link to="/about" style={buttonStyle}>About</Link>
                 </div>
-                <h3><Link to="/profile" style={buttonStyle}>Minu profiil</Link></h3>
+                <div>
+                    <Link to="/contact" style={buttonStyle}>Kontakt</Link>
+                </div>
             </div>
             <div>
                 <Link to="/register">Register</Link>

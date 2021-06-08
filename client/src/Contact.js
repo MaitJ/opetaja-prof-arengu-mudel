@@ -40,16 +40,16 @@ const Contact = () => {
         
             <section className='contact'>
                 <section className='contact-heading'>
-                    <h1>Kontakteeru meiega</h1>
+                    <h1>Kontakteeru meiega!</h1>
                 </section>
                 <section className="contact-form">
                     <label>Nimi</label>
-                    <input type="text" id='name' name='name' placeholder='Name...' required/>
+                    <input type="text" id='name' name='name' placeholder='Nimi' required/>
                     <label>Email</label>
-                    <input type="email" id='email' name='email' placeholder='E-mail...'/>
+                    <input type="email" id='email' name='email' placeholder='E-mail'/>
                     <label>Teema</label>
-                    <input type="text" id='message' name='message' placeholder='Some text...'/>
-                    <button type='submit' id='button' value='Submit'>Send</button>
+                    <input type="text" id='message' name='message' placeholder='Sõnum'/>
+                    <button className="contact-button" type='submit' id='button' value='Submit'>Saada</button>
                 </section>
             </section>
         </form>
