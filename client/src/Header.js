@@ -51,7 +51,6 @@ const Header = () => {
         
     })
 
-
     return (
         <header>
             <div className="navbar-content">

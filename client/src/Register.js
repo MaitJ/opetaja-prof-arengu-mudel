@@ -11,10 +11,10 @@ const Register = () => {
     const [passwordErr, setPasswordErr] = useState("");
     const [emailReg, setEmailReg] = useState("");
     const [passwordReg, setPasswordReg] = useState("");
-    const [phoneReg, setPhoneReg] = useState();
-    const [jobReg, setJobReg] = useState();
-    const [firstNameReg, setFirstNameReg] = useState();
-    const [lastNameReg, setLastNameReg] = useState();
+    const [phoneReg, setPhoneReg] = useState("");
+    const [jobReg, setJobReg] = useState("");
+    const [firstNameReg, setFirstNameReg] = useState("");
+    const [lastNameReg, setLastNameReg] = useState("");
     const [regStatus, setRegStatus] = useState("");
 
 
@@ -31,13 +31,29 @@ const Register = () => {
                 setRegStatus("Registreerimine õnnestus!");
                 history.push("/login");
                 window.location.reload();
-                //console.log(response.data);
             }, (error) => {
                 console.log(error);
                 setRegStatus("Midagi läks valesti!");
             })
         }
     };
+
+    const handlePhone = (e) => {
+        setPhoneReg(e.target.value);
+    }
+
+    const handleJob = (e) => {
+        setJobReg(e.target.value);
+    }
+
+    const handleFirstName = (e) => {
+        setFirstNameReg(e.target.value);
+    }
+
+    const handleLastName = (e) => {
+        setLastNameReg(e.target.value);
+    }
+
 
     const validatePassword = (e) => {
         var validatedPassword = e.target.value;
@@ -65,12 +81,12 @@ const Register = () => {
         <section className='register'>
             <label>
                 <h3>Eesnimi</h3>
-                <input type="text" id="firstName" name="firstName" onChange={e => setFirstNameReg(e)}/>
+                <input type="text" id="firstName" name="firstName" onChange={e => handleFirstName(e)}/>
                 <br/>
             </label>
             <label>
                 <h3>Perekonnanimi</h3>
-                <input type="text" id="lastName" name="lastName" onChange={e => setLastNameReg(e)}/>
+                <input type="text" id="lastName" name="lastName" onChange={e => handleLastName(e)}/>
                 <br/>
             </label>
             <label>
@@ -87,16 +103,16 @@ const Register = () => {
             </label>
             <label>
                 <h3>Telefon</h3>
-                <input type="tel" id="phone" name="phone" onChange={e => setPhoneReg(e)}/>
+                <input type="tel" id="phone" name="phone" onChange={e => handlePhone(e)}/>
                 <br/>
             </label>
             <label>
                 <h3>Töökoht</h3>
-                <input type="text" id="job" name="job" onChange={e => setJobReg(e)}/>
+                <input type="text" id="job" name="job" onChange={e => handleJob(e)}/>
                 <br/>
             </label>
             <div>
-                <button type='submit' onClick={register} disabled={passwordErr || emailErr || emailReg == "" || passwordReg == "" || phoneReg == "" || jobReg == ""}>Registreeru</button>
+                <button type='submit' onClick={register} disabled={passwordErr || emailErr || emailReg == "" || passwordReg == "" || phoneReg == "" || jobReg == "" || firstNameReg == "" || lastNameReg == ""}>Registreeru</button>
             </div>
             <div>
                 <span style={{fontWeight: 'bold',color: 'green'}}>{regStatus}</span>
