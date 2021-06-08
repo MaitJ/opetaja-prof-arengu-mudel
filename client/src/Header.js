@@ -77,6 +77,9 @@ const Header = () => {
                 <Link to="/login">Login</Link>
             </div>
             <div>
+                <Link to="/Contact">Kontakt</Link>
+            </div>
+            <div>
                 {getAccessToken() != "" ? (<button onClick={async () => {await logout(); setAccessToken(""); setUserEmail(""); console.log(getAccessToken() + "See on getaccestoken")}}>Logi valja</button>) : null}
             </div>
             <div>

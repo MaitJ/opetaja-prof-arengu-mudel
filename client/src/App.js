@@ -13,6 +13,8 @@ import Login from './Login.js';
 import Register from './Register';
 import About from './About.js';
 import Home from './Home.js';
+import Contact from './Contact.js';
+import './css/style.css';
 import { setAccessToken } from "./accessToken";
 import { getAccessToken } from "./accessToken";
 import jwtDecode from "jwt-decode";
