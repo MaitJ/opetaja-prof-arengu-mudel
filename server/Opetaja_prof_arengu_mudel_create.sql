@@ -42,7 +42,7 @@ CREATE TABLE Kasutajaroll (
 -- Table: Kysimus
 CREATE TABLE Kysimus (
     kysimus_id int NOT NULL AUTO_INCREMENT,
-    kysimus_tekst varchar(500) NOT NULL,
+    kysimus_tekst varchar(1000) NOT NULL,
     kysimusteplokk_id int NOT NULL,
     CONSTRAINT Kysimus_pk PRIMARY KEY (kysimus_id)
 );
