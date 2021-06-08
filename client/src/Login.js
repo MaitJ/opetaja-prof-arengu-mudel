@@ -4,11 +4,18 @@ import validator from 'validator';
 import { getAccessToken } from "./accessToken";
 import jwtDecode from 'jwt-decode';
 import {useHistory, Redirect} from 'react-router-dom';
+import './css/Login.css';
+import { Link } from "react-router-dom";
 
 
 const Login = () => {
 
     const history = useHistory();
+
+    const hrefStyle = {
+        textDecoration: "underline",
+        color: "gray"
+    };
 
     const [loading, setLoading] = useState(false);
     const [email, setEmail] = useState("");
@@ -42,25 +49,35 @@ const Login = () => {
             console.log(error.response.status);
         })
         
+        
     };
-
     
     return(
         <section className='login'>
-            <label>
+            <div className="page-login">
+                <div>
+                    <button id="login-id">Sisene ID-kaardiga</button>
+                </div>
+                <div>
+                    <button id="login-mobile">Sisene Mobiil-IDga</button>
+                </div>
+                <label>
                     <h3>E-mail</h3>
-                    <input type="email" name="email" id="email" onChange={e => {setEmail(e.target.value)}}/>
+                    <input className="email-input" placeholder="E-mail" type="email" name="email" id="email" onChange={e => {setEmail(e.target.value)}}/>
                 </label>
                 <label htmlFor="">
-                    <h3>Salasona</h3>
-                    <input type="password" id="password" name="password" onChange={e => {setPassword(e.target.value)}}/>
+                    <h3>Salasõna</h3>                    <input className="password-input" placeholder="Salasõna" type="password" id="password" name="password" onChange={e => {setPassword(e.target.value)}}/>
                 </label>
                 <div>
-                    <button type='submit' onClick={login}>Logi sisse</button>
+                    <button className="login-button" type='submit' onClick={login}>Logi sisse</button>
                 </div>
                 <div>
                     <span style={{fontWeight: 'bold',color: 'red'}}>{loginStatus}</span>
                 </div>
+                <div>
+                    <h4><Link to="/register" style={hrefStyle}>Registreeru kasutajaks</Link></h4>
+                </div>
+            </div>
         </section>
     );
 }

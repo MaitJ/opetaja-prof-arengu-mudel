@@ -1,0 +1,120 @@
+/* .login-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+body {
+  background-color: rgba(231, 231, 231, 0.3);
+}
+
+/* Register page CSS */
+
+@media all and (min-width: 480px) {
+  .register {
+    padding-bottom: 30px;
+    display: inline-block;
+  }
+  .register form {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+}
+.register h3 {
+  display: flex;
+  font-size: 1em;
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+#register-button {
+  background-color: green;
+  color: white;
+  font-size: 1em;
+  letter-spacing: 1px;
+  border-radius: 10px;
+  border: none;
+  transition: 0.3s;
+  box-shadow: 3px 5px 3px rgba(37, 37, 37, 0.3);
+}
+#register-button:hover{
+  background-color: rgb(3, 88, 3);
+  cursor: pointer;
+}
+.reg-page {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 6px 6px 5px rgba(37, 37, 37, 0.4);
+}
+.register input {
+  display: inline-block;
+  padding: 1em;
+  border-radius: 6px;
+  font-size: 1em;
+  margin-bottom: 0;
+}
+.register span {
+  word-wrap: break-word;
+}
+
+/* Login page CSS */
+
+.login { 
+  display: inline-block;
+  padding: 20px;
+  vertical-align: auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(37, 37, 37, 0.4);
+}
+.page-intro {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 20px;
+}
+.page-login {
+  display: inline-block;
+}
+.login-button, #login-id, #login-mobile {
+  background-color: green;
+  color: white;
+  font-size: 1em;
+  letter-spacing: 1px;
+  border-radius: 10px;
+  padding: 1rem;
+  border: none;
+  transition: 0.3s;
+  box-shadow: 3px 5px 3px rgba(37, 37, 37, 0.3);
+}
+.login-button:hover {
+  background-color: rgb(6, 83, 6);
+  cursor: pointer;
+}
+.email-input, .password-input {
+  display: inline-block;
+  padding: 1em;
+  border-radius: 6px;
+  font-size: 1em;
+}
+#login-id:hover {
+  background-color: rgb(6, 83, 6);
+  cursor: pointer;
+}
+#login-mobile:hover {
+  background-color: rgb(6, 83, 6);
+  cursor: pointer;
+}
+.login h3 {
+  display: flex;
+  font-size: 1em;
+  margin-bottom: 0;
+  color: rgb(59, 59, 59);
+  margin-left: 10px;
+}
+.login-button, #login-id, #login-mobile, .email-input, .password-input, #register-button, .register input {
+  width: 20em;
+  height: 3em;
+  margin: 5px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}

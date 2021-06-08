@@ -42,26 +42,24 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: #F5F5F5;
 }
-/* Navigation bar styles */
+/* Navigation bar */
 .navbar-content {
     background-color: #459157;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
-.navbar-content h1, .navbar-content h3 {
+.navbar-content > h1, .navbar-content > h3 {
     margin-left: 20px;
     margin-right: 20px;
     color: white;
 }
-.navbar-content div {
-    opacity: 0.8;
+.navbar-content > div {
     margin-left: 20px;
     font-size: 20px;
     transition: 0.5s;
 }
-.navbar-content div:hover {
-    opacity: 1;
+.navbar-content > div:hover {
     transform: translateY(-3px);
     text-decoration: underline;
 }
