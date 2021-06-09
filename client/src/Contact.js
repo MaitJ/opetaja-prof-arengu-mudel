@@ -48,7 +48,7 @@ const Contact = () => {
                     <label>Email</label>
                     <input type="email" id='email' name='email' placeholder='E-mail'/>
                     <label>Teema</label>
-                    <input type="text" id='message' name='message' placeholder='Sõnum'/>
+                    <textarea id="s6num" name="s6num" rows="6" cols="80"></textarea>
                     <button className="contact-button" type='submit' id='button' value='Submit'>Saada</button>
                 </section>
             </section>

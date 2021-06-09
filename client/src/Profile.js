@@ -38,6 +38,9 @@ const Profile = () => {
     return(
         <section className="profile-container">
             <section className="profile-card">
+                <h2>PILT</h2>
+                <h2>PILT</h2>
+                <h2>PILT</h2>
                 <img src='https://via.placeholder.com/300.png/09f/fff' alt='profilepic'></img>
                 <h2>{profiilAndmed.eesnimi} {profiilAndmed.perenimi}</h2>
                 <h4>{profiilAndmed.kasutajaroll}</h4>

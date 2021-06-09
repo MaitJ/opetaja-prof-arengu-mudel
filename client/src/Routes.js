@@ -8,6 +8,7 @@ import Header from './Header';
 import KysimustikuValik from "./KysimustikuValik.js";
 import Profile from "./Profile.js";
 import Contact from "./Contact.js";
+import Oppematerjal from "./Oppematerjal.js";
 import MuudaProfiili from "./MuudaProfiili.js";
 
 const Routes = () => {
@@ -24,6 +25,7 @@ const Routes = () => {
                 <Route exact path="/login" component={Login} />
                 <Route exact path='/register' component={Register} />
                 <Route exact path='/contact' component={Contact} />
+                <Route exact path='/lisa-oppematerjal' component={Oppematerjal} />
                 <Route exact path='/muudaprofiili' component={MuudaProfiili} />
                 </Switch>
             </div>
