@@ -92,34 +92,34 @@ const Register = () => {
                 </div>
                 <label>
                     <h3>Eesnimi</h3>
-                    <input placeholder="Eesnimi" type="text" id="firstName" name="firstName" onChange={e => handleFirstName(e)}/>
+                    <input style={{border: "1px solid silver"}} className="input-css" placeholder="Eesnimi" type="text" id="firstName" name="firstName" onChange={e => handleFirstName(e)}/>
                     <br/>
                 </label>
                 <label>
                     <h3>Perekonnanimi</h3>
-                    <input placeholder="Perekonnanimi" type="text" id="lastName" name="lastName" onChange={e => handleLastName(e)}/>
+                    <input style={{border: "1px solid silver"}} className="input-css" placeholder="Perekonnanimi" type="text" id="lastName" name="lastName" onChange={e => handleLastName(e)}/>
                     <br/>
                 </label>
                 <label>
                     <h3>E-mail</h3>
-                    <input placeholder="E-mail" type="email" name="email" id="email" onChange={e => validateEmail(e)}/>
+                    <input style={{border: "1px solid silver"}} placeholder="E-mail" type="email" name="email" id="email" onChange={e => validateEmail(e)}/>
                     <br/>
                     <span style={{fontWeight: 'bold',color: 'red'}}>{emailErr}</span>
                 </label>
                 <label htmlFor="">
                     <h3>Salasõna</h3>
-                    <input placeholder="Parool" type="password" id="password" name="password" onChange={e => validatePassword(e)}/>
+                    <input style={{border: "1px solid silver"}} placeholder="Parool" type="password" id="password" name="password" onChange={e => validatePassword(e)}/>
                     <br/>
                     <span style={{fontWeight: 'bold',color: 'red'}}>{passwordErr}</span>
                 </label>
                 <label>
                     <h3>Telefon</h3>
-                    <input placeholder="Telefoni number" type="tel" id="phone" name="phone" onChange={e => handlePhone(e)}/>
+                    <input style={{border: "1px solid silver"}} placeholder="Telefoni number" type="tel" id="phone" name="phone" onChange={e => handlePhone(e)}/>
                     <br/>
                 </label>
                 <label>
                     <h3>Töökoht</h3>
-                    <input placeholder="Töökoht" type="text" id="job" name="job" onChange={e => handleJob(e)}/>
+                    <input style={{border: "1px solid silver"}} placeholder="Töökoht" type="text" id="job" name="job" onChange={e => handleJob(e)}/>
                     <br/>
                 </label>
                 <div>

@@ -62,18 +62,19 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
 }
 .navbar-content > h1, .navbar-content > h3 {
     margin-left: 20px;
     margin-right: 20px;
     color: white;
 }
-.navbar-content > div {
+.navbar-content > div{
     margin-left: 20px;
     font-size: 20px;
     transition: 0.5s;
 }
-.navbar-content > div:hover {
+.navbar-content div:hover:not(.dropdown) {
     transform: translateY(-3px);
     text-decoration: underline;
 }
@@ -240,3 +241,36 @@ body {
       flex-direction: column;
     }
   }
+  /* My profile elements */
+.profile-elements {
+    display: flex;
+    margin-right: 20px;
+}
+#dropdown-button {
+    float: left;
+    font-size: 25px;
+}
+#notification-button {
+    font-size: 22px;
+    margin-right: 5px;
+}
+#notification-button:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+#dropdown-button, #notification-button {
+      margin-top: 10px;
+      margin-left: 0px;
+      background: none;
+      border: none;
+      color: rgb(255, 255, 255);
+      transition: 0.3s;
+  }
+#dropdown-button:hover {
+      cursor: pointer;
+      opacity: 0.7;
+  }
+/* Dropdown section pooleli */
+.dropdown {
+    display: none;
+}
