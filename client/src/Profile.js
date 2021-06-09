@@ -37,8 +37,8 @@ const Profile = () => {
                 <h2>PILT</h2>
                 <h2>PILT</h2>
                 <h2>PILT</h2>
-                <h2>Alex Nelke{profiilAndmed.eesnimi} {profiilAndmed.perenimi}</h2>
-                <h4>Õpetaja{profiilAndmed.kasutajaroll}</h4>
+                <h2>{profiilAndmed.eesnimi} {profiilAndmed.perenimi}</h2>
+                <h4>{profiilAndmed.kasutajaroll}</h4>
                 <br/>
                 <button className="profile-button">Profiil</button>
                 <button className="profile-button">Õppematerjalid</button>

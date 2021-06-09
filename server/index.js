@@ -24,10 +24,10 @@ app.use(cors());
 app.use(respond);
 
 const db = mysql.createConnection({
-  user: "opprofmudel",
+  user: "root",
   host: "localhost",
-  password: "0pProfMudel10!",
-  database: "opprofmudeldb"
+  password: "admin",
+  database: "opetajaprofareng"
 });
 
 function auth (req, res) {

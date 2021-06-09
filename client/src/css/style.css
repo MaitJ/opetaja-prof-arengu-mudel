@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-.about{
-    background-color: aqua;
-}
+
 
 input[type=text],input[type=email] {
     display: block;
@@ -21,6 +19,22 @@ input[type=text],input[type=email] {
 
 #message{
     min-height: 250px;
+}
+
+#s6num{
+    display: block;
+    justify-content: center;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-items: center;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 8px;
+    margin-bottom: 16px; 
 }
 
 .contact-button {
@@ -113,6 +127,95 @@ body {
   }
 
 .profile-button:hover{
+    opacity: 0.7;
+}
+
+.back-button{
+    text-decoration: none;
+    border-radius: 12px;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #459157;
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+    width: 15%;
+}
+
+.oppematerjal-label{
+    font-size: 29px;
+    font-weight: 800;
+}
+
+.row {
+    background-color: white;
+    border-radius: 12px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 120px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.files input {
+    outline: 2px dashed #92b0b3;
+    outline-offset: -10px;
+    padding: 120px 0px 85px 15%;
+    text-align: center;
+    margin: 0;
+    max-width: 20vw;
+}
+.files{ position:relative}
+.files:after {  pointer-events: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 50px;
+    right: 0;
+    height: 50px;
+    content: "";
+    background-image: url(https://image.flaticon.com/icons/png/128/109/109612.png);
+    display: block;
+    margin: 0 auto;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.files:before {
+    position: absolute;
+    bottom: 2px;
+    left: 0;  pointer-events: none;
+    width: 100%;
+    right: 0;
+    height: 57px;
+    content: " Või tiri siia kasti ";
+    display: block;
+    margin: 0 auto;
+    color: #2ea591;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+
+.upload-files-button{
+    border: none;
+    border-radius: 8px;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #459157;
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+    width: 15%;
+}
+
+.upload-files-button:hover{
     opacity: 0.7;
 }
 
