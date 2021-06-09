@@ -45,6 +45,8 @@
     ]
   },
   "react-dotenv": {
-    "whitelist": ["PROFILE_URL"]
+    "whitelist": [
+      "PROFILE_URL"
+    ]
   }
 }

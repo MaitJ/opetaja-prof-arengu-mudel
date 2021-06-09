@@ -5,9 +5,9 @@ import { getAccessToken } from "./accessToken";
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
 import {useHistory} from 'react-router-dom';
-
+import { IoIosArrowDown } from "react-icons/io";
+import { BsFillBellFill } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
-import {BrowserRouter as Router} from "react-router-dom";
 
 const Header = () => {
 
@@ -18,6 +18,8 @@ const Header = () => {
     const [lastlogged, setLastLogged] = useState("");
     const [loggedIn, setLoggedIn] = useState(false);
     const [body, setBody] = useState();
+
+    const showMenu = false;
 
     const buttonStyle = {
         textDecoration: "none",
@@ -43,7 +45,7 @@ const Header = () => {
         //setAccessToken("");
         //setLoggedIn(false);
     }
-
+   
     useEffect (() => {
     
         const token = getAccessToken();
@@ -59,31 +61,44 @@ const Header = () => {
         }
 
         console.log(userEmail + " on kasutaja email");
+
         
-        
+
     })
 
     return (
         <header>
             <div className="navbar-content">
+                <p style={{display: "none"}}>profiil, küsimustikud, teated?, kontakt, meist</p>
                 <h1><NavLink to="/" style={buttonStyleSecondary}>Logo</NavLink></h1>
-                <div>
-                    <NavLink activeStyle={activePage} exact to="/" style={buttonStyle}>Home</NavLink>
-                </div>
+                
                 <div>
                     <NavLink activeStyle={activePage} to="/profile" style={buttonStyle}>Profiil</NavLink>
                 </div>
                 <div>
-                    <NavLink activeStyle={activePage} to="/kysimustikud" style={buttonStyle}>Kysimustik</NavLink>
+                    <NavLink activeStyle={activePage} to="/kysimustikud" style={buttonStyle}>Küsimustikud</NavLink>
                 </div>
                 <div>
-                    <NavLink activeStyle={activePage} to="/about" style={buttonStyle}>About</NavLink>
+                    <NavLink activeStyle={activePage} exact to="/" style={buttonStyle}>Teated</NavLink>
                 </div>
-                <h3><NavLink to="/profile" style={buttonStyleSecondary}>Minu profiil</NavLink></h3>
+                <div>
+                    <NavLink activeStyle={activePage} exact to="/contact" style={buttonStyle}>Kontakt</NavLink>
+                </div>
+                <div>
+                    <NavLink activeStyle={activePage} to="/about" style={buttonStyle}>Meist</NavLink>
+                </div>
+                <section className="profile-elements">
+                    <button id="notification-button"><BsFillBellFill /></button>
+                    <h3><NavLink to="/profile" style={buttonStyleSecondary}>Eesnimi</NavLink></h3>
+                    <button id="dropdown-button"><IoIosArrowDown /></button>
+                    <div className="dropdown">
+                        <ul id="dropdown-items">
+                            <li id="logout">Logi välja</li>
+                        </ul>
+                    </div>
+                </section>
             </div>
-            <div className="profile-dropdown">
-                    <Link to="/">Logi välja</Link>
-            </div>
+
             <div>
                 <Link to="/register">Register</Link>
             </div>
