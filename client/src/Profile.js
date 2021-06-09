@@ -2,14 +2,18 @@ import axios from 'axios';
 import {useEffect, useState} from 'react';
 import { setAccessToken } from "./accessToken";
 import { getAccessToken } from "./accessToken";
+import { BrowserRouter as Router, Link, Redirect, Route } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
 import env from 'react-dotenv';
+//import {useUserIdContext} from './App.js';
 require('dotenv').config();
 
 const currentProfileId = 21;
 const profileUrl = "http://localhost:3001/getKasutaja";
 
 const Profile = () => {
+
+    //const {userId} = useUserIdContext();
     const [profiilAndmed, setProfiilAndmed] = useState({});
 
     useEffect(() => {
@@ -37,14 +41,15 @@ const Profile = () => {
                 <h2>PILT</h2>
                 <h2>PILT</h2>
                 <h2>PILT</h2>
-                <h2>Alex Nelke{profiilAndmed.eesnimi} {profiilAndmed.perenimi}</h2>
-                <h4>Õpetaja{profiilAndmed.kasutajaroll}</h4>
+                <img src='https://via.placeholder.com/300.png/09f/fff' alt='profilepic'></img>
+                <h2>{profiilAndmed.eesnimi} {profiilAndmed.perenimi}</h2>
+                <h4>{profiilAndmed.kasutajaroll}</h4>
                 <br/>
                 <button className="profile-button">Profiil</button>
                 <button className="profile-button">Õppematerjalid</button>
                 <button className="profile-button">Minu küsimustikud</button>
                 <br/>
-                <button className="profile-button">Muuda profiili</button>
+                <Link to='/muudaprofiili' type='button' className="profile-button">Muuda profiili</Link>
             </section>
             <section className="profile-data-1">
                 <h1 className="profiil">Profiil</h1>
