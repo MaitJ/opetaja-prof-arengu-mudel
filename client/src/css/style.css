@@ -3,7 +3,7 @@
     background-color: aqua;
 }
 
-input[type=text],input[type=email] {
+input[type=text],input[type=email], input[type=password] {
     display: block;
     justify-content: center;
     width: 60%;

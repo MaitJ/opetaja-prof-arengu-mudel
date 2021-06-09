@@ -7,14 +7,20 @@ const axios = require('axios');
 const cors = require('cors');
 const mysql = require('mysql');
 const respond = require('express-respond');
+const router = express.Router();
 const jwt = require('jsonwebtoken');
 const jwtdecode = require('jwt-decode');
 const bcrypt = require('bcrypt');
+const nodemailer = require("nodemailer")
 const { check, validationResult } = require('express-validator');
 const cookieParser = require('cookie-parser');
+const multer = require('multer');
+
+const upload = multer();
 
 app.use(cookieParser());
 app.use(express.json());
+app.use("/", router);
 
 const port = 3001;
 
@@ -24,10 +30,10 @@ app.use(cors());
 app.use(respond);
 
 const db = mysql.createConnection({
-  user: "opprofmudel",
+  user: "root",
   host: "localhost",
-  password: "0pProfMudel10!",
-  database: "opprofmudeldb"
+  password: "admin",
+  database: "opetajaprofareng"
 });
 
 function auth (req, res) {
@@ -165,28 +171,35 @@ app.post('/kirjutaVastused', (req, res, next) => {
 
 app.post('/tekitaKysimustik', (req, res, next) => {
   if (req.body.kasutaja_id !== undefined && req.body.kysimustik_id !== undefined) {
-    const profiil_id = req.body.kasutaja_id;
+    const kasutaja_id = req.body.kasutaja_id;
     const kysimustik_id = req.body.kysimustik_id;
-    db.query(`SELECT * FROM profiil_kysimustik WHERE profiil_id=${profiil_id} AND kysimustik_id=${kysimustik_id}`, (error, results, fields) => {
-      if (error) throw error;
-
-      if (results[0] == undefined) {
-          //INESRT INTO profiil_kysimustik (kysimustik_id, profiil_id) VALUES (1, 1);
-        db.query(`INSERT INTO profiil_kysimustik (kysimustik_id, profiil_id) VALUES (${kysimustik_id}, ${profiil_id})`, (error, results, fields) => {
-          if (error) throw error;
-          req.profiil_kysimustik_id = results.insertId;
+    db.query(`SELECT profiil_id FROM profiil WHERE kasutaja_id=${kasutaja_id}`, (error, results) => {
+      if(error) throw error;
+      var profiil_id;
+      console.log("REULTSES: " + results[0].profiil_id);
+      profiil_id = results[0].profiil_id;
+      db.query(`SELECT * FROM profiil_kysimustik WHERE profiil_id=${profiil_id} AND kysimustik_id=${kysimustik_id}`, (error, results, fields) => {
+        if (error) throw error;
+  
+        if (results[0] == undefined) {
+            //INESRT INTO profiil_kysimustik (kysimustik_id, profiil_id) VALUES (1, 1);
+          db.query(`INSERT INTO profiil_kysimustik (kysimustik_id, profiil_id) VALUES (${kysimustik_id}, ${profiil_id})`, (error, results, fields) => {
+            if (error) throw error;
+            req.status = 1;
+            next();
+          });
+        }
+  
+        else {
           req.status = 1;
           next();
-        });
-      }
+        }
+  
+      });
 
-      else {
-        req.profiil_kysimustik_id = results[0].profiil_kysimustik_id;
-        req.status = 1;
-        next();
-      }
-
-    });
+      
+    })
+    
   }
 }, (req, res) => {
   res.json({profiil_kysimustik_id: req.profiil_kysimustik_id, status: req.status});
@@ -354,6 +367,76 @@ app.post('/refresh_token', (req, res) => {
 
 })
 
+app.post('/changeprofile', (req, res) => {
+  var email = req.body.email;
+  var password = req.body.password;
+  var phone = req.body.phone;
+  var job = req.body.job;
+  var firstName = req.body.firstName;
+  var lastName = req.body.lastName;
+  var kasutajaid = req.body.userid;
+
+  db.query(`SELECT * FROM profiil WHERE kasutaja_id=${kasutajaid}`, (error, results) => {
+    if (error) {
+      throw error;
+    }
+
+    if(firstName == "") {
+      firstName = results[0].eesnimi;
+    }
+    if(phone == "") {
+      phone = results[0].telefon;
+    }
+    if(job == "") {
+      job = results[0].tookoht;
+    }
+    if(lastName == "") {
+      lastName = results[0].perenimi;
+    }
+
+    db.query(`SELECT email FROM kasutaja WHERE kasutaja_id=${kasutajaid}`, (error, results) => {
+      if(email == "") {
+        email = results[0].email;
+      }
+
+      db.query(`UPDATE kasutaja SET email='${email}' WHERE kasutaja_id=${kasutajaid}`, (err, result) => {
+        //check('email', 'Email on sisestamata!').notEmpty();
+        //check('email', 'Email ei ole korralik!').isEmail();
+        //check('password', 'Salasona vali on tyhi!').notEmpty();
+        if(err) {
+          console.log(err);
+          res.send({err: err});
+        }
+        if (result != null) {
+          console.log(result);
+          //res.send(result);
+        }
+        // } else {
+        //   //res.send({message: "Midagi laks valesti!"});
+        // }
+    
+        db.query(`UPDATE profiil SET telefon='${phone}', tookoht='${job}', eesnimi='${firstName}', perenimi='${lastName}' WHERE kasutaja_id=${kasutajaid} `, (error, result) => {
+          if (error) {
+            console.log(error);
+            throw error;
+          } else {
+            return res.status(200).json({ msg: "Andmed salvestatud"})
+          }
+        })
+      });
+    })
+  })
+
+  
+
+
+})
+
+app.post('/uploadimage', upload.single(), (req, res) => {
+  const formdata = req.body.data[1];
+  console.log("SEE ON DATA: " + formdata);
+})
+
 app.get('/jwt', (req, res) => {
   const token = req.cookies.jid;
 
@@ -479,6 +562,43 @@ app.post('/register', async (req, res) => {
     });
   });
 })
+
+const contactEmail = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: "opetajaprofareng@gmail.com",
+    pass: "Opetajaareng1!",
+  },
+});
+
+contactEmail.verify((error) => {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log("Valmis saatma");
+  }
+});
+
+router.post("/contact", (req, res) => {
+  const name = req.body.name;
+  const email = req.body.email;
+  const message = req.body.message; 
+  const mail = {
+    from: name,
+    to: "opetajaprofareng@gmail.com",
+    subject: "Contact Form Submission",
+    html: `<p>Name: ${name}</p>
+           <p>Email: ${email}</p>
+           <p>Message: ${message}</p>`,
+  };
+  contactEmail.sendMail(mail, (error) => {
+    if (error) {
+      res.json({ status: "ERROR" });
+    } else {
+      res.json({ status: "Message Sent" });
+    }
+  });
+});
 
 app.listen(port, () => {
     console.log("Server running at: " + port);
