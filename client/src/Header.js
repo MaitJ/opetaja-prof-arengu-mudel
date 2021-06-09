@@ -5,7 +5,6 @@ import { getAccessToken } from "./accessToken";
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
 import {useHistory} from 'react-router-dom';
-
 import { NavLink } from "react-router-dom";
 import {BrowserRouter as Router} from "react-router-dom";
 
