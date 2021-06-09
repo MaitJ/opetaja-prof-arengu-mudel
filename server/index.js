@@ -115,6 +115,60 @@ app.post('/getKasutaja', (req, res) => {
 //Vaata, kas kysimustik on pooleli, olenevalt sellest tekita profiil_kysimustikku
 //kirje voi uuenda olemasolevat kirjet
 
+app.post('/kirjutaVastused', (req, res, next) => {
+  if (req.body !== undefined) {
+    //Kysi profiil_kysimustiku_id'd vastavalt bodys oleva kasutaja_id'le ja kysimustik_id'le
+    const profiil_kysimustik_id = req.body.profiil_kysimustik_id;
+    const kysimusteVastused = req.body.vastused;
+    req.status = 0;
+
+    //Kirjuta ennem eneseanalyys ning siis alles vastus kuna 1-1
+
+    //INSERT INTO eneseanalyys (eneseanalyys_tekst) VALUES (kysimusteVastused[i].eneseanalyys);
+
+    db.query('SELECT MAX(eneseanalyys_id) AS eneseanalyys_count FROM eneseanalyys;', (error, result, fields) => {
+      if (error) throw error;
+      let eneseanalyys_count = result[0].eneseanalyys_count + 1;
+
+      let eneseanalyysSQL = 'INSERT INTO eneseanalyys (eneseanalyys_tekst) VALUES ?';
+      let eneseanalyysData = [];
+
+      for (let i = 0 ; i < kysimusteVastused.length; ++i) {
+        eneseanalyysData = [...eneseanalyysData, [kysimusteVastused[i].eneseanalyys]];
+      }
+
+      db.query(eneseanalyysSQL, [eneseanalyysData], (error, result, fields) => {
+        if (error) throw error;
+
+        //Vahetasin vertabelos ara eneseanalyys_id siin eneseanalyys_eneseanalyys_id
+        let vastusSQL = 'INSERT INTO kysimus_vastus (profiil_kysimustik_id, kysimus_id, vastus, eneseanalyys_eneseanalyys_id) VALUES ?';
+        let vastusData = [];
+        for (let i = 0; i < kysimusteVastused.length; ++i) {
+          vastusData = [...vastusData, [profiil_kysimustik_id, kysimusteVastused[i].id, kysimusteVastused[i].vastus
+        ,eneseanalyys_count]];
+          ++eneseanalyys_count;
+        }
+        
+        db.query(vastusSQL, [vastusData], (error, result, fields) => {
+          if (error) throw error;
+          req.status = 1;
+          next();
+        })
+
+
+      })
+
+
+
+    })
+    //INSERT INTO kysimus_vastus (profiil_kysimustik_id, kysimus_id, vastus, eneseanalyys_id) VALUES (...);
+  }
+
+}, (req, res) => {
+  res.json(req.status);
+});
+
+
 app.post('/tekitaKysimustik', (req, res, next) => {
   if (req.body.kasutaja_id !== undefined && req.body.kysimustik_id !== undefined) {
     const kasutaja_id = req.body.kasutaja_id;
@@ -148,7 +202,7 @@ app.post('/tekitaKysimustik', (req, res, next) => {
     
   }
 }, (req, res) => {
-  res.json(req.status);
+  res.json({profiil_kysimustik_id: req.profiil_kysimustik_id, status: req.status});
 
 });
 
