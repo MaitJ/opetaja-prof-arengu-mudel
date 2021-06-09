@@ -66,7 +66,8 @@ const Login = () => {
                     <input className="email-input" placeholder="E-mail" type="email" name="email" id="email" onChange={e => {setEmail(e.target.value)}}/>
                 </label>
                 <label htmlFor="">
-                    <h3>Salasõna</h3>                    <input className="password-input" placeholder="Salasõna" type="password" id="password" name="password" onChange={e => {setPassword(e.target.value)}}/>
+                    <h3>Salasõna</h3>
+                    <input className="password-input" placeholder="Salasõna" type="password" id="password" name="password" onChange={e => {setPassword(e.target.value)}}/>
                 </label>
                 <div>
                     <button className="login-button" type='submit' onClick={login}>Logi sisse</button>

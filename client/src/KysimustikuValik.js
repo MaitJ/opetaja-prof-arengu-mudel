@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import Kysimustik from './Kysimustik';
+import { getAccessToken } from "./accessToken";
+import jwtDecode from 'jwt-decode';
 import {useState, useEffect} from 'react';
 import {Link, Route} from 'react-router-dom';
 
@@ -12,6 +14,14 @@ const KysimustikuValik = () => {
     const [kasutajaid, setKasutajaId] = useState(1);
 
     //Saada kasutajaid ja kysimustikid /tekitaKysimustik api kutsele (POST REQUEST!!!!!!)
+
+    useEffect(() => {
+        const token = getAccessToken();
+
+        const {id} = jwtDecode(token);
+
+        setKasutajaId(id);
+    }, [])
 
     const kysimustikuNupp = (kysimustik_id) => {
         axios.post(tekitaURL, {kasutaja_id: kasutajaid, kysimustik_id: kysimustik_id}).then((response) => {

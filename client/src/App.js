@@ -7,7 +7,7 @@ import Kysimustik from './Kysimustik';
 import MainWRoutes from './MainWRoutes';
 import Profile from './Profile.js';
 //import {BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import {BrowserRouter as Router, Switch, Route, Link, useHistory} from 'react-router-dom';
 import Login from './Login.js';
 import Register from './Register';
@@ -22,6 +22,8 @@ import Routes from "./Routes";
 import axios from 'axios';
 import './css/style.css';
 
+// const userIdContext = React.createContext();
+
 function App() {
 
   const history = useHistory();
@@ -29,7 +31,9 @@ function App() {
   const [loginStatus, setLoginStatus] = useState("");
   const [loading, setLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userId, setUserId] = useState();
   const [jwt, setJwt] = useState();
+
 
   function isAuthenticated() {
     const token = getAccessToken();
@@ -72,7 +76,15 @@ function App() {
 
     if (isAuthenticated()) {
       fetchAccessToken();
-    } 
+    }
+
+    // const token = getAccessToken();
+    // const {id} = jwtDecode(token);
+    // console.log("TOUKENTOUKEN: " + token);
+    // setUserId(id);
+
+
+
     // else {
     //   history.push("/login");
     //   window.location.reload();
@@ -83,13 +95,24 @@ function App() {
   //   return <div>loading...</div>;
   // }
 
+  
+
   return (
     <React.Fragment>
+      
       <Main>
         <Routes />
       </Main>
+    
     </React.Fragment>
   );
 }
+
+// export const useUserIdContext = () => {
+//   return useContext(userIdContext);
+// }
+
+
+
 
 export default App;
