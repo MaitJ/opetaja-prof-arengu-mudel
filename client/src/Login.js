@@ -6,6 +6,9 @@ import jwtDecode from 'jwt-decode';
 import {useHistory, Redirect} from 'react-router-dom';
 import './css/Login.css';
 import { Link } from "react-router-dom";
+import {useUserContext} from './userContext';
+
+axios.defaults.withCredentials = true;
 
 
 const Login = () => {
@@ -17,6 +20,8 @@ const Login = () => {
         color: "gray"
     };
 
+
+    const {setAccessToken} = useUserContext();
     const [loading, setLoading] = useState(false);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -29,13 +34,14 @@ const Login = () => {
             password: password,
 
         }).then((response) => {
-            const token = getAccessToken();
             if (response.data.msg == "Login success") {
                 //setLoginStatus("Sisselogitud: " + email);
-                //console.log(getAccessToken() + "accesstoken");
+                console.log(response.data.accessToken);
+                setAccessToken(response.data.accessToken);
                 history.push("/");
                 window.location.reload();
             } else {
+                console.log("Login ei olnud successful");
                 return true;
             }
             

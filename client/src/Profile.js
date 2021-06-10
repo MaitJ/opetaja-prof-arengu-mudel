@@ -6,24 +6,19 @@ import { BrowserRouter as Router, Link, Redirect, Route } from 'react-router-dom
 import jwtDecode from 'jwt-decode';
 import env from 'react-dotenv';
 //import {useUserIdContext} from './App.js';
+import {useUserContext} from './userContext';
 require('dotenv').config();
-
-const currentProfileId = 21;
-const profileUrl = "http://localhost:3001/getKasutaja";
 
 const Profile = () => {
 
     //const {userId} = useUserIdContext();
     const [profiilAndmed, setProfiilAndmed] = useState({});
+    const {userId} = useUserContext();
 
     useEffect(() => {
 
-        const token = getAccessToken();
-
-        const {id} = jwtDecode(token);
-
         axios.post('http://localhost:3001/getKasutaja', {
-            kasutajaid: id
+            kasutajaid: userId
         }).then((response) => {
             setProfiilAndmed(response.data);
         }).catch((error) => {

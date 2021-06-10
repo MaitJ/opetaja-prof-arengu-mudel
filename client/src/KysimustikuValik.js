@@ -4,26 +4,16 @@ import Kysimustik from './Kysimustik';
 import { getAccessToken } from "./accessToken";
 import jwtDecode from 'jwt-decode';
 import {useState, useEffect} from 'react';
-import {Link, Route} from 'react-router-dom';
-import {getAccessToken} from './accessToken';
-import jwtDecode from 'jwt-decode';
+import {useUserContext} from './userContext';
 
 const kysimustikudURL = 'http://localhost:3001/getKysimused';
 const tekitaURL = 'http://localhost:3001/tekitaKysimustik';
 const KysimustikuValik = () => {
     const [kysimustikud, setKysimustikud] = useState([]);
     const [selectedKysimustik, setSelectedKysimustik] = useState(0);
-    const [kasutajaid, setKasutajaId] = useState(0);
     const [profiilKysimustikId, setProfiilKysimustikId] = useState(0);
+    const {userId} = useUserContext();
 
-
-    useEffect(() => {
-        const token = getAccessToken();
-        const {id} = jwtDecode(token);
-        if (id) {
-            setKasutajaId(id);
-        }
-    }, [])
 
 
     //Saada kasutajaid ja kysimustikid /tekitaKysimustik api kutsele (POST REQUEST!!!!!!)
@@ -31,7 +21,7 @@ const KysimustikuValik = () => {
     //Response saada edasi Kysimustik komponendile
 
     const kysimustikuNupp = (kysimustik_id) => {
-        axios.post(tekitaURL, {kasutaja_id: kasutajaid, kysimustik_id: kysimustik_id}).then((response) => {
+        axios.post(tekitaURL, {kasutaja_id: userId, kysimustik_id: kysimustik_id}).then((response) => {
             if (response.data.status) {
                 setSelectedKysimustik(kysimustik_id);
                 setProfiilKysimustikId(response.data.profiil_kysimustik_id);
