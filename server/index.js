@@ -15,6 +15,7 @@ const nodemailer = require("nodemailer")
 const { check, validationResult } = require('express-validator');
 const cookieParser = require('cookie-parser');
 const multer = require('multer');
+const bodyParser = require('body-parser');
 
 var storage = multer.diskStorage({
   destination: __dirname + '/uploads/images',
@@ -39,12 +40,18 @@ var storageFile = multer.diskStorage({
 })
 
 
-const upload = multer({storage: storage});
+const upload = multer({storage: storage}).single("profilepic");
 const uploadFile = multer({storage: storageFile});
 
+app.use(express.json());
+app.use(express.urlencoded({
+  extended: true
+}));
 app.use(cookieParser());
 app.use(express.json());
 app.use("/", router);
+
+
 
 const port = 3001;
 
@@ -54,10 +61,10 @@ app.use(cors({credentials: true, origin: true}));
 app.use(respond);
 
 const db = mysql.createConnection({
-  user: "opprofmudel",
+  user: "root",
   host: "localhost",
-  password: "0pProfMudel10!",
-  database: "opprofmudeldb2"
+  password: "admin",
+  database: "opetajaprofareng"
 });
 
 function auth (req, res) {
@@ -455,28 +462,43 @@ app.post('/changeprofile', (req, res) => {
   })
 })
 
-app.post('/uploadimage', upload.single("profilepic"), (req, res) => {
-  const imageName = req.file.filename;
-  const userid = req.body.userid;
+app.post('/uploadimage', (req, res) => {
+  upload(req, res, function(err) {
+    const imageName = req.file.filename;
+    const userid = req.body;
 
-  console.log("UUSERID: " + userid);
-
-  db.query(`UPDATE profiil SET profiilipilt='${imageName}' WHERE kasutaja_id=24`, (error, result) => {
-    if(error) {
-      console.log(error);
-      throw error;
+    if(err) {
+      return res.end("Error uploading file.");
     }
+    res.end("File is uploaded");
 
-    db.query(`SELECT profiilipilt FROM profiil WHERE kasutaja_id=24`, (error, result) => {
+    console.log(userid);
+
+    db.query(`UPDATE profiil SET profiilipilt='${imageName}' WHERE kasutaja_id=${userid}`, (error, result) => {
       if(error) {
+        console.log(error);
         throw error;
-      } else {
-        var image = result[0].profiilipilt;
-        res.send({image: image})
       }
-
+  
+      db.query(`SELECT profiilipilt FROM profiil WHERE kasutaja_id=${userid}`, (error, result) => {
+        if(error) {
+          throw error;
+        } else {
+          var image = result[0].profiilipilt;
+          res.status(204).json({image: image});
+        }
+      })
     })
   })
+  
+})
+
+app.post('/useridtest', (req, res) => {
+  const userid = req.body.kasutajaid;
+
+  console.log("SEE ON USERID: " + userid);
+
+  return res.status(200).json({ msg: userid});
 })
 
 app.post("/uploadfile", function (req, res, next) {

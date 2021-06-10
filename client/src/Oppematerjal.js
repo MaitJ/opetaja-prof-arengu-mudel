@@ -3,10 +3,13 @@ import axios from 'axios';
 import { NavLink } from "react-router-dom";
 import { getAccessToken } from "./accessToken";
 import jwtDecode from 'jwt-decode';
+import {useUserContext} from './userContext';
 
 const Oppematerjal = () =>  {
 
   const [selectedFile, setSelectedFile] = useState();
+
+  const {userId} = useUserContext();
   
 
   const onFileChange = (e) => {
@@ -46,14 +49,14 @@ const Oppematerjal = () =>  {
 
     console.log(formData.get("File"));
 
-    const token = getAccessToken();
+    // const token = getAccessToken();
 
-    const {id} = jwtDecode(token);
+    // const {id} = jwtDecode(token);
 
     axios.post('http://localhost:3001/uploadfile', {
         headers: { "Content-Type": "multipart/form-data" },
         data: formData,
-        userid: id
+        userid: userId
     }).then((response) => {
         console.log("SEE ON RESPONSE: " + JSON.stringify(response.data));
     });

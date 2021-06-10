@@ -4,6 +4,7 @@ import { setAccessToken } from "./accessToken";
 import { getAccessToken } from "./accessToken";
 import jwtDecode from 'jwt-decode';
 import env from 'react-dotenv';
+import {useUserContext} from './userContext';
 //import {useUserIdContext} from './App.js';
 require('dotenv').config();
 
@@ -14,7 +15,7 @@ const Profile = () => {
 
     //const {userId} = useUserIdContext();
     const [profiilAndmed, setProfiilAndmed] = useState({});
-    const [userId, setUserId] = useState();
+    //const [userId, setUserId] = useState();
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [job, setJob] = useState("");
@@ -25,6 +26,8 @@ const Profile = () => {
 
     const imageAddr = "http://localhost:3001/server/uploads/images/";
 
+    const {userId} = useUserContext();
+
     const fileUpload = () => {
 
         let formData = new FormData();
@@ -33,13 +36,16 @@ const Profile = () => {
 
         console.log(formData.get("File"));
 
+        console.log("SEE ON KASUTAJAID JAH: " + userId);
+
         axios.post('http://localhost:3001/uploadimage', {
             headers: { "Content-Type": "multipart/form-data" },
-            data: formData,
-            userid: userId
+            kasutajaid: userId
         }).then((response) => {
             console.log("SEE ON RESPONSE: " + JSON.stringify(response.data));
         });
+
+        
     }
 
     const onFileChange = (e) => {
@@ -67,25 +73,23 @@ const Profile = () => {
             console.log(error);
             setChangeStatus("Midagi läks valesti!");
         })
+
+        axios.post('http://localhost:3001/useridtest', {
+            kasutajaid: userId
+        }).then((response) => {
+            console.log("SEE RESPONSE: " + JSON.stringify(response.data));
+        })
     }
 
-    useEffect(() => {
-
-        const token = getAccessToken();
-
-        const {id} = jwtDecode(token);
-
-        setUserId(id);
-        console.log(id + " on userid");
-
-        axios.post('http://localhost:3001/getKasutaja', {
-            kasutajaid: id
-        }).then((response) => {
-            setProfiilAndmed(response.data);
-        }).catch((error) => {
-            console.log(error);
-        })
-    }, []);
+    // useEffect(() => {
+    //     axios.post('http://localhost:3001/getKasutaja', {
+    //         kasutajaid: userId
+    //     }).then((response) => {
+    //         setProfiilAndmed(response.data);
+    //     }).catch((error) => {
+    //         console.log(error);
+    //     })
+    // }, []);
 
     // useEffect(() => {
     //     console.log(profiilAndmed);
@@ -94,9 +98,14 @@ const Profile = () => {
     return(
         <section className="profile-container">
             <section className="profile-card">
-                <form onSubmit={fileUpload} encType="multipart/form-data">
+            {/* <style>
+                .hide { position:absolute; top:-1px; left:-1px; width:1px; height:1px; }
+            </style>
+            <iframe name="hiddenFrame" class="hide"></iframe> */}
+                <form action='http://localhost:3001/uploadimage' method='post' encType="multipart/form-data">
                     <img src='http://localhost:3000/server/uploads/images/profilepic-1623311751880.png' alt='profilepic'></img>
                     <input type='file' name="profilepic" onChange={e => {onFileChange(e)}}/>
+                    <input type="text" value={userId} />
                     <button id='changepic' className='reg-but' type='submit'>Muuda pilti</button>
                 </form>
                 <h2>{profiilAndmed.eesnimi} {profiilAndmed.perenimi}</h2>
