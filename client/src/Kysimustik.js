@@ -15,6 +15,7 @@ const Kysimustik = ({kysimustik_id, profiil_kysimustik_id}) => {
     const [kysimusteIdArr, setKysimusteIdArr] = useState([]);
     const [curProtsentuaalneTulemus, setCurProtsentuaalneTulemus] = useState(0);
     const [tulemuseVaheleht, setTulemuseVaheleht] = useState(false);
+    const [currentFeedback, setCurrentFeedback] = useState({});
 
     useEffect(() => {
         isLoading(true);
@@ -92,6 +93,7 @@ const Kysimustik = ({kysimustik_id, profiil_kysimustik_id}) => {
         return (
             <section className="tulemuse_vaheleht-container">
                 <h5>Selle ploki tulemus: {curProtsentuaalneTulemus}</h5>
+                <p>{currentFeedback}</p>
                 <button className="next-block-button" onClick={() => {
                     setKysimustePlokk(selectedPlokk + 1);
                     setTulemuseVaheleht(false);}}>J2rgmine leht</button>
@@ -152,6 +154,24 @@ const Kysimustik = ({kysimustik_id, profiil_kysimustik_id}) => {
         return summa;
     };
 
+    //Saada protsent backendi ja kysi tagasiside teksti
+    const getFeedback = (percentage) => {
+
+        axios.post('http://localhost:3001/getFeedback', {percentage: percentage, questionblock_id: selectedPlokk})
+        .then((response) => {
+            console.log(response.data);
+            setCurrentFeedback({tagasiside_tekst: response.data.tagasiside_tekst, tagasiside_id: response.data.tagasiside_id});
+
+        })
+        .catch((error) => console.log(error));
+
+    };
+
+    //
+    const saveFeedback = () => {
+
+    }
+
     const liiguEdasi = () => {
         //if (kasOnTaidetud()) {
             const maxPunktid = arvutaMaxPunktid();
@@ -163,6 +183,7 @@ const Kysimustik = ({kysimustik_id, profiil_kysimustik_id}) => {
 
             const protsentuaalneTagasiside = (taidetudPunktid * 100) / maxPunktid;
             setCurProtsentuaalneTulemus(protsentuaalneTagasiside);
+            getFeedback(protsentuaalneTagasiside);
 
             setTulemuseVaheleht(true);
         //} else {

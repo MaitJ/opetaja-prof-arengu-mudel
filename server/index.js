@@ -23,6 +23,9 @@ var storage = multer.diskStorage({
     cb(null, file.fieldname + '-' + Date.now() + '.png')
   }
 })
+const routes = require('./routes');
+
+const upload = multer();
 
 var storageFile = multer.diskStorage({
   destination: __dirname + '/uploads/files',
@@ -56,6 +59,7 @@ app.use("/", router);
 const port = 3001;
 
 const testandmed = require('./testandmed/testandmed');
+const { response } = require('express');
 
 app.use(cors({credentials: true, origin: true}));
 app.use(respond);
@@ -114,6 +118,7 @@ function comparePassword (dbpassword, encrypted) {
   })
 }
 
+/*
 app.post('/getKasutaja', (req, res) => {  
     const kasutajaid = req.body.kasutajaid;
     db.query(`SELECT * FROM profiil WHERE kasutaja_id=${kasutajaid}`, (error, results, fields) => {
@@ -144,6 +149,10 @@ app.post('/getKasutaja', (req, res) => {
     });
 
 });
+*/
+
+routes.getKasutja(app);
+
 
 //Vaata, kas kysimustik on pooleli, olenevalt sellest tekita profiil_kysimustikku
 //kirje voi uuenda olemasolevat kirjet
@@ -313,6 +322,36 @@ app.post('/getSoovitused', (req, res, next) => {
 
 app.get('/', (req, res) => {
     res.send("hello guys");
+});
+
+//SELECT * FROM tagasiside WHERE kysimusteplokk_id=questionblock_id AND percentage >= vahemikMin AND percentage <= vahemikMax;
+app.post('/getFeedback', (req, res, next) => {
+  if (req.body.percentage !== undefined && req.body.questionblock_id !== undefined) {
+    const percentage = req.body.percentage;
+    const questionblock_id = req.body.questionblock_id;
+
+    console.log("percentage: " + percentage + " questionblock_id: " + questionblock_id);
+
+    db.query(`SELECT tagasiside_id, tagasiside_tekst FROM tagasiside WHERE kysimusteplokk_id=${questionblock_id} AND ${percentage} >= vahemikMin AND ${percentage} <= vahemikMax`,
+    (error, results, fields) => {
+      if (error) throw error;
+      console.log(results);
+
+      if (results[0].tagasiside_tekst !== undefined) {
+        
+        req.data = {tagasiside_tekst: results[0].tagasiside_tekst, tagasiside_id: results[0].tagasiside_id};
+      } else {
+        req.data = "";
+      }
+      next();
+    })
+  } else {
+    req.data = 0;
+    next();
+  }
+
+}, (req, res) => {
+  res.json(req.data);
 });
 
 app.post('/login', async (req, res) => {
