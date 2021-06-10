@@ -45,6 +45,8 @@ function App() {
     try {
       const { exp } = jwtDecode(token);
       if (Date.now() >= exp * 1000) {
+        console.log(Date.now() + "DATE NOW");
+        console.log(exp + "EXPIRATION");
         return false;
       } else {
         return true;

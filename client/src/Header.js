@@ -62,8 +62,6 @@ const Header = () => {
 
         console.log(userEmail + " on kasutaja email");
 
-        
-
     })
 
     return (
