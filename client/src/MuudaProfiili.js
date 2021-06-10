@@ -6,6 +6,7 @@ import jwtDecode from 'jwt-decode';
 import { NavLink, Switch } from "react-router-dom";
 import env from 'react-dotenv';
 import Profilecard from './Profilecard';
+import {useUserContext} from './userContext';
 //import {useUserIdContext} from './App.js';
 require('dotenv').config();
 
@@ -16,7 +17,7 @@ const Profile = () => {
 
     //const {userId} = useUserIdContext();
     const [profiilAndmed, setProfiilAndmed] = useState({});
-    const [userId, setUserId] = useState();
+    //const [userId, setUserId] = useState();
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [job, setJob] = useState("");
@@ -25,25 +26,33 @@ const Profile = () => {
     const [changeStatus, setChangeStatus] = useState("");
     const [selectedFile, setSelectedFile] = useState();
 
+    const imageAddr = "http://localhost:3001/server/uploads/images/";
+
+    const {userId} = useUserContext();
+
     const fileUpload = () => {
 
         let formData = new FormData();
 
-        formData.append("Faili nimi", selectedFile);
+        formData.append("File", selectedFile);
 
-        console.log(selectedFile);
+        console.log(formData.get("File"));
+
+        console.log("SEE ON KASUTAJAID JAH: " + userId);
 
         axios.post('http://localhost:3001/uploadimage', {
-            data: formData,
-            headers: { "Content-Type": "multipart/form-data" }
+            headers: { "Content-Type": "multipart/form-data" },
+            kasutajaid: userId
+        }).then((response) => {
+            console.log("SEE ON RESPONSE: " + JSON.stringify(response.data));
         });
+
+        
     }
 
     const onFileChange = (e) => {
         setSelectedFile(e.target.files[0]);
     }
-
-    // const fileData = () => {
     
     //     if (selectedFile) {
            
@@ -74,7 +83,6 @@ const Profile = () => {
     //     }
     // };
     
-
     const changeProfile = () => {
         axios.post('http://localhost:3001/changeprofile', {
             email: email,
@@ -96,29 +104,27 @@ const Profile = () => {
             console.log(error);
             setChangeStatus("Midagi läks valesti!");
         })
+
+        axios.post('http://localhost:3001/useridtest', {
+            kasutajaid: userId
+        }).then((response) => {
+            console.log("SEE RESPONSE: " + JSON.stringify(response.data));
+        })
     }
 
-    useEffect(() => {
+    // useEffect(() => {
+    //     axios.post('http://localhost:3001/getKasutaja', {
+    //         kasutajaid: userId
+    //     }).then((response) => {
+    //         setProfiilAndmed(response.data);
+    //     }).catch((error) => {
+    //         console.log(error);
+    //     })
+    // }, []);
 
-        const token = getAccessToken();
-
-        const {id} = jwtDecode(token);
-
-        setUserId(id);
-        console.log(userId + " on userid");
-
-        axios.post('http://localhost:3001/getKasutaja', {
-            kasutajaid: id
-        }).then((response) => {
-            setProfiilAndmed(response.data);
-        }).catch((error) => {
-            console.log(error);
-        })
-    }, []);
-
-    useEffect(() => {
-        console.log(profiilAndmed);
-    }, [profiilAndmed]);
+    // useEffect(() => {
+    //     console.log(profiilAndmed);
+    // }, [profiilAndmed]);
 
     return(
         <section className="profile-container">
@@ -126,6 +132,27 @@ const Profile = () => {
                 <Profilecard/>
             </Switch>
             <section className="profile-data-header">
+            <section className="profile-card">
+            {/* <style>
+                .hide { position:absolute; top:-1px; left:-1px; width:1px; height:1px; }
+            </style>
+            <iframe name="hiddenFrame" class="hide"></iframe> */}
+                <form action='http://localhost:3001/uploadimage' method='post' encType="multipart/form-data">
+                    <img src='http://localhost:3000/server/uploads/images/profilepic-1623311751880.png' alt='profilepic'></img>
+                    <input type='file' name="profilepic" onChange={e => {onFileChange(e)}}/>
+                    <input type="text" value={userId} />
+                    <button id='changepic' className='reg-but' type='submit'>Muuda pilti</button>
+                </form>
+                <h2>{profiilAndmed.eesnimi} {profiilAndmed.perenimi}</h2>
+                <h4>{profiilAndmed.kasutajaroll}</h4>
+                <br/>
+                <button className="profile-button">Profiil</button>
+                <button className="profile-button">Õppematerjalid</button>
+                <button className="profile-button">Minu küsimustikud</button>
+                <br/>
+                <button className="profile-button">Muuda profiili</button>
+            </section>
+            <section className="profile-data-1">
                 <h1 className="profiil">Profiil</h1>
             <section className="profile-edit-data">
                 <label>

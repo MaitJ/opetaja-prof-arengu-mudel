@@ -8,19 +8,22 @@ import {useHistory} from 'react-router-dom';
 import { IoIosArrowDown } from "react-icons/io";
 import { BsFillBellFill } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
+import {useUserContext} from './userContext';
+
+
 
 const Header = () => {
 
     const history = useHistory();
 
-    const [userEmail, setUserEmail] = useState("");
-    const [userId, setUserId] = useState();
+    const { userEmail, userId, accessToken, setAccessToken, setUserEmail } = useUserContext();
     const [lastlogged, setLastLogged] = useState("");
     const [loggedIn, setLoggedIn] = useState(false);
     const [body, setBody] = useState();
-
-    const showMenu = false;
-
+    
+    const [isMenu, setMenu] = React.useState(false);
+    const [isBell, setBell] = React.useState(false);
+    
     const buttonStyle = {
         textDecoration: "none",
         color: "rgba(255, 255, 255, 0.7)"
@@ -46,31 +49,11 @@ const Header = () => {
         //setLoggedIn(false);
     }
    
-    useEffect (() => {
-    
-        const token = getAccessToken();
-
-        if (!token) {
-            return true
-        } else {
-            const {email} = jwtDecode(token);
-            const {id} = jwtDecode(token);
-            setUserId(id);
-            setUserEmail(email);
-            console.log(getAccessToken() + "accesstoken");
-        }
-
-        console.log(userEmail + " on kasutaja email");
-
-        
-
-    })
 
     return (
         <header>
             <div className="navbar-content">
-                <p style={{display: "none"}}>profiil, küsimustikud, teated?, kontakt, meist</p>
-                <h1><NavLink to="/" style={buttonStyleSecondary}>Logo</NavLink></h1>
+                <h1><NavLink id="navbar-logo" to="/" style={buttonStyleSecondary}>Logo</NavLink></h1>
                 
                 <div>
                     <NavLink activeStyle={activePage} to="/profile" style={buttonStyle}>Profiil</NavLink>
@@ -88,16 +71,19 @@ const Header = () => {
                     <NavLink activeStyle={activePage} to="/about" style={buttonStyle}>Meist</NavLink>
                 </div>
                 <section className="profile-elements">
-                    <button id="notification-button"><BsFillBellFill /></button>
-                    <h3><NavLink to="/profile" style={buttonStyleSecondary}>Eesnimi</NavLink></h3>
-                    <button id="dropdown-button"><IoIosArrowDown /></button>
-                    <div className="dropdown">
-                        <ul id="dropdown-items">
-                            <li id="logout">Logi välja</li>
-                        </ul>
-                    </div>
+                    <button id="notification-button" onClick={() => setBell(!isBell)}><BsFillBellFill /></button>
+                    <div className="notif-section">
+                        {/* Praegu katki <div className="notif-content">
+                            { isBell && <p>Teil pole ühtegi teadet!</p> }
+                    </div> */}
+                    </div> 
+                    <h3><NavLink id="navbar-name" to="/profile" style={buttonStyleSecondary}>Eesnimi</NavLink></h3>
+                    <button onClick={() => setMenu(!isMenu)} id="dropdown-button"><IoIosArrowDown /></button>
                 </section>
             </div>
+            {/* <div id="drop-content">
+                { isMenu && <button id="logout-fake">Logi välja</button>}
+    </div> */}
 
             <div>
                 <Link to="/register">Register</Link>
@@ -108,9 +94,12 @@ const Header = () => {
             <div>
                 <Link to="/Contact">Kontakt</Link>
             </div>
+            
             <div>
-                {getAccessToken() != "" ? (<button onClick={async () => {await logout(); setAccessToken(""); setUserEmail(""); console.log(getAccessToken() + "See on getaccestoken")}}>Logi valja</button>) : null}
+                {accessToken != "" ? (<button onClick={async () => {await logout(); setAccessToken(""); setUserEmail(""); console.log(accessToken + "See on getaccestoken")}}>Logi valja</button>) : null}
             </div>
+        
+            
             <div>
                 {userEmail}
                 <br />
