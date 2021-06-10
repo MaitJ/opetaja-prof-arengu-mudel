@@ -13,6 +13,7 @@ const Profile = () => {
 
     //const {userId} = useUserIdContext();
     const [profiilAndmed, setProfiilAndmed] = useState({});
+  
     const {userId} = useUserContext();
 
     useEffect(() => {
@@ -26,6 +27,18 @@ const Profile = () => {
         })
     }, []);
 
+    // useEffect (() => {
+    
+    //     const token = getAccessToken();
+
+    //     if (!token) {
+    //         return true
+    //     } else {
+    //         const {id} = jwtDecode(token);
+    //         setUserId(id);
+    //     }
+    // })
+
     useEffect(() => {
         console.log(profiilAndmed);
     }, [profiilAndmed]);
@@ -33,9 +46,6 @@ const Profile = () => {
     return(
         <section className="profile-container">
             <section className="profile-card">
-                <h2>PILT</h2>
-                <h2>PILT</h2>
-                <h2>PILT</h2>
                 <img src='https://via.placeholder.com/300.png/09f/fff' alt='profilepic'></img>
                 <h2>{profiilAndmed.eesnimi} {profiilAndmed.perenimi}</h2>
                 <h4>{profiilAndmed.kasutajaroll}</h4>

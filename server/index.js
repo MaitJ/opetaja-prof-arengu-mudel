@@ -16,7 +16,31 @@ const { check, validationResult } = require('express-validator');
 const cookieParser = require('cookie-parser');
 const multer = require('multer');
 
-const upload = multer();
+var storage = multer.diskStorage({
+  destination: __dirname + '/uploads/images',
+  filename: function (req, file, cb) {
+    cb(null, file.fieldname + '-' + Date.now() + '.png')
+  }
+})
+
+var storageFile = multer.diskStorage({
+  destination: __dirname + '/uploads/files',
+  filename: function(req, file, cb) {
+    if(file.mimetype === 'image/jpeg') {
+      cb(null, file.fieldname + '-' + Date.now() + '.jpg')
+    } else if(file.mimetype === 'image/png') {
+      cb(null, file.fieldname + '-' + Date.now() + '.png')
+    } else if (file.mimetype === 'application/pdf') {
+      cb(null, file.fieldname + '-' + Date.now() + '.pdf')
+    } else if (file.mimetype === 'video/mp4') {
+      cb(null, file.fieldname + '-' + Date.now() + '.mp4')
+    }
+  }
+})
+
+
+const upload = multer({storage: storage});
+const uploadFile = multer({storage: storageFile});
 
 app.use(cookieParser());
 app.use(express.json());
@@ -429,16 +453,74 @@ app.post('/changeprofile', (req, res) => {
       });
     })
   })
+})
 
+app.post('/uploadimage', upload.single("profilepic"), (req, res) => {
+  const imageName = req.file.filename;
+  const userid = req.body.userid;
+
+  console.log("UUSERID: " + userid);
+
+  db.query(`UPDATE profiil SET profiilipilt='${imageName}' WHERE kasutaja_id=24`, (error, result) => {
+    if(error) {
+      console.log(error);
+      throw error;
+    }
+
+    db.query(`SELECT profiilipilt FROM profiil WHERE kasutaja_id=24`, (error, result) => {
+      if(error) {
+        throw error;
+      } else {
+        var image = result[0].profiilipilt;
+        res.send({image: image})
+      }
+
+    })
+  })
+})
+
+app.post("/uploadfile", function (req, res, next) {
+  uploadFile.single('oppematerjal')(req, res, function (error) {
+    if (error) {
+      console.log(`upload.single error: ${error}`);
+      return res.sendStatus(500);
+    }
+      console.log("filename: " + req.file.filename);
+  })
+  // upload.single('oppematerjal')(req, res, function (error) {
+  //   if (error) {
+  //     console.log(`upload.single error: ${error}`);
+  //     return res.sendStatus(500);
+  //   }
+  //   console.log("filename: " + req.file.filename);
   
+  //   // const fileName = req.file.filename;
+  //   // const userid = req.body.userid;
 
+  //   // db.query(`UPDATE profiil SET oppematerjal='${fileName}' WHERE kasutaja_id=${userid}`, (error, result) => {
+  //   //   if(error) {
+  //   //     console.log(error);
+  //   //     throw error;
+  //   //   } else {
+  //   //     res.send({file: fileName});
+  //   //   }
+  //   // })
+  //   // })
+});
 
-})
+// app.post('/uploadfile', uploadFile.single("oppematerjal"), (req, res) => {
+//   const fileName = req.file.filename;
+//   const userid = req.body.userid;
 
-app.post('/uploadimage', upload.single(), (req, res) => {
-  const formdata = req.body.data[1];
-  console.log("SEE ON DATA: " + formdata);
-})
+//   db.query(`UPDATE profiil SET oppematerjal='${fileName}' WHERE kasutaja_id=${userid}`, (error, result) => {
+//     if(error) {
+//       console.log(error);
+//       throw error;
+//     } else {
+//       res.send({file: fileName});
+//     }
+//   })
+// })
 
 app.get('/jwt', (req, res) => {
   const token = req.cookies.jid;

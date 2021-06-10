@@ -23,56 +23,29 @@ const Profile = () => {
     const [changeStatus, setChangeStatus] = useState("");
     const [selectedFile, setSelectedFile] = useState();
 
+    const imageAddr = "http://localhost:3001/server/uploads/images/";
+
     const fileUpload = () => {
 
         let formData = new FormData();
 
-        formData.append("Faili nimi", selectedFile);
+        formData.append("File", selectedFile);
 
-        console.log(selectedFile);
+        console.log(formData.get("File"));
 
         axios.post('http://localhost:3001/uploadimage', {
+            headers: { "Content-Type": "multipart/form-data" },
             data: formData,
-            headers: { "Content-Type": "multipart/form-data" }
+            userid: userId
+        }).then((response) => {
+            console.log("SEE ON RESPONSE: " + JSON.stringify(response.data));
         });
     }
 
     const onFileChange = (e) => {
         setSelectedFile(e.target.files[0]);
     }
-
-    // const fileData = () => {
     
-    //     if (selectedFile) {
-           
-    //       return (
-    //         <div>
-    //           <h2>Faili Detailid:</h2>
-               
-    //             <p>Faili Nimi: {selectedFile.name}</p>
-   
-               
-    //             <p>Faili Tyyp: {selectedFile.type}</p>
-   
-               
-    //             <p>
-    //             Last Modified:{" "}
-    //             {selectedFile.lastModifiedDate.toDateString()}
-    //           </p>
-   
-    //         </div>
-    //       );
-    //     } else {
-    //       return (
-    //         <div>
-    //           <br />
-    //           <h4>Vali enne kui "Lae yles" nuppu vajutad!</h4>
-    //         </div>
-    //       );
-    //     }
-    // };
-    
-
     const changeProfile = () => {
         axios.post('http://localhost:3001/changeprofile', {
             email: email,
@@ -103,7 +76,7 @@ const Profile = () => {
         const {id} = jwtDecode(token);
 
         setUserId(id);
-        console.log(userId + " on userid");
+        console.log(id + " on userid");
 
         axios.post('http://localhost:3001/getKasutaja', {
             kasutajaid: id
@@ -114,16 +87,18 @@ const Profile = () => {
         })
     }, []);
 
-    useEffect(() => {
-        console.log(profiilAndmed);
-    }, [profiilAndmed]);
+    // useEffect(() => {
+    //     console.log(profiilAndmed);
+    // }, [profiilAndmed]);
 
     return(
         <section className="profile-container">
             <section className="profile-card">
-                <img src='https://via.placeholder.com/300.png/09f/fff' alt='profilepic'></img>
-                <input type='file' name="profilepic" onChange={e => {onFileChange(e)}}/>
-                <button id='changepic' className='reg-but' type='submit' onClick={fileUpload}>Muuda pilti</button>
+                <form onSubmit={fileUpload} encType="multipart/form-data">
+                    <img src='http://localhost:3000/server/uploads/images/profilepic-1623311751880.png' alt='profilepic'></img>
+                    <input type='file' name="profilepic" onChange={e => {onFileChange(e)}}/>
+                    <button id='changepic' className='reg-but' type='submit'>Muuda pilti</button>
+                </form>
                 <h2>{profiilAndmed.eesnimi} {profiilAndmed.perenimi}</h2>
                 <h4>{profiilAndmed.kasutajaroll}</h4>
                 <br/>

@@ -14,10 +14,6 @@ import {UserProvider} from './userContext';
 function App() {
 
 
-  // if (loading) {
-  //   return <div>loading...</div>;
-  // }
-
   
 
   return (
