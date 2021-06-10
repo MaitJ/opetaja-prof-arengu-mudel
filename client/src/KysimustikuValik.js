@@ -5,8 +5,8 @@ import { getAccessToken } from "./accessToken";
 import jwtDecode from 'jwt-decode';
 import {useState, useEffect} from 'react';
 import {Link, Route} from 'react-router-dom';
-import {getAccessToken} from './accessToken';
-import jwtDecode from 'jwt-decode';
+//import {getAccessToken} from './accessToken';
+//import jwtDecode from 'jwt-decode';
 
 const kysimustikudURL = 'http://localhost:3001/getKysimused';
 const tekitaURL = 'http://localhost:3001/tekitaKysimustik';
