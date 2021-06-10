@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { NavLink } from "react-router-dom";
+import { NavLink, Switch } from "react-router-dom";
+import Profilecard from './Profilecard';
 
 class Oppematerjal extends Component {
     constructor(props) {
@@ -56,6 +57,10 @@ class Oppematerjal extends Component {
 
     render() {
         return (
+        <section className="profile-oppematerjal">
+          <Switch>
+            <Profilecard/>
+          </Switch>
           <div class="back-button-container">
             <NavLink className="back-button" to="/profile">Tagasi õppematerjalidesse</NavLink>
           <div class="oppematerjal-container">
@@ -74,6 +79,7 @@ class Oppematerjal extends Component {
               </div>
           </div>
           </div>
+          </section>
         );
       }
     }

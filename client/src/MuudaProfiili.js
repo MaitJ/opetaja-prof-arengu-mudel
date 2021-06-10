@@ -3,7 +3,9 @@ import {useEffect, useState} from 'react';
 import { setAccessToken } from "./accessToken";
 import { getAccessToken } from "./accessToken";
 import jwtDecode from 'jwt-decode';
+import { NavLink, Switch } from "react-router-dom";
 import env from 'react-dotenv';
+import Profilecard from './Profilecard';
 //import {useUserIdContext} from './App.js';
 require('dotenv').config();
 
@@ -66,7 +68,7 @@ const Profile = () => {
     //       return (
     //         <div>
     //           <br />
-    //           <h4>Vali enne kui "Lae yles" nuppu vajutad!</h4>
+    //           <h3>Vali enne kui "Lae yles" nuppu vajutad!</h3>
     //         </div>
     //       );
     //     }
@@ -120,32 +122,32 @@ const Profile = () => {
 
     return(
         <section className="profile-container">
-            <section className="profile-card">
-                <img src='https://via.placeholder.com/300.png/09f/fff' alt='profilepic'></img>
-                <input type='file' name="profilepic" onChange={e => {onFileChange(e)}}/>
-                <button id='changepic' className='reg-but' type='submit' onClick={fileUpload}>Muuda pilti</button>
-                <h2>{profiilAndmed.eesnimi} {profiilAndmed.perenimi}</h2>
-                <h4>{profiilAndmed.kasutajaroll}</h4>
-                <br/>
-                <button className="profile-button">Profiil</button>
-                <button className="profile-button">Õppematerjalid</button>
-                <button className="profile-button">Minu küsimustikud</button>
-                <br/>
-                <button className="profile-button">Muuda profiili</button>
-            </section>
-            <section className="profile-data-1">
+            <Switch>
+                <Profilecard/>
+            </Switch>
+            <section className="profile-data-header">
                 <h1 className="profiil">Profiil</h1>
-            <section className="profile-data">
-                <h4>Eesnimi</h4>
+            <section className="profile-edit-data">
+                <label>
+                <h3>Eesnimi</h3>
                 <input className="email-input" placeholder="Eesnimi" type="text" name="firstName" id="firstName" onChange={e => {setFirstName(e.target.value)}}/>
-                <h4>Perekonnanimi</h4>
+                </label>
+                <label>
+                <h3>Perekonnanimi</h3>
                 <input className="email-input" placeholder="Perekonnanimi" type="text" name="lastName" id="lastName" onChange={e => {setLastName(e.target.value)}}/>
-                <h4>E-mail</h4>
+                </label>
+                <label>
+                <h3>E-mail</h3>
                 <input className="email-input" placeholder="E-mail" type="email" name="email" id="email" onChange={e => {setEmail(e.target.value)}}/>
-                <h4>Töökoht</h4>
+                </label>
+                <label>
+                <h3>Töökoht</h3>
                 <input className="email-input" placeholder="Tookoht" type="text" name="job" id="job" onChange={e => {setJob(e.target.value)}}/>
-                <h4>Telefon</h4>
+                </label>
+                <label>
+                <h3>Telefon</h3>
                 <input className="email-input" placeholder="Telefon" type="tel" name="phone" id="phone" onChange={e => {setPhone(e.target.value)}}/>
+                </label>
                 <button id="register-button" className="reg-but" type='submit' onClick={changeProfile}>Salvesta</button>
                 <h5>{changeStatus}</h5>
             </section>

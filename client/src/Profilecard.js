@@ -1,20 +1,20 @@
 import axios from 'axios';
-import {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { setAccessToken } from "./accessToken";
 import { getAccessToken } from "./accessToken";
-import { BrowserRouter as Router, Link, Redirect, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Redirect, Route } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
 import env from 'react-dotenv';
 import { NavLink } from "react-router-dom";
-import Profilecard from './Profilecard';
 
-//import {useUserIdContext} from './App.js';
+
 require('dotenv').config();
 
 const currentProfileId = 21;
 const profileUrl = "http://localhost:3001/getKasutaja";
 
-const Profile = () => {
+
+const Profilecard = () => {
 
     //const {userId} = useUserIdContext();
     const [profiilAndmed, setProfiilAndmed] = useState({});
@@ -39,22 +39,20 @@ const Profile = () => {
     }, [profiilAndmed]);
 
     return(
-        <section className="profile-container">
-            <Switch>
-                <Profilecard/>
-            </Switch>
-            <section className="profile-data-header">
-                <h1 className="profiil">Profiil</h1>
-            <section className="profile-data">
-                <h4>Nimi: {profiilAndmed.eesnimi} {profiilAndmed.perenimi}</h4>
-                <h4>Roll: {profiilAndmed.kasutajaroll}</h4>
-                <h4>E-mail: {profiilAndmed.email}</h4>
-                <h4>Töökoht: {profiilAndmed.tookoht} </h4>
-                <h4>Telefon: {profiilAndmed.telefon} </h4>
+        <React.Fragment>
+            <section className="profile-card">
+                <img src='https://via.placeholder.com/300.png/09f/fff' alt='profilepic'></img>
+                <h2>{profiilAndmed.eesnimi} {profiilAndmed.perenimi}</h2>
+                <h4>{profiilAndmed.kasutajaroll}</h4>
+                <br/>
+                <NavLink className="profile-button" to="/profile">Profiil</NavLink>
+                <NavLink className="profile-button" to="/lisa-oppematerjal">Õppematerjalid</NavLink>
+                <NavLink className="profile-button" to="/">Minu küsimustikud</NavLink>
+                <NavLink className="profile-button" to='/muudaprofiili'>Muuda profiili</NavLink>
             </section>
-            </section>
-        </section>
+        </React.Fragment>
     );
+
 }
 
-export default Profile;
+export default Profilecard;

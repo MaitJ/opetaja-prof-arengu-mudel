@@ -4,9 +4,10 @@ import Kysimustik from './Kysimustik';
 import { getAccessToken } from "./accessToken";
 import jwtDecode from 'jwt-decode';
 import {useState, useEffect} from 'react';
-import {Link, Route} from 'react-router-dom';
-import {getAccessToken} from './accessToken';
-import jwtDecode from 'jwt-decode';
+import {Link, Route, Switch} from 'react-router-dom';
+import Profilecard from './Profilecard';
+// import {getAccessToken} from './accessToken';
+// import jwtDecode from 'jwt-decode';
 
 const kysimustikudURL = 'http://localhost:3001/getKysimused';
 const tekitaURL = 'http://localhost:3001/tekitaKysimustik';
@@ -85,9 +86,16 @@ const KysimustikuValik = () => {
 
 
     return(
-        <React.Fragment>
-            {selectedKysimustik === 0 ? kuvaKysimustikud() : kuvaKysimustik(selectedKysimustik)}
-        </React.Fragment>
+        <section className="profile-kysimustik">
+            <Switch>
+                <Profilecard/>
+            </Switch>
+            <section className="kysimustik-container">
+                <React.Fragment>
+                    {selectedKysimustik === 0 ? kuvaKysimustikud() : kuvaKysimustik(selectedKysimustik)}
+                </React.Fragment>
+            </section>
+        </section>
     );
 };
 
