@@ -50,14 +50,14 @@ const port = 3001;
 
 const testandmed = require('./testandmed/testandmed');
 
-app.use(cors());
+app.use(cors({credentials: true, origin: true}));
 app.use(respond);
 
 const db = mysql.createConnection({
-  user: "root",
+  user: "opprofmudel",
   host: "localhost",
-  password: "admin",
-  database: "opetajaprofareng"
+  password: "0pProfMudel10!",
+  database: "opprofmudeldb2"
 });
 
 function auth (req, res) {
@@ -73,10 +73,12 @@ function generateAccessToken(emailInput, idInput) {
 }
 
 function sendToken (res, token) {
+  res.header('Access-Control-Allow-Credentials', 'true')
   res.cookie("jid", token, {httpOnly: true, path: "/jwt"});
 }
 
 function sendTokentoLogout (res, token) {
+  res.header('Access-Control-Allow-Credentials', 'true')
   res.cookie("jid", token, {httpOnly: true, path: "/logout"});
 }
 
@@ -326,6 +328,7 @@ app.post('/login', async (req, res) => {
           sendRefreshToken(res, createRefreshToken(results[0].email, results[0].kasutaja_id));
           const accToken = generateAccessToken(results[0].email, results[0].kasutaja_id);
            console.log("touken: " + results[0].kasutaja_id);
+           console.log("Login token: " + accToken);
            sendToken(res, accToken);
            sendTokentoLogout(res, accToken);
            return res.status(200).json({ msg: "Login success", accessToken: accToken })
@@ -382,7 +385,7 @@ app.post('/refresh_token', (req, res) => {
       sendTokentoLogout(res, accToken);
       return res.send({ok: true, user: user, accessToken: accToken});
     } catch (error) {
-      console.log(error);
+      throw error;
     }
   })
   
