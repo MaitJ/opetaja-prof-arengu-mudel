@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 
-input[type=text],input[type=email], input[type=password] {
+input[type=text],input[type=email], input[type=password], input[type=tel] {
     display: block;
     justify-content: center;
     width: 60%;
@@ -35,6 +35,16 @@ input[type=text],input[type=email], input[type=password] {
     box-sizing: border-box;
     margin-top: 8px;
     margin-bottom: 16px; 
+}
+
+.contact{
+    margin-right: 50px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin-bottom: 50vh;
+    margin-top: 10vh;
+    border-radius: 10px;
 }
 
 .contact-button {
@@ -80,34 +90,38 @@ body {
     text-decoration: underline;
 }
 
-.profile-data-1{
+.profile-data-header{
     font-size: 24px;
-    text-align: left;
 }
 
 .profiil{
     font-size: 50px;
 }
 
-.profile-container{
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .profile-data{
-    flex: 70%;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     text-align: left;
     padding: 20px;
+    margin-bottom: 30px;
     border-radius: 10px 10px 10px 10px;
-    width: 650%;
+    width: 60vw;
+}
+
+.profile-edit-data{
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: left;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px 10px 10px 10px;
+    width: 60vw;
 }
 
 .profile-card{
     font-size: 25px;
     flex: 30%;
-    min-height: 89vh;
+    min-height: 90vh;
     background-color: #E6E6E6;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 350px;
@@ -124,12 +138,21 @@ body {
     background-color: #459157;
     text-align: center;
     cursor: pointer;
-    width: 100%;
+    width: 95.8%;
     font-size: 22px;
+    text-decoration: none;
   }
 
 .profile-button:hover{
     opacity: 0.7;
+}
+
+/* .profile-button:focus{
+    opacity: 0.7;
+} */
+
+img {
+    padding-top: 20px;
 }
 
 .back-button{
@@ -144,6 +167,15 @@ body {
     cursor: pointer;
     font-size: 22px;
     width: 15%;
+}
+
+.profile-oppematerjal, .profile-container, .profile-contact, .profile-about, .profile-kysimustik{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.back-button-container, .about, .profile-data, .profile-edit-data, .contact, .kysimustik-container{
+    flex: 70%;
 }
 
 .oppematerjal-label{
@@ -201,8 +233,6 @@ body {
     text-align: center;
 }
 
-
-
 .upload-files-button{
     border: none;
     border-radius: 8px;
@@ -220,6 +250,33 @@ body {
 .upload-files-button:hover{
     opacity: 0.7;
 }
+
+.about{
+    text-align: center;
+}
+
+.kysimustik-container, .about{
+    margin-bottom: auto;
+    margin-right: 50px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin-bottom: 50vh;
+    margin-top: 10vh;
+    border-radius: 10px;
+}
+
+.profile-edit-data{
+    text-align: center;
+}
+
+.profile-edit-data label .email-input {
+display: inline-block;
+padding: 1em;
+border-radius: 10px;
+}
+
+
 
 @media screen and (min-width: 480px) {
     .register {
@@ -239,7 +296,8 @@ body {
     }
 
     .profile-container {   
-      flex-direction: column;
+      flex-direction: flex;
+      flex-wrap: wrap;
     }
   }
   /* My profile elements */
@@ -270,6 +328,21 @@ body {
 #dropdown-button:hover {
       cursor: pointer;
       opacity: 0.7;
+  }
+/* Dropdown section pooleli */
+.dropdown {
+    display: none;
+}
+
+
+@media (max-width: 800px) {
+    .profile-card, .back-button-container, .about, .profile-data-header, .contact, .kysimustik-container {
+      flex: 100%;
+    }
+
+    .profile-data, .profile-edit-data, .kysimustik-container, .about{
+        margin: 0 auto;
+    }
   }
 
 #logout {

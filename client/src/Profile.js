@@ -2,9 +2,12 @@ import axios from 'axios';
 import {useEffect, useState} from 'react';
 import { setAccessToken } from "./accessToken";
 import { getAccessToken } from "./accessToken";
-import { BrowserRouter as Router, Link, Redirect, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Redirect, Route, Switch } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
 import env from 'react-dotenv';
+import { NavLink } from "react-router-dom";
+import Profilecard from './Profilecard';
+
 //import {useUserIdContext} from './App.js';
 import {useUserContext} from './userContext';
 require('dotenv').config();
@@ -45,6 +48,10 @@ const Profile = () => {
 
     return(
         <section className="profile-container">
+            <Switch>
+                <Profilecard/>
+            </Switch>
+            <section className="profile-data-header">
             <section className="profile-card">
                 <img src='https://via.placeholder.com/300.png/09f/fff' alt='profilepic'></img>
                 <h2>{profiilAndmed.eesnimi} {profiilAndmed.perenimi}</h2>

@@ -1,5 +1,9 @@
 import React, {useState, useRef} from 'react';
 import env from 'react-dotenv';
+import { Switch } from 'react-router';
+import Profilecard from './Profilecard';
+
+
 require('dotenv').config();
 const Contact = () => {
     const [status, setStatus] = useState("Submit");
@@ -37,19 +41,23 @@ const Contact = () => {
     return(
         
         <form onSubmit={handleSubmit}>
-        
-            <section className='contact'>
-                <section className='contact-heading'>
-                    <h1>Kontakteeru meiega!</h1>
-                </section>
-                <section className="contact-form">
-                    <label>Nimi</label>
-                    <input type="text" id='name' name='name' placeholder='Nimi' required/>
-                    <label>Email</label>
-                    <input type="email" id='email' name='email' placeholder='E-mail'/>
-                    <label>Teema</label>
-                    <textarea id="s6num" name="s6num" rows="6" cols="80"></textarea>
-                    <button className="contact-button" type='submit' id='button' value='Submit'>Saada</button>
+        <section className="profile-contact">
+            <Switch>
+                <Profilecard/>
+            </Switch>
+                <section className='contact'>
+                    <section className='contact-heading'>
+                        <h1>Kontakteeru meiega!</h1>
+                    </section>
+                    <section className="contact-form">
+                        <label>Nimi</label>
+                        <input type="text" id='name' name='name' placeholder='Nimi' required/>
+                        <label>Email</label>
+                        <input type="email" id='email' name='email' placeholder='E-mail'/>
+                        <label>Teema</label>
+                        <textarea id="s6num" name="s6num" rows="6" cols="80"></textarea>
+                        <button className="contact-button" type='submit' id='button' value='Submit'>Saada</button>
+                    </section>
                 </section>
             </section>
         </form>

@@ -1,6 +1,7 @@
 import React, { Component, useState } from 'react';
 import axios from 'axios';
-import { NavLink } from "react-router-dom";
+import { NavLink, Switch } from "react-router-dom";
+import Profilecard from './Profilecard';
 import { getAccessToken } from "./accessToken";
 import jwtDecode from 'jwt-decode';
 import {useUserContext} from './userContext';
@@ -82,29 +83,34 @@ const Oppematerjal = () =>  {
 
 
     return (
+      <section className="profile-oppematerjal">
+          <Switch>
+            <Profilecard/>
+          </Switch>
       <div class="back-button-container">
         <NavLink className="back-button" to="/profile">Tagasi õppematerjalidesse</NavLink>
-      <div class="oppematerjal-container">
-          <div class="row">
-            <form action='http://localhost:3001/uploadfile' method='post' encType="multipart/form-data">
-              <label className="oppematerjal-label">Lae üles enda õppematerjalid </label>
-                <div class="form-group files">
-                  <input className="choose-files" type="file" name='oppematerjal' multiple onChange={e => {onFileChange(e)}}/>
-                </div>  
-              <label for="text">Õppematerjali pealkiri</label>
-              <input type="text" id="title" name="title"></input>
-              <label for="text">Õppematerjali kirjeldus</label>
-              <textarea id="description" name="description" rows="6" cols="80"></textarea>
-              <div class="form-group"> 
-                <button className="upload-files-button" type="submit" onClick={fileUpload}>Lae üles</button>
-              </div>
-            </form>
+        <div class="oppematerjal-container">
+            <div class="row">
+              <form action='http://localhost:3001/uploadfile' method='post' encType="multipart/form-data">
+                <label className="oppematerjal-label">Lae üles enda õppematerjalid </label>
+                  <div class="form-group files">
+                    <input className="choose-files" type="file" name='oppematerjal' multiple onChange={e => {onFileChange(e)}}/>
+                  </div>  
+                <label for="text">Õppematerjali pealkiri</label>
+                <input type="text" id="title" name="title"></input>
+                <label for="text">Õppematerjali kirjeldus</label>
+                <textarea id="description" name="description" rows="6" cols="80"></textarea>
+                <div class="form-group"> 
+                  <button className="upload-files-button" type="submit" onClick={fileUpload}>Lae üles</button>
+                </div>
+              </form>
+            </div>
           </div>
-      </div>
-      </div>
-    );
-  }
-  
-
+        </div>
+      </section>
+        );
+      }
+    }
+)
     
 export default Oppematerjal;
