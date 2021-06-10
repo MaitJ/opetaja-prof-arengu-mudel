@@ -16,6 +16,8 @@ const { check, validationResult } = require('express-validator');
 const cookieParser = require('cookie-parser');
 const multer = require('multer');
 
+const routes = require('./routes');
+
 const upload = multer();
 
 app.use(cookieParser());
@@ -25,15 +27,16 @@ app.use("/", router);
 const port = 3001;
 
 const testandmed = require('./testandmed/testandmed');
+const { response } = require('express');
 
-app.use(cors());
+app.use(cors({credentials: true, origin: true}));
 app.use(respond);
 
 const db = mysql.createConnection({
-  user: "root",
+  user: "opprofmudel",
   host: "localhost",
-  password: "admin",
-  database: "opetajaprofareng"
+  password: "0pProfMudel10!",
+  database: "opprofmudeldb2"
 });
 
 function auth (req, res) {
@@ -49,10 +52,12 @@ function generateAccessToken(emailInput, idInput) {
 }
 
 function sendToken (res, token) {
+  res.header('Access-Control-Allow-Credentials', 'true')
   res.cookie("jid", token, {httpOnly: true, path: "/jwt"});
 }
 
 function sendTokentoLogout (res, token) {
+  res.header('Access-Control-Allow-Credentials', 'true')
   res.cookie("jid", token, {httpOnly: true, path: "/logout"});
 }
 
@@ -81,6 +86,7 @@ function comparePassword (dbpassword, encrypted) {
   })
 }
 
+/*
 app.post('/getKasutaja', (req, res) => {  
     const kasutajaid = req.body.kasutajaid;
     db.query(`SELECT * FROM profiil WHERE kasutaja_id=${kasutajaid}`, (error, results, fields) => {
@@ -111,6 +117,10 @@ app.post('/getKasutaja', (req, res) => {
     });
 
 });
+*/
+
+routes.getKasutja(app);
+
 
 //Vaata, kas kysimustik on pooleli, olenevalt sellest tekita profiil_kysimustikku
 //kirje voi uuenda olemasolevat kirjet
@@ -282,6 +292,36 @@ app.get('/', (req, res) => {
     res.send("hello guys");
 });
 
+//SELECT * FROM tagasiside WHERE kysimusteplokk_id=questionblock_id AND percentage >= vahemikMin AND percentage <= vahemikMax;
+app.post('/getFeedback', (req, res, next) => {
+  if (req.body.percentage !== undefined && req.body.questionblock_id !== undefined) {
+    const percentage = req.body.percentage;
+    const questionblock_id = req.body.questionblock_id;
+
+    console.log("percentage: " + percentage + " questionblock_id: " + questionblock_id);
+
+    db.query(`SELECT tagasiside_id, tagasiside_tekst FROM tagasiside WHERE kysimusteplokk_id=${questionblock_id} AND ${percentage} >= vahemikMin AND ${percentage} <= vahemikMax`,
+    (error, results, fields) => {
+      if (error) throw error;
+      console.log(results);
+
+      if (results[0].tagasiside_tekst !== undefined) {
+        
+        req.data = {tagasiside_tekst: results[0].tagasiside_tekst, tagasiside_id: results[0].tagasiside_id};
+      } else {
+        req.data = "";
+      }
+      next();
+    })
+  } else {
+    req.data = 0;
+    next();
+  }
+
+}, (req, res) => {
+  res.json(req.data);
+});
+
 app.post('/login', async (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
@@ -302,6 +342,7 @@ app.post('/login', async (req, res) => {
           sendRefreshToken(res, createRefreshToken(results[0].email, results[0].kasutaja_id));
           const accToken = generateAccessToken(results[0].email, results[0].kasutaja_id);
            console.log("touken: " + results[0].kasutaja_id);
+           console.log("Login token: " + accToken);
            sendToken(res, accToken);
            sendTokentoLogout(res, accToken);
            return res.status(200).json({ msg: "Login success", accessToken: accToken })
@@ -358,7 +399,7 @@ app.post('/refresh_token', (req, res) => {
       sendTokentoLogout(res, accToken);
       return res.send({ok: true, user: user, accessToken: accToken});
     } catch (error) {
-      console.log(error);
+      throw error;
     }
   })
   

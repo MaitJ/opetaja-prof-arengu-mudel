@@ -8,13 +8,13 @@ import {useHistory} from 'react-router-dom';
 import { IoIosArrowDown } from "react-icons/io";
 import { BsFillBellFill } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
+import {useUserContext} from './userContext';
 
 const Header = () => {
 
     const history = useHistory();
 
-    const [userEmail, setUserEmail] = useState("");
-    const [userId, setUserId] = useState();
+    const { userEmail, userId, accessToken, setAccessToken, setUserEmail } = useUserContext();
     const [lastlogged, setLastLogged] = useState("");
     const [loggedIn, setLoggedIn] = useState(false);
     const [body, setBody] = useState();
@@ -46,25 +46,6 @@ const Header = () => {
         //setLoggedIn(false);
     }
    
-    useEffect (() => {
-    
-        const token = getAccessToken();
-
-        if (!token) {
-            return true
-        } else {
-            const {email} = jwtDecode(token);
-            const {id} = jwtDecode(token);
-            setUserId(id);
-            setUserEmail(email);
-            console.log(getAccessToken() + "accesstoken");
-        }
-
-        console.log(userEmail + " on kasutaja email");
-
-        
-
-    })
 
     return (
         <header>
@@ -109,7 +90,7 @@ const Header = () => {
                 <Link to="/Contact">Kontakt</Link>
             </div>
             <div>
-                {getAccessToken() != "" ? (<button onClick={async () => {await logout(); setAccessToken(""); setUserEmail(""); console.log(getAccessToken() + "See on getaccestoken")}}>Logi valja</button>) : null}
+                {accessToken != "" ? (<button onClick={async () => {await logout(); setAccessToken(""); setUserEmail(""); console.log(accessToken + "See on getaccestoken")}}>Logi valja</button>) : null}
             </div>
             <div>
                 {userEmail}
