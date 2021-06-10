@@ -6,30 +6,38 @@ import { BrowserRouter as Router, Link, Redirect, Route } from 'react-router-dom
 import jwtDecode from 'jwt-decode';
 import env from 'react-dotenv';
 //import {useUserIdContext} from './App.js';
+import {useUserContext} from './userContext';
 require('dotenv').config();
-
-const currentProfileId = 21;
-const profileUrl = "http://localhost:3001/getKasutaja";
 
 const Profile = () => {
 
     //const {userId} = useUserIdContext();
     const [profiilAndmed, setProfiilAndmed] = useState({});
+  
+    const {userId} = useUserContext();
 
     useEffect(() => {
 
-        const token = getAccessToken();
-
-        const {id} = jwtDecode(token);
-
         axios.post('http://localhost:3001/getKasutaja', {
-            kasutajaid: id
+            kasutajaid: userId
         }).then((response) => {
             setProfiilAndmed(response.data);
         }).catch((error) => {
             console.log(error);
         })
     }, []);
+
+    // useEffect (() => {
+    
+    //     const token = getAccessToken();
+
+    //     if (!token) {
+    //         return true
+    //     } else {
+    //         const {id} = jwtDecode(token);
+    //         setUserId(id);
+    //     }
+    // })
 
     useEffect(() => {
         console.log(profiilAndmed);
@@ -38,9 +46,6 @@ const Profile = () => {
     return(
         <section className="profile-container">
             <section className="profile-card">
-                <h2>PILT</h2>
-                <h2>PILT</h2>
-                <h2>PILT</h2>
                 <img src='https://via.placeholder.com/300.png/09f/fff' alt='profilepic'></img>
                 <h2>{profiilAndmed.eesnimi} {profiilAndmed.perenimi}</h2>
                 <h4>{profiilAndmed.kasutajaroll}</h4>
