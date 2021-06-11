@@ -134,6 +134,7 @@ const Profile = () => {
             </section>
             <section className="profile-data-1">
                 <h1 className="profiil">Profiil</h1>
+            </section>
             <section className="profile-edit-data">
                 <label>
                 <h3>Eesnimi</h3>
@@ -162,6 +163,6 @@ const Profile = () => {
         </section>
         </section>
     );
-}
 
+}
 export default Profile;

@@ -47,7 +47,7 @@ const Profile = () => {
     }, [profiilAndmed]);
 
     return(
-        <section className="profile-container">
+                <section className="profile-container">
             <Switch>
                 <Profilecard/>
             </Switch>

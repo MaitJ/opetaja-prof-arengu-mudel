@@ -14,7 +14,7 @@ import {useUserContext} from './userContext';
 
 const Profilecard = () => {
 
-    //const {userId} = useUserIdContext();
+    const {userId} = useUserContext();
     const [profiilAndmed, setProfiilAndmed] = useState({});
     //const [imageAddr, setImageAddr] = useState("");
     const {userId} = useUserContext();
@@ -37,6 +37,10 @@ const Profilecard = () => {
     // useEffect(() => {
     //     console.log(profiilAndmed);
     // }, [profiilAndmed]);
+
+    useEffect(() => {
+        console.log(profiilAndmed);
+    }, [profiilAndmed]);
 
     return(
         <React.Fragment>

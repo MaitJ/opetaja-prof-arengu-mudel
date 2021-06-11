@@ -40,7 +40,7 @@ const Contact = () => {
 
     return(
         
-        <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
         <section className="profile-contact">
             <Switch>
                 <Profilecard/>
