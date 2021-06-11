@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef, ReactDOM, Component} from 'react';
 import { Link } from "react-router-dom";
 import { setAccessToken } from "./accessToken";
 import { getAccessToken } from "./accessToken";
@@ -9,8 +9,8 @@ import { IoIosArrowDown } from "react-icons/io";
 import { BsFillBellFill } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
 import {useUserContext} from './userContext';
-
-
+import { GoThreeBars } from "react-icons/go";
+import { ImCross } from 'react-icons/im';
 
 const Header = () => {
 
@@ -20,10 +20,7 @@ const Header = () => {
     const [lastlogged, setLastLogged] = useState("");
     const [loggedIn, setLoggedIn] = useState(false);
     const [body, setBody] = useState();
-    
-    const [isMenu, setMenu] = React.useState(false);
-    const [isBell, setBell] = React.useState(false);
-    
+
     const buttonStyle = {
         textDecoration: "none",
         color: "rgba(255, 255, 255, 0.7)"
@@ -37,7 +34,7 @@ const Header = () => {
     const activePage = {
         color: '#fff',
         textDecoration: 'underline'
-    }
+    };
 
     function logout () {
         axios.post('/logout').then((response) => {
@@ -48,42 +45,36 @@ const Header = () => {
         //setAccessToken("");
         //setLoggedIn(false);
     }
-   
 
     return (
         <header>
             <div className="navbar-content">
+                <div id="hamburger-icon">
+                    <GoThreeBars />
+                </div>
                 <h1><NavLink id="navbar-logo" to="/" style={buttonStyleSecondary}>Logo</NavLink></h1>
                 
-                <div>
+                <div id="nav-item">
                     <NavLink activeStyle={activePage} to="/profile" style={buttonStyle}>Profiil</NavLink>
                 </div>
-                <div>
+                <div id="nav-item">
                     <NavLink activeStyle={activePage} to="/kysimustikud" style={buttonStyle}>Küsimustikud</NavLink>
                 </div>
-                <div>
+                <div id="nav-item">
                     <NavLink activeStyle={activePage} exact to="/" style={buttonStyle}>Teated</NavLink>
                 </div>
-                <div>
+                <div id="nav-item">
                     <NavLink activeStyle={activePage} exact to="/contact" style={buttonStyle}>Kontakt</NavLink>
                 </div>
-                <div>
+                <div id="nav-item">
                     <NavLink activeStyle={activePage} to="/about" style={buttonStyle}>Meist</NavLink>
                 </div>
                 <section className="profile-elements">
-                    <button id="notification-button" onClick={() => setBell(!isBell)}><BsFillBellFill /></button>
-                    <div className="notif-section">
-                        {/* Praegu katki <div className="notif-content">
-                            { isBell && <p>Teil pole ühtegi teadet!</p> }
-                    </div> */}
-                    </div> 
-                    <h3><NavLink id="navbar-name" to="/profile" style={buttonStyleSecondary}>Eesnimi</NavLink></h3>
-                    <button onClick={() => setMenu(!isMenu)} id="dropdown-button"><IoIosArrowDown /></button>
+                    <button id="notification-button"><BsFillBellFill /></button>
+                    <h2><NavLink id="navbar-name" to="/profile" style={buttonStyleSecondary}>Eesnimi</NavLink></h2>
+                    <button id="dropdown-button"><IoIosArrowDown /></button>
                 </section>
             </div>
-            {/* <div id="drop-content">
-                { isMenu && <button id="logout-fake">Logi välja</button>}
-    </div> */}
 
             <div>
                 <Link to="/register">Register</Link>
