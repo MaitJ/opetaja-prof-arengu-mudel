@@ -20,15 +20,17 @@ const Profile = () => {
     const {userId} = useUserContext();
 
     useEffect(() => {
+        if (userId !== undefined) {
+            axios.post('http://localhost:3001/getKasutaja', {
+                kasutajaid: userId
+            }).then((response) => {
+                setProfiilAndmed(response.data);
+            }).catch((error) => {
+                console.log(error);
+            })
 
-        axios.post('http://localhost:3001/getKasutaja', {
-            kasutajaid: userId
-        }).then((response) => {
-            setProfiilAndmed(response.data);
-        }).catch((error) => {
-            console.log(error);
-        })
-    }, []);
+        }
+    }, [userId]);
 
     // useEffect (() => {
     
@@ -47,12 +49,12 @@ const Profile = () => {
     }, [profiilAndmed]);
 
     return(
-        <section className="profile-container">
+                <section className="profile-container">
             <Switch>
                 <Profilecard/>
             </Switch>
             <section className="profile-data-header">
-            <section className="profile-card">
+            {/* <section className="profile-card">
                 <img src='https://via.placeholder.com/300.png/09f/fff' alt='profilepic'></img>
                 <h2>{profiilAndmed.eesnimi} {profiilAndmed.perenimi}</h2>
                 <h4>{profiilAndmed.kasutajaroll}</h4>
@@ -62,7 +64,7 @@ const Profile = () => {
                 <button className="profile-button">Minu küsimustikud</button>
                 <br/>
                 <Link to='/muudaprofiili' type='button' className="profile-button">Muuda profiili</Link>
-            </section>
+            </section> */}
             <section className="profile-data-1">
                 <h1 className="profiil">Profiil</h1>
             <section className="profile-data">
@@ -73,6 +75,7 @@ const Profile = () => {
                 <h4>Telefon: {profiilAndmed.telefon} </h4>
             </section>
             </section>
+        </section>
         </section>
     );
 }

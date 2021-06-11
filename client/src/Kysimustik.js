@@ -15,7 +15,9 @@ const Kysimustik = ({kysimustik_id, profiil_kysimustik_id}) => {
     const [kysimusteIdArr, setKysimusteIdArr] = useState([]);
     const [curProtsentuaalneTulemus, setCurProtsentuaalneTulemus] = useState(0);
     const [tulemuseVaheleht, setTulemuseVaheleht] = useState(false);
-    const [currentFeedback, setCurrentFeedback] = useState({});
+    const [currentFeedback, setCurrentFeedback] = useState('');
+    const [currentFeedbackId, setCurrentFeedbackId] = useState(0);
+    const [questionBlockStats, setQuestionBlockStats] = useState([]);
 
     useEffect(() => {
         isLoading(true);
@@ -81,6 +83,10 @@ const Kysimustik = ({kysimustik_id, profiil_kysimustik_id}) => {
         });
     }, [kysimusedList])
 
+    useEffect(() => {
+        console.log(kysimusteVastused);
+    }, [kysimusteVastused])
+
     if (loading) {
         return (
             <section className="kysimuse-container">
@@ -88,28 +94,9 @@ const Kysimustik = ({kysimustik_id, profiil_kysimustik_id}) => {
             </section>
         );
     }
-
-    if (tulemuseVaheleht) {
-        return (
-            <section className="tulemuse_vaheleht-container">
-                <h5>Selle ploki tulemus: {curProtsentuaalneTulemus}</h5>
-                <p>{currentFeedback}</p>
-                <button className="next-block-button" onClick={() => {
-                    setKysimustePlokk(selectedPlokk + 1);
-                    setTulemuseVaheleht(false);}}>J2rgmine leht</button>
-            </section>
-        );
-    }
-
-    const arvutaMaxPunktid = () => {
-        let summa = 0;
-        for (let i = 0; i < kysimusteIdArr.length; ++i) { summa += 3 };
-        return summa;
-    };
-
     const lopetaKysimustik = () => {
         //Saada profiil_kysimustik_id ja koik vastused backendi.
-        axios.post(salvestamise_url, {profiil_kysimustik_id: profiil_kysimustik_id, vastused: kysimusteVastused})
+        axios.post(salvestamise_url, {profiil_kysimustik_id: profiil_kysimustik_id, vastused: kysimusteVastused, tagasisided: questionBlockStats})
         .then((response) => {
 
             /*
@@ -121,11 +108,45 @@ const Kysimustik = ({kysimustik_id, profiil_kysimustik_id}) => {
         .catch((err) => console.log(err));
     };
 
+    const saveFeedback = () => {
+        setQuestionBlockStats([...questionBlockStats, {protsentuaalne_tagasiside: curProtsentuaalneTulemus,
+        profiil_kysimustik_id: profiil_kysimustik_id, tagasiside_id: currentFeedbackId}])
+    }
+
+
+    const statPageBtnHandler = () => {
+        if (selectedPlokk === mituPlokki) {
+            return(<button className="next-block-button" onClick={() => lopetaKysimustik()}>Lopeta kysimustik</button>)
+        } else {
+            return(<button className="next-block-button" onClick={() => {
+                setKysimustePlokk(selectedPlokk + 1);
+                saveFeedback();
+                setTulemuseVaheleht(false);}}>J2rgmine leht</button>)
+        }
+    };
+
+    if (tulemuseVaheleht) {
+        return (
+            <section className="tulemuse_vaheleht-container">
+                <h5>Selle ploki tulemus: {curProtsentuaalneTulemus}</h5>
+                <h5>Tagasiside_id: {currentFeedbackId}</h5>
+                <h5>Profiil_kysimustik_id: {profiil_kysimustik_id}</h5>
+                <p>{currentFeedback}</p>
+                {statPageBtnHandler()}
+            </section>
+        );
+    }
+
+    const arvutaMaxPunktid = () => {
+        let summa = 0;
+        for (let i = 0; i < kysimusteIdArr.length; ++i) { summa += 3 };
+        return summa;
+    };
+
+
     const displayPlokkButtons = () => {
-        if (selectedPlokk < mituPlokki) {
+        if (selectedPlokk <= mituPlokki) {
             return <button type="button" onClick={() => liiguEdasi()}>Jargmine leht</button>
-        } else if (selectedPlokk === mituPlokki) {
-            return <button type="button" onClick={() => lopetaKysimustik()}>Lopeta kysimustik</button>
         }
     };
 
@@ -160,7 +181,8 @@ const Kysimustik = ({kysimustik_id, profiil_kysimustik_id}) => {
         axios.post('http://localhost:3001/getFeedback', {percentage: percentage, questionblock_id: selectedPlokk})
         .then((response) => {
             console.log(response.data);
-            setCurrentFeedback({tagasiside_tekst: response.data.tagasiside_tekst, tagasiside_id: response.data.tagasiside_id});
+            setCurrentFeedback(response.data.tagasiside_tekst);
+            setCurrentFeedbackId(response.data.tagasiside_id);
 
         })
         .catch((error) => console.log(error));
@@ -168,9 +190,6 @@ const Kysimustik = ({kysimustik_id, profiil_kysimustik_id}) => {
     };
 
     //
-    const saveFeedback = () => {
-
-    }
 
     const liiguEdasi = () => {
         //if (kasOnTaidetud()) {

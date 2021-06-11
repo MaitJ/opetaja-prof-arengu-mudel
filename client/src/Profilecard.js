@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Link, Redirect, Route } from 'react-router-dom
 import jwtDecode from 'jwt-decode';
 import env from 'react-dotenv';
 import { NavLink } from "react-router-dom";
+import {userUserContext, useUserContext} from './userContext';
 
 
 require('dotenv').config();
@@ -16,23 +17,21 @@ const profileUrl = "http://localhost:3001/getKasutaja";
 
 const Profilecard = () => {
 
-    //const {userId} = useUserIdContext();
+    const {userId} = useUserContext();
     const [profiilAndmed, setProfiilAndmed] = useState({});
 
     useEffect(() => {
+        if (userId !== undefined) {
+            axios.post('http://localhost:3001/getKasutaja', {
+                kasutajaid: userId
+            }).then((response) => {
+                setProfiilAndmed(response.data);
+            }).catch((error) => {
+                console.log(error);
+            })
 
-        const token = getAccessToken();
-
-        const {id} = jwtDecode(token);
-
-        axios.post('http://localhost:3001/getKasutaja', {
-            kasutajaid: id
-        }).then((response) => {
-            setProfiilAndmed(response.data);
-        }).catch((error) => {
-            console.log(error);
-        })
-    }, []);
+        }
+    }, [userId]);
 
     useEffect(() => {
         console.log(profiilAndmed);
