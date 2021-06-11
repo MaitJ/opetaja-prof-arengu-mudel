@@ -5,8 +5,8 @@ import { getAccessToken } from "./accessToken";
 import jwtDecode from 'jwt-decode';
 import {useState, useEffect} from 'react';
 import {useUserContext} from './userContext';
-import {Switch} from 'react-router-dom';
 import Profilecard from './Profilecard';
+import { NavLink, Switch } from "react-router-dom";
 
 const kysimustikudURL = 'http://localhost:3001/getKysimused';
 const tekitaURL = 'http://localhost:3001/tekitaKysimustik';

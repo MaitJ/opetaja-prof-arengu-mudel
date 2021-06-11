@@ -8,19 +8,17 @@ import env from 'react-dotenv';
 import { NavLink } from "react-router-dom";
 import Profilecard from './Profilecard';
 
-//import {useUserIdContext} from './App.js';
 import {useUserContext} from './userContext';
 require('dotenv').config();
 
 const Profile = () => {
 
-    //const {userId} = useUserIdContext();
     const [profiilAndmed, setProfiilAndmed] = useState({});
   
     const {userId} = useUserContext();
 
     useEffect(() => {
-        if (userId !== undefined) {
+        if(userId !== undefined) {
             axios.post('http://localhost:3001/getKasutaja', {
                 kasutajaid: userId
             }).then((response) => {
@@ -28,8 +26,8 @@ const Profile = () => {
             }).catch((error) => {
                 console.log(error);
             })
-
         }
+        
     }, [userId]);
 
     // useEffect (() => {
