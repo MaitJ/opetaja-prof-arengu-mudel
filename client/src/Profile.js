@@ -18,15 +18,17 @@ const Profile = () => {
     const {userId} = useUserContext();
 
     useEffect(() => {
-
-        axios.post('http://localhost:3001/getKasutaja', {
-            kasutajaid: userId
-        }).then((response) => {
-            setProfiilAndmed(response.data);
-        }).catch((error) => {
-            console.log(error);
-        })
-    }, []);
+        if(userId !== undefined) {
+            axios.post('http://localhost:3001/getKasutaja', {
+                kasutajaid: userId
+            }).then((response) => {
+                setProfiilAndmed(response.data);
+            }).catch((error) => {
+                console.log(error);
+            })
+        }
+        
+    }, [userId]);
 
     // useEffect (() => {
     

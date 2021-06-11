@@ -16,9 +16,12 @@ const { check, validationResult } = require('express-validator');
 const cookieParser = require('cookie-parser');
 const multer = require('multer');
 const bodyParser = require('body-parser');
+const sharp = require('sharp');
+const path = require('path');
+const fs = require('fs');
 
 var storage = multer.diskStorage({
-  destination: __dirname + '/uploads/images',
+  destination: path.resolve(__dirname, ".","../../client/public/uploads/images"),
   filename: function (req, file, cb) {
     cb(null, file.fieldname + '-' + Date.now() + '.png')
   }
@@ -43,7 +46,7 @@ var storageFile = multer.diskStorage({
 })
 
 
-const upload = multer({storage: storage}).single("profilepic");
+const upload = multer({storage: storage});
 const uploadFile = multer({storage: storageFile});
 
 app.use(express.json());
@@ -60,7 +63,6 @@ const port = 3001;
 
 const testandmed = require('./testandmed/testandmed');
 const { response } = require('express');
-
 app.use(cors({credentials: true, origin: true}));
 app.use(respond);
 
@@ -111,6 +113,11 @@ const hashPassword = async (password, saltRounds = 10) => {
     return null;
 };
 
+const resize = async (imageFile, image) => {
+  await sharp(imageFile.path).resize(500).jpeg({quality: 50}).toFile(path.resolve(imageFile.destination,'resized',image));
+  fs.unlinkSync(req.file.path);
+}
+
 
 function comparePassword (dbpassword, encrypted) {
   bcrypt.compare(dbpassword, encrypted, (err, res) => {
@@ -131,6 +138,8 @@ app.post('/getKasutaja', (req, res) => {
         andmed.perenimi = results[0].perenimi;
         andmed.telefon = results[0].telefon;
         andmed.tookoht = results[0].tookoht;
+        andmed.profilepicture = results[0].profiilipilt;
+        andmed.oppematerjal = results[0].oppematerjal;
         const kasutajaroll_id = results[0].kasutajaroll_id;
 
         db.query(`SELECT rolli_nimi FROM Kasutajaroll WHERE kasutajaroll_id=${kasutajaroll_id}`, (error, results, fields) => {
@@ -501,34 +510,47 @@ app.post('/changeprofile', (req, res) => {
   })
 })
 
-app.post('/uploadimage', (req, res) => {
-  upload(req, res, function(err) {
-    const imageName = req.file.filename;
-    const userid = req.body;
-
-    if(err) {
-      return res.end("Error uploading file.");
-    }
-    res.end("File is uploaded");
-
-    console.log(userid);
-
-    db.query(`UPDATE profiil SET profiilipilt='${imageName}' WHERE kasutaja_id=${userid}`, (error, result) => {
-      if(error) {
-        console.log(error);
-        throw error;
-      }
+app.post('/uploadimage', upload.single("file"), async (req, res) => {
   
-      db.query(`SELECT profiilipilt FROM profiil WHERE kasutaja_id=${userid}`, (error, result) => {
-        if(error) {
-          throw error;
-        } else {
-          var image = result[0].profiilipilt;
-          res.status(204).json({image: image});
-        }
-      })
+  console.log(req.file);
+  const { filename: image } = req.file;
+  const imageName = "profilepic-"+Date.now();
+
+  await sharp(req.file.path)
+  .resize(300, 300)
+  .jpeg({quality: 50}).toFile("../client/public/uploads/images/"+ imageName +  ".jpg");
+  // .toFile(
+  //   path.resolve(req.file.destination,'resized',image)
+  // )
+  
+  // sharp(req.file.path).resize(500).jpeg({quality: 50}).toFile(path.resolve(req.file.destination,'resized',image));
+  // fs.unlinkSync(req.file.path);
+
+  //const imageName = req.file.filename;
+  const userid = req.body.userid;
+
+  console.log(userid);
+
+  db.query(`UPDATE profiil SET profiilipilt='${imageName}' WHERE kasutaja_id=${userid}`, (error, result) => {
+    if(error) {
+      console.log(error);
+      throw error;
+    }
+
+    db.query(`SELECT profiilipilt FROM profiil WHERE kasutaja_id=${userid}`, (error, result) => {
+      if(error) {
+        throw error;
+      } else {
+        let data = {};
+        data.image = result[0].profiilipilt;
+        //var image = result[0].profiilipilt;
+        res.send(data);
+      }
     })
   })
+ 
+  
+
   
 })
 
