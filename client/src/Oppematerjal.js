@@ -109,8 +109,6 @@ const Oppematerjal = () =>  {
         </div>
       </section>
         );
-      }
-    }
-)
     
+    }
 export default Oppematerjal;

@@ -5,6 +5,8 @@ import { getAccessToken } from "./accessToken";
 import jwtDecode from 'jwt-decode';
 import {useState, useEffect} from 'react';
 import {useUserContext} from './userContext';
+import {Switch} from 'react-router-dom';
+import Profilecard from './Profilecard';
 
 const kysimustikudURL = 'http://localhost:3001/getKysimused';
 const tekitaURL = 'http://localhost:3001/tekitaKysimustik';
@@ -23,6 +25,7 @@ const KysimustikuValik = () => {
     const kysimustikuNupp = (kysimustik_id) => {
         axios.post(tekitaURL, {kasutaja_id: userId, kysimustik_id: kysimustik_id}).then((response) => {
             if (response.data.status) {
+                console.log(response.data);
                 setSelectedKysimustik(kysimustik_id);
                 setProfiilKysimustikId(response.data.profiil_kysimustik_id);
                 //testi
@@ -76,9 +79,6 @@ const KysimustikuValik = () => {
 
     return(
         <section className="profile-kysimustik">
-            <Switch>
-                <Profilecard/>
-            </Switch>
             <section className="kysimustik-container">
                 <React.Fragment>
                     {selectedKysimustik === 0 ? kuvaKysimustikud() : kuvaKysimustik(selectedKysimustik)}
