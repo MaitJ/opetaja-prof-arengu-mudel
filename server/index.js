@@ -67,8 +67,8 @@ app.use(respond);
 const db = mysql.createConnection({
   user: "root",
   host: "localhost",
-  password: "adminadmin",
-  database: "opprofmudeldb2"
+  password: "admin",
+  database: "opetajaprofareng"
 });
 
 function auth (req, res) {

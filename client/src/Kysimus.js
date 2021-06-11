@@ -93,9 +93,9 @@ const Kysimus = ({kysimus, setKysimusteVastused, kysimusteVastused}) => {
     };
 
     return(
-        <article className="kysimus">
-            <p>{kysimus.kysimus_tekst}</p>
-            <label>Vastus:</label>
+        <article className="kysimus-plokk">
+            <p className="kysimus">{kysimus.kysimus_tekst}</p>
+            <label className="vastuse-valik-title">Vastus:</label>
             <div className="vastuse-valik-container" /*onChange={(e) => setVastus(e)}*/>
                 {
                     kysimusteValikud.map((valik, index) => {
@@ -109,7 +109,7 @@ const Kysimus = ({kysimus, setKysimusteVastused, kysimusteVastused}) => {
                 }
             </div>
             {soovitused.length > 0 && kuvaSoovitused()}
-            <label>Enesehinnang:</label>
+            <label className="enesehinnang-label">Enesehinnang:</label>
             <textarea id="enesehinnangText" className="enesehinnangText" onChange={(e) => setEnesehinnang(e)} rows="4" cols="50"></textarea>
         </article>
     );
