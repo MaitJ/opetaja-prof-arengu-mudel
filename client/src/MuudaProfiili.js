@@ -128,15 +128,8 @@ const Profile = () => {
 
     return(
         <section className="profile-container">
-            <Switch>
-                <Profilecard/>
-            </Switch>
-            <section className="profile-data-header">
-            <section className="profile-card">
-            {/* <style>
-                .hide { position:absolute; top:-1px; left:-1px; width:1px; height:1px; }
-            </style>
-            <iframe name="hiddenFrame" class="hide"></iframe> */}
+           <section className="profile-card">
+                <img src='https://via.placeholder.com/300.png/09f/fff' alt='profilepic'></img>
                 <form action='http://localhost:3001/uploadimage' method='post' encType="multipart/form-data">
                     <img src='http://localhost:3000/server/uploads/images/profilepic-1623311751880.png' alt='profilepic'></img>
                     <input type='file' name="profilepic" onChange={e => {onFileChange(e)}}/>
@@ -146,11 +139,12 @@ const Profile = () => {
                 <h2>{profiilAndmed.eesnimi} {profiilAndmed.perenimi}</h2>
                 <h4>{profiilAndmed.kasutajaroll}</h4>
                 <br/>
-                <button className="profile-button">Profiil</button>
-                <button className="profile-button">Õppematerjalid</button>
-                <button className="profile-button">Minu küsimustikud</button>
-                <br/>
-                <button className="profile-button">Muuda profiili</button>
+                <NavLink className="profile-button" to="/profile">Profiil</NavLink>
+                <NavLink className="profile-button" to="/lisa-oppematerjal">Õppematerjalid</NavLink>
+                <NavLink className="profile-button" to="/">Minu küsimustikud</NavLink>
+                <NavLink className="profile-button" to='/muudaprofiili'>Muuda profiili</NavLink>
+            </section>
+            <section className="profile-data-header">
             </section>
             <section className="profile-data-1">
                 <h1 className="profiil">Profiil</h1>
@@ -178,7 +172,7 @@ const Profile = () => {
                 <button id="register-button" className="reg-but" type='submit' onClick={changeProfile}>Salvesta</button>
                 <h5>{changeStatus}</h5>
             </section>
-            </section>
+        </section>
         </section>
     );
 }
