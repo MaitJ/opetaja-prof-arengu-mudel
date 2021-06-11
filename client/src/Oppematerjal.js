@@ -84,9 +84,9 @@ const Oppematerjal = () =>  {
 
     return (
       <section className="profile-oppematerjal">
-          <Switch>
-            <Profilecard/>
-          </Switch>
+        <Switch>
+          <Profilecard/>
+        </Switch>
       <div class="back-button-container">
         <NavLink className="back-button" to="/profile">Tagasi õppematerjalidesse</NavLink>
         <div class="oppematerjal-container">
@@ -108,9 +108,6 @@ const Oppematerjal = () =>  {
           </div>
         </div>
       </section>
-        );
-      }
-    }
-)
-    
+  )
+}  
 export default Oppematerjal;

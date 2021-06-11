@@ -8,13 +8,11 @@ import env from 'react-dotenv';
 import { NavLink } from "react-router-dom";
 import Profilecard from './Profilecard';
 
-//import {useUserIdContext} from './App.js';
 import {useUserContext} from './userContext';
 require('dotenv').config();
 
 const Profile = () => {
 
-    //const {userId} = useUserIdContext();
     const [profiilAndmed, setProfiilAndmed] = useState({});
   
     const {userId} = useUserContext();
@@ -52,7 +50,7 @@ const Profile = () => {
                 <Profilecard/>
             </Switch>
             <section className="profile-data-header">
-            <section className="profile-card">
+            {/* <section className="profile-card">
                 <img src='https://via.placeholder.com/300.png/09f/fff' alt='profilepic'></img>
                 <h2>{profiilAndmed.eesnimi} {profiilAndmed.perenimi}</h2>
                 <h4>{profiilAndmed.kasutajaroll}</h4>
@@ -62,7 +60,7 @@ const Profile = () => {
                 <button className="profile-button">Minu küsimustikud</button>
                 <br/>
                 <Link to='/muudaprofiili' type='button' className="profile-button">Muuda profiili</Link>
-            </section>
+            </section> */}
             <section className="profile-data-1">
                 <h1 className="profiil">Profiil</h1>
             <section className="profile-data">
@@ -73,6 +71,7 @@ const Profile = () => {
                 <h4>Telefon: {profiilAndmed.telefon} </h4>
             </section>
             </section>
+        </section>
         </section>
     );
 }
