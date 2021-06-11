@@ -133,7 +133,7 @@ const Profile = () => {
             </Switch>
             <section className="profile-data-header">
             <section className="profile-card">
-            {/* <style>
+            <style>
                 .hide { position:absolute; top:-1px; left:-1px; width:1px; height:1px; }
             </style>
             <iframe name="hiddenFrame" class="hide"></iframe> */}
