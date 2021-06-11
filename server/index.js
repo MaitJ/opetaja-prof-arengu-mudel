@@ -25,7 +25,7 @@ var storage = multer.diskStorage({
 })
 const routes = require('./routes');
 
-const upload = multer();
+//const upload = multer();
 
 var storageFile = multer.diskStorage({
   destination: __dirname + '/uploads/files',
@@ -118,7 +118,7 @@ function comparePassword (dbpassword, encrypted) {
   })
 }
 
-/*
+
 app.post('/getKasutaja', (req, res) => {  
     const kasutajaid = req.body.kasutajaid;
     db.query(`SELECT * FROM profiil WHERE kasutaja_id=${kasutajaid}`, (error, results, fields) => {
@@ -149,9 +149,9 @@ app.post('/getKasutaja', (req, res) => {
     });
 
 });
-*/
 
-routes.getKasutja(app);
+
+//routes.getKasutaja(app);
 
 
 //Vaata, kas kysimustik on pooleli, olenevalt sellest tekita profiil_kysimustikku
