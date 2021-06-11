@@ -61,12 +61,14 @@ input[type=text],input[type=email], input[type=password], input[type=tel] {
 }
 
 body {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     font-family: 'Roboto', sans-serif;
     background-color: #F5F5F5;
 }
+
 /* Navigation bar */
+
 .navbar-content {
     background-color: #459157;
     display: flex;
@@ -88,6 +90,42 @@ body {
 .navbar-content div:hover:not(.notif-section, .notif-content) {
     transform: translateY(-3px);
     text-decoration: underline;
+}
+
+/* Hamburger ? */
+@media only screen and (max-width: 770px) {
+    #hamburger-icon {
+        display: block;
+    }
+    .navbar-content > #nav-item {
+        display: none;
+    }
+    #navbar-logo {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 771px) {
+    #hamburger-icon {
+        display: none;
+    }
+    #hamburgerGone {
+        display: none;
+    }
+}
+#hamburger-icon {
+    color: white;
+    align-self: center;
+    font-size: 2em;
+}
+#hamburger-icon:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+#hamburgerGone {
+    display: none;
+    color: white;
 }
 
 .profile-data-header{
@@ -306,8 +344,10 @@ border-radius: 10px;
     margin-right: 20px;
 }
 #dropdown-button {
-    float: left;
-    font-size: 25px;
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+    padding: 0;
 }
 #notification-button {
     font-size: 22px;
@@ -318,22 +358,25 @@ border-radius: 10px;
     opacity: 0.7;
 }
 #dropdown-button, #notification-button {
-      margin-top: 10px;
-      margin-left: 0px;
+      margin-bottom: 5px;
       background: none;
       border: none;
       color: rgb(255, 255, 255);
       transition: 0.3s;
   }
+#notification-button {
+    margin-top: 5px;
+    font-size: 25px;
+    align-items: center;
+}
+
 #dropdown-button:hover {
       cursor: pointer;
       opacity: 0.7;
   }
-/* Dropdown section pooleli */
-.dropdown {
-    display: none;
-}
-
+  #arrow-icon {
+      font-size: 2em;
+  }
 
 @media (max-width: 800px) {
     .profile-card, .back-button-container, .about, .profile-data-header, .contact, .kysimustik-container {
@@ -364,10 +407,9 @@ border-radius: 10px;
     cursor: pointer;
     background-color: #b8b8b8;
 }
-#profile-button {
-    float: left;
-}
+
 /* Notification bell */
+
 #profile-button {
     display: flex;
     background: none;
