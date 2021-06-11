@@ -62,7 +62,7 @@ const KysimustikuValik = () => {
                         return(
                             <article className="kysimustik">
                                 <h5>{kysimustik_pealkiri}</h5>
-                                <button onClick={() => kysimustikuNupp(kysimustik_id)}>Täida</button>
+                                <button className="kysimustik-button" onClick={() => kysimustikuNupp(kysimustik_id)}>Täida</button>
                             </article>
                         );
                     })

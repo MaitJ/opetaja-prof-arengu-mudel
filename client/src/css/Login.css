@@ -26,6 +26,7 @@ body {
   margin-bottom: 0;
 }
 #register-button {
+  display: block;
   background-color: #459157;
   color: white;
   font-size: 1em;

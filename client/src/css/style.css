@@ -38,6 +38,7 @@ input[type=text],input[type=email], input[type=password], input[type=tel] {
 }
 
 .contact{
+    display: block;
     margin-right: 50px;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -92,6 +93,7 @@ body {
     text-decoration: underline;
 }
 
+/* profiil + profile-card css */
 /* Hamburger ? */
 @media only screen and (max-width: 770px) {
     #hamburger-icon {
@@ -164,7 +166,6 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 350px;
     text-align: center;
-    margin-right: 50px;
 }
 
 .profile-button {
@@ -185,10 +186,6 @@ body {
     opacity: 0.7;
 }
 
-/* .profile-button:focus{
-    opacity: 0.7;
-} */
-
 img {
     padding-top: 20px;
 }
@@ -207,6 +204,8 @@ img {
     width: 15%;
 }
 
+/* css et kõik lehed profile-card-ga töötaks*/
+
 .profile-oppematerjal, .profile-container, .profile-contact, .profile-about, .profile-kysimustik{
     display: flex;
     flex-wrap: wrap;
@@ -215,6 +214,8 @@ img {
 .back-button-container, .about, .profile-data, .profile-edit-data, .contact, .kysimustik-container{
     flex: 70%;
 }
+
+/* lisa õppematerjale css*/
 
 .oppematerjal-label{
     font-size: 29px;
@@ -289,13 +290,9 @@ img {
     opacity: 0.7;
 }
 
-.about{
-    text-align: center;
-}
-
 .kysimustik-container, .about{
-    margin-bottom: auto;
     margin-right: 50px;
+    margin-left: 50px;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 20px;
@@ -308,12 +305,9 @@ img {
     text-align: center;
 }
 
-.profile-edit-data label .email-input {
-display: inline-block;
-padding: 1em;
-border-radius: 10px;
+.profile-edit-data, label, .email-input {
+display: block;
 }
-
 
 
 @media screen and (min-width: 480px) {
@@ -327,7 +321,7 @@ border-radius: 10px;
     }
   }
 
-  @media (max-width: 580px) {
+  @media (max-width: 800px) {
 
     .profile-card{
         min-width: 100%;
@@ -337,7 +331,20 @@ border-radius: 10px;
       flex-direction: flex;
       flex-wrap: wrap;
     }
+
+    .profile-card, .back-button-container, .about, .profile-data-header, .contact, .kysimustik-container {
+      flex: 100%;
+    }
+  
+    .profile-data, .profile-edit-data, .kysimustik-container, .about{
+      margin: 0 auto;
+    }
+    
+    .contact{
+        margin: auto;
+    }
   }
+  
   /* My profile elements */
 .profile-elements {
     display: flex;
@@ -374,19 +381,75 @@ border-radius: 10px;
       cursor: pointer;
       opacity: 0.7;
   }
+/* Dropdown section pooleli */
+.dropdown {
+    display: none;
+}
+
+/* küsimustiku css */
   #arrow-icon {
       font-size: 2em;
   }
 
-@media (max-width: 800px) {
-    .profile-card, .back-button-container, .about, .profile-data-header, .contact, .kysimustik-container {
-      flex: 100%;
-    }
+.kysimustik-button{
+    background-color: #459157;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
-    .profile-data, .profile-edit-data, .kysimustik-container, .about{
-        margin: 0 auto;
-    }
-  }
+.kysimustik-button:hover{
+    opacity: 0.8;
+}
+
+
+.vastuse-valik-container{
+    background-color: #F5F5F5;
+    font-size: 18px;
+    border-radius: 5px;
+    padding-bottom: 10px;
+}
+
+.vastuse-valik-title{
+    font-size: 22px;
+    background-color: #F5F5F5;
+    border-radius: 5px;
+    font-weight: 600;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+.enesehinnang-label{
+    padding-top: 15px;
+    font-size: 22px;
+}
+
+.kysimus{
+    font-size: 22px;
+    font-weight: 600;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-top: 4cm;
+    border-color: black;
+    background-color: #F5F5F5;
+    margin-bottom: 0;
+}
+
+.enesehinnangText{
+    font-size: 22px;
+}
+
+.kysimuste-plokk-button{
+    background-color: #459157;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 15px;
+}
 
 #logout {
     position: fixed;
