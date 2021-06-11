@@ -9,29 +9,34 @@ import { NavLink } from "react-router-dom";
 import {useUserContext} from './userContext';
 
 
-require('dotenv').config();
-
-const currentProfileId = 21;
-const profileUrl = "http://localhost:3001/getKasutaja";
-
+//require('dotenv').config();
 
 
 const Profilecard = () => {
 
-    //const {userId} = useUserIdContext();
+    const {userId} = useUserContext();
     const [profiilAndmed, setProfiilAndmed] = useState({});
+    //const [imageAddr, setImageAddr] = useState("");
     const {userId} = useUserContext();
 
     useEffect(() => {
+        if(userId !== undefined) {
+            axios.post('http://localhost:3001/getKasutaja', {
+                kasutajaid: userId
+            }).then((response) => {
+                setProfiilAndmed(response.data);
+            }).catch((error) => {
+                console.log(error);
+            })
+        }
+        
+    }, [userId]);
 
-        axios.post('http://localhost:3001/getKasutaja', {
-            kasutajaid: userId
-        }).then((response) => {
-            setProfiilAndmed(response.data);
-        }).catch((error) => {
-            console.log(error);
-        })
-    }, []);
+    const ImageAddr = "uploads/images/" + profiilAndmed.profilepicture + ".jpg";
+
+    // useEffect(() => {
+    //     console.log(profiilAndmed);
+    // }, [profiilAndmed]);
 
     useEffect(() => {
         console.log(profiilAndmed);
@@ -40,7 +45,7 @@ const Profilecard = () => {
     return(
         <React.Fragment>
             <section className="profile-card">
-                <img src='https://via.placeholder.com/300.png/09f/fff' alt='profilepic'></img>
+                <img src={process.env.PUBLIC_URL + ImageAddr} alt='profilepic'></img>
                 <h2>{profiilAndmed.eesnimi} {profiilAndmed.perenimi}</h2>
                 <h4>{profiilAndmed.kasutajaroll}</h4>
                 <br/>
