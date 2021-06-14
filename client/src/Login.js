@@ -38,7 +38,7 @@ const Login = () => {
                 //setLoginStatus("Sisselogitud: " + email);
                 console.log(response.data.accessToken);
                 setAccessToken(response.data.accessToken);
-                history.push("/");
+                history.push("/profile");
                 window.location.reload();
             } else {
                 console.log("Login ei olnud successful");

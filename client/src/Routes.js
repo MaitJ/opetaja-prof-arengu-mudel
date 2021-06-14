@@ -10,6 +10,8 @@ import Profile from "./Profile.js";
 import Contact from "./Contact.js";
 import Oppematerjal from "./Oppematerjal.js";
 import MuudaProfiili from "./MuudaProfiili.js";
+import OppematerjalidKuvamine from "./OppematerjalidKuvamine.js";
+import Teated from "./Teated.js";
 
 const Routes = () => {
 
@@ -18,7 +20,7 @@ const Routes = () => {
             <div>
                 <Header />
                 <Switch>
-                <Route exact path="/" component={Home} />
+                <Route exact path="/" component={Teated} />
                 <Route exact path="/about" component={About} />
                 <Route exact path="/profile" component={Profile} />
                 <Route exact path="/kysimustikud" component={KysimustikuValik} />
@@ -27,6 +29,7 @@ const Routes = () => {
                 <Route exact path='/contact' component={Contact} />
                 <Route exact path='/lisa-oppematerjal' component={Oppematerjal} />
                 <Route exact path='/muudaprofiili' component={MuudaProfiili} />
+                <Route exact path='/oppematerjalid' component={OppematerjalidKuvamine} />
                 </Switch>
             </div>
         </BrowserRouter>
