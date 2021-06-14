@@ -3,7 +3,7 @@ const db = require('./database').db;
 exports.getKasutaja = (req, res) => {
   if (req.body.kasutajaid !== undefined) {
     const kasutajaid = req.body.kasutajaid;
-    db.query(`SELECT * FROM profiil WHERE kasutaja_id=${kasutajaid}`, (error, results, fields) => {
+    db.query(`SELECT * FROM Profiil WHERE kasutaja_id=${kasutajaid}`, (error, results, fields) => {
         if (error) {
         console.log("ERROR: " + error);
         throw error;
@@ -22,7 +22,7 @@ exports.getKasutaja = (req, res) => {
             andmed.kasutajaroll = results[0].rolli_nimi;
         });
 
-        db.query(`SELECT email FROM kasutaja WHERE kasutaja_id=${kasutajaid}`, (error, results) => {
+        db.query(`SELECT email FROM Kasutaja WHERE kasutaja_id=${kasutajaid}`, (error, results) => {
         if (error) {
             console.log(error);
             throw error;
@@ -46,7 +46,7 @@ exports.kirjutaVastused = (req, res, next) => {
 
     //INSERT INTO eneseanalyys (eneseanalyys_tekst) VALUES (kysimusteVastused[i].eneseanalyys);
 
-    db.query('SELECT MAX(eneseanalyys_id) AS eneseanalyys_count FROM eneseanalyys;', (error, result, fields) => {
+    db.query('SELECT MAX(eneseanalyys_id) AS eneseanalyys_count FROM eneseanalyys', (error, result, fields) => {
       if (error) throw error;
       let eneseanalyys_count = result[0].eneseanalyys_count + 1;
 
@@ -82,9 +82,11 @@ exports.kirjutaVastused = (req, res, next) => {
             }
             console.log(tagasiside);
 
-            db.query(`INSERT INTO kysimusteplokk_tagasiside (protsentuaalne_tulemus, profiil_kysimustik_id, tagasiside_id)
+            db.query(`INSERT INTO KysimustePlokk_Tagasiside (protsentuaalne_tulemus, profiil_kysimustik_id, tagasiside_id)
             VALUES ?`, [tagasiside],  (error, result, fields) => {
               if (error) throw error;
+              req.status = 1;
+              next();
             })
         })
 
@@ -108,7 +110,7 @@ exports.tekitaVastused = (req, res, next) => {
   if (req.body.kasutaja_id !== undefined && req.body.kysimustik_id !== undefined) {
     const kasutaja_id = req.body.kasutaja_id;
     const kysimustik_id = req.body.kysimustik_id;
-    db.query(`SELECT profiil_id FROM profiil WHERE kasutaja_id=${kasutaja_id}`, (error, results) => {
+    db.query(`SELECT profiil_id FROM Profiil WHERE kasutaja_id=${kasutaja_id}`, (error, results) => {
       if(error) throw error;
       var profiil_id;
       console.log("REULTSES: " + results[0].profiil_id);
@@ -216,11 +218,12 @@ exports.getFeedback = (req, res, next) => {
 
     console.log("percentage: " + percentage + " questionblock_id: " + questionblock_id);
 
-    db.query(`SELECT tagasiside_id, tagasiside_tekst FROM tagasiside WHERE kysimusteplokk_id=${questionblock_id} AND ${percentage} >= vahemikMin AND ${percentage} <= vahemikMax`,
+    db.query(`SELECT tagasiside_id, tagasiside_tekst FROM Tagasiside WHERE kysimusteplokk_id=${questionblock_id} AND ${percentage} >= vahemikMin AND ${percentage} <= vahemikMax`,
     (error, results, fields) => {
       if (error) throw error;
 
-      if (results[0].tagasiside_tekst !== undefined) {
+      //Fix this please
+      if (results !== undefined) {
         
         req.data = {tagasiside_tekst: results[0].tagasiside_tekst, tagasiside_id: results[0].tagasiside_id};
       } else {
@@ -246,7 +249,7 @@ exports.saveFeedback = (req, res) => {
     const protsent = req.body.protsentuaalne_tagasiside;
     const profiil_kysimustik_id = req.body.profiil_kysimustik_id;
     const tagasiside_id = req.body.tagasiside_id;
-    db.query(`INSERT INTO kysimusteplokk_tagasiside (protsentuaalne_tulemus, profiil_kysimustik_id, tagasiside_id)
+    db.query(`INSERT INTO KysimustePlokk_Tagasiside (protsentuaalne_tulemus, profiil_kysimustik_id, tagasiside_id)
     VALUES (${protsent}, ${profiil_kysimustik_id}, ${tagasiside_id})`, (error, result, fields) => {
       if (error) throw error;
     })

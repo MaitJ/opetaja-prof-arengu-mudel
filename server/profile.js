@@ -23,7 +23,7 @@ exports.changeProfile = (req, res) => {
   var lastName = req.body.lastName;
   var kasutajaid = req.body.userid;
 
-  db.query(`SELECT * FROM profiil WHERE kasutaja_id=${kasutajaid}`, (error, results) => {
+  db.query(`SELECT * FROM Profiil WHERE kasutaja_id=${kasutajaid}`, (error, results) => {
     if (error) {
       throw error;
     }
@@ -41,12 +41,12 @@ exports.changeProfile = (req, res) => {
       lastName = results[0].perenimi;
     }
 
-    db.query(`SELECT email FROM kasutaja WHERE kasutaja_id=${kasutajaid}`, (error, results) => {
+    db.query(`SELECT email FROM Kasutaja WHERE kasutaja_id=${kasutajaid}`, (error, results) => {
       if(email == "") {
         email = results[0].email;
       }
 
-      db.query(`UPDATE kasutaja SET email='${email}' WHERE kasutaja_id=${kasutajaid}`, (err, result) => {
+      db.query(`UPDATE Kasutaja SET email='${email}' WHERE kasutaja_id=${kasutajaid}`, (err, result) => {
         //check('email', 'Email on sisestamata!').notEmpty();
         //check('email', 'Email ei ole korralik!').isEmail();
         //check('password', 'Salasona vali on tyhi!').notEmpty();
@@ -62,7 +62,7 @@ exports.changeProfile = (req, res) => {
         //   //res.send({message: "Midagi laks valesti!"});
         // }
     
-        db.query(`UPDATE profiil SET telefon='${phone}', tookoht='${job}', eesnimi='${firstName}', perenimi='${lastName}' WHERE kasutaja_id=${kasutajaid} `, (error, result) => {
+        db.query(`UPDATE Profiil SET telefon='${phone}', tookoht='${job}', eesnimi='${firstName}', perenimi='${lastName}' WHERE kasutaja_id=${kasutajaid} `, (error, result) => {
           if (error) {
             console.log(error);
             throw error;
@@ -93,15 +93,14 @@ exports.uploadImage = async (req, res) => {
   //const imageName = req.file.filename;
   const userid = req.body.userid;
 
-  console.log(userid);
 
-  db.query(`UPDATE profiil SET profiilipilt='${imageName}' WHERE kasutaja_id=${userid}`, (error, result) => {
+  db.query(`UPDATE Profiil SET profiilipilt='${imageName}' WHERE kasutaja_id=${userid}`, (error, result) => {
     if(error) {
       console.log(error);
       throw error;
     }
 
-    db.query(`SELECT profiilipilt FROM profiil WHERE kasutaja_id=${userid}`, (error, result) => {
+    db.query(`SELECT profiilipilt FROM Profiil WHERE kasutaja_id=${userid}`, (error, result) => {
       if(error) {
         throw error;
       } else {

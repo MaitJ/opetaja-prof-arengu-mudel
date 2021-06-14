@@ -1,7 +1,7 @@
 const mysql = require('mysql');
 
 exports.db = mysql.createConnection({
-  user: "root",
+  user: "opprofmudeluser",
   host: "localhost",
   password: "admin",
   database: "opetajaprofareng"
