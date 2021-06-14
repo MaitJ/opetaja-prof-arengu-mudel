@@ -130,11 +130,8 @@ const Profile = () => {
                 <NavLink className="profile-button" to="/">Minu küsimustikud</NavLink>
                 <NavLink className="profile-button" to='/muudaprofiili'>Muuda profiili</NavLink>
             </section>
-            <section className="profile-data-header">
-            </section>
-            <section className="profile-data-1">
+            <section className="profile-container-1">
                 <h1 className="profiil">Profiil</h1>
-            </section>
             <section className="profile-edit-data">
                 <label>
                 <h3>Eesnimi</h3>

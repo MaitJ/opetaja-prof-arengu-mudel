@@ -79,6 +79,9 @@ const KysimustikuValik = () => {
 
     return(
         <section className="profile-kysimustik">
+            <Switch>
+                <Profilecard/>
+            </Switch>
             <section className="kysimustik-container">
                 <React.Fragment>
                     {selectedKysimustik === 0 ? kuvaKysimustikud() : kuvaKysimustik(selectedKysimustik)}
