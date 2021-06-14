@@ -12,6 +12,7 @@ const token = require('./token');
 const profile = require('./profile')
 const fileUpload = require('./fileUpload')
 const contact = require('./contact.js')
+//const path = require('path');
 
 app.use(express.json());
 app.use(express.urlencoded({
@@ -26,7 +27,7 @@ app.use(respond);
 
 
 //Kysimustik routes
-app.post('/getKasutaja', routes.getKasutja);
+app.post('/getKasutaja', routes.getKasutaja);
 app.post('/kirjutaVastused', routes.kirjutaVastused, routes.kirjutaVastusedHandler);
 app.post('/tekitaKysimustik', routes.tekitaVastused, routes.tekitaVastusedHandler);
 app.post('/getKysimused', routes.getKysimused, routes.getKysimusedHandler);
@@ -50,10 +51,11 @@ app.delete('/logout', (req, res) => {
 
 //Profile routes
 app.post('/changeprofile', profile.changeProfile);
-app.post('/uploadimage', profile.uploadImage);
+app.post('/uploadimage', profile.upload.single("file"), profile.uploadImage);
 
 //Oppematerjalid
-app.post("/uploadfile", fileUpload.uploadFile);
+app.post("/uploadfile", fileUpload.upload.single("file"), fileUpload.uploadFile);
+app.post("/getOppematerjalid", fileUpload.getOppematerjalid);
 
 router.post("/contact", contact.contactRoute);
 

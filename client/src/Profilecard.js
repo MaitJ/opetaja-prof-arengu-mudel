@@ -16,6 +16,7 @@ const Profilecard = () => {
 
     const {userId} = useUserContext();
     const [profiilAndmed, setProfiilAndmed] = useState({});
+    const [havePicture, setHavePicture] = useState(false);
     //const [imageAddr, setImageAddr] = useState("");
 
     useEffect(() => {
@@ -28,28 +29,39 @@ const Profilecard = () => {
                 console.log(error);
             })
         }
+
+       
         
     }, [userId]);
 
     const ImageAddr = "uploads/images/" + profiilAndmed.profilepicture + ".jpg";
-
-    // useEffect(() => {
-    //     console.log(profiilAndmed);
-    // }, [profiilAndmed]);
+    const defaultImageAddr = "uploads/images/defaultpic.png";
 
     useEffect(() => {
-        console.log(profiilAndmed);
+        if(profiilAndmed !== undefined) {
+            console.log("PROFILEPIC: " + profiilAndmed.profilepicture);
+            if(profiilAndmed.profilepicture != null || profiilAndmed.profilepicture != undefined) {
+                setHavePicture(true);
+            }
+        }
     }, [profiilAndmed]);
+
+    // useEffect(() => {
+        
+    // }, [profiilAndmed]);
+
+
+    console.log(havePicture);
 
     return(
         <React.Fragment>
             <section className="profile-card">
-                <img src={process.env.PUBLIC_URL + ImageAddr} alt='profilepic'></img>
+                {havePicture ? <img src={process.env.PUBLIC_URL + ImageAddr} alt='profilepic'></img> : <img src={process.env.PUBLIC_URL + defaultImageAddr} alt='profilepic'></img>} 
                 <h2>{profiilAndmed.eesnimi} {profiilAndmed.perenimi}</h2>
                 <h4>{profiilAndmed.kasutajaroll}</h4>
                 <br/>
                 <NavLink className="profile-button" to="/profile">Profiil</NavLink>
-                <NavLink className="profile-button" to="/lisa-oppematerjal">Õppematerjalid</NavLink>
+                <NavLink className="profile-button" to="/oppematerjalid">Õppematerjalid</NavLink>
                 <NavLink className="profile-button" to="/">Minu küsimustikud</NavLink>
                 <NavLink className="profile-button" to='/muudaprofiili'>Muuda profiili</NavLink>
             </section>

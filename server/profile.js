@@ -1,14 +1,18 @@
 const db = require('./database').db;
-const multer = require('multer')
+const multer = require('multer');
+const path = require('path');
+const sharp = require('sharp');
 
-const upload = multer({storage: storage}).single("profilepic");
+//const upload = multer({storage: storage}).single("profilepic");
 
 var storage = multer.diskStorage({
-  destination: __dirname + '/uploads/images',
+  destination: path.resolve(__dirname, ".","../../client/public/uploads/images"),
   filename: function (req, file, cb) {
     cb(null, file.fieldname + '-' + Date.now() + '.png')
   }
 })
+
+exports.upload = multer({storage: storage});
 
 exports.changeProfile = (req, res) => {
   var email = req.body.email;
@@ -71,32 +75,41 @@ exports.changeProfile = (req, res) => {
   })
 };
 
-exports.uploadImage = (req, res) => {
-  upload(req, res, function(err) {
-    const imageName = req.file.filename;
-    const userid = req.body;
+exports.uploadImage = async (req, res) => {
+  console.log(req.file);
+  const { filename: image } = req.file;
+  const imageName = "profilepic-"+Date.now();
 
-    if(err) {
-      return res.end("Error uploading file.");
-    }
-    res.end("File is uploaded");
-
-    console.log(userid);
-
-    db.query(`UPDATE profiil SET profiilipilt='${imageName}' WHERE kasutaja_id=${userid}`, (error, result) => {
-      if(error) {
-        console.log(error);
-        throw error;
-      }
+  await sharp(req.file.path)
+  .resize(300, 300)
+  .jpeg({quality: 50}).toFile("../client/public/uploads/images/"+ imageName +  ".jpg");
+  // .toFile(
+  //   path.resolve(req.file.destination,'resized',image)
+  // )
   
-      db.query(`SELECT profiilipilt FROM profiil WHERE kasutaja_id=${userid}`, (error, result) => {
-        if(error) {
-          throw error;
-        } else {
-          var image = result[0].profiilipilt;
-          res.status(204).json({image: image});
-        }
-      })
+  // sharp(req.file.path).resize(500).jpeg({quality: 50}).toFile(path.resolve(req.file.destination,'resized',image));
+  // fs.unlinkSync(req.file.path);
+
+  //const imageName = req.file.filename;
+  const userid = req.body.userid;
+
+  console.log(userid);
+
+  db.query(`UPDATE profiil SET profiilipilt='${imageName}' WHERE kasutaja_id=${userid}`, (error, result) => {
+    if(error) {
+      console.log(error);
+      throw error;
+    }
+
+    db.query(`SELECT profiilipilt FROM profiil WHERE kasutaja_id=${userid}`, (error, result) => {
+      if(error) {
+        throw error;
+      } else {
+        let data = {};
+        data.image = result[0].profiilipilt;
+        //var image = result[0].profiilipilt;
+        res.send(data);
+      }
     })
   })
 };
