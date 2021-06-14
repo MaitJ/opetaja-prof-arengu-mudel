@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-
 input[type=text],input[type=email], input[type=password], input[type=tel] {
     display: block;
     justify-content: center;
@@ -37,17 +36,6 @@ input[type=text],input[type=email], input[type=password], input[type=tel] {
     margin-bottom: 16px; 
 }
 
-.contact{
-    display: block;
-    margin-right: 50px;
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    margin-bottom: 50vh;
-    margin-top: 10vh;
-    border-radius: 10px;
-}
-
 .contact-button {
     background-color: #459157;
     color: white;
@@ -59,6 +47,10 @@ input[type=text],input[type=email], input[type=password], input[type=tel] {
 
 .contact-button:hover{
     background-color: #45a049;
+}
+
+.contact-heading{
+    font-size: 30px;
 }
 
 body {
@@ -88,14 +80,14 @@ body {
     font-size: 20px;
     transition: 0.5s;
 }
-.navbar-content div:hover:not(.notif-section, .notif-content) {
+.navbar-content #nav-item:hover {
     transform: translateY(-3px);
     text-decoration: underline;
 }
 
 /* profiil + profile-card css */
 /* Hamburger ? */
-@media only screen and (max-width: 770px) {
+@media only screen and (max-width: 776px) {
     #hamburger-icon {
         display: block;
     }
@@ -107,11 +99,11 @@ body {
     }
 }
 
-@media only screen and (min-width: 771px) {
+@media only screen and (min-width: 777px) {
     #hamburger-icon {
         display: none;
     }
-    #hamburgerGone {
+    .hamburger-menu {
         display: none;
     }
 }
@@ -125,9 +117,20 @@ body {
     opacity: 0.7;
 }
 
-#hamburgerGone {
-    display: none;
-    color: white;
+.hamburger-menu {
+    display: block;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1;
+    font-size: 1.5rem;
+    background-color: rgb(1, 105, 62);
+}
+.hamburger-menu div:hover {
+    background-color: rgb(1, 90, 56);
+}
+.hamburger-menu div {
+    padding: 2rem;
 }
 
 .profile-data-header{
@@ -136,26 +139,23 @@ body {
 
 .profiil{
     font-size: 50px;
+    margin: auto;
 }
 
-.profile-data{
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+.profile-data-1{
     text-align: left;
-    padding: 20px;
-    margin-bottom: 30px;
-    border-radius: 10px 10px 10px 10px;
-    width: 60vw;
 }
 
-.profile-edit-data{
+.profile-container-1, .profile-data-1{
+    margin-top: 20px;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    text-align: left;
     padding: 20px;
     margin-bottom: 30px;
-    border-radius: 10px 10px 10px 10px;
-    width: 60vw;
+    border-radius: 10px;
+    min-width: 50vw;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .profile-card{
@@ -191,9 +191,10 @@ img {
 }
 
 .back-button{
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-decoration: none;
     border-radius: 12px;
-    outline: 0;
     display: inline-block;
     padding: 8px;
     color: white;
@@ -201,7 +202,6 @@ img {
     text-align: center;
     cursor: pointer;
     font-size: 22px;
-    width: 15%;
 }
 
 /* css et kõik lehed profile-card-ga töötaks*/
@@ -211,7 +211,7 @@ img {
     flex-wrap: wrap;
 }
 
-.back-button-container, .about, .profile-data, .profile-edit-data, .contact, .kysimustik-container{
+.back-button-container, .about, .profile-data, .profile-edit-data, .contact, .kysimustik-container, .oppematerjal-container-1{
     flex: 70%;
 }
 
@@ -222,7 +222,7 @@ img {
     font-weight: 800;
 }
 
-.row {
+/* .row {
     background-color: white;
     border-radius: 12px;
     padding-top: 20px;
@@ -232,7 +232,7 @@ img {
     margin-right: auto;
     margin-top: 120px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
+} */
 
 .files input {
     outline: 2px dashed #92b0b3;
@@ -273,6 +273,7 @@ img {
 }
 
 .upload-files-button{
+    margin-top: 20px;
     border: none;
     border-radius: 8px;
     outline: 0;
@@ -290,15 +291,30 @@ img {
     opacity: 0.7;
 }
 
-.kysimustik-container, .about{
-    margin-right: 50px;
-    margin-left: 50px;
+.contact, .oppematerjal-container-1, .kysimustik-container, .about{
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 70%;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    margin-bottom: 50vh;
-    margin-top: 10vh;
     border-radius: 10px;
+    font-size: 1.5rem;
+}
+
+.contact{
+    margin-bottom: 30vh;
+}
+
+.kysimustik-container, .about{
+    margin-bottom: 60vh;
+}
+
+.oppematerjal-container-1{
+    margin-bottom: 20vh;
 }
 
 .profile-edit-data{
@@ -308,7 +324,6 @@ img {
 .profile-edit-data, label, .email-input {
 display: block;
 }
-
 
 @media screen and (min-width: 480px) {
     .register {
@@ -339,21 +354,80 @@ display: block;
     .profile-data, .profile-edit-data, .kysimustik-container, .about{
       margin: 0 auto;
     }
-    
+
     .contact{
         margin: auto;
     }
   }
   
+
   /* My profile elements */
+
+  .dropdown {
+    display: inline-block;
+    background-color: #eeeeee;
+    position: absolute;
+    right: 1rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    top: 8vh;
+
+}
+.dropdown div{
+    font-size: 1em;
+}
+.dropdown #drop-1 {
+    border-radius: 15px 15px 0 0;
+}
+.dropdown #drop-2 {
+    border-top: 1px solid rgba(65, 65, 65, 0.39);
+}
+.dropdown #drop-3 {
+    border-top: 1px solid rgba(65, 65, 65, 0.39);
+    border-radius: 0 0 15px 15px;
+}
+.dropdown button {
+    font-size: 1rem;
+    padding: 1rem;
+    width: 10rem;
+    background: none;
+    border: none;
+}
+.dropdown button:active {
+    color: rgb(65, 65, 65);
+}
+.dropdown div:hover {
+    cursor: pointer;
+    background-color: #b8b8b8;
+    transition: 0.3s;
+}
+
+.notifications {
+    position: absolute;
+    background-color: rgb(233, 233, 233);
+    text-align: center;
+    padding: 10px;
+    right: 3.5rem;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    color: rgb(65, 65, 65);
+}
+
 .profile-elements {
     display: flex;
     margin-right: 20px;
+    align-items: center;
+}
+#profile-1 {
+    align-items: center;
+}
+#profile-2 {
+    display: flex;
 }
 #dropdown-button {
     display: flex;
     align-items: center;
-    font-size: 2em;
+    font-size: 2rem;
     padding: 0;
 }
 #notification-button {
@@ -381,10 +455,6 @@ display: block;
       cursor: pointer;
       opacity: 0.7;
   }
-/* Dropdown section pooleli */
-.dropdown {
-    display: none;
-}
 
 /* küsimustiku css */
   #arrow-icon {
@@ -471,8 +541,6 @@ display: block;
     background-color: #b8b8b8;
 }
 
-/* Notification bell */
-
 #profile-button {
     display: flex;
     background: none;
@@ -490,3 +558,49 @@ display: block;
     background-color: rgb(235, 235, 235);
     box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
 }
+
+.hidden {
+    display: none;
+}
+
+@media screen and (min-width: 480px) {
+    .register {
+      padding: 60px 0;
+    }
+  
+    .register form {
+      margin: 0 auto;
+      max-width: 320px;
+    }
+  }
+
+  @media (max-width: 800px) {
+
+    .profile-card, .kysimustik-container{
+        min-width: 100%;
+    }
+
+    .profile-button{
+        min-width: 97.9%;
+    }
+
+    .profile-container {   
+      flex-direction: flex;
+      flex-wrap: wrap;
+    }
+
+    .profile-card, .about, .profile-data-header, .contact, .kysimustik-container, .oppematerjal-container-1, .profile-container-1 {
+      flex: 100%;
+      min-width: 100%;
+      margin: auto;
+    }
+  
+    .profile-data, .profile-edit-data, .kysimustik-container, .about{
+      margin: 0 auto;
+    }
+    
+    .contact{
+        margin: auto;
+    }
+  }
+  

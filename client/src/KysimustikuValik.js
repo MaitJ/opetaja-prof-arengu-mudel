@@ -63,6 +63,7 @@ const KysimustikuValik = () => {
                             <article className="kysimustik">
                                 <h5>{kysimustik_pealkiri}</h5>
                                 <button className="kysimustik-button" onClick={() => kysimustikuNupp(kysimustik_id)}>Täida</button>
+                                <br />
                             </article>
                         );
                     })
@@ -79,6 +80,9 @@ const KysimustikuValik = () => {
 
     return(
         <section className="profile-kysimustik">
+            <Switch>
+                <Profilecard/>
+            </Switch>
             <section className="kysimustik-container">
                 <React.Fragment>
                     {selectedKysimustik === 0 ? kuvaKysimustikud() : kuvaKysimustik(selectedKysimustik)}

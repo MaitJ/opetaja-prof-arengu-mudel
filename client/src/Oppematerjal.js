@@ -9,6 +9,8 @@ import {useUserContext} from './userContext';
 const Oppematerjal = () =>  {
 
   const [selectedFile, setSelectedFile] = useState();
+  const [fileTitle, setFileTitle] = useState();
+  const [fileDescription, setFileDescription] = useState();
 
   const {userId} = useUserContext();
   
@@ -42,44 +44,35 @@ const Oppematerjal = () =>  {
     return true;
   }
 
-  const fileUpload = () => {
+  const fileUpload = (e) => {
+        
+    e.preventDefault();
+    let data = new FormData();
 
-    let formData = new FormData();
+    data.append("file", selectedFile);
+    data.append("userid", userId);
+    data.append("title", fileTitle);
+    data.append("desc", fileDescription);
 
-    formData.append("File", selectedFile);
+    console.log(data.get("file"));
 
-    console.log(formData.get("File"));
+    console.log("SEE ON KASUTAJAID JAH: " + userId);
 
-    // const token = getAccessToken();
-
-    // const {id} = jwtDecode(token);
-
-    axios.post('http://localhost:3001/uploadfile', {
-        headers: { "Content-Type": "multipart/form-data" },
-        data: formData,
-        userid: userId
-    }).then((response) => {
-        console.log("SEE ON RESPONSE: " + JSON.stringify(response.data));
+    fetch("http://localhost:3001/uploadfile", {
+        method: "POST",
+        body: data,
+    })
+    .then((result) => {
+        console.log("File Sent Successful");
+        console.log(result.data + "ON KASUTAJA DATA");
+    })
+    .catch((err) => {
+        console.log(err);
     });
-}
 
-  // onChangeHandler=event=>{
-  //   var files = event.target.files
-  //   if(this.maxSelectFile(event) && this.checkMimeType(event)){ 
-  //      this.setState({
-  //      selectedFile: files,
-  //      loaded:0
-  //   })
-  // }
-  //}
-  // onClickHandler = () => {
-  //   const data = new FormData() 
-  //   for(var x = 0; x<this.state.selectedFile.length; x++) {
-  //     data.append('file', this.state.selectedFile[x])
-  //   }
-  //   axios.post("http://localhost:3001/kuhuiganes", data, {
-  //   })
-  //   }
+  }
+
+ 
 
 
     return (
@@ -87,26 +80,28 @@ const Oppematerjal = () =>  {
         <Switch>
           <Profilecard/>
         </Switch>
+      <section className="oppematerjal-container-1">
       <div class="back-button-container">
-        <NavLink className="back-button" to="/profile">Tagasi õppematerjalidesse</NavLink>
+        <NavLink className="back-button" to="/oppematerjalid">Tagasi õppematerjalidesse</NavLink>
         <div class="oppematerjal-container">
             <div class="row">
-              <form action='http://localhost:3001/uploadfile' method='post' encType="multipart/form-data">
+              <form onSubmit={fileUpload} encType="multipart/form-data">
                 <label className="oppematerjal-label">Lae üles enda õppematerjalid </label>
                   <div class="form-group files">
                     <input className="choose-files" type="file" name='oppematerjal' multiple onChange={e => {onFileChange(e)}}/>
                   </div>  
                 <label for="text">Õppematerjali pealkiri</label>
-                <input type="text" id="title" name="title"></input>
+                <input type="text" id="title" name="title" onChange={e => {setFileTitle(e.target.value)}}></input>
                 <label for="text">Õppematerjali kirjeldus</label>
-                <textarea id="description" name="description" rows="6" cols="80"></textarea>
+                <textarea id="description" name="description" rows="6" cols="80" onChange={e => {setFileDescription(e.target.value)}}></textarea>
                 <div class="form-group"> 
-                  <button className="upload-files-button" type="submit" onClick={fileUpload}>Lae üles</button>
+                  <button className="upload-files-button" type="submit">Lae üles</button>
                 </div>
               </form>
             </div>
           </div>
         </div>
+        </section>
       </section>
   )
 }  

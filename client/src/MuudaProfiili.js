@@ -28,6 +28,7 @@ const Profile = () => {
     //const [profiilAndmed, setProfiilAndmed] = useState({});
     const [profilePic, setProfilePic] = useState({});
     const [imageAddr, setImageAddr] = useState();
+    const [havePicture, setHavePicture] = useState(false);
 
     const {userId} = useUserContext();
 
@@ -71,11 +72,17 @@ const Profile = () => {
     }, [userId]);
 
     const ImageAddr = "uploads/images/" + profiilAndmed.profilepicture + ".jpg";
+    const defaultImageAddr = "uploads/images/defaultpic.png";
         
 
-    // // useEffect(() => {
-    //     console.log(profilePic);
-    // }, [profilePic]);
+    useEffect(() => {
+        if(profiilAndmed !== undefined) {
+            console.log("PROFILEPIC: " + profiilAndmed.profilepicture);
+            if(profiilAndmed.profilepicture != null || profiilAndmed.profilepicture != undefined) {
+                setHavePicture(true);
+            }
+        }
+    }, [profiilAndmed]);
 
     const onFileChange = (e) => {
         setSelectedFile(e.target.files[0]);
@@ -97,7 +104,7 @@ const Profile = () => {
             }
             
             //history.push("/login");
-            //window.location.reload();
+            window.location.reload();
         }, (error) => {
             console.log(error);
             setChangeStatus("Midagi läks valesti!");
@@ -117,7 +124,7 @@ const Profile = () => {
            <section className="profile-card">
                 {/* <img src='https://via.placeholder.com/300.png/09f/fff' alt='profilepic'></img> */}
                 <form onSubmit={fileUpload} encType="multipart/form-data">
-                    <img src={ImageAddr} alt='profilepic'></img>
+                {havePicture ? <img src={process.env.PUBLIC_URL + ImageAddr} alt='profilepic'></img> : <img src={process.env.PUBLIC_URL + defaultImageAddr} alt='profilepic'></img>} 
                     <input type='file' onChange={e => {onFileChange(e)}}/>
                     {/* <input type="text" value={userId} /> */}
                     <button id='changepic' className='reg-but' type='submit'>Muuda pilti</button>
@@ -130,11 +137,8 @@ const Profile = () => {
                 <NavLink className="profile-button" to="/">Minu küsimustikud</NavLink>
                 <NavLink className="profile-button" to='/muudaprofiili'>Muuda profiili</NavLink>
             </section>
-            <section className="profile-data-header">
-            </section>
-            <section className="profile-data-1">
+            <section className="profile-container-1">
                 <h1 className="profiil">Profiil</h1>
-            </section>
             <section className="profile-edit-data">
                 <label>
                 <h3>Eesnimi</h3>
@@ -160,7 +164,6 @@ const Profile = () => {
                 <button id="register-button" className="reg-but" type='submit' onClick={changeProfile}>Salvesta</button>
                 <h5>{changeStatus}</h5>
             </section>
-        </section>
         </section>
     );
 
