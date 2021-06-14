@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-
 input[type=text],input[type=email], input[type=password], input[type=tel] {
     display: block;
     justify-content: center;
@@ -37,17 +36,6 @@ input[type=text],input[type=email], input[type=password], input[type=tel] {
     margin-bottom: 16px; 
 }
 
-.contact{
-    display: block;
-    margin-right: 50px;
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    margin-bottom: 50vh;
-    margin-top: 10vh;
-    border-radius: 10px;
-}
-
 .contact-button {
     background-color: #459157;
     color: white;
@@ -59,6 +47,10 @@ input[type=text],input[type=email], input[type=password], input[type=tel] {
 
 .contact-button:hover{
     background-color: #45a049;
+}
+
+.contact-heading{
+    font-size: 30px;
 }
 
 body {
@@ -147,26 +139,23 @@ body {
 
 .profiil{
     font-size: 50px;
+    margin: auto;
 }
 
-.profile-data{
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+.profile-data-1{
     text-align: left;
-    padding: 20px;
-    margin-bottom: 30px;
-    border-radius: 10px 10px 10px 10px;
-    width: 60vw;
 }
 
-.profile-edit-data{
+.profile-container-1, .profile-data-1{
+    margin-top: 20px;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    text-align: left;
     padding: 20px;
     margin-bottom: 30px;
-    border-radius: 10px 10px 10px 10px;
-    width: 60vw;
+    border-radius: 10px;
+    min-width: 50vw;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .profile-card{
@@ -202,9 +191,10 @@ img {
 }
 
 .back-button{
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-decoration: none;
     border-radius: 12px;
-    outline: 0;
     display: inline-block;
     padding: 8px;
     color: white;
@@ -212,7 +202,6 @@ img {
     text-align: center;
     cursor: pointer;
     font-size: 22px;
-    width: 15%;
 }
 
 /* css et kõik lehed profile-card-ga töötaks*/
@@ -222,7 +211,7 @@ img {
     flex-wrap: wrap;
 }
 
-.back-button-container, .about, .profile-data, .profile-edit-data, .contact, .kysimustik-container{
+.back-button-container, .about, .profile-data, .profile-edit-data, .contact, .kysimustik-container, .oppematerjal-container-1{
     flex: 70%;
 }
 
@@ -233,7 +222,7 @@ img {
     font-weight: 800;
 }
 
-.row {
+/* .row {
     background-color: white;
     border-radius: 12px;
     padding-top: 20px;
@@ -243,7 +232,7 @@ img {
     margin-right: auto;
     margin-top: 120px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
+} */
 
 .files input {
     outline: 2px dashed #92b0b3;
@@ -284,6 +273,7 @@ img {
 }
 
 .upload-files-button{
+    margin-top: 20px;
     border: none;
     border-radius: 8px;
     outline: 0;
@@ -301,15 +291,30 @@ img {
     opacity: 0.7;
 }
 
-.kysimustik-container, .about{
-    margin-right: 50px;
-    margin-left: 50px;
+.contact, .oppematerjal-container-1, .kysimustik-container, .about{
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 70%;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    margin-bottom: 50vh;
-    margin-top: 10vh;
     border-radius: 10px;
+    font-size: 1.5rem;
+}
+
+.contact{
+    margin-bottom: 30vh;
+}
+
+.kysimustik-container, .about{
+    margin-bottom: 60vh;
+}
+
+.oppematerjal-container-1{
+    margin-bottom: 20vh;
 }
 
 .profile-edit-data{
@@ -319,7 +324,6 @@ img {
 .profile-edit-data, label, .email-input {
 display: block;
 }
-
 
 @media screen and (min-width: 480px) {
     .register {
@@ -356,6 +360,7 @@ display: block;
     }
   }
   
+
   /* My profile elements */
 
   .dropdown {
@@ -553,6 +558,49 @@ display: block;
     background-color: rgb(235, 235, 235);
     box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
 }
+
 .hidden {
     display: none;
 }
+
+@media screen and (min-width: 480px) {
+    .register {
+      padding: 60px 0;
+    }
+  
+    .register form {
+      margin: 0 auto;
+      max-width: 320px;
+    }
+  }
+
+  @media (max-width: 800px) {
+
+    .profile-card, .kysimustik-container{
+        min-width: 100%;
+    }
+
+    .profile-button{
+        min-width: 97.9%;
+    }
+
+    .profile-container {   
+      flex-direction: flex;
+      flex-wrap: wrap;
+    }
+
+    .profile-card, .about, .profile-data-header, .contact, .kysimustik-container, .oppematerjal-container-1, .profile-container-1 {
+      flex: 100%;
+      min-width: 100%;
+      margin: auto;
+    }
+  
+    .profile-data, .profile-edit-data, .kysimustik-container, .about{
+      margin: 0 auto;
+    }
+    
+    .contact{
+        margin: auto;
+    }
+  }
+  

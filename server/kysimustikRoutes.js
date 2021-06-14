@@ -1,6 +1,6 @@
 const db = require('./database').db;
 
-exports.getKasutja = (req, res) => {
+exports.getKasutaja = (req, res) => {
   if (req.body.kasutajaid !== undefined) {
     const kasutajaid = req.body.kasutajaid;
     db.query(`SELECT * FROM profiil WHERE kasutaja_id=${kasutajaid}`, (error, results, fields) => {
@@ -13,6 +13,8 @@ exports.getKasutja = (req, res) => {
         andmed.perenimi = results[0].perenimi;
         andmed.telefon = results[0].telefon;
         andmed.tookoht = results[0].tookoht;
+        andmed.profilepicture = results[0].profiilipilt;
+        andmed.oppematerjal = results[0].oppematerjal;
         const kasutajaroll_id = results[0].kasutajaroll_id;
 
         db.query(`SELECT rolli_nimi FROM Kasutajaroll WHERE kasutajaroll_id=${kasutajaroll_id}`, (error, results, fields) => {
