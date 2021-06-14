@@ -46,7 +46,7 @@ exports.loginRoute = async (req, res) => {
 
   const hash = await hashPassword(password);
 
-  db.query("SELECT * FROM kasutaja WHERE email = ?",
+  db.query("SELECT * FROM Kasutaja WHERE email = ?",
   [email], (err, results) => {
     if (results.length === 0) {
       return res.status(400).json({msg: "Kasutajat ei leitud"});
@@ -94,7 +94,7 @@ exports.refreshToken = (req, res) => {
   console.log("email: " + email[0]);
   console.log(JSON.stringify(email));
 
-  db.query("SELECT * FROM kasutaja WHERE email = ?",
+  db.query("SELECT * FROM Kasutaja WHERE email = ?",
   [email], (err, results) => {
     if (err) {
       throw err;
@@ -188,7 +188,7 @@ exports.register = async (req, res) => {
     db.beginTransaction(function(err) {
       if(err) {throw err; }
     })
-      db.query("INSERT INTO kasutaja (email, salasona) VALUES (?, ?)", [email, hash], (err, result) => {
+      db.query("INSERT INTO Kasutaja (email, salasona) VALUES (?, ?)", [email, hash], (err, result) => {
         check('email', 'Email on sisestamata!').notEmpty();
         check('email', 'Email ei ole korralik!').isEmail();
         check('password', 'Salasona vali on tyhi!').notEmpty();
@@ -197,18 +197,18 @@ exports.register = async (req, res) => {
           return res.status(400).json({ errors: errors.array() });
         }
         if(err) {
-          res.send({err: err});
+          return res.send({err: err});
         }
         if (result != null) {
           res.send(result);
         } else {
-          res.send({message: "Vale email / salasona!"});
+          return res.send({message: "Vale email / salasona!"});
         }
       
 
       var kasutajaID = result.insertId;
 
-      db.query("INSERT INTO profiil (eesnimi, perenimi, kasutaja_id, telefon, tookoht, kasutajaroll_id) VALUES (?, ?, ?, ?, ?, ?)", [firstName, lastName, kasutajaID, phone, job, 1], (err, result) => {
+      db.query("INSERT INTO Profiil (eesnimi, perenimi, kasutaja_id, telefon, tookoht, kasutajaroll_id) VALUES (?, ?, ?, ?, ?, ?)", [firstName, lastName, kasutajaID, phone, job, 1], (err, result) => {
         check('eesnimi', 'Eesnimi on sisestamata!').notEmpty();
         check('perenimi', 'Perekonnanimi ei ole korralik!').notEmpty();
         check('telefon', 'Telefoninumber on sisestamata!').notEmpty();
