@@ -88,14 +88,14 @@ body {
     font-size: 20px;
     transition: 0.5s;
 }
-.navbar-content div:hover:not(.notif-section, .notif-content) {
+.navbar-content #nav-item:hover {
     transform: translateY(-3px);
     text-decoration: underline;
 }
 
 /* profiil + profile-card css */
 /* Hamburger ? */
-@media only screen and (max-width: 770px) {
+@media only screen and (max-width: 776px) {
     #hamburger-icon {
         display: block;
     }
@@ -107,11 +107,11 @@ body {
     }
 }
 
-@media only screen and (min-width: 771px) {
+@media only screen and (min-width: 777px) {
     #hamburger-icon {
         display: none;
     }
-    #hamburgerGone {
+    .hamburger-menu {
         display: none;
     }
 }
@@ -125,9 +125,20 @@ body {
     opacity: 0.7;
 }
 
-#hamburgerGone {
-    display: none;
-    color: white;
+.hamburger-menu {
+    display: block;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1;
+    font-size: 1.5rem;
+    background-color: rgb(1, 105, 62);
+}
+.hamburger-menu div:hover {
+    background-color: rgb(1, 90, 56);
+}
+.hamburger-menu div {
+    padding: 2rem;
 }
 
 .profile-data-header{
@@ -339,21 +350,79 @@ display: block;
     .profile-data, .profile-edit-data, .kysimustik-container, .about{
       margin: 0 auto;
     }
-    
+
     .contact{
         margin: auto;
     }
   }
   
   /* My profile elements */
+
+  .dropdown {
+    display: inline-block;
+    background-color: #eeeeee;
+    position: absolute;
+    right: 1rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    top: 8vh;
+
+}
+.dropdown div{
+    font-size: 1em;
+}
+.dropdown #drop-1 {
+    border-radius: 15px 15px 0 0;
+}
+.dropdown #drop-2 {
+    border-top: 1px solid rgba(65, 65, 65, 0.39);
+}
+.dropdown #drop-3 {
+    border-top: 1px solid rgba(65, 65, 65, 0.39);
+    border-radius: 0 0 15px 15px;
+}
+.dropdown button {
+    font-size: 1rem;
+    padding: 1rem;
+    width: 10rem;
+    background: none;
+    border: none;
+}
+.dropdown button:active {
+    color: rgb(65, 65, 65);
+}
+.dropdown div:hover {
+    cursor: pointer;
+    background-color: #b8b8b8;
+    transition: 0.3s;
+}
+
+.notifications {
+    position: absolute;
+    background-color: rgb(233, 233, 233);
+    text-align: center;
+    padding: 10px;
+    right: 3.5rem;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    color: rgb(65, 65, 65);
+}
+
 .profile-elements {
     display: flex;
     margin-right: 20px;
+    align-items: center;
+}
+#profile-1 {
+    align-items: center;
+}
+#profile-2 {
+    display: flex;
 }
 #dropdown-button {
     display: flex;
     align-items: center;
-    font-size: 2em;
+    font-size: 2rem;
     padding: 0;
 }
 #notification-button {
@@ -381,10 +450,6 @@ display: block;
       cursor: pointer;
       opacity: 0.7;
   }
-/* Dropdown section pooleli */
-.dropdown {
-    display: none;
-}
 
 /* küsimustiku css */
   #arrow-icon {
@@ -471,8 +536,6 @@ display: block;
     background-color: #b8b8b8;
 }
 
-/* Notification bell */
-
 #profile-button {
     display: flex;
     background: none;
@@ -489,4 +552,7 @@ display: block;
     position: absolute;
     background-color: rgb(235, 235, 235);
     box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
+}
+.hidden {
+    display: none;
 }
