@@ -10,8 +10,8 @@ const About = () => {
                 <Profilecard/>
             </Switch>
             <section className='about'>
-                <h2>See on About page ja siin on lambine info</h2>
-                <p>Lorem ipsum dolor Rem illo debitis nihil doloremque aliquam dolor consequatur eveniet, porro quaerat quidem eum consectetur explicabo quibusdam tempora, similique nisi.</p>
+                <h2>Infot meie kohta</h2>
+                <p>Oleme neljaliikmeline tiim, kes arendab projekti nimega "Opetaja professionaalne areng" nii kaugele kui suvepraktika ajaraames jõuab.</p>
             </section>
         </section>
     )

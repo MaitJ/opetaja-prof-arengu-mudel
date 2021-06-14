@@ -12,14 +12,36 @@ import {useUserContext} from './userContext';
 import { GoThreeBars } from "react-icons/go";
 import { ImCross } from 'react-icons/im';
 
+
 const Header = () => {
 
     const history = useHistory();
 
     const { userEmail, userId, accessToken, setAccessToken, setUserEmail } = useUserContext();
-    const [lastlogged, setLastLogged] = useState("");
+    const [isLogged, setIsLogged] = useState(true);
     const [loggedIn, setLoggedIn] = useState(false);
     const [body, setBody] = useState();
+
+    const [profiilAndmed, setProfiilAndmed] = useState({});
+
+    useEffect(() => {
+        if(userId !== undefined) {
+            setIsLogged(true);
+            axios.post('http://localhost:3001/getKasutaja', {
+                kasutajaid: userId
+            }).then((response) => {
+                setProfiilAndmed(response.data);
+            }).catch((error) => {
+                console.log(error);
+            })
+        }
+
+        if(userId == undefined) {
+            setIsLogged(false);
+        }
+        
+    }, [userId]);
+
 
     const buttonStyle = {
         textDecoration: "none",
@@ -69,28 +91,19 @@ const Header = () => {
                 <div id="nav-item">
                     <NavLink activeStyle={activePage} to="/about" style={buttonStyle}>Meist</NavLink>
                 </div>
-                <section className="profile-elements">
+                {isLogged ? <section className="profile-elements">
                     <button id="notification-button"><BsFillBellFill /></button>
-                    <h2><NavLink id="navbar-name" to="/profile" style={buttonStyleSecondary}>Eesnimi</NavLink></h2>
+                    <h2><NavLink id="navbar-name" to="/profile" style={buttonStyleSecondary}>{profiilAndmed.eesnimi}</NavLink></h2>
                     <button id="dropdown-button"><IoIosArrowDown /></button>
-                </section>
+                    </section> :
+                    <div id="nav-item">
+                     <NavLink to="/login" style={buttonStyleSecondary}>Logi sisse</NavLink>
+                    </div>}
+    
             </div>
-
-            <div>
-                <Link to="/register">Register</Link>
-            </div>
-            <div>
-                <Link to="/login">Login</Link>
-            </div>
-            <div>
-                <Link to="/Contact">Kontakt</Link>
-            </div>
-            
             <div>
                 {accessToken != "" ? (<button onClick={async () => {await logout(); setAccessToken(""); setUserEmail(""); console.log(accessToken + "See on getaccestoken")}}>Logi valja</button>) : null}
             </div>
-        
-            
             <div>
                 {userEmail}
                 <br />
