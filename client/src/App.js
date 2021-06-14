@@ -6,7 +6,6 @@ import Main from './Main';
 import React from 'react';
 import './css/style.css';
 import Routes from "./Routes";
-import './css/style.css';
 import {UserProvider} from './userContext';
 
 // const userIdContext = React.createContext();

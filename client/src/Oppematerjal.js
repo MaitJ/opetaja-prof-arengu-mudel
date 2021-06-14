@@ -80,6 +80,7 @@ const Oppematerjal = () =>  {
         <Switch>
           <Profilecard/>
         </Switch>
+      <section className="oppematerjal-container-1">
       <div class="back-button-container">
         <NavLink className="back-button" to="/oppematerjalid">Tagasi õppematerjalidesse</NavLink>
         <div class="oppematerjal-container">
@@ -100,6 +101,7 @@ const Oppematerjal = () =>  {
             </div>
           </div>
         </div>
+        </section>
       </section>
   )
 }  

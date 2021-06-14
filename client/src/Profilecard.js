@@ -18,7 +18,6 @@ const Profilecard = () => {
     const [profiilAndmed, setProfiilAndmed] = useState({});
     const [havePicture, setHavePicture] = useState(false);
     //const [imageAddr, setImageAddr] = useState("");
-    //const {userId} = useUserContext();
 
     useEffect(() => {
         if(userId !== undefined) {
