@@ -176,36 +176,6 @@ const Header = () => {
                 </div>
             </div> }
             
-            <div>
-                <Link to="/register">Register</Link>
-            </div>
-            <div>
-                <Link to="/login">Login</Link>
-            </div>
-            <div>
-                <Link to="/Contact">Kontakt</Link>
-            </div>
-            
-
-            <div>
-                {isLogged ? <section className="profile-elements">
-                    <button id="notification-button"><BsFillBellFill /></button>
-                    <h2><NavLink id="navbar-name" to="/profile" style={buttonStyleSecondary}>{profiilAndmed.eesnimi}</NavLink></h2>
-                    <button id="dropdown-button"><IoIosArrowDown /></button>
-                    </section> :
-                    <div id="nav-item">
-                     <NavLink to="/login" style={buttonStyleSecondary}>Logi sisse</NavLink>
-                    </div>}
-    
-            </div>
-            <div>
-                {accessToken != "" ? (<button onClick={async () => {await logout(); setAccessToken(""); setUserEmail(""); console.log(accessToken + "See on getaccestoken")}}>Logi valja</button>) : null}
-            </div>
-            <div>
-                {userEmail}
-                <br />
-                {userId}
-            </div>
         </header>
     )
 }

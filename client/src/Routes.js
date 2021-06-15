@@ -12,6 +12,7 @@ import Oppematerjal from "./Oppematerjal.js";
 import MuudaProfiili from "./MuudaProfiili.js";
 import OppematerjalidKuvamine from "./OppematerjalidKuvamine.js";
 import Teated from "./Teated.js";
+import ProtectedRoute from "./ProtectedRoutes.js";
 
 const Routes = () => {
 
@@ -21,7 +22,7 @@ const Routes = () => {
                 <Header />
                 <Switch>
                 <Route exact path="/" component={Teated} />
-                <Route exact path="/about" component={About} />
+                <ProtectedRoute exact path="/about" component={About} />
                 <Route exact path="/profile" component={Profile} />
                 <Route exact path="/kysimustikud" component={KysimustikuValik} />
                 <Route exact path="/login" component={Login} />

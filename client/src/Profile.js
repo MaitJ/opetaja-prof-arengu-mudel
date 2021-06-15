@@ -51,7 +51,6 @@ const Profile = () => {
             <Switch>
                 <Profilecard/>
             </Switch>
-            <section className="profile-data-header">
             <section className="profile-data-1">
                 <h1 className="profiil">Profiil</h1>
             <section className="profile-data">
@@ -60,7 +59,6 @@ const Profile = () => {
                 <h4>E-mail: {profiilAndmed.email}</h4>
                 <h4>Töökoht: {profiilAndmed.tookoht} </h4>
                 <h4>Telefon: {profiilAndmed.telefon} </h4>
-            </section>
             </section>
         </section>
         </section>

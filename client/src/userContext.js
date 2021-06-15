@@ -84,7 +84,8 @@ export const UserProvider = ({children}) => {
         ,userEmail
         ,accessToken
         ,setAccessToken
-        ,setUserEmail}}>
+        ,setUserEmail
+        ,isLoggedIn}}>
             {children}
         </UserContext.Provider>
     );
