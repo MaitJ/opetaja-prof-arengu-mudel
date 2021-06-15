@@ -16,13 +16,31 @@ cursor = db.cursor()
 
 cursor.execute("SELECT MAX(kysimus_vastus_id) FROM kysimus_vastus")
 
-kysimusVastusStart = int(cursor.fetchone()[0])
+
+results = cursor.fetchone()[0]
+kysimusVastusStart = 0;
+
+if results != None:
+    kysimusVastusStart = int(results)
+
+inputValue = input("Mis vastuseid sisestada? (0-2, r - random): ")
+isRandom = False
+
+if str(inputValue) == 'r':
+    isRandom = True
+elif int(inputValue) < 0:
+    inputValue = 0
+elif int(inputValue) > 2:
+    inputValue = 2
+
+email = input("Sisesta veebilehe kasutajanimi: ")
+password = input("Sisesta veebilehe kasutaja parool: ")
 
 driver = webdriver.Firefox()
 driver.get('http://localhost:3000')
 
-email = 'maitjurask1@test.ee'
-password = 'Maitjurask10!'
+
+    
 
 loginElement = driver.find_element_by_id("loginLink")
 loginElement.click()
@@ -67,19 +85,20 @@ while endQuestionaire():
     time.sleep(1)
     try:
         kysimusPlokk = driver.find_elements_by_class_name("kysimus-plokk")
-        blockButtons = driver.find_elements_by_id("kysimuste-plokk-button")
+        blockButtons = driver.find_elements_by_class_name("kysimuste-plokk-button")
         for kysimus in kysimusPlokk:
             currentVastusContainer = kysimus.find_element_by_class_name("vastuse-valik-container")
             currentVastusInputs = currentVastusContainer.find_elements_by_id("vastus")
-            vastus = random.randint(0, 2)
-            currentVastusInputs[vastus].click()
+            if (isRandom):
+                inputValue = random.randint(0, 2)
+            currentVastusInputs[int(inputValue)].click()
             currentEnesehinnang = kysimus.find_element_by_id("enesehinnangText")
             currentKysimusTekst = kysimus.find_element_by_class_name("kysimus")
             eneseanalyys = currentKysimusTekst.text[0:4]
             currentEnesehinnang.send_keys(eneseanalyys)
             kysimusCount += 1
             kysimusVastusStart += 1
-            kysimuseVastused.append(Kysimus(kysimusCount, kysimusVastusStart, vastus, eneseanalyys))
+            kysimuseVastused.append(Kysimus(kysimusCount, kysimusVastusStart, int(inputValue), eneseanalyys))
         time.sleep(5)
 
 

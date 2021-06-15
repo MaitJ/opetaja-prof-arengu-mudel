@@ -102,7 +102,7 @@ const Kysimus = ({kysimus, setKysimusteVastused, kysimusteVastused}) => {
                         return (
                             <React.Fragment key={index}>
                                 <label>{valik.valik_tekst}</label>
-                                <input type="radio" value={valik.value} name={`vastus${kysimus.kysimus_id}`} onChange={(e) => setVastus(e)} checked={kasOnTaidetud(valik.value)}/>
+                                <input type="radio" value={valik.value} id="vastus" name={`vastus${kysimus.kysimus_id}`} onChange={(e) => setVastus(e)} checked={kasOnTaidetud(valik.value)}/>
                             </React.Fragment>
                         );
                     })

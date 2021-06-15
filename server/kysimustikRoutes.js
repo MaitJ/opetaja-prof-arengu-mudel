@@ -218,13 +218,12 @@ exports.getFeedback = (req, res, next) => {
 
     console.log("percentage: " + percentage + " questionblock_id: " + questionblock_id);
 
+
     db.query(`SELECT tagasiside_id, tagasiside_tekst FROM Tagasiside WHERE kysimusteplokk_id=${questionblock_id} AND ${percentage} >= vahemikMin AND ${percentage} <= vahemikMax`,
     (error, results, fields) => {
       if (error) throw error;
 
-      //Fix this please
-      if (results !== undefined) {
-        
+      if (results != undefined) {
         req.data = {tagasiside_tekst: results[0].tagasiside_tekst, tagasiside_id: results[0].tagasiside_id};
       } else {
         req.data = "";
@@ -254,4 +253,16 @@ exports.saveFeedback = (req, res) => {
       if (error) throw error;
     })
   }
+};
+
+exports.saveFinalResult = (req, res) => {
+  if (req.body.percentage !== undefined) {
+    const finalResult = req.body.percentage;
+    const profiil_kysimustik_id = req.body.profiil_kysimustik_id;
+
+    db.query(`UPDATE profiil_kysimustik SET kysimustik_protsentuaalne_tagasiside=${finalResult} WHERE profiil_kysimustik_id=${profiil_kysimustik_id}`, (error, results, fields) => {
+      if (error) throw error;
+    })
+  }
+
 };

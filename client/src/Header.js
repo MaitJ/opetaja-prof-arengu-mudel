@@ -192,10 +192,12 @@ const Header = () => {
             </div> }
             
             {/* <div>
+           
+            <div>
                 <Link to="/register">Register</Link>
             </div>
             <div>
-                <Link to="/login">Login</Link>
+                <Link id="loginLink" to="/login">Login</Link>
             </div>
             <div>
                 <Link to="/Contact">Kontakt</Link>
