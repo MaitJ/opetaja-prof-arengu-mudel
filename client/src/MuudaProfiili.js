@@ -137,12 +137,12 @@ const Profile = () => {
                 <h4>{profiilAndmed.kasutajaroll}</h4>
                 <br/>
                 <NavLink className="profile-button" to="/profile">Profiil</NavLink>
-                <NavLink className="profile-button" to="/lisa-oppematerjal">Õppematerjalid</NavLink>
-                <NavLink className="profile-button" to="/">Minu küsimustikud</NavLink>
+                <NavLink className="profile-button" to="/oppematerjalid">Õppematerjalid</NavLink>
+                <NavLink className="profile-button" to="/minu-kysimustikud">Minu küsimustikud</NavLink>
                 <NavLink className="profile-button" to='/muudaprofiili'>Muuda profiili</NavLink>
             </section>
             <section className="profile-container-1">
-                <h1 className="profiil">Profiil</h1>
+                <h1 className="profiil">Muuda profiili</h1>
             <section className="profile-edit-data">
                 <label>
                 <h3>Eesnimi</h3>

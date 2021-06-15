@@ -47,21 +47,23 @@ const Profile = () => {
     }, [profiilAndmed]);
 
     return(
-                <section className="profile-container">
-            <Switch>
-                <Profilecard/>
-            </Switch>
-            <section className="profile-data-1">
-                <h1 className="profiil">Profiil</h1>
-            <section className="profile-data">
-                <h4>Nimi: {profiilAndmed.eesnimi} {profiilAndmed.perenimi}</h4>
-                <h4>Roll: {profiilAndmed.kasutajaroll}</h4>
-                <h4>E-mail: {profiilAndmed.email}</h4>
-                <h4>Töökoht: {profiilAndmed.tookoht} </h4>
-                <h4>Telefon: {profiilAndmed.telefon} </h4>
+            <section className="profile-container">
+                <Switch>
+                    <Profilecard/>
+                </Switch>
+                <section className="profile-data-header">
+                <section className="profile-data-1">
+                    <h1 className="profiil">Profiil</h1>
+                <section className="profile-data">
+                    <h4>Nimi: {profiilAndmed.eesnimi} {profiilAndmed.perenimi}</h4>
+                    <h4>Roll: {profiilAndmed.kasutajaroll}</h4>
+                    <h4>E-mail: {profiilAndmed.email}</h4>
+                    <h4>Töökoht: {profiilAndmed.tookoht} </h4>
+                    <h4>Telefon: {profiilAndmed.telefon} </h4>
+                </section>
+                </section>
+                </section>
             </section>
-        </section>
-        </section>
     );
 }
 

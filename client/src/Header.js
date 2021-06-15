@@ -45,6 +45,16 @@ const Header = () => {
         
     }, [userId]);
 
+    const profileRouteChange = () =>{ 
+        let path = "/profile"; 
+        history.push(path);
+    }
+
+    const contactRouteChange = () =>{ 
+        let path = "/contact"; 
+        history.push(path);
+    }
+
     const buttonStyle = {
         textDecoration: "none",
         color: "rgba(255, 255, 255, 0.7)"
@@ -109,7 +119,7 @@ const Header = () => {
                 <div id="hamburger-icon" onClick={showBurgerMenu}>  
                     <GoThreeBars />
                 </div>
-                <h1><NavLink id="navbar-logo" to="/" style={buttonStyleSecondary}>Logo</NavLink></h1>
+                <h1><NavLink id="navbar-logo" to="/profile" style={buttonStyleSecondary}>Logo</NavLink></h1>
                 
                 <div id="nav-item">
                     <NavLink activeStyle={activePage} to="/profile" style={buttonStyle}>Profiil</NavLink>
@@ -126,6 +136,7 @@ const Header = () => {
                 <div id="nav-item">
                     <NavLink activeStyle={activePage} to="/about" style={buttonStyle}>Meist</NavLink>
                 </div>
+                {accessToken != "" ? 
                 <div className="profile-elements">
                     <div id="profile-1">
                         <button id="notification-button" onClick={wrapperToggleNotif}><BsFillBellFill /></button>
@@ -136,23 +147,27 @@ const Header = () => {
                         }
                     </div>
                     <div id="profile-2">
-                        <h3><NavLink id="navbar-name" to="/profile" style={buttonStyleSecondary}>Eesnimi</NavLink></h3>
+                        <h3><NavLink id="navbar-name" to="/profile" style={buttonStyleSecondary}>{profiilAndmed.eesnimi}</NavLink></h3>
                         <button id="dropdown-button" onClick = {wrapperToggleDrop}><IoIosArrowDown /></button>
                     </div>
-                </div>
+                </div> : <div className='nav-item'>
+                            <NavLink to="/login" style={buttonStyle}>Logi sisse</NavLink>
+                            </div>
+                        
+                }
 
             </div>
 
             { showDrop &&
             <div className="dropdown">
                <div id="drop-1" onClick = {toggleDrop}>
-                    <button>Minu profiil</button>
+                    <button onClick={profileRouteChange} >Minu profiil</button>
                </div>
                 <div id="drop-2" onClick = {toggleDrop}>
-                    <button>KKK</button>
+                    <button onClick={contactRouteChange}>Kontakt</button>
                 </div>
                 <div id="drop-3" onClick = {toggleDrop}>
-                    <button>Logi välja</button>
+                <button onClick={async () => {await logout(); setAccessToken(""); setUserEmail(""); console.log(accessToken + "See on getaccestoken")}}>Logi valja</button>
                 </div>
             </div>
             }
@@ -175,6 +190,8 @@ const Header = () => {
                     <Link to="/about" style={buttonStyleSecondary} onClick={() => setShowHamburger(!showHamburger)}>Meist</Link>
                 </div>
             </div> }
+            
+            {/* <div>
            
             <div>
                 <Link to="/register">Register</Link>
@@ -185,9 +202,9 @@ const Header = () => {
             <div>
                 <Link to="/Contact">Kontakt</Link>
             </div>
-            
+             */}
 
-            <div>
+            {/* <div>
                 {isLogged ? <section className="profile-elements">
                     <button id="notification-button"><BsFillBellFill /></button>
                     <h2><NavLink id="navbar-name" to="/profile" style={buttonStyleSecondary}>{profiilAndmed.eesnimi}</NavLink></h2>
@@ -200,12 +217,12 @@ const Header = () => {
             </div>
             <div>
                 {accessToken != "" ? (<button onClick={async () => {await logout(); setAccessToken(""); setUserEmail(""); console.log(accessToken + "See on getaccestoken")}}>Logi valja</button>) : null}
-            </div>
-            <div>
+            </div> */}
+            {/* <div>
                 {userEmail}
                 <br />
                 {userId}
-            </div>
+            </div> */}
         </header>
     )
 }

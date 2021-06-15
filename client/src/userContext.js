@@ -83,6 +83,7 @@ export const UserProvider = ({children}) => {
         <UserContext.Provider value={{userId
         ,userEmail
         ,accessToken
+        ,isLoggedIn
         ,setAccessToken
         ,setUserEmail
         ,isLoggedIn}}>
