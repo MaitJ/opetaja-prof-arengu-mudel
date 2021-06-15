@@ -23,7 +23,7 @@ exports.getOppematerjalid = (req, res, next) => {
   if(req.body.kasutajaid !== undefined) {
     const userid = req.body.kasutajaid;
 
-    db.query(`SELECT profiil_id FROM profiil WHERE kasutaja_id=${userid}`, (error, result) => {
+    db.query(`SELECT profiil_id FROM Profiil WHERE kasutaja_id=${userid}`, (error, result) => {
       if(error) {
         console.log(error);
         throw error;
@@ -32,7 +32,7 @@ exports.getOppematerjalid = (req, res, next) => {
       var profiilId = result[0].profiil_id;
   
   
-      db.query(`SELECT * FROM oppematerjal WHERE profiil_id=${profiilId}`, (error, results) => {
+      db.query(`SELECT * FROM Oppematerjal WHERE profiil_id=${profiilId}`, (error, results) => {
         if(error) {
           console.log(error);
           throw error;
@@ -74,14 +74,14 @@ exports.uploadFile = async (req, res) => {
       if(err) {throw err; }
     })
 
-    db.query(`UPDATE profiil SET oppematerjal='${fileName}' WHERE kasutaja_id=${userid}`, (error, result) => {
+    db.query(`UPDATE Profiil SET oppematerjal='${fileName}' WHERE kasutaja_id=${userid}`, (error, result) => {
       if(error) {
         console.log(error);
         throw error;
       }
 
 
-      db.query(`SELECT profiil_id FROM profiil WHERE kasutaja_id=${userid}`, (error, result) => {
+      db.query(`SELECT profiil_id FROM Profiil WHERE kasutaja_id=${userid}`, (error, result) => {
         if(error) {
           console.log(error);
           throw error;
@@ -89,7 +89,7 @@ exports.uploadFile = async (req, res) => {
 
         var profiilId = result[0].profiil_id;
 
-        db.query(`INSERT INTO oppematerjal (oppematerjal_nimi, oppematerjal_failinimi, oppematerjal_kirjeldus, profiil_id) VALUES (?, ?, ?, ?)`, [title, fileName, desc, profiilId], (error, result) => {
+        db.query(`INSERT INTO Oppematerjal (oppematerjal_nimi, oppematerjal_failinimi, oppematerjal_kirjeldus, profiil_id) VALUES (?, ?, ?, ?)`, [title, fileName, desc, profiilId], (error, result) => {
           if (error) {
             console.log(error);
             throw error;

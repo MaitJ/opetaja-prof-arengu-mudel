@@ -34,6 +34,7 @@ app.post('/getKysimused', routes.getKysimused, routes.getKysimusedHandler);
 app.post('/getSoovitused', routes.getSoovitused, routes.getSoovitusedHandler);
 app.post('/getFeedback', routes.getFeedback, routes.getFeedbackHandler);
 app.post('/saveFeedback', routes.saveFeedback);
+app.post('/saveFinalResult', routes.saveFinalResult)
 
 //Login/token routes
 app.post('/login', token.loginRoute);
