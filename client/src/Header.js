@@ -175,7 +175,7 @@ const Header = () => {
                     <Link to="/about" style={buttonStyleSecondary} onClick={() => setShowHamburger(!showHamburger)}>Meist</Link>
                 </div>
             </div> }
-            
+           
             <div>
                 <Link to="/register">Register</Link>
             </div>

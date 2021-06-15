@@ -193,9 +193,7 @@ const Kysimustik = ({kysimustik_id, profiil_kysimustik_id}) => {
 
     const displayPlokkButtons = () => {
         if (selectedPlokk <= mituPlokki) {
-            return <button type="button" id="next-page-button" onClick={() => {
-                liiguEdasi()
-            }}>Jargmine leht</button>
+            return <button type="button" id="next-page-button" onClick={() => liiguEdasi()}>Jargmine leht</button>
         }
     };
 

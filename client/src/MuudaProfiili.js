@@ -122,13 +122,17 @@ const Profile = () => {
     return(
         <section className="profile-container">
            <section className="profile-card">
+               <section className="pic-button">
                 {/* <img src='https://via.placeholder.com/300.png/09f/fff' alt='profilepic'></img> */}
                 <form onSubmit={fileUpload} encType="multipart/form-data">
+                <div className="1">
                 {havePicture ? <img src={process.env.PUBLIC_URL + ImageAddr} alt='profilepic'></img> : <img src={process.env.PUBLIC_URL + defaultImageAddr} alt='profilepic'></img>} 
-                    <input type='file' onChange={e => {onFileChange(e)}}/>
+                </div>
+                    <input type='file' className="input-but" onChange={e => {onFileChange(e)}}/>
                     {/* <input type="text" value={userId} /> */}
                     <button id='changepic' className='reg-but' type='submit'>Muuda pilti</button>
                 </form>
+                </section>
                 <h2>{profiilAndmed.eesnimi} {profiilAndmed.perenimi}</h2>
                 <h4>{profiilAndmed.kasutajaroll}</h4>
                 <br/>
@@ -165,7 +169,7 @@ const Profile = () => {
                 <h5>{changeStatus}</h5>
             </section>
         </section>
-    </section>
+        </section>
     );
 
 }
