@@ -103,9 +103,6 @@ body {
     #hamburger-icon {
         display: none;
     }
-    .hamburger-menu {
-        display: none;
-    }
 }
 #hamburger-icon {
     color: white;
@@ -359,7 +356,6 @@ display: block;
         margin: auto;
     }
   }
-  
 
   /* My profile elements */
 
@@ -602,5 +598,67 @@ display: block;
     .contact{
         margin: auto;
     }
+
   }
-  
+  /* Õppematerjalid */
+ 
+  .educational-top {
+      display: block;
+  }
+
+  #add-educational {
+      max-width: 10em;
+      padding: 1em;
+      border-radius: 10px;
+      margin-top: 1em;
+  }
+
+  .educational-wrapper {
+      display: block;
+  }
+
+  .educational-docs {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2em;
+      margin-bottom: 2em;
+      margin-left: 2em;
+      padding: 2em;
+      max-width: 30em;
+      background-color: #ededed;
+      border-radius: 15px;
+      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  }
+
+    #educational-icon:hover {
+    cursor: pointer;
+  }
+
+  .educational-1 {
+      text-align: left;
+  }
+
+  .educational-2 {
+      align-self: center;
+      margin-top: 10px;
+      font-size: 3em;
+  }
+
+  #educational-desc {
+    color: rgba(0, 0, 0, 0.7);
+  }
+
+  #educational-icon {
+      color: rgba(0, 0, 0, 0.7);
+  }
+
+  @media  (max-width: 600px) {
+      .educational-docs {
+          align-items: center;
+          margin-left: 1em;
+          width: 20em;
+      }
+      .educational-2 {
+          display: none;
+      }
+  }
