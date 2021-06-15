@@ -1,17 +1,17 @@
-#Opetaja professionaalse arengu mudel (TLU Suveprakika projekt)
+# Opetaja professionaalse arengu mudel (TLU Suveprakika projekt)
 
-##Pildid rakendusest
+## Pildid rakendusest
 
 
-##Mis on meie rakenduse eesm2rk?
+## Mis on meie rakenduse eesm2rk?
 * Lihtsustada 6petajate enesearendus protsessi
 * Anda koolidele lihtsam viis 6pejajaid hinnata
 
-##Projektist endast
+## Projektist endast
 Projekt on loodud TLU Digitehnoloogia Instituudi 6pilaste poolt ning loodi Tarkvaraarenduse projekti kursuse raames.
 Projekti kavandamisega alustati 2021 kevadsemester ning koodi hakati kirjutama juunis 2021. 
 
-##Kasutatud tehnoloogiad
+## Kasutatud tehnoloogiad
 * React
     * Pluginad client/package.json
 * Node.js
@@ -19,14 +19,14 @@ Projekti kavandamisega alustati 2021 kevadsemester ning koodi hakati kirjutama j
 * Express
 * MariaDB
 
-##Loojad
+## Loojad
 * **Alex Nelke**
 * **Caroly Vilo**
 * **Martin Kilgi**
 * **Mait Jurask**
 
-##Paigaldusjuhised
+## Paigaldusjuhised
 WIP
 
-##Litsents
+## Litsents
 WIP
