@@ -6697,3 +6697,3166 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 
 ###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1623750599210	geckodriver	INFO	Listening on 127.0.0.1:39487
+1623750600269	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile7wZsgL"
+
+(firefox:87342): Gdk-WARNING **: 12:50:00.532: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:87342): Gdk-WARNING **: 12:50:00.593: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:87342): Gdk-WARNING **: 12:50:00.593: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:87342): Gdk-WARNING **: 12:50:00.593: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:87342): Gdk-WARNING **: 12:50:00.593: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623750601000	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:87474): Gdk-WARNING **: 12:50:01.390: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:87474): Gdk-WARNING **: 12:50:01.431: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:87474): Gdk-WARNING **: 12:50:01.431: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:87474): Gdk-WARNING **: 12:50:01.431: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:87474): Gdk-WARNING **: 12:50:01.432: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:87501): Gdk-WARNING **: 12:50:01.630: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:87342): Gdk-WARNING **: 12:50:01.829: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:87501): Gdk-WARNING **: 12:50:01.852: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:87501): Gdk-WARNING **: 12:50:01.852: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:87501): Gdk-WARNING **: 12:50:01.853: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:87501): Gdk-WARNING **: 12:50:01.853: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile7wZsgL/search.json.mozlz4", (void 0)))
+1623750602515	Marionette	INFO	Listening on port 34859
+
+(/usr/lib/firefox/firefox:87577): Gdk-WARNING **: 12:50:02.532: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:87577): Gdk-WARNING **: 12:50:02.582: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:87577): Gdk-WARNING **: 12:50:02.582: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:87577): Gdk-WARNING **: 12:50:02.582: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:87577): Gdk-WARNING **: 12:50:02.582: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623750602608	Marionette	WARN	TLS certificate errors will be ignored for this session
+1623750619077	Marionette	INFO	Stopped listening on port 34859
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623750935360	geckodriver	INFO	Listening on 127.0.0.1:60817
+1623750935363	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilex4e79h"
+
+(firefox:87886): Gdk-WARNING **: 12:55:35.391: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:87886): Gdk-WARNING **: 12:55:35.433: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:87886): Gdk-WARNING **: 12:55:35.433: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:87886): Gdk-WARNING **: 12:55:35.433: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:87886): Gdk-WARNING **: 12:55:35.433: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623750935700	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:88009): Gdk-WARNING **: 12:55:36.015: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:88009): Gdk-WARNING **: 12:55:36.059: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:88009): Gdk-WARNING **: 12:55:36.059: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:88009): Gdk-WARNING **: 12:55:36.059: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:88009): Gdk-WARNING **: 12:55:36.059: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:88036): Gdk-WARNING **: 12:55:36.173: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:87886): Gdk-WARNING **: 12:55:36.416: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:88036): Gdk-WARNING **: 12:55:36.432: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:88036): Gdk-WARNING **: 12:55:36.432: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:88036): Gdk-WARNING **: 12:55:36.432: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:88036): Gdk-WARNING **: 12:55:36.433: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilex4e79h/search.json.mozlz4", (void 0)))
+1623750936964	Marionette	INFO	Listening on port 37075
+1623750936981	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:88122): Gdk-WARNING **: 12:55:37.130: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:88122): Gdk-WARNING **: 12:55:37.218: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:88122): Gdk-WARNING **: 12:55:37.219: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:88122): Gdk-WARNING **: 12:55:37.219: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:88122): Gdk-WARNING **: 12:55:37.220: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:87886): Gdk-WARNING **: 12:56:26.738: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:87886): Gdk-WARNING **: 12:56:28.083: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+1623751048118	Marionette	INFO	Stopped listening on port 37075
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623751049219	geckodriver	INFO	Listening on 127.0.0.1:33219
+1623751049222	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileTy3Kd3"
+
+(firefox:88398): Gdk-WARNING **: 12:57:29.251: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:88398): Gdk-WARNING **: 12:57:29.301: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:88398): Gdk-WARNING **: 12:57:29.301: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:88398): Gdk-WARNING **: 12:57:29.301: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:88398): Gdk-WARNING **: 12:57:29.301: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623751049568	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:88519): Gdk-WARNING **: 12:57:29.881: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:88519): Gdk-WARNING **: 12:57:29.924: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:88519): Gdk-WARNING **: 12:57:29.925: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:88519): Gdk-WARNING **: 12:57:29.925: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:88519): Gdk-WARNING **: 12:57:29.925: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:88546): Gdk-WARNING **: 12:57:30.042: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:88546): Gdk-WARNING **: 12:57:30.179: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:88546): Gdk-WARNING **: 12:57:30.179: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:88546): Gdk-WARNING **: 12:57:30.179: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:88546): Gdk-WARNING **: 12:57:30.221: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:88398): Gdk-WARNING **: 12:57:30.222: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileTy3Kd3/search.json.mozlz4", (void 0)))
+1623751050785	Marionette	INFO	Listening on port 39655
+1623751050844	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:88632): Gdk-WARNING **: 12:57:31.110: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:88632): Gdk-WARNING **: 12:57:31.210: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:88632): Gdk-WARNING **: 12:57:31.210: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:88632): Gdk-WARNING **: 12:57:31.210: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:88632): Gdk-WARNING **: 12:57:31.210: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:88398): Gdk-WARNING **: 12:57:50.375: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:88398): Gdk-WARNING **: 12:57:52.921: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:88398): Gdk-WARNING **: 12:57:54.060: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+1623751133432	Marionette	INFO	Stopped listening on port 39655
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623751134654	geckodriver	INFO	Listening on 127.0.0.1:42537
+1623751134657	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilePDXv85"
+
+(firefox:88787): Gdk-WARNING **: 12:58:54.684: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:88787): Gdk-WARNING **: 12:58:54.725: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:88787): Gdk-WARNING **: 12:58:54.725: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:88787): Gdk-WARNING **: 12:58:54.725: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:88787): Gdk-WARNING **: 12:58:54.725: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623751134991	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:88908): Gdk-WARNING **: 12:58:55.310: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:88908): Gdk-WARNING **: 12:58:55.353: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:88908): Gdk-WARNING **: 12:58:55.353: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:88908): Gdk-WARNING **: 12:58:55.353: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:88908): Gdk-WARNING **: 12:58:55.354: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:88935): Gdk-WARNING **: 12:58:55.470: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:88935): Gdk-WARNING **: 12:58:55.596: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:88935): Gdk-WARNING **: 12:58:55.596: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:88935): Gdk-WARNING **: 12:58:55.596: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:88935): Gdk-WARNING **: 12:58:55.608: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:88787): Gdk-WARNING **: 12:58:55.635: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilePDXv85/search.json.mozlz4", (void 0)))
+1623751136146	Marionette	INFO	Listening on port 38265
+1623751136177	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:89021): Gdk-WARNING **: 12:58:56.399: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:89021): Gdk-WARNING **: 12:58:56.503: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:89021): Gdk-WARNING **: 12:58:56.503: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:89021): Gdk-WARNING **: 12:58:56.503: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:89021): Gdk-WARNING **: 12:58:56.504: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:88787): Gdk-WARNING **: 12:59:32.392: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:88787): Gdk-WARNING **: 12:59:33.551: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1623751272333	geckodriver	INFO	Listening on 127.0.0.1:34853
+1623751272335	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileeySJCH"
+
+(firefox:89186): Gdk-WARNING **: 13:01:12.362: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:89186): Gdk-WARNING **: 13:01:12.403: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:89186): Gdk-WARNING **: 13:01:12.404: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:89186): Gdk-WARNING **: 13:01:12.404: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:89186): Gdk-WARNING **: 13:01:12.404: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623751272678	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:89307): Gdk-WARNING **: 13:01:12.999: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:89307): Gdk-WARNING **: 13:01:13.042: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:89307): Gdk-WARNING **: 13:01:13.042: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:89307): Gdk-WARNING **: 13:01:13.043: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:89307): Gdk-WARNING **: 13:01:13.043: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:89334): Gdk-WARNING **: 13:01:13.159: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:89186): Gdk-WARNING **: 13:01:13.303: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:89334): Gdk-WARNING **: 13:01:13.318: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:89334): Gdk-WARNING **: 13:01:13.318: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:89334): Gdk-WARNING **: 13:01:13.318: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:89334): Gdk-WARNING **: 13:01:13.319: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileeySJCH/search.json.mozlz4", (void 0)))
+1623751273986	Marionette	INFO	Listening on port 34233
+
+(/usr/lib/firefox/firefox:89411): Gdk-WARNING **: 13:01:14.013: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+1623751274056	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:89411): Gdk-WARNING **: 13:01:14.064: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:89411): Gdk-WARNING **: 13:01:14.064: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:89411): Gdk-WARNING **: 13:01:14.064: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:89411): Gdk-WARNING **: 13:01:14.064: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623751411444	Marionette	INFO	Stopped listening on port 34233
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623751459115	geckodriver	INFO	Listening on 127.0.0.1:43369
+1623751459118	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilefZSqAr"
+
+(firefox:89557): Gdk-WARNING **: 13:04:19.143: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:89557): Gdk-WARNING **: 13:04:19.184: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:89557): Gdk-WARNING **: 13:04:19.184: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:89557): Gdk-WARNING **: 13:04:19.184: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:89557): Gdk-WARNING **: 13:04:19.184: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623751459451	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:89678): Gdk-WARNING **: 13:04:19.768: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:89678): Gdk-WARNING **: 13:04:19.829: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:89678): Gdk-WARNING **: 13:04:19.829: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:89678): Gdk-WARNING **: 13:04:19.829: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:89678): Gdk-WARNING **: 13:04:19.830: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:89705): Gdk-WARNING **: 13:04:19.962: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:89557): Gdk-WARNING **: 13:04:20.082: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:89705): Gdk-WARNING **: 13:04:20.100: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:89705): Gdk-WARNING **: 13:04:20.101: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:89705): Gdk-WARNING **: 13:04:20.101: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:89705): Gdk-WARNING **: 13:04:20.148: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilefZSqAr/search.json.mozlz4", (void 0)))
+1623751460867	Marionette	INFO	Listening on port 45145
+
+(/usr/lib/firefox/firefox:89782): Gdk-WARNING **: 13:04:20.883: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:89782): Gdk-WARNING **: 13:04:20.940: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:89782): Gdk-WARNING **: 13:04:20.941: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:89782): Gdk-WARNING **: 13:04:20.941: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:89782): Gdk-WARNING **: 13:04:20.941: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623751460943	Marionette	WARN	TLS certificate errors will be ignored for this session
+1623751603425	Marionette	INFO	Stopped listening on port 45145
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623752146290	geckodriver	INFO	Listening on 127.0.0.1:46587
+1623752146293	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile5LEtwF"
+
+(firefox:89998): Gdk-WARNING **: 13:15:46.319: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:89998): Gdk-WARNING **: 13:15:46.360: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:89998): Gdk-WARNING **: 13:15:46.360: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:89998): Gdk-WARNING **: 13:15:46.360: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:89998): Gdk-WARNING **: 13:15:46.360: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623752146626	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:90120): Gdk-WARNING **: 13:15:46.943: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:90120): Gdk-WARNING **: 13:15:46.987: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:90120): Gdk-WARNING **: 13:15:46.987: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:90120): Gdk-WARNING **: 13:15:46.987: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:90120): Gdk-WARNING **: 13:15:46.987: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:90147): Gdk-WARNING **: 13:15:47.109: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:90147): Gdk-WARNING **: 13:15:47.236: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:90147): Gdk-WARNING **: 13:15:47.236: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:90147): Gdk-WARNING **: 13:15:47.237: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:90147): Gdk-WARNING **: 13:15:47.310: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile5LEtwF/search.json.mozlz4", (void 0)))
+
+(firefox:89998): Gdk-WARNING **: 13:15:47.591: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+1623752147870	Marionette	INFO	Listening on port 42291
+1623752147914	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:90229): Gdk-WARNING **: 13:15:48.024: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:90229): Gdk-WARNING **: 13:15:48.149: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:90229): Gdk-WARNING **: 13:15:48.149: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:90229): Gdk-WARNING **: 13:15:48.149: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:90229): Gdk-WARNING **: 13:15:48.150: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623752290748	Marionette	INFO	Stopped listening on port 42291
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623752375866	geckodriver	INFO	Listening on 127.0.0.1:46399
+1623752375868	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileYqRCAT"
+
+(firefox:90396): Gdk-WARNING **: 13:19:35.894: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:90396): Gdk-WARNING **: 13:19:35.936: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:90396): Gdk-WARNING **: 13:19:35.936: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:90396): Gdk-WARNING **: 13:19:35.936: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:90396): Gdk-WARNING **: 13:19:35.936: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623752376205	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:90513): Gdk-WARNING **: 13:19:36.476: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:90513): Gdk-WARNING **: 13:19:36.525: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:90513): Gdk-WARNING **: 13:19:36.525: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:90513): Gdk-WARNING **: 13:19:36.526: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:90513): Gdk-WARNING **: 13:19:36.526: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:90545): Gdk-WARNING **: 13:19:36.640: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:90545): Gdk-WARNING **: 13:19:36.690: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:90545): Gdk-WARNING **: 13:19:36.690: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:90545): Gdk-WARNING **: 13:19:36.690: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:90545): Gdk-WARNING **: 13:19:36.690: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:90396): Gdk-WARNING **: 13:19:36.823: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileYqRCAT/search.json.mozlz4", (void 0)))
+1623752377493	Marionette	INFO	Listening on port 43969
+
+(/usr/lib/firefox/firefox:90619): Gdk-WARNING **: 13:19:37.524: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:90619): Gdk-WARNING **: 13:19:37.572: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:90619): Gdk-WARNING **: 13:19:37.572: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:90619): Gdk-WARNING **: 13:19:37.572: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:90619): Gdk-WARNING **: 13:19:37.573: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623752377589	Marionette	WARN	TLS certificate errors will be ignored for this session
+1623752520124	Marionette	INFO	Stopped listening on port 43969
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623752567647	geckodriver	INFO	Listening on 127.0.0.1:35533
+1623752567649	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile96IzMp"
+
+(firefox:90778): Gdk-WARNING **: 13:22:47.678: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:90778): Gdk-WARNING **: 13:22:47.720: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:90778): Gdk-WARNING **: 13:22:47.720: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:90778): Gdk-WARNING **: 13:22:47.720: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:90778): Gdk-WARNING **: 13:22:47.721: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623752567989	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:90901): Gdk-WARNING **: 13:22:48.303: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:90901): Gdk-WARNING **: 13:22:48.347: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:90901): Gdk-WARNING **: 13:22:48.347: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:90901): Gdk-WARNING **: 13:22:48.347: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:90901): Gdk-WARNING **: 13:22:48.347: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:90928): Gdk-WARNING **: 13:22:48.462: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:90928): Gdk-WARNING **: 13:22:48.588: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:90928): Gdk-WARNING **: 13:22:48.588: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:90928): Gdk-WARNING **: 13:22:48.588: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:90928): Gdk-WARNING **: 13:22:48.656: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:90778): Gdk-WARNING **: 13:22:48.657: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile96IzMp/search.json.mozlz4", (void 0)))
+1623752569337	Marionette	INFO	Listening on port 39827
+
+(/usr/lib/firefox/firefox:91004): Gdk-WARNING **: 13:22:49.353: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+1623752569375	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:91004): Gdk-WARNING **: 13:22:49.409: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:91004): Gdk-WARNING **: 13:22:49.409: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:91004): Gdk-WARNING **: 13:22:49.409: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:91004): Gdk-WARNING **: 13:22:49.410: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623752580784	Marionette	INFO	Stopped listening on port 39827
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623752584130	geckodriver	INFO	Listening on 127.0.0.1:52979
+1623752584133	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileKvfVln"
+
+(firefox:91116): Gdk-WARNING **: 13:23:04.161: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:91116): Gdk-WARNING **: 13:23:04.206: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:91116): Gdk-WARNING **: 13:23:04.206: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:91116): Gdk-WARNING **: 13:23:04.206: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:91116): Gdk-WARNING **: 13:23:04.207: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623752584474	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:91237): Gdk-WARNING **: 13:23:04.799: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:91237): Gdk-WARNING **: 13:23:04.841: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:91237): Gdk-WARNING **: 13:23:04.841: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:91237): Gdk-WARNING **: 13:23:04.841: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:91237): Gdk-WARNING **: 13:23:04.842: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:91264): Gdk-WARNING **: 13:23:04.957: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:91116): Gdk-WARNING **: 13:23:05.030: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:91264): Gdk-WARNING **: 13:23:05.096: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:91264): Gdk-WARNING **: 13:23:05.097: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:91264): Gdk-WARNING **: 13:23:05.097: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:91264): Gdk-WARNING **: 13:23:05.114: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileKvfVln/search.json.mozlz4", (void 0)))
+1623752585934	Marionette	INFO	Listening on port 33831
+
+(/usr/lib/firefox/firefox:91340): Gdk-WARNING **: 13:23:05.949: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+1623752585958	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:91340): Gdk-WARNING **: 13:23:06.066: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:91340): Gdk-WARNING **: 13:23:06.066: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:91340): Gdk-WARNING **: 13:23:06.066: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:91340): Gdk-WARNING **: 13:23:06.066: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623752618171	Marionette	INFO	Stopped listening on port 33831
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623752735184	geckodriver	INFO	Listening on 127.0.0.1:57305
+1623752735187	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileM3C5e5"
+
+(firefox:91515): Gdk-WARNING **: 13:25:35.213: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:91515): Gdk-WARNING **: 13:25:35.256: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:91515): Gdk-WARNING **: 13:25:35.256: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:91515): Gdk-WARNING **: 13:25:35.256: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:91515): Gdk-WARNING **: 13:25:35.256: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623752735530	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:91636): Gdk-WARNING **: 13:25:35.848: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:91636): Gdk-WARNING **: 13:25:35.909: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:91636): Gdk-WARNING **: 13:25:35.909: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:91636): Gdk-WARNING **: 13:25:35.909: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:91636): Gdk-WARNING **: 13:25:35.909: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:91663): Gdk-WARNING **: 13:25:36.035: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:91515): Gdk-WARNING **: 13:25:36.109: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:91663): Gdk-WARNING **: 13:25:36.158: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:91663): Gdk-WARNING **: 13:25:36.158: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:91663): Gdk-WARNING **: 13:25:36.159: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:91663): Gdk-WARNING **: 13:25:36.178: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileM3C5e5/search.json.mozlz4", (void 0)))
+1623752736913	Marionette	INFO	Listening on port 36717
+
+(/usr/lib/firefox/firefox:91740): Gdk-WARNING **: 13:25:36.933: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:91740): Gdk-WARNING **: 13:25:36.989: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:91740): Gdk-WARNING **: 13:25:36.989: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:91740): Gdk-WARNING **: 13:25:36.990: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:91740): Gdk-WARNING **: 13:25:36.990: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623752737012	Marionette	WARN	TLS certificate errors will be ignored for this session
+1623752879389	Marionette	INFO	Stopped listening on port 36717
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623753411397	geckodriver	INFO	Listening on 127.0.0.1:43671
+1623753411399	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileE6IP0X"
+
+(firefox:92007): Gdk-WARNING **: 13:36:51.426: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:92007): Gdk-WARNING **: 13:36:51.467: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:92007): Gdk-WARNING **: 13:36:51.467: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:92007): Gdk-WARNING **: 13:36:51.467: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:92007): Gdk-WARNING **: 13:36:51.467: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623753411740	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:92131): Gdk-WARNING **: 13:36:52.059: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:92131): Gdk-WARNING **: 13:36:52.103: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:92131): Gdk-WARNING **: 13:36:52.103: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:92131): Gdk-WARNING **: 13:36:52.103: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:92131): Gdk-WARNING **: 13:36:52.103: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:92158): Gdk-WARNING **: 13:36:52.225: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:92158): Gdk-WARNING **: 13:36:52.345: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:92158): Gdk-WARNING **: 13:36:52.345: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:92158): Gdk-WARNING **: 13:36:52.346: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:92158): Gdk-WARNING **: 13:36:52.365: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:92007): Gdk-WARNING **: 13:36:52.365: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileE6IP0X/search.json.mozlz4", (void 0)))
+1623753413128	Marionette	INFO	Listening on port 33495
+
+(/usr/lib/firefox/firefox:92236): Gdk-WARNING **: 13:36:53.144: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:92236): Gdk-WARNING **: 13:36:53.199: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:92236): Gdk-WARNING **: 13:36:53.199: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:92236): Gdk-WARNING **: 13:36:53.199: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:92236): Gdk-WARNING **: 13:36:53.199: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623753413224	Marionette	WARN	TLS certificate errors will be ignored for this session
+1623753555935	Marionette	INFO	Stopped listening on port 33495
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623754439968	geckodriver	INFO	Listening on 127.0.0.1:49947
+1623754439971	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilexfX95b"
+
+(firefox:92514): Gdk-WARNING **: 13:53:59.997: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:92514): Gdk-WARNING **: 13:54:00.038: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:92514): Gdk-WARNING **: 13:54:00.038: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:92514): Gdk-WARNING **: 13:54:00.038: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:92514): Gdk-WARNING **: 13:54:00.038: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623754440305	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:92635): Gdk-WARNING **: 13:54:00.624: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:92635): Gdk-WARNING **: 13:54:00.667: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:92635): Gdk-WARNING **: 13:54:00.667: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:92635): Gdk-WARNING **: 13:54:00.667: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:92635): Gdk-WARNING **: 13:54:00.668: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:92662): Gdk-WARNING **: 13:54:00.787: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:92514): Gdk-WARNING **: 13:54:00.870: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:92662): Gdk-WARNING **: 13:54:00.935: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:92662): Gdk-WARNING **: 13:54:00.935: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:92662): Gdk-WARNING **: 13:54:00.935: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:92662): Gdk-WARNING **: 13:54:00.935: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilexfX95b/search.json.mozlz4", (void 0)))
+1623754441657	Marionette	INFO	Listening on port 41375
+
+(/usr/lib/firefox/firefox:92738): Gdk-WARNING **: 13:54:01.672: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+1623754441696	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:92738): Gdk-WARNING **: 13:54:01.729: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:92738): Gdk-WARNING **: 13:54:01.729: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:92738): Gdk-WARNING **: 13:54:01.729: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:92738): Gdk-WARNING **: 13:54:01.729: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623754470112	Marionette	INFO	Stopped listening on port 41375
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623754471023	geckodriver	INFO	Listening on 127.0.0.1:36137
+1623754471026	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileZ7lYj1"
+
+(firefox:92855): Gdk-WARNING **: 13:54:31.052: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:92855): Gdk-WARNING **: 13:54:31.093: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:92855): Gdk-WARNING **: 13:54:31.093: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:92855): Gdk-WARNING **: 13:54:31.093: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:92855): Gdk-WARNING **: 13:54:31.093: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623754471364	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:92979): Gdk-WARNING **: 13:54:31.684: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:92979): Gdk-WARNING **: 13:54:31.727: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:92979): Gdk-WARNING **: 13:54:31.727: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:92979): Gdk-WARNING **: 13:54:31.727: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:92979): Gdk-WARNING **: 13:54:31.727: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:93006): Gdk-WARNING **: 13:54:31.850: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:92855): Gdk-WARNING **: 13:54:31.957: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:93006): Gdk-WARNING **: 13:54:31.984: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:93006): Gdk-WARNING **: 13:54:31.984: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:93006): Gdk-WARNING **: 13:54:31.984: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:93006): Gdk-WARNING **: 13:54:31.985: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileZ7lYj1/search.json.mozlz4", (void 0)))
+
+(/usr/lib/firefox/firefox:93082): Gdk-WARNING **: 13:54:32.837: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+1623754472854	Marionette	INFO	Listening on port 40525
+
+(/usr/lib/firefox/firefox:93082): Gdk-WARNING **: 13:54:32.894: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:93082): Gdk-WARNING **: 13:54:32.894: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:93082): Gdk-WARNING **: 13:54:32.894: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:93082): Gdk-WARNING **: 13:54:32.894: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623754472954	Marionette	WARN	TLS certificate errors will be ignored for this session
+1623754615410	Marionette	INFO	Stopped listening on port 40525
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623755123054	geckodriver	INFO	Listening on 127.0.0.1:51351
+1623755123056	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileTjDupm"
+
+(firefox:93342): Gdk-WARNING **: 14:05:23.083: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:93342): Gdk-WARNING **: 14:05:23.124: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:93342): Gdk-WARNING **: 14:05:23.124: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:93342): Gdk-WARNING **: 14:05:23.124: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:93342): Gdk-WARNING **: 14:05:23.125: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623755123390	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:93463): Gdk-WARNING **: 14:05:23.692: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:93463): Gdk-WARNING **: 14:05:23.741: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:93463): Gdk-WARNING **: 14:05:23.741: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:93463): Gdk-WARNING **: 14:05:23.741: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:93463): Gdk-WARNING **: 14:05:23.742: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:93490): Gdk-WARNING **: 14:05:23.865: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:93342): Gdk-WARNING **: 14:05:23.962: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:93490): Gdk-WARNING **: 14:05:23.986: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:93490): Gdk-WARNING **: 14:05:23.987: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:93490): Gdk-WARNING **: 14:05:23.987: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:93490): Gdk-WARNING **: 14:05:24.065: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileTjDupm/search.json.mozlz4", (void 0)))
+1623755124587	Marionette	INFO	Listening on port 34215
+1623755124710	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:93569): Gdk-WARNING **: 14:05:24.725: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:93569): Gdk-WARNING **: 14:05:24.818: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:93569): Gdk-WARNING **: 14:05:24.818: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:93569): Gdk-WARNING **: 14:05:24.818: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:93569): Gdk-WARNING **: 14:05:24.818: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623755145696	Marionette	INFO	Stopped listening on port 34215
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623755152380	geckodriver	INFO	Listening on 127.0.0.1:43483
+1623755152383	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileVJx2ch"
+
+(firefox:93700): Gdk-WARNING **: 14:05:52.410: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:93700): Gdk-WARNING **: 14:05:52.452: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:93700): Gdk-WARNING **: 14:05:52.452: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:93700): Gdk-WARNING **: 14:05:52.452: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:93700): Gdk-WARNING **: 14:05:52.453: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623755152720	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:93821): Gdk-WARNING **: 14:05:53.042: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:93821): Gdk-WARNING **: 14:05:53.085: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:93821): Gdk-WARNING **: 14:05:53.085: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:93821): Gdk-WARNING **: 14:05:53.085: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:93821): Gdk-WARNING **: 14:05:53.086: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:93848): Gdk-WARNING **: 14:05:53.201: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:93700): Gdk-WARNING **: 14:05:53.277: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:93848): Gdk-WARNING **: 14:05:53.321: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:93848): Gdk-WARNING **: 14:05:53.321: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:93848): Gdk-WARNING **: 14:05:53.321: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:93848): Gdk-WARNING **: 14:05:53.361: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileVJx2ch/search.json.mozlz4", (void 0)))
+1623755153906	Marionette	INFO	Listening on port 39243
+1623755154030	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:93924): Gdk-WARNING **: 14:05:54.052: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:93924): Gdk-WARNING **: 14:05:54.134: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:93924): Gdk-WARNING **: 14:05:54.134: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:93924): Gdk-WARNING **: 14:05:54.134: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:93924): Gdk-WARNING **: 14:05:54.135: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623755296598	Marionette	INFO	Stopped listening on port 39243
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623755845701	geckodriver	INFO	Listening on 127.0.0.1:55071
+1623755845704	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilehBBnjP"
+
+(firefox:94207): Gdk-WARNING **: 14:17:25.732: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:94207): Gdk-WARNING **: 14:17:25.774: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:94207): Gdk-WARNING **: 14:17:25.774: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:94207): Gdk-WARNING **: 14:17:25.774: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:94207): Gdk-WARNING **: 14:17:25.774: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623755846041	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:94328): Gdk-WARNING **: 14:17:26.354: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:94328): Gdk-WARNING **: 14:17:26.397: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:94328): Gdk-WARNING **: 14:17:26.397: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:94328): Gdk-WARNING **: 14:17:26.397: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:94328): Gdk-WARNING **: 14:17:26.398: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:94355): Gdk-WARNING **: 14:17:26.516: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:94207): Gdk-WARNING **: 14:17:26.636: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:94355): Gdk-WARNING **: 14:17:26.649: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:94355): Gdk-WARNING **: 14:17:26.650: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:94355): Gdk-WARNING **: 14:17:26.650: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:94355): Gdk-WARNING **: 14:17:26.697: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilehBBnjP/search.json.mozlz4", (void 0)))
+1623755847397	Marionette	INFO	Listening on port 43871
+
+(/usr/lib/firefox/firefox:94432): Gdk-WARNING **: 14:17:27.408: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+1623755847441	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:94432): Gdk-WARNING **: 14:17:27.470: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:94432): Gdk-WARNING **: 14:17:27.470: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:94432): Gdk-WARNING **: 14:17:27.470: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:94432): Gdk-WARNING **: 14:17:27.470: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623755860203	Marionette	INFO	Stopped listening on port 43871
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623755861914	geckodriver	INFO	Listening on 127.0.0.1:40995
+1623755862922	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilelKyJla"
+
+(firefox:94551): Gdk-WARNING **: 14:17:42.961: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:94551): Gdk-WARNING **: 14:17:43.008: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:94551): Gdk-WARNING **: 14:17:43.008: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:94551): Gdk-WARNING **: 14:17:43.008: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:94551): Gdk-WARNING **: 14:17:43.009: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623755863279	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:94672): Gdk-WARNING **: 14:17:43.599: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:94672): Gdk-WARNING **: 14:17:43.639: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:94672): Gdk-WARNING **: 14:17:43.639: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:94672): Gdk-WARNING **: 14:17:43.639: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:94672): Gdk-WARNING **: 14:17:43.639: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:94699): Gdk-WARNING **: 14:17:43.754: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:94551): Gdk-WARNING **: 14:17:43.886: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:94699): Gdk-WARNING **: 14:17:43.905: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:94699): Gdk-WARNING **: 14:17:43.906: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:94699): Gdk-WARNING **: 14:17:43.906: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:94699): Gdk-WARNING **: 14:17:43.958: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilelKyJla/search.json.mozlz4", (void 0)))
+1623755864486	Marionette	INFO	Listening on port 40105
+1623755864539	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:94779): Gdk-WARNING **: 14:17:44.663: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:94779): Gdk-WARNING **: 14:17:44.801: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:94779): Gdk-WARNING **: 14:17:44.801: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:94779): Gdk-WARNING **: 14:17:44.801: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:94779): Gdk-WARNING **: 14:17:44.802: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623755999522	Marionette	INFO	Stopped listening on port 40105
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623756212567	geckodriver	INFO	Listening on 127.0.0.1:37051
+1623756212570	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileS6bRWI"
+
+(firefox:94945): Gdk-WARNING **: 14:23:32.597: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:94945): Gdk-WARNING **: 14:23:32.638: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:94945): Gdk-WARNING **: 14:23:32.638: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:94945): Gdk-WARNING **: 14:23:32.638: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:94945): Gdk-WARNING **: 14:23:32.639: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623756212913	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:95067): Gdk-WARNING **: 14:23:33.232: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:95067): Gdk-WARNING **: 14:23:33.273: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:95067): Gdk-WARNING **: 14:23:33.274: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:95067): Gdk-WARNING **: 14:23:33.274: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:95067): Gdk-WARNING **: 14:23:33.274: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:95094): Gdk-WARNING **: 14:23:33.394: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:94945): Gdk-WARNING **: 14:23:33.431: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:95094): Gdk-WARNING **: 14:23:33.506: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:95094): Gdk-WARNING **: 14:23:33.506: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:95094): Gdk-WARNING **: 14:23:33.506: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:95094): Gdk-WARNING **: 14:23:33.530: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileS6bRWI/search.json.mozlz4", (void 0)))
+
+(/usr/lib/firefox/firefox:95170): Gdk-WARNING **: 14:23:34.308: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+1623756214314	Marionette	INFO	Listening on port 43935
+
+(/usr/lib/firefox/firefox:95170): Gdk-WARNING **: 14:23:34.358: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:95170): Gdk-WARNING **: 14:23:34.358: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:95170): Gdk-WARNING **: 14:23:34.358: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:95170): Gdk-WARNING **: 14:23:34.359: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623756214390	Marionette	WARN	TLS certificate errors will be ignored for this session
+1623756247007	Marionette	INFO	Stopped listening on port 43935
+1623756247520	geckodriver	INFO	Listening on 127.0.0.1:55351
+1623756247523	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofiledTB19X"
+
+(firefox:95282): Gdk-WARNING **: 14:24:07.552: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:95282): Gdk-WARNING **: 14:24:07.595: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:95282): Gdk-WARNING **: 14:24:07.595: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:95282): Gdk-WARNING **: 14:24:07.595: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:95282): Gdk-WARNING **: 14:24:07.595: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623756247863	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:95405): Gdk-WARNING **: 14:24:08.178: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:95405): Gdk-WARNING **: 14:24:08.221: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:95405): Gdk-WARNING **: 14:24:08.221: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:95405): Gdk-WARNING **: 14:24:08.221: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:95405): Gdk-WARNING **: 14:24:08.221: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:95432): Gdk-WARNING **: 14:24:08.336: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:95432): Gdk-WARNING **: 14:24:08.459: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:95432): Gdk-WARNING **: 14:24:08.460: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:95432): Gdk-WARNING **: 14:24:08.460: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:95432): Gdk-WARNING **: 14:24:08.463: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:95282): Gdk-WARNING **: 14:24:08.530: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofiledTB19X/search.json.mozlz4", (void 0)))
+1623756249050	Marionette	INFO	Listening on port 45123
+1623756249151	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:95519): Gdk-WARNING **: 14:24:09.409: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:95519): Gdk-WARNING **: 14:24:09.499: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:95519): Gdk-WARNING **: 14:24:09.499: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:95519): Gdk-WARNING **: 14:24:09.499: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:95519): Gdk-WARNING **: 14:24:09.499: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623756391672	Marionette	INFO	Stopped listening on port 45123
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623757397891	geckodriver	INFO	Listening on 127.0.0.1:37511
+1623757397894	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileZbbt1x"
+
+(firefox:96434): Gdk-WARNING **: 14:43:17.921: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:96434): Gdk-WARNING **: 14:43:17.963: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:96434): Gdk-WARNING **: 14:43:17.963: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:96434): Gdk-WARNING **: 14:43:17.963: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:96434): Gdk-WARNING **: 14:43:17.963: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623757398228	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:96557): Gdk-WARNING **: 14:43:18.544: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:96557): Gdk-WARNING **: 14:43:18.588: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:96557): Gdk-WARNING **: 14:43:18.588: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:96557): Gdk-WARNING **: 14:43:18.588: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:96557): Gdk-WARNING **: 14:43:18.589: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:96584): Gdk-WARNING **: 14:43:18.708: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:96434): Gdk-WARNING **: 14:43:18.771: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:96584): Gdk-WARNING **: 14:43:18.847: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:96584): Gdk-WARNING **: 14:43:18.847: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:96584): Gdk-WARNING **: 14:43:18.847: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:96584): Gdk-WARNING **: 14:43:18.848: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileZbbt1x/search.json.mozlz4", (void 0)))
+1623757399412	Marionette	INFO	Listening on port 44731
+1623757399525	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:96671): Gdk-WARNING **: 14:43:19.711: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:96671): Gdk-WARNING **: 14:43:19.814: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:96671): Gdk-WARNING **: 14:43:19.815: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:96671): Gdk-WARNING **: 14:43:19.816: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:96671): Gdk-WARNING **: 14:43:19.817: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+JavaScript error: http://localhost:3000/static/js/main.chunk.js, line 1454: Error: Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/maitj/Documents/opetaja-prof-arengu-mudel/client/src/Kysimustik.js: Unexpected reserved word 'await' (228:12)
+
+[0m [90m 226 |[39m             [36mconst[39m protsentuaalneTagasiside [33m=[39m (taidetudPunktid [33m*[39m [35m100[39m) [33m/[39m maxPunktid[33m;[39m[0m
+[0m [90m 227 |[39m             setCurProtsentuaalneTulemus(protsentuaalneTagasiside)[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 228 |[39m             [36mawait[39m getFeedback()[0m
+[0m [90m     |[39m             [31m[1m^[22m[39m[0m
+[0m [90m 229 |[39m[0m
+[0m [90m 230 |[39m             setTulemuseVaheleht([36mtrue[39m)[33m;[39m[0m
+[0m [90m 231 |[39m         [90m//} else {[39m[0m
+    at _temp._raise (/home/maitj/Documents/opetaja-prof-arengu-mudel/client/node_modules/@babel/parser/lib/index.js:775:17)
+    at _temp.raiseWithData (/home/maitj/Documents/opetaja-prof-arengu-mudel/client/node_modules/@babel/parser/lib/index.js:768:17)
+    at _temp.raise (/home/maitj/Documents/opetaja-prof-arengu-mudel/client/node_modules/@babel/parser/lib/index.js:736:17)
+    at _temp.checkReservedWord (/home/maitj/Documents/opetaja-prof-arengu-mudel/client/node_modules/@babel/parser/lib/index.js:11924:12)
+    at _temp.parseIdentifierName (/home/maitj/Documents/opetaja-prof-arengu-mudel/client/node_modules/@babel/parser/lib/index.js:11886:12)
+    at _temp.parseIdentifier (/home/maitj/Documents/opetaja-prof-arengu-mudel/client/node_modules/@babel/parser/lib/index.js:11853:23)
+    at _temp.parseExprAtom (/home/maitj/Documents/opetaja-prof-arengu-mudel/client/node_modules/@babel/parser/lib/index.js:10945:27)
+    at _temp.parseExprAtom (/home/maitj/Documents/opetaja-prof-arengu-mudel/client/node_modules/@babel/parser/lib/index.js:5173:20)
+    at _temp.parseExprSubscripts (/home/maitj/Documents/opetaja-prof-arengu-mudel/client/node_modules/@babel/parser/lib/index.js:10689:23)
+    at _temp.parseUpdate (/home/maitj/Documents/opetaja-prof-arengu-mudel/client/node_modules/@babel/parser/lib/index.js:10669:21)
+1623757414291	geckodriver	INFO	Listening on 127.0.0.1:59451
+1623757414295	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileNIeZyM"
+
+(firefox:96757): Gdk-WARNING **: 14:43:34.327: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:96757): Gdk-WARNING **: 14:43:34.370: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:96757): Gdk-WARNING **: 14:43:34.371: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:96757): Gdk-WARNING **: 14:43:34.371: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:96757): Gdk-WARNING **: 14:43:34.371: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623757414861	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:96883): Gdk-WARNING **: 14:43:35.381: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:96883): Gdk-WARNING **: 14:43:35.426: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:96883): Gdk-WARNING **: 14:43:35.426: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:96883): Gdk-WARNING **: 14:43:35.426: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:96883): Gdk-WARNING **: 14:43:35.427: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:96910): Gdk-WARNING **: 14:43:35.551: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:96757): Gdk-WARNING **: 14:43:35.584: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:96910): Gdk-WARNING **: 14:43:35.662: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:96910): Gdk-WARNING **: 14:43:35.662: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:96910): Gdk-WARNING **: 14:43:35.662: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:96910): Gdk-WARNING **: 14:43:35.663: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623757417068	Marionette	INFO	Stopped listening on port 44731
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623757418511	geckodriver	INFO	Listening on 127.0.0.1:49241
+1623757418514	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileCl41z8"
+
+(firefox:96988): Gdk-WARNING **: 14:43:38.540: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:96988): Gdk-WARNING **: 14:43:38.582: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:96988): Gdk-WARNING **: 14:43:38.582: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:96988): Gdk-WARNING **: 14:43:38.582: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:96988): Gdk-WARNING **: 14:43:38.582: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623757418869	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:97119): Gdk-WARNING **: 14:43:39.205: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:97119): Gdk-WARNING **: 14:43:39.247: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:97119): Gdk-WARNING **: 14:43:39.247: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:97119): Gdk-WARNING **: 14:43:39.247: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:97119): Gdk-WARNING **: 14:43:39.247: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:97146): Gdk-WARNING **: 14:43:39.366: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:96988): Gdk-WARNING **: 14:43:39.458: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:97146): Gdk-WARNING **: 14:43:39.531: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:97146): Gdk-WARNING **: 14:43:39.532: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:97146): Gdk-WARNING **: 14:43:39.532: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:97146): Gdk-WARNING **: 14:43:39.599: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileCl41z8/search.json.mozlz4", (void 0)))
+1623757420367	Marionette	INFO	Listening on port 39687
+
+(/usr/lib/firefox/firefox:97223): Gdk-WARNING **: 14:43:40.375: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:97223): Gdk-WARNING **: 14:43:40.428: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:97223): Gdk-WARNING **: 14:43:40.429: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:97223): Gdk-WARNING **: 14:43:40.429: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:97223): Gdk-WARNING **: 14:43:40.429: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623757420437	Marionette	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+1623757763259	geckodriver	INFO	Listening on 127.0.0.1:51471
+1623757763262	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileckLW2R"
+
+(firefox:98110): Gdk-WARNING **: 14:49:23.288: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:98110): Gdk-WARNING **: 14:49:23.330: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:98110): Gdk-WARNING **: 14:49:23.330: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:98110): Gdk-WARNING **: 14:49:23.330: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:98110): Gdk-WARNING **: 14:49:23.331: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623757763595	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:98230): Gdk-WARNING **: 14:49:23.913: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:98230): Gdk-WARNING **: 14:49:23.958: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:98230): Gdk-WARNING **: 14:49:23.958: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:98230): Gdk-WARNING **: 14:49:23.958: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:98230): Gdk-WARNING **: 14:49:23.958: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:98257): Gdk-WARNING **: 14:49:24.071: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:98110): Gdk-WARNING **: 14:49:24.299: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:98257): Gdk-WARNING **: 14:49:24.326: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:98257): Gdk-WARNING **: 14:49:24.327: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:98257): Gdk-WARNING **: 14:49:24.327: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:98257): Gdk-WARNING **: 14:49:24.327: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileckLW2R/search.json.mozlz4", (void 0)))
+1623757764881	Marionette	INFO	Listening on port 42153
+1623757765006	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:98344): Gdk-WARNING **: 14:49:25.198: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:98344): Gdk-WARNING **: 14:49:25.277: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:98344): Gdk-WARNING **: 14:49:25.277: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:98344): Gdk-WARNING **: 14:49:25.277: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:98344): Gdk-WARNING **: 14:49:25.277: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623757774592	Marionette	INFO	Stopped listening on port 42153
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623757777978	geckodriver	INFO	Listening on 127.0.0.1:42705
+1623757777981	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile0wqw7E"
+
+(firefox:98442): Gdk-WARNING **: 14:49:38.007: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:98442): Gdk-WARNING **: 14:49:38.048: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:98442): Gdk-WARNING **: 14:49:38.048: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:98442): Gdk-WARNING **: 14:49:38.048: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:98442): Gdk-WARNING **: 14:49:38.049: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623757778314	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:98573): Gdk-WARNING **: 14:49:38.648: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:98573): Gdk-WARNING **: 14:49:38.696: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:98573): Gdk-WARNING **: 14:49:38.696: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:98573): Gdk-WARNING **: 14:49:38.696: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:98573): Gdk-WARNING **: 14:49:38.696: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:98600): Gdk-WARNING **: 14:49:38.819: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:98442): Gdk-WARNING **: 14:49:38.890: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:98600): Gdk-WARNING **: 14:49:38.974: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:98600): Gdk-WARNING **: 14:49:38.974: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:98600): Gdk-WARNING **: 14:49:38.974: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:98600): Gdk-WARNING **: 14:49:38.975: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile0wqw7E/search.json.mozlz4", (void 0)))
+1623757779780	Marionette	INFO	Listening on port 33507
+
+(/usr/lib/firefox/firefox:98674): Gdk-WARNING **: 14:49:39.789: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+1623757779804	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:98674): Gdk-WARNING **: 14:49:39.851: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:98674): Gdk-WARNING **: 14:49:39.851: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:98674): Gdk-WARNING **: 14:49:39.851: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:98674): Gdk-WARNING **: 14:49:39.852: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1623757970757	geckodriver	INFO	Listening on 127.0.0.1:41567
+1623757970759	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilemKmBZY"
+
+(firefox:98911): Gdk-WARNING **: 14:52:50.786: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:98911): Gdk-WARNING **: 14:52:50.828: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:98911): Gdk-WARNING **: 14:52:50.828: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:98911): Gdk-WARNING **: 14:52:50.828: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:98911): Gdk-WARNING **: 14:52:50.828: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623757971095	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:99031): Gdk-WARNING **: 14:52:51.410: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:99031): Gdk-WARNING **: 14:52:51.454: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:99031): Gdk-WARNING **: 14:52:51.454: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:99031): Gdk-WARNING **: 14:52:51.454: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:99031): Gdk-WARNING **: 14:52:51.454: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:99058): Gdk-WARNING **: 14:52:51.571: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:98911): Gdk-WARNING **: 14:52:51.850: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:99058): Gdk-WARNING **: 14:52:51.879: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:99058): Gdk-WARNING **: 14:52:51.879: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:99058): Gdk-WARNING **: 14:52:51.879: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:99058): Gdk-WARNING **: 14:52:51.880: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilemKmBZY/search.json.mozlz4", (void 0)))
+1623757972550	Marionette	INFO	Listening on port 46651
+
+(/usr/lib/firefox/firefox:99138): Gdk-WARNING **: 14:52:52.559: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+1623757972582	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:99138): Gdk-WARNING **: 14:52:52.614: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:99138): Gdk-WARNING **: 14:52:52.614: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:99138): Gdk-WARNING **: 14:52:52.614: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:99138): Gdk-WARNING **: 14:52:52.615: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623758115154	Marionette	INFO	Stopped listening on port 46651
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623758200081	geckodriver	INFO	Listening on 127.0.0.1:33257
+1623758200084	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileUXa6uQ"
+
+(firefox:99345): Gdk-WARNING **: 14:56:40.111: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:99345): Gdk-WARNING **: 14:56:40.153: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:99345): Gdk-WARNING **: 14:56:40.153: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:99345): Gdk-WARNING **: 14:56:40.153: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:99345): Gdk-WARNING **: 14:56:40.153: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623758200424	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:99467): Gdk-WARNING **: 14:56:40.745: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:99467): Gdk-WARNING **: 14:56:40.787: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:99467): Gdk-WARNING **: 14:56:40.788: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:99467): Gdk-WARNING **: 14:56:40.788: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:99467): Gdk-WARNING **: 14:56:40.788: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:99494): Gdk-WARNING **: 14:56:40.909: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:99345): Gdk-WARNING **: 14:56:41.181: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:99494): Gdk-WARNING **: 14:56:41.190: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:99494): Gdk-WARNING **: 14:56:41.190: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:99494): Gdk-WARNING **: 14:56:41.190: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:99494): Gdk-WARNING **: 14:56:41.190: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileUXa6uQ/search.json.mozlz4", (void 0)))
+1623758201699	Marionette	INFO	Listening on port 39425
+
+(/usr/lib/firefox/firefox:99571): Gdk-WARNING **: 14:56:41.750: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:99571): Gdk-WARNING **: 14:56:41.798: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:99571): Gdk-WARNING **: 14:56:41.799: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:99571): Gdk-WARNING **: 14:56:41.799: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:99571): Gdk-WARNING **: 14:56:41.799: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623758201800	Marionette	WARN	TLS certificate errors will be ignored for this session
+1623758343942	Marionette	INFO	Stopped listening on port 39425
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623758898303	geckodriver	INFO	Listening on 127.0.0.1:59839
+1623758898305	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile9S6208"
+
+(firefox:100062): Gdk-WARNING **: 15:08:18.332: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:100062): Gdk-WARNING **: 15:08:18.373: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:100062): Gdk-WARNING **: 15:08:18.373: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:100062): Gdk-WARNING **: 15:08:18.373: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:100062): Gdk-WARNING **: 15:08:18.373: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623758898643	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:100182): Gdk-WARNING **: 15:08:18.958: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:100182): Gdk-WARNING **: 15:08:19.000: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:100182): Gdk-WARNING **: 15:08:19.000: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:100182): Gdk-WARNING **: 15:08:19.000: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:100182): Gdk-WARNING **: 15:08:19.000: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:100209): Gdk-WARNING **: 15:08:19.119: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:100062): Gdk-WARNING **: 15:08:19.323: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:100209): Gdk-WARNING **: 15:08:19.354: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:100209): Gdk-WARNING **: 15:08:19.354: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:100209): Gdk-WARNING **: 15:08:19.354: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:100209): Gdk-WARNING **: 15:08:19.355: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile9S6208/search.json.mozlz4", (void 0)))
+1623758900014	Marionette	INFO	Listening on port 37601
+
+(/usr/lib/firefox/firefox:100284): Gdk-WARNING **: 15:08:20.032: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:100284): Gdk-WARNING **: 15:08:20.080: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:100284): Gdk-WARNING **: 15:08:20.080: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:100284): Gdk-WARNING **: 15:08:20.080: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:100284): Gdk-WARNING **: 15:08:20.081: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623758900122	Marionette	WARN	TLS certificate errors will be ignored for this session
+1623759042664	Marionette	INFO	Stopped listening on port 37601
+1623759605615	geckodriver	INFO	Listening on 127.0.0.1:43243
+1623759605618	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilelhE72Y"
+
+(firefox:100743): Gdk-WARNING **: 15:20:05.655: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:100743): Gdk-WARNING **: 15:20:05.699: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:100743): Gdk-WARNING **: 15:20:05.699: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:100743): Gdk-WARNING **: 15:20:05.699: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:100743): Gdk-WARNING **: 15:20:05.699: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623759605979	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:100864): Gdk-WARNING **: 15:20:06.300: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:100864): Gdk-WARNING **: 15:20:06.341: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:100864): Gdk-WARNING **: 15:20:06.341: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:100864): Gdk-WARNING **: 15:20:06.341: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:100864): Gdk-WARNING **: 15:20:06.341: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:100891): Gdk-WARNING **: 15:20:06.456: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:100743): Gdk-WARNING **: 15:20:06.742: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:100891): Gdk-WARNING **: 15:20:06.746: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:100891): Gdk-WARNING **: 15:20:06.746: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:100891): Gdk-WARNING **: 15:20:06.746: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:100891): Gdk-WARNING **: 15:20:06.746: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilelhE72Y/search.json.mozlz4", (void 0)))
+1623759607411	Marionette	INFO	Listening on port 45457
+
+(/usr/lib/firefox/firefox:100969): Gdk-WARNING **: 15:20:07.421: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+1623759607440	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:100969): Gdk-WARNING **: 15:20:07.481: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:100969): Gdk-WARNING **: 15:20:07.481: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:100969): Gdk-WARNING **: 15:20:07.481: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:100969): Gdk-WARNING **: 15:20:07.481: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623759749781	Marionette	INFO	Stopped listening on port 45457
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623760019767	geckodriver	INFO	Listening on 127.0.0.1:35183
+1623760019770	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilel3hrVy"
+
+(firefox:101223): Gdk-WARNING **: 15:26:59.797: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:101223): Gdk-WARNING **: 15:26:59.840: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:101223): Gdk-WARNING **: 15:26:59.840: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:101223): Gdk-WARNING **: 15:26:59.840: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:101223): Gdk-WARNING **: 15:26:59.840: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623760020107	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:101346): Gdk-WARNING **: 15:27:00.428: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:101346): Gdk-WARNING **: 15:27:00.470: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:101346): Gdk-WARNING **: 15:27:00.471: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:101346): Gdk-WARNING **: 15:27:00.471: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:101346): Gdk-WARNING **: 15:27:00.471: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:101374): Gdk-WARNING **: 15:27:00.590: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:101223): Gdk-WARNING **: 15:27:00.864: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:101374): Gdk-WARNING **: 15:27:00.877: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:101374): Gdk-WARNING **: 15:27:00.877: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:101374): Gdk-WARNING **: 15:27:00.877: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:101374): Gdk-WARNING **: 15:27:00.878: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilel3hrVy/search.json.mozlz4", (void 0)))
+1623760021407	Marionette	INFO	Listening on port 38083
+1623760021527	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:101453): Gdk-WARNING **: 15:27:01.619: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:101453): Gdk-WARNING **: 15:27:01.719: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:101453): Gdk-WARNING **: 15:27:01.719: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:101453): Gdk-WARNING **: 15:27:01.719: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:101453): Gdk-WARNING **: 15:27:01.720: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623760107870	Marionette	INFO	Stopped listening on port 38083
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623760490563	geckodriver	INFO	Listening on 127.0.0.1:48897
+1623760490566	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileGZB3X4"
+
+(firefox:101751): Gdk-WARNING **: 15:34:50.592: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:101751): Gdk-WARNING **: 15:34:50.633: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:101751): Gdk-WARNING **: 15:34:50.633: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:101751): Gdk-WARNING **: 15:34:50.633: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:101751): Gdk-WARNING **: 15:34:50.634: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623760490900	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:101872): Gdk-WARNING **: 15:34:51.217: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:101872): Gdk-WARNING **: 15:34:51.262: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:101872): Gdk-WARNING **: 15:34:51.262: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:101872): Gdk-WARNING **: 15:34:51.262: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:101872): Gdk-WARNING **: 15:34:51.262: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:101899): Gdk-WARNING **: 15:34:51.376: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:101899): Gdk-WARNING **: 15:34:51.535: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:101899): Gdk-WARNING **: 15:34:51.535: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:101899): Gdk-WARNING **: 15:34:51.536: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:101899): Gdk-WARNING **: 15:34:51.565: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:101751): Gdk-WARNING **: 15:34:51.588: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileGZB3X4/search.json.mozlz4", (void 0)))
+1623760492353	Marionette	INFO	Listening on port 40757
+
+(/usr/lib/firefox/firefox:101977): Gdk-WARNING **: 15:34:52.365: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+1623760492394	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:101977): Gdk-WARNING **: 15:34:52.421: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:101977): Gdk-WARNING **: 15:34:52.421: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:101977): Gdk-WARNING **: 15:34:52.421: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:101977): Gdk-WARNING **: 15:34:52.422: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623760503361	Marionette	INFO	Stopped listening on port 40757
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623760506047	geckodriver	INFO	Listening on 127.0.0.1:55605
+1623760506050	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileRvz5md"
+
+(firefox:102092): Gdk-WARNING **: 15:35:06.076: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:102092): Gdk-WARNING **: 15:35:06.118: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:102092): Gdk-WARNING **: 15:35:06.118: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:102092): Gdk-WARNING **: 15:35:06.118: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:102092): Gdk-WARNING **: 15:35:06.118: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623760506388	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:102212): Gdk-WARNING **: 15:35:06.704: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:102212): Gdk-WARNING **: 15:35:06.747: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:102212): Gdk-WARNING **: 15:35:06.747: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:102212): Gdk-WARNING **: 15:35:06.747: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:102212): Gdk-WARNING **: 15:35:06.747: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:102239): Gdk-WARNING **: 15:35:06.870: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:102092): Gdk-WARNING **: 15:35:07.001: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:102239): Gdk-WARNING **: 15:35:07.149: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:102239): Gdk-WARNING **: 15:35:07.149: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:102239): Gdk-WARNING **: 15:35:07.149: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:102239): Gdk-WARNING **: 15:35:07.149: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileRvz5md/search.json.mozlz4", (void 0)))
+
+(/usr/lib/firefox/firefox:102315): Gdk-WARNING **: 15:35:07.717: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+1623760507729	Marionette	INFO	Listening on port 37767
+
+(/usr/lib/firefox/firefox:102315): Gdk-WARNING **: 15:35:07.769: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:102315): Gdk-WARNING **: 15:35:07.769: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:102315): Gdk-WARNING **: 15:35:07.769: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:102315): Gdk-WARNING **: 15:35:07.769: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623760507770	Marionette	WARN	TLS certificate errors will be ignored for this session
+1623760583083	Marionette	INFO	Stopped listening on port 37767
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623760585125	geckodriver	INFO	Listening on 127.0.0.1:37213
+1623760585128	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile6TYDsi"
+
+(firefox:102541): Gdk-WARNING **: 15:36:25.160: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:102541): Gdk-WARNING **: 15:36:25.211: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:102541): Gdk-WARNING **: 15:36:25.211: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:102541): Gdk-WARNING **: 15:36:25.211: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:102541): Gdk-WARNING **: 15:36:25.212: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623760585488	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:102661): Gdk-WARNING **: 15:36:25.805: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:102661): Gdk-WARNING **: 15:36:25.848: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:102661): Gdk-WARNING **: 15:36:25.848: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:102661): Gdk-WARNING **: 15:36:25.848: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:102661): Gdk-WARNING **: 15:36:25.848: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:102688): Gdk-WARNING **: 15:36:25.966: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:102541): Gdk-WARNING **: 15:36:26.208: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:102688): Gdk-WARNING **: 15:36:26.246: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:102688): Gdk-WARNING **: 15:36:26.246: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:102688): Gdk-WARNING **: 15:36:26.246: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:102688): Gdk-WARNING **: 15:36:26.247: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile6TYDsi/search.json.mozlz4", (void 0)))
+1623760586772	Marionette	INFO	Listening on port 46295
+
+(/usr/lib/firefox/firefox:102770): Gdk-WARNING **: 15:36:26.821: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+1623760586852	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:102770): Gdk-WARNING **: 15:36:26.870: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:102770): Gdk-WARNING **: 15:36:26.870: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:102770): Gdk-WARNING **: 15:36:26.870: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:102770): Gdk-WARNING **: 15:36:26.870: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623760729575	Marionette	INFO	Stopped listening on port 46295
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623763327626	geckodriver	INFO	Listening on 127.0.0.1:46621
+1623763328639	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile0oOoYo"
+
+(firefox:103924): Gdk-WARNING **: 16:22:08.677: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:103924): Gdk-WARNING **: 16:22:08.733: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:103924): Gdk-WARNING **: 16:22:08.733: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:103924): Gdk-WARNING **: 16:22:08.734: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:103924): Gdk-WARNING **: 16:22:08.734: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623763329045	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:104060): Gdk-WARNING **: 16:22:09.392: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:104060): Gdk-WARNING **: 16:22:09.433: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:104060): Gdk-WARNING **: 16:22:09.433: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:104060): Gdk-WARNING **: 16:22:09.434: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:104060): Gdk-WARNING **: 16:22:09.434: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:104087): Gdk-WARNING **: 16:22:09.560: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:103924): Gdk-WARNING **: 16:22:09.772: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:104087): Gdk-WARNING **: 16:22:09.832: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:104087): Gdk-WARNING **: 16:22:09.832: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:104087): Gdk-WARNING **: 16:22:09.832: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:104087): Gdk-WARNING **: 16:22:09.832: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile0oOoYo/search.json.mozlz4", (void 0)))
+1623763330521	Marionette	INFO	Listening on port 35681
+
+(/usr/lib/firefox/firefox:104163): Gdk-WARNING **: 16:22:10.532: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+1623763330574	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:104163): Gdk-WARNING **: 16:22:10.635: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:104163): Gdk-WARNING **: 16:22:10.635: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:104163): Gdk-WARNING **: 16:22:10.635: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:104163): Gdk-WARNING **: 16:22:10.635: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623763473063	Marionette	INFO	Stopped listening on port 35681
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623765088334	geckodriver	INFO	Listening on 127.0.0.1:36039
+1623765088337	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile7rCpJj"
+
+(firefox:105471): Gdk-WARNING **: 16:51:28.368: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:105471): Gdk-WARNING **: 16:51:28.412: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:105471): Gdk-WARNING **: 16:51:28.412: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:105471): Gdk-WARNING **: 16:51:28.412: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:105471): Gdk-WARNING **: 16:51:28.413: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623765088704	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:105594): Gdk-WARNING **: 16:51:29.044: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:105594): Gdk-WARNING **: 16:51:29.086: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:105594): Gdk-WARNING **: 16:51:29.086: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:105594): Gdk-WARNING **: 16:51:29.086: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:105594): Gdk-WARNING **: 16:51:29.087: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:105621): Gdk-WARNING **: 16:51:29.208: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:105471): Gdk-WARNING **: 16:51:29.426: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:105621): Gdk-WARNING **: 16:51:29.462: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:105621): Gdk-WARNING **: 16:51:29.462: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:105621): Gdk-WARNING **: 16:51:29.462: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:105621): Gdk-WARNING **: 16:51:29.462: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile7rCpJj/search.json.mozlz4", (void 0)))
+1623765090028	Marionette	INFO	Listening on port 35819
+1623765090057	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:105707): Gdk-WARNING **: 16:51:30.210: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:105707): Gdk-WARNING **: 16:51:30.292: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:105707): Gdk-WARNING **: 16:51:30.292: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:105707): Gdk-WARNING **: 16:51:30.292: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:105707): Gdk-WARNING **: 16:51:30.293: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623765097917	Marionette	INFO	Stopped listening on port 35819
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623765154062	geckodriver	INFO	Listening on 127.0.0.1:47705
+1623765154074	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileoEWxBq"
+
+(firefox:105887): Gdk-WARNING **: 16:52:34.119: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:105887): Gdk-WARNING **: 16:52:34.169: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:105887): Gdk-WARNING **: 16:52:34.169: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:105887): Gdk-WARNING **: 16:52:34.169: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:105887): Gdk-WARNING **: 16:52:34.169: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623765154469	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:106008): Gdk-WARNING **: 16:52:34.810: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:106008): Gdk-WARNING **: 16:52:34.861: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:106008): Gdk-WARNING **: 16:52:34.861: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:106008): Gdk-WARNING **: 16:52:34.861: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:106008): Gdk-WARNING **: 16:52:34.862: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:106035): Gdk-WARNING **: 16:52:34.987: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:105887): Gdk-WARNING **: 16:52:35.159: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:106035): Gdk-WARNING **: 16:52:35.272: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:106035): Gdk-WARNING **: 16:52:35.272: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:106035): Gdk-WARNING **: 16:52:35.272: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:106035): Gdk-WARNING **: 16:52:35.273: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileoEWxBq/search.json.mozlz4", (void 0)))
+1623765155764	Marionette	INFO	Listening on port 39103
+1623765155809	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:106112): Gdk-WARNING **: 16:52:35.822: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:106112): Gdk-WARNING **: 16:52:35.895: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:106112): Gdk-WARNING **: 16:52:35.896: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:106112): Gdk-WARNING **: 16:52:35.896: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:106112): Gdk-WARNING **: 16:52:35.897: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623765160467	Marionette	INFO	Stopped listening on port 39103
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623765203020	geckodriver	INFO	Listening on 127.0.0.1:45249
+1623765203030	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile1H6mVd"
+
+(firefox:106242): Gdk-WARNING **: 16:53:23.076: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:106242): Gdk-WARNING **: 16:53:23.126: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:106242): Gdk-WARNING **: 16:53:23.126: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:106242): Gdk-WARNING **: 16:53:23.126: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:106242): Gdk-WARNING **: 16:53:23.126: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623765203419	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:106365): Gdk-WARNING **: 16:53:23.751: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:106365): Gdk-WARNING **: 16:53:23.803: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:106365): Gdk-WARNING **: 16:53:23.803: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:106365): Gdk-WARNING **: 16:53:23.803: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:106365): Gdk-WARNING **: 16:53:23.803: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:106392): Gdk-WARNING **: 16:53:23.929: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:106242): Gdk-WARNING **: 16:53:24.109: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:106392): Gdk-WARNING **: 16:53:24.212: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:106392): Gdk-WARNING **: 16:53:24.212: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:106392): Gdk-WARNING **: 16:53:24.212: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:106392): Gdk-WARNING **: 16:53:24.213: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile1H6mVd/search.json.mozlz4", (void 0)))
+
+(/usr/lib/firefox/firefox:106469): Gdk-WARNING **: 16:53:24.804: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+1623765204820	Marionette	INFO	Listening on port 43663
+1623765204851	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:106469): Gdk-WARNING **: 16:53:24.860: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:106469): Gdk-WARNING **: 16:53:24.860: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:106469): Gdk-WARNING **: 16:53:24.860: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:106469): Gdk-WARNING **: 16:53:24.860: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1623765306214	geckodriver	INFO	Listening on 127.0.0.1:51937
+1623765306223	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilewqi6pA"
+
+(firefox:106638): Gdk-WARNING **: 16:55:06.268: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:106638): Gdk-WARNING **: 16:55:06.317: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:106638): Gdk-WARNING **: 16:55:06.317: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:106638): Gdk-WARNING **: 16:55:06.317: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:106638): Gdk-WARNING **: 16:55:06.317: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623765306598	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:106760): Gdk-WARNING **: 16:55:06.930: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:106760): Gdk-WARNING **: 16:55:07.001: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:106760): Gdk-WARNING **: 16:55:07.002: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:106760): Gdk-WARNING **: 16:55:07.002: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:106760): Gdk-WARNING **: 16:55:07.002: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:106787): Gdk-WARNING **: 16:55:07.145: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:106638): Gdk-WARNING **: 16:55:07.390: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:106787): Gdk-WARNING **: 16:55:07.421: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:106787): Gdk-WARNING **: 16:55:07.421: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:106787): Gdk-WARNING **: 16:55:07.421: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:106787): Gdk-WARNING **: 16:55:07.421: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilewqi6pA/search.json.mozlz4", (void 0)))
+1623765308077	Marionette	INFO	Listening on port 33511
+
+(/usr/lib/firefox/firefox:106866): Gdk-WARNING **: 16:55:08.079: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:106866): Gdk-WARNING **: 16:55:08.144: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:106866): Gdk-WARNING **: 16:55:08.144: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:106866): Gdk-WARNING **: 16:55:08.144: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:106866): Gdk-WARNING **: 16:55:08.144: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623765308150	Marionette	WARN	TLS certificate errors will be ignored for this session
+1623765461266	Marionette	INFO	Stopped listening on port 33511
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623766122061	geckodriver	INFO	Listening on 127.0.0.1:41403
+1623766122072	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileUdIgJf"
+
+(firefox:107480): Gdk-WARNING **: 17:08:42.121: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:107480): Gdk-WARNING **: 17:08:42.169: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:107480): Gdk-WARNING **: 17:08:42.169: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:107480): Gdk-WARNING **: 17:08:42.169: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:107480): Gdk-WARNING **: 17:08:42.170: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623766122450	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:107601): Gdk-WARNING **: 17:08:42.781: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:107601): Gdk-WARNING **: 17:08:42.826: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:107601): Gdk-WARNING **: 17:08:42.826: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:107601): Gdk-WARNING **: 17:08:42.826: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:107601): Gdk-WARNING **: 17:08:42.827: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:107628): Gdk-WARNING **: 17:08:42.962: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:107480): Gdk-WARNING **: 17:08:43.225: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:107628): Gdk-WARNING **: 17:08:43.248: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:107628): Gdk-WARNING **: 17:08:43.248: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:107628): Gdk-WARNING **: 17:08:43.248: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:107628): Gdk-WARNING **: 17:08:43.249: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileUdIgJf/search.json.mozlz4", (void 0)))
+
+(/usr/lib/firefox/firefox:107708): Gdk-WARNING **: 17:08:43.852: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+1623766123855	Marionette	INFO	Listening on port 38017
+1623766123893	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:107708): Gdk-WARNING **: 17:08:43.903: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:107708): Gdk-WARNING **: 17:08:43.903: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:107708): Gdk-WARNING **: 17:08:43.903: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:107708): Gdk-WARNING **: 17:08:43.904: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1623766264885	geckodriver	INFO	Listening on 127.0.0.1:40929
+1623766264892	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileRqq7hw"
+
+(firefox:107886): Gdk-WARNING **: 17:11:04.939: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:107886): Gdk-WARNING **: 17:11:04.987: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:107886): Gdk-WARNING **: 17:11:04.987: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:107886): Gdk-WARNING **: 17:11:04.987: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:107886): Gdk-WARNING **: 17:11:04.987: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623766265271	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:108007): Gdk-WARNING **: 17:11:05.597: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:108007): Gdk-WARNING **: 17:11:05.645: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:108007): Gdk-WARNING **: 17:11:05.645: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:108007): Gdk-WARNING **: 17:11:05.645: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:108007): Gdk-WARNING **: 17:11:05.646: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:108034): Gdk-WARNING **: 17:11:05.767: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:107886): Gdk-WARNING **: 17:11:05.989: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:108034): Gdk-WARNING **: 17:11:06.022: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:108034): Gdk-WARNING **: 17:11:06.022: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:108034): Gdk-WARNING **: 17:11:06.022: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:108034): Gdk-WARNING **: 17:11:06.023: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileRqq7hw/search.json.mozlz4", (void 0)))
+1623766266542	Marionette	INFO	Listening on port 40527
+1623766266627	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:108120): Gdk-WARNING **: 17:11:06.775: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:108120): Gdk-WARNING **: 17:11:06.854: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:108120): Gdk-WARNING **: 17:11:06.854: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:108120): Gdk-WARNING **: 17:11:06.854: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:108120): Gdk-WARNING **: 17:11:06.855: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623766416057	Marionette	INFO	Stopped listening on port 40527
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623766437188	geckodriver	INFO	Listening on 127.0.0.1:36397
+1623766437195	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilezBHTQs"
+
+(firefox:108270): Gdk-WARNING **: 17:13:57.245: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:108270): Gdk-WARNING **: 17:13:57.292: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:108270): Gdk-WARNING **: 17:13:57.292: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:108270): Gdk-WARNING **: 17:13:57.292: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:108270): Gdk-WARNING **: 17:13:57.293: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623766437570	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:108392): Gdk-WARNING **: 17:13:57.925: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:108392): Gdk-WARNING **: 17:13:57.973: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:108392): Gdk-WARNING **: 17:13:57.973: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:108392): Gdk-WARNING **: 17:13:57.973: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:108392): Gdk-WARNING **: 17:13:57.973: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:108419): Gdk-WARNING **: 17:13:58.097: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:108270): Gdk-WARNING **: 17:13:58.342: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:108419): Gdk-WARNING **: 17:13:58.381: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:108419): Gdk-WARNING **: 17:13:58.381: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:108419): Gdk-WARNING **: 17:13:58.381: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:108419): Gdk-WARNING **: 17:13:58.382: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilezBHTQs/search.json.mozlz4", (void 0)))
+
+(/usr/lib/firefox/firefox:108496): Gdk-WARNING **: 17:13:58.954: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:108496): Gdk-WARNING **: 17:13:58.998: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:108496): Gdk-WARNING **: 17:13:58.998: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:108496): Gdk-WARNING **: 17:13:58.998: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:108496): Gdk-WARNING **: 17:13:58.999: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623766439028	Marionette	INFO	Listening on port 39223
+1623766439132	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(firefox:108270): Gdk-WARNING **: 17:15:54.848: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:108270): Gdk-WARNING **: 17:15:56.178: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+1623766587764	Marionette	INFO	Stopped listening on port 39223
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623766773941	geckodriver	INFO	Listening on 127.0.0.1:43959
+1623766773946	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileVPyUWx"
+
+(firefox:108788): Gdk-WARNING **: 17:19:33.995: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:108788): Gdk-WARNING **: 17:19:34.046: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:108788): Gdk-WARNING **: 17:19:34.046: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:108788): Gdk-WARNING **: 17:19:34.046: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:108788): Gdk-WARNING **: 17:19:34.046: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623766774340	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:108910): Gdk-WARNING **: 17:19:34.683: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:108910): Gdk-WARNING **: 17:19:34.735: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:108910): Gdk-WARNING **: 17:19:34.735: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:108910): Gdk-WARNING **: 17:19:34.735: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:108910): Gdk-WARNING **: 17:19:34.736: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:108937): Gdk-WARNING **: 17:19:34.860: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:108788): Gdk-WARNING **: 17:19:35.082: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:108937): Gdk-WARNING **: 17:19:35.130: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:108937): Gdk-WARNING **: 17:19:35.130: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:108937): Gdk-WARNING **: 17:19:35.130: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:108937): Gdk-WARNING **: 17:19:35.130: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileVPyUWx/search.json.mozlz4", (void 0)))
+1623766775643	Marionette	INFO	Listening on port 34737
+1623766775678	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:109018): Gdk-WARNING **: 17:19:35.695: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:109018): Gdk-WARNING **: 17:19:35.763: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:109018): Gdk-WARNING **: 17:19:35.763: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:109018): Gdk-WARNING **: 17:19:35.763: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:109018): Gdk-WARNING **: 17:19:35.763: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623766796964	geckodriver	INFO	Listening on 127.0.0.1:41099
+1623766796975	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileRy99v4"
+
+(firefox:109110): Gdk-WARNING **: 17:19:57.022: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:109110): Gdk-WARNING **: 17:19:57.071: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:109110): Gdk-WARNING **: 17:19:57.071: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(firefox:109110): Gdk-WARNING **: 17:19:57.071: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(firefox:109110): Gdk-WARNING **: 17:19:57.072: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623766797357	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:109233): Gdk-WARNING **: 17:19:57.693: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:109233): Gdk-WARNING **: 17:19:57.742: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:109233): Gdk-WARNING **: 17:19:57.742: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:109233): Gdk-WARNING **: 17:19:57.742: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:109233): Gdk-WARNING **: 17:19:57.743: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:109260): Gdk-WARNING **: 17:19:57.873: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(firefox:109110): Gdk-WARNING **: 17:19:58.092: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:109260): Gdk-WARNING **: 17:19:58.113: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:109260): Gdk-WARNING **: 17:19:58.113: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:109260): Gdk-WARNING **: 17:19:58.113: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:109260): Gdk-WARNING **: 17:19:58.113: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileRy99v4/search.json.mozlz4", (void 0)))
+1623766798743	Marionette	INFO	Listening on port 34799
+
+(/usr/lib/firefox/firefox:109337): Gdk-WARNING **: 17:19:58.753: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+1623766798798	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:109337): Gdk-WARNING **: 17:19:58.802: Cannot transform xsetting gtk-xft-dpi of type gchararray to type gint
+
+
+(/usr/lib/firefox/firefox:109337): Gdk-WARNING **: 17:19:58.802: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:109337): Gdk-WARNING **: 17:19:58.802: Cannot transform xsetting gtk-enable-event-sounds of type gchararray to type gboolean
+
+
+(/usr/lib/firefox/firefox:109337): Gdk-WARNING **: 17:19:58.802: Cannot transform xsetting gtk-enable-input-feedback-sounds of type gchararray to type gboolean
+
+1623766801048	Marionette	INFO	Stopped listening on port 34737
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623766940921	Marionette	INFO	Stopped listening on port 34799
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+

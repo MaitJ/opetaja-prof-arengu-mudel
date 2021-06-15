@@ -165,6 +165,7 @@ const Profile = () => {
                 <h5>{changeStatus}</h5>
             </section>
         </section>
+    </section>
     );
 
 }
