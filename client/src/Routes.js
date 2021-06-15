@@ -12,6 +12,8 @@ import Oppematerjal from "./Oppematerjal.js";
 import MuudaProfiili from "./MuudaProfiili.js";
 import OppematerjalidKuvamine from "./OppematerjalidKuvamine.js";
 import Teated from "./Teated.js";
+import KysimustikudKuvamine from "./KysimustikudKuvamine.js";
+import ProtectedRoute from "./ProtectedRoutes.js";
 
 const Routes = () => {
 
@@ -20,16 +22,17 @@ const Routes = () => {
             <div>
                 <Header />
                 <Switch>
-                <Route exact path="/" component={Teated} />
-                <Route exact path="/about" component={About} />
-                <Route exact path="/profile" component={Profile} />
-                <Route exact path="/kysimustikud" component={KysimustikuValik} />
+                <ProtectedRoute exact path="/" component={Teated} />
+                <ProtectedRoute exact path="/about" component={About} />
+                <ProtectedRoute exact path="/profile"  component={Profile} />
+                <ProtectedRoute exact path="/kysimustikud" component={KysimustikuValik} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path='/register' component={Register} />
-                <Route exact path='/contact' component={Contact} />
-                <Route exact path='/lisa-oppematerjal' component={Oppematerjal} />
-                <Route exact path='/muudaprofiili' component={MuudaProfiili} />
-                <Route exact path='/oppematerjalid' component={OppematerjalidKuvamine} />
+                <ProtectedRoute exact path='/contact' component={Contact} />
+                <ProtectedRoute exact path='/lisa-oppematerjal' component={Oppematerjal} />
+                <ProtectedRoute exact path='/muudaprofiili' component={MuudaProfiili} />
+                <ProtectedRoute exact path='/oppematerjalid' component={OppematerjalidKuvamine} />
+                <ProtectedRoute exact path='/minu-kysimustikud' component={KysimustikudKuvamine} />
                 </Switch>
             </div>
         </BrowserRouter>

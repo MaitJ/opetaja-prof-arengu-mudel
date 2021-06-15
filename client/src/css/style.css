@@ -386,13 +386,14 @@ display: block;
     border-top: 1px solid rgba(65, 65, 65, 0.39);
     border-radius: 0 0 15px 15px;
 }
-.dropdown button {
+.dropdown button{
     font-size: 1rem;
     padding: 1rem;
     width: 10rem;
     background: none;
     border: none;
 }
+
 .dropdown button:active {
     color: rgb(65, 65, 65);
 }
@@ -587,6 +588,7 @@ display: block;
     .profile-container {   
       flex-direction: flex;
       flex-wrap: wrap;
+      
     }
 
     .profile-card, .about, .profile-data-header, .contact, .kysimustik-container, .oppematerjal-container-1, .profile-container-1 {
