@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import {useState} from 'react';
 import axios from 'axios';
 import Kysimusteplokk from './Kysimusteplokk';
+import { toast } from 'react-toastify';
 
 const kysimused_url = "http://localhost:3001/getKysimused";
 const salvestamise_url = 'http://localhost:3001/kirjutaVastused';
@@ -156,28 +157,28 @@ const Kysimustik = ({kysimustik_id, profiil_kysimustik_id}) => {
             return(<button className="next-block-button" id="end-button" onClick={() => {
                 setKysimustePlokk(selectedPlokk + 1);
                 lopetaKysimustik();
-            }}>Lopeta kysimustik</button>)
+            }}>Lõpeta küsimustik</button>)
         } else {
             return(<button className="next-block-button" onClick={() => {
                 setKysimustePlokk(selectedPlokk + 1);
-                setTulemuseVaheleht(false);}}>J2rgmine leht</button>)
+                setTulemuseVaheleht(false);}}>Järgmine leht</button>)
         }
     };
 
     if (questionnaireEnd) {
         return (
             <section className="tulemuse_vaheleht-container">
-                <h5>Lopptulemus: {finalResult}</h5>
+                <h5>Lõpptulemus: {finalResult}</h5>
             </section>
         );
     }
 
     if (tulemuseVaheleht) {
+        const roundedPercent = Math.round(curProtsentuaalneTulemus * 100, 1) / 100;
         return (
             <section className="tulemuse_vaheleht-container">
-                <h5>Selle ploki tulemus: {curProtsentuaalneTulemus}</h5>
-                <h5>Tagasiside_id: {currentFeedbackId}</h5>
-                <h5>Profiil_kysimustik_id: {profiil_kysimustik_id}</h5>
+                <h2>Ploki tulemus: {roundedPercent} %</h2>
+                <h3>Tagasiside</h3>
                 <p>{currentFeedback}</p>
                 {statPageBtnHandler()}
             </section>
@@ -193,7 +194,7 @@ const Kysimustik = ({kysimustik_id, profiil_kysimustik_id}) => {
 
     const displayPlokkButtons = () => {
         if (selectedPlokk <= mituPlokki) {
-            return <button type="button" id="next-page-button" onClick={() => liiguEdasi()}>Jargmine leht</button>
+            return <button type="button" id="next-page-button" onClick={() => liiguEdasi()}>Järgmine leht</button>
         }
     };
 
@@ -241,6 +242,15 @@ const Kysimustik = ({kysimustik_id, profiil_kysimustik_id}) => {
 
             setTulemuseVaheleht(true);
         } else {
+            toast.error('Sul ei ole sellest küsimusteplokist kõik vastatud!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                });
             console.log("Sul ei ole kysimused taidetud");
         }
 
@@ -251,7 +261,7 @@ const Kysimustik = ({kysimustik_id, profiil_kysimustik_id}) => {
 
     return(
         <section className="kysimused-container">
-            <h3>Kysimused</h3>
+            <h2>Küsimused</h2>
             <form>
                 <Kysimusteplokk kysimused={kysimusedList} key={selectedPlokk} displayPlokkButtons={displayPlokkButtons} setKysimusteVastused={setKysimusteVastused} kysimusteVastused={kysimusteVastused}/>
             </form>

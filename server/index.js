@@ -56,6 +56,7 @@ app.post('/uploadimage', profile.upload.single("file"), profile.uploadImage);
 
 //Oppematerjalid
 app.post("/uploadfile", fileUpload.upload.single("file"), fileUpload.uploadFile);
+app.post("/deleteFile", fileUpload.deleteFile);
 app.post("/getOppematerjalid", fileUpload.getOppematerjalid);
 
 router.post("/contact", contact.contactRoute);

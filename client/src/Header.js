@@ -178,7 +178,7 @@ const Header = () => {
                     <button onClick={contactRouteChange}>Kontakt</button>
                 </div>
                 <div id="drop-3" onClick = {toggleDrop}>
-                <button onClick={async () => {await logout(); setAccessToken(""); setUserEmail(""); console.log(accessToken + "See on getaccestoken")}}>Logi valja</button>
+                <button onClick={async () => {await logout(); setAccessToken(""); setUserEmail(""); localStorage.removeItem('loggedIn'); console.log(accessToken + "See on getaccestoken")}}>Logi välja</button>
                 </div>
             </div>
             }

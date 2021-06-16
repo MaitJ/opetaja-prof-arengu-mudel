@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {useEffect, useState} from 'react';
+import {useEffect, useState, useRef} from 'react';
 import { setAccessToken } from "./accessToken";
 import { getAccessToken } from "./accessToken";
 import jwtDecode from 'jwt-decode';
@@ -7,6 +7,8 @@ import { NavLink, Switch } from "react-router-dom";
 import env from 'react-dotenv';
 import Profilecard from './Profilecard';
 import {useUserContext} from './userContext';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 //import {useUserIdContext} from './App.js';
 require('dotenv').config();
 
@@ -23,14 +25,32 @@ const Profile = () => {
     const [job, setJob] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
-    const [changeStatus, setChangeStatus] = useState("");
+    const [changeStatus, setChangeStatus] = useState();
     const [selectedFile, setSelectedFile] = useState();
     //const [profiilAndmed, setProfiilAndmed] = useState({});
     const [profilePic, setProfilePic] = useState({});
     const [imageAddr, setImageAddr] = useState();
     const [havePicture, setHavePicture] = useState(false);
+    
 
     const {userId} = useUserContext();
+
+    // const notify = () => {
+    //     if(changeStatus == true) {
+    //         toast.success('Andmete salvestamine õnnestus!', {
+    //             position: "top-right",
+    //             autoClose: 5000,
+    //             hideProgressBar: false,
+    //             closeOnClick: false,
+    //             pauseOnHover: true,
+    //             draggable: true,
+    //             progress: undefined,
+    //         });
+    //     } else {
+            
+    //     }
+       
+    // }
 
     const fileUpload = (e) => {
         
@@ -51,6 +71,7 @@ const Profile = () => {
         .then((result) => {
             console.log("File Sent Successful");
             console.log(result.data + "ON KASUTAJA DATA");
+           
         })
         .catch((err) => {
             console.log(err);
@@ -98,26 +119,60 @@ const Profile = () => {
             userid: userId
         }).then((response) => {
             console.log("SEE ON RESPONSE: " + JSON.stringify(response.data));
+            console.log("Response code: " + response.status);
             if (JSON.stringify(response.data.msg)) {
-                setChangeStatus("Andmete salvestamine õnnestus!");
+                setChangeStatus(true);
+                if (response.status == 200) {
+                    toast.success('Andmete salvestamine õnnestus!', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: false,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    });
+                } else {
+                    toast.error('Midagi läks valesti!', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: false,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        });  
+                }
+                
                 console.log("SEE ON CHANGESTATUS: " + changeStatus);
             }
             
             //history.push("/login");
-            window.location.reload();
+            //window.location.reload();
         }, (error) => {
             console.log(error);
-            setChangeStatus("Midagi läks valesti!");
+            setChangeStatus(false);
         })
 
-        axios.post('http://localhost:3001/useridtest', {
-            kasutajaid: userId
-        }).then((response) => {
-            console.log("SEE RESPONSE: " + JSON.stringify(response.data));
-        })
+
     }
 
-    //console.log(JSON.stringify(profilePic) + "SEE ON PROFILEPIC");
+    // useEffect(() => {
+    //     if (changeStatus) {
+    //         toast.success('Andmete salvestamine õnnestus!', {
+    //             position: "top-right",
+    //             autoClose: 5000,
+    //             hideProgressBar: false,
+    //             closeOnClick: false,
+    //             pauseOnHover: true,
+    //             draggable: true,
+    //             progress: undefined,
+    //         });
+    //     }
+
+       
+    // }, [changeStatus])
+
 
     return(
         <section className="profile-container">
@@ -166,7 +221,8 @@ const Profile = () => {
                 </label>
                 <br/>
                 <button id="register-button" className="reg-but" type='submit' onClick={changeProfile}>Salvesta</button>
-                <h5>{changeStatus}</h5>
+                
+                {/* <h5>{changeStatus}</h5> */}
             </section>
         </section>
         </section>

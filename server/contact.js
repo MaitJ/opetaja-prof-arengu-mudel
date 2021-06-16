@@ -19,6 +19,7 @@ contactEmail.verify((error) => {
 });
 
 exports.contactRoute = (req, res) => {
+  console.log(req.body);
   const name = req.body.name;
   const email = req.body.email;
   const message = req.body.message; 
@@ -34,7 +35,7 @@ exports.contactRoute = (req, res) => {
     if (error) {
       res.json({ status: "ERROR" });
     } else {
-      res.json({ status: "Message Sent" });
+      res.status(200).json({ status: "Message Sent" });
     }
   });
 };

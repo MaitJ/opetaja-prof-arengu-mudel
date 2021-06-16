@@ -7,9 +7,9 @@ import mysql.connector as mysql
 
 db = mysql.connect(
     host = "localhost",
-    user = "opprofmudeluser",
-    passwd = "0pProfMudel10!",
-    database = "opprofmudeldb2"
+    user = "root",
+    passwd = "admin",
+    database = "opetajaprofareng2"
 )
 
 cursor = db.cursor()
@@ -39,7 +39,7 @@ password = input("Sisesta veebilehe kasutaja parool: ")
 driver = webdriver.Firefox()
 driver.get('http://localhost:3000')
 
-
+time.sleep(2)
     
 
 loginElement = driver.find_element_by_id("loginLink")

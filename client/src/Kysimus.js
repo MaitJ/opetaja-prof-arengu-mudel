@@ -4,16 +4,16 @@ import axios from 'axios';
 const soovitusAPI = "http://localhost:3001/getSoovitused/";
 
 const kysimusteValikud = [{
-    valik_tekst: "Halvasti",
-    value: 1
+    valik_tekst: "Hästi",
+    value: 3
 },
 {
     valik_tekst: "Keskmiselt",
     value: 2
 },
 {
-    valik_tekst: "Hasti",
-    value: 3
+    valik_tekst: "Halvasti",
+    value: 1
 }];
 
 const Kysimus = ({kysimus, setKysimusteVastused, kysimusteVastused}) => {
