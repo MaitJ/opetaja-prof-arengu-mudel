@@ -1,27 +1,19 @@
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
-import { setAccessToken } from "./accessToken";
-import { getAccessToken } from "./accessToken";
-import { BrowserRouter as Router, Link, Redirect, Route } from 'react-router-dom';
-import jwtDecode from 'jwt-decode';
-import env from 'react-dotenv';
 import { NavLink } from "react-router-dom";
 import {useUserContext} from './userContext';
-
-
-//require('dotenv').config();
-
+require('dotenv').config();
+const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 const Profilecard = () => {
 
     const {userId} = useUserContext();
     const [profiilAndmed, setProfiilAndmed] = useState({});
     const [havePicture, setHavePicture] = useState(false);
-    //const [imageAddr, setImageAddr] = useState("");
 
     useEffect(() => {
         if(userId !== undefined) {
-            axios.post('http://localhost:3001/getKasutaja', {
+            axios.post(`${SERVER_URL}/getKasutaja`, {
                 kasutajaid: userId
             }).then((response) => {
                 setProfiilAndmed(response.data);

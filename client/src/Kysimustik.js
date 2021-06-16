@@ -3,8 +3,10 @@ import {useState} from 'react';
 import axios from 'axios';
 import Kysimusteplokk from './Kysimusteplokk';
 
-const kysimused_url = "http://localhost:3001/getKysimused";
-const salvestamise_url = 'http://localhost:3001/kirjutaVastused';
+require('dotenv').config()
+const SERVER_URL = process.env.REACT_APP_SERVER_URL
+const kysimused_url = `${SERVER_URL}/getKysimused`;
+const salvestamise_url = `${SERVER_URL}/kirjutaVastused`;
 
 const Kysimustik = ({kysimustik_id, profiil_kysimustik_id}) => {
     const [kysimusedList, setKysimusedList] = useState([]);
@@ -20,6 +22,7 @@ const Kysimustik = ({kysimustik_id, profiil_kysimustik_id}) => {
     const [questionBlockStats, setQuestionBlockStats] = useState([]);
     const [questionnaireEnd, setQuestionnaireEnd] = useState(false)
     const [finalResult, setFinalResult] = useState(0)
+
 
     useEffect(() => {
         isLoading(true);
@@ -100,7 +103,7 @@ const Kysimustik = ({kysimustik_id, profiil_kysimustik_id}) => {
 
     useEffect(() => {
         if (finalResult > 0) {
-            axios.post('http://localhost:3001/saveFinalResult', {percentage: finalResult, profiil_kysimustik_id: profiil_kysimustik_id})
+            axios.post(`${SERVER_URL}/saveFinalResult`, {percentage: finalResult, profiil_kysimustik_id: profiil_kysimustik_id})
             .catch((error) => console.log("Failed to write finalResult: " + error));
         }
         // 
@@ -108,7 +111,7 @@ const Kysimustik = ({kysimustik_id, profiil_kysimustik_id}) => {
 
     const getFeedback = async () => {
         if (curProtsentuaalneTulemus > 0) {
-            await axios.post('http://localhost:3001/getFeedback', {percentage: curProtsentuaalneTulemus, questionblock_id: selectedPlokk})
+            await axios.post(`${SERVER_URL}/getFeedback`, {percentage: curProtsentuaalneTulemus, questionblock_id: selectedPlokk})
             .then((response) => {
                 console.log(response.data);
                 setCurrentFeedback(response.data.tagasiside_tekst);

@@ -1,9 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import validator from 'validator';
-import { getAccessToken } from "./accessToken";
-import jwtDecode from 'jwt-decode';
-import {useHistory, Redirect} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import './css/Login.css';
 import { Link } from "react-router-dom";
 import {useUserContext} from './userContext';
@@ -23,13 +20,9 @@ const Login = () => {
 
 
     const {setAccessToken} = useUserContext();
-    const [loading, setLoading] = useState(false);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loginStatus, setLoginStatus] = useState("");
-    const [logged, setLogged] = useState();
-    const [userEmail, setUserEmail] = useState("");
-    const {userId} = useUserContext();
 
 
     const login = () => {

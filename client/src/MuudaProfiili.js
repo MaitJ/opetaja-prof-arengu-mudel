@@ -1,17 +1,11 @@
 import axios from 'axios';
 import {useEffect, useState} from 'react';
-import { setAccessToken } from "./accessToken";
-import { getAccessToken } from "./accessToken";
-import jwtDecode from 'jwt-decode';
-import { NavLink, Switch } from "react-router-dom";
-import env from 'react-dotenv';
-import Profilecard from './Profilecard';
+import { NavLink} from "react-router-dom";
 import {useUserContext} from './userContext';
-//import {useUserIdContext} from './App.js';
-require('dotenv').config();
 
-const currentProfileId = 21;
-const profileUrl = "http://localhost:3001/getKasutaja";
+require('dotenv').config();
+const SERVER_URL = process.env.REACT_APP_SERVER_URL
+
 
 const Profile = () => {
 
@@ -26,8 +20,6 @@ const Profile = () => {
     const [changeStatus, setChangeStatus] = useState("");
     const [selectedFile, setSelectedFile] = useState();
     //const [profiilAndmed, setProfiilAndmed] = useState({});
-    const [profilePic, setProfilePic] = useState({});
-    const [imageAddr, setImageAddr] = useState();
     const [havePicture, setHavePicture] = useState(false);
 
     const {userId} = useUserContext();
@@ -44,7 +36,7 @@ const Profile = () => {
 
         console.log("SEE ON KASUTAJAID JAH: " + userId);
 
-        fetch("http://localhost:3001/uploadimage", {
+        fetch(`${SERVER_URL}/uploadimage`, {
             method: "POST",
             body: data,
         })
@@ -61,7 +53,7 @@ const Profile = () => {
 
     useEffect(() => {
         if(userId !== undefined) {
-            axios.post('http://localhost:3001/getKasutaja', {
+            axios.post(`${SERVER_URL}/getKasutaja`, {
                 kasutajaid: userId
             }).then((response) => {
                 setProfiilAndmed(response.data);
@@ -89,7 +81,7 @@ const Profile = () => {
     }
     
     const changeProfile = () => {
-        axios.post('http://localhost:3001/changeprofile', {
+        axios.post(`${SERVER_URL}/changeprofile`, {
             email: email,
             phone: phone,
             job: job,
@@ -110,7 +102,7 @@ const Profile = () => {
             setChangeStatus("Midagi läks valesti!");
         })
 
-        axios.post('http://localhost:3001/useridtest', {
+        axios.post(`${SERVER_URL}/useridtest`, {
             kasutajaid: userId
         }).then((response) => {
             console.log("SEE RESPONSE: " + JSON.stringify(response.data));

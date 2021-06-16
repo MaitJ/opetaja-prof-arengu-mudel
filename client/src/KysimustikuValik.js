@@ -1,15 +1,15 @@
 import React from 'react';
 import axios from 'axios';
 import Kysimustik from './Kysimustik';
-import { getAccessToken } from "./accessToken";
-import jwtDecode from 'jwt-decode';
 import {useState, useEffect} from 'react';
 import {useUserContext} from './userContext';
 import Profilecard from './Profilecard';
-import { NavLink, Switch } from "react-router-dom";
+import { Switch } from "react-router-dom";
+require('dotenv').config()
+const SERVER_URL = process.env.REACT_APP_SERVER_URL
+const kysimustikudURL = `${SERVER_URL}/getKysimused`;
+const tekitaURL = `${SERVER_URL}/tekitaKysimustik`;
 
-const kysimustikudURL = 'http://localhost:3001/getKysimused';
-const tekitaURL = 'http://localhost:3001/tekitaKysimustik';
 const KysimustikuValik = () => {
     const [kysimustikud, setKysimustikud] = useState([]);
     const [selectedKysimustik, setSelectedKysimustik] = useState(0);
