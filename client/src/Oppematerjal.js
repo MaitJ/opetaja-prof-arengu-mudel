@@ -1,12 +1,14 @@
-import React, { Component, useState } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import { NavLink, Switch } from "react-router-dom";
 import Profilecard from './Profilecard';
-import { getAccessToken } from "./accessToken";
-import jwtDecode from 'jwt-decode';
 import {useUserContext} from './userContext';
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
+
+require('dotenv').config()
+
+const SERVER_URL = process.env.REACT_APP_SERVER_URL;
+
 
 const Oppematerjal = () =>  {
 
@@ -82,7 +84,7 @@ const Oppematerjal = () =>  {
 
     console.log("SEE ON KASUTAJAID JAH: " + userId);
 
-    fetch("http://localhost:3001/uploadfile", {
+    fetch(`${SERVER_URL}/uploadfile`, {
         method: "POST",
         body: data,
     })

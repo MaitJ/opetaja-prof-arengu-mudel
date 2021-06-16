@@ -3,25 +3,7 @@ from selenium.webdriver.common.keys import Keys
 import time
 import random
 
-import mysql.connector as mysql
-
-db = mysql.connect(
-    host = "localhost",
-    user = "root",
-    passwd = "admin",
-    database = "opetajaprofareng2"
-)
-
-cursor = db.cursor()
-
-cursor.execute("SELECT MAX(kysimus_vastus_id) FROM kysimus_vastus")
-
-
-results = cursor.fetchone()[0]
 kysimusVastusStart = 0;
-
-if results != None:
-    kysimusVastusStart = int(results)
 
 inputValue = input("Mis vastuseid sisestada? (0-2, r - random): ")
 isRandom = False
@@ -37,13 +19,8 @@ email = input("Sisesta veebilehe kasutajanimi: ")
 password = input("Sisesta veebilehe kasutaja parool: ")
 
 driver = webdriver.Firefox()
-driver.get('http://localhost:3000')
 
-time.sleep(2)
-    
-
-loginElement = driver.find_element_by_id("loginLink")
-loginElement.click()
+driver.get('http://138.68.68.210:3000')
 
 driver.find_element_by_id("email").send_keys(email)
 driver.find_element_by_id("password").send_keys(password)

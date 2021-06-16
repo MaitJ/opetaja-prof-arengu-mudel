@@ -13,10 +13,6 @@ import 'react-toastify/dist/ReactToastify.css';
 // const userIdContext = React.createContext();
 
 function App() {
-
-
-  
-
   return (
     <React.Fragment>
       <UserProvider>

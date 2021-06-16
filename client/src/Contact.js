@@ -1,11 +1,9 @@
-import React, {useState, useRef} from 'react';
-import env from 'react-dotenv';
+import React, {useState} from 'react';
 import { Switch } from 'react-router';
 import Profilecard from './Profilecard';
 import { toast } from 'react-toastify';
 
 
-require('dotenv').config();
 const Contact = () => {
     const [status, setStatus] = useState("Submit");
     const [msgStatus, setMsgStatus] = useState(false);

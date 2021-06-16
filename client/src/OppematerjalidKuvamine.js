@@ -1,10 +1,11 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { NavLink, Switch, Link } from "react-router-dom";
 import Profilecard from './Profilecard';
-import { getAccessToken } from "./accessToken";
-import jwtDecode from 'jwt-decode';
 import {useUserContext} from './userContext';
+require('dotenv').config()
+
+const SERVER_URL = process.env.REACT_APP_SERVER_URL
 import { BiChevronRight } from 'react-icons/bi';
 
 const OppematerjalidKuvamine = () =>  {
@@ -36,11 +37,9 @@ const OppematerjalidKuvamine = () =>  {
 
     useEffect(() => {
         if(userId !== undefined) {
-            axios.post('http://localhost:3001/getOppematerjalid', {
+            axios.post(`${SERVER_URL}/getOppematerjalid`, {
                 kasutajaid: userId
             }).then((response) => {
-                //console.log("RESPUNSE: " + JSON.stringify(response.data));
-                //console.log("RAW: " + response.data[0].oppematerjal_id);
                 setOppematerjalid(response.data);
             })
         }
