@@ -95,14 +95,15 @@ display:none;
 }
 
 @media only screen and (min-width: 777px) {
-#hamburger-icon {
-display:none;
-}
+    #hamburger-icon {
+        display: none;
+    }
+
 
 .hamburger-menu {
 display:none;
 }
-}
+
 
 #hamburger-icon {
 color:#fff;
@@ -323,29 +324,54 @@ display:block;
 }
 
 @media screen and (min-width: 480px) {
-.register {
-padding:60px 0;
-}
+    .register {
+      padding: 60px 0;
+    }
+  
+    .register form {
+      margin: 0 auto;
+      max-width: 320px;
+    }
+  }
 
-.register form {
-margin:0 auto;
-max-width:320px;
-}
-}
+  @media (max-width: 800px) {
 
-@media (max-width: 800px) {
-.profile-card {
-min-width:100%;
-}
+    .profile-card{
+        min-width: 100%;
+    }
 
-.profile-container {
-flex-direction:flex;
-flex-wrap:wrap;
-}
+    .profile-container {   
+      flex-direction: flex;
+      flex-wrap: wrap;
+    }
 
-.profile-card,.back-button-container,.about,.profile-data-1,.contact,.kysimustik-container {
-flex:100%;
-min-width: 100%;
+    .profile-card, .back-button-container, .about, .profile-data-header, .contact, .kysimustik-container {
+      flex: 100%;
+    }
+  
+    .profile-data, .profile-edit-data, .kysimustik-container, .about{
+      margin: 0 auto;
+    }
+
+    .contact{
+        margin: auto;
+    }
+  }
+
+  /* My profile elements */
+
+  .dropdown {
+    display: inline-block;
+    background-color: #eeeeee;
+    position: absolute;
+    right: 1rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    top: 8vh;
+
+}
+.dropdown div{
+    font-size: 1em;
 }
 
 .profile-data,.profile-edit-data,.kysimustik-container,.about {
@@ -571,41 +597,106 @@ display:none;
 }
 
 @media screen and (min-width: 480px) {
-.register {
-padding:60px 0;
-}
+    .register {
+      padding: 60px 0;
+    }
+  
+    .register form {
+      margin: 0 auto;
+      max-width: 320px;
+    }
+  }
 
-.register form {
-margin:0 auto;
-max-width:320px;
-}
-}
+  @media (max-width: 800px) {
 
-@media (max-width: 800px) {
-.profile-card,.kysimustik-container {
-min-width:100%;
-}
+    .profile-card, .kysimustik-container{
+        min-width: 100%;
+    }
 
-.profile-button {
-min-width:97.9%;
-}
+    .profile-button{
+        min-width: 97.9%;
+    }
 
-.profile-container {
-flex-direction:flex;
-flex-wrap:wrap;
-}
+    .profile-container {   
+      flex-direction: flex;
+      flex-wrap: wrap;
+    }
 
-.profile-card,.about,.profile-data-1,.contact,.kysimustik-container,.oppematerjal-container-1,.profile-container-1 {
-flex:100%;
-min-width:100%;
-margin:auto;
-}
+    .profile-card, .about, .profile-data-header, .contact, .kysimustik-container, .oppematerjal-container-1, .profile-container-1 {
+      flex: 100%;
+      min-width: 100%;
+      margin: auto;
+    }
+  
+    .profile-data, .profile-edit-data, .kysimustik-container, .about{
+      margin: 0 auto;
+    }
+    
+    .contact{
+        margin: auto;
+    }
 
-.profile-data,.profile-edit-data,.kysimustik-container,.about {
-margin:0 auto;
-}
+  }
+  /* Õppematerjalid */
+ 
+  .educational-top {
+      display: block;
+  }
 
-.contact {
-margin:auto;
-}
+  #add-educational {
+      max-width: 10em;
+      padding: 1em;
+      border-radius: 10px;
+      margin-top: 1em;
+  }
+
+  .educational-wrapper {
+      display: block;
+  }
+
+  .educational-docs {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2em;
+      margin-bottom: 2em;
+      margin-left: 2em;
+      padding: 2em;
+      max-width: 30em;
+      background-color: #ededed;
+      border-radius: 15px;
+      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  }
+
+    #educational-icon:hover {
+    cursor: pointer;
+  }
+
+  .educational-1 {
+      text-align: left;
+  }
+
+  .educational-2 {
+      align-self: center;
+      margin-top: 10px;
+      font-size: 3em;
+  }
+
+  #educational-desc {
+    color: rgba(0, 0, 0, 0.7);
+  }
+
+  #educational-icon {
+      color: rgba(0, 0, 0, 0.7);
+  }
+
+  @media  (max-width: 600px) {
+      .educational-docs {
+          align-items: center;
+          margin-left: 1em;
+          width: 20em;
+      }
+      .educational-2 {
+          display: none;
+      }
+  }
 }

@@ -54,7 +54,7 @@ const Profilecard = () => {
                 <br/>
                 <NavLink className="profile-button" to="/profile">Profiil</NavLink>
                 <NavLink className="profile-button" to="/oppematerjalid">Õppematerjalid</NavLink>
-                <NavLink className="profile-button" to="/">Minu küsimustikud</NavLink>
+                <NavLink className="profile-button" to="/minu-kysimustikud">Minu küsimustikud</NavLink>
                 <NavLink className="profile-button" to='/muudaprofiili'>Muuda profiili</NavLink>
             </section>
         </React.Fragment>
