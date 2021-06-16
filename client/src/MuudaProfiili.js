@@ -122,23 +122,27 @@ const Profile = () => {
     return(
         <section className="profile-container">
            <section className="profile-card">
+               <section className="pic-button">
                 {/* <img src='https://via.placeholder.com/300.png/09f/fff' alt='profilepic'></img> */}
                 <form onSubmit={fileUpload} encType="multipart/form-data">
+                <div className="1">
                 {havePicture ? <img src={process.env.PUBLIC_URL + ImageAddr} alt='profilepic'></img> : <img src={process.env.PUBLIC_URL + defaultImageAddr} alt='profilepic'></img>} 
-                    <input type='file' onChange={e => {onFileChange(e)}}/>
+                </div>
+                    <input type='file' className="input-but" onChange={e => {onFileChange(e)}}/>
                     {/* <input type="text" value={userId} /> */}
                     <button id='changepic' className='reg-but' type='submit'>Muuda pilti</button>
                 </form>
+                </section>
                 <h2>{profiilAndmed.eesnimi} {profiilAndmed.perenimi}</h2>
                 <h4>{profiilAndmed.kasutajaroll}</h4>
                 <br/>
                 <NavLink className="profile-button" to="/profile">Profiil</NavLink>
-                <NavLink className="profile-button" to="/lisa-oppematerjal">Õppematerjalid</NavLink>
-                <NavLink className="profile-button" to="/">Minu küsimustikud</NavLink>
+                <NavLink className="profile-button" to="/oppematerjalid">Õppematerjalid</NavLink>
+                <NavLink className="profile-button" to="/minu-kysimustikud">Minu küsimustikud</NavLink>
                 <NavLink className="profile-button" to='/muudaprofiili'>Muuda profiili</NavLink>
             </section>
             <section className="profile-container-1">
-                <h1 className="profiil">Profiil</h1>
+                <h1 className="profiil">Muuda profiili</h1>
             <section className="profile-edit-data">
                 <label>
                 <h3>Eesnimi</h3>
