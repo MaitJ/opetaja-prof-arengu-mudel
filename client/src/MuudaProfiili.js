@@ -171,6 +171,6 @@ const Profile = () => {
         </section>
         </section>
     );
-
+    
 }
 export default Profile;

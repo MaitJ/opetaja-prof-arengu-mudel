@@ -5,6 +5,7 @@ import Profilecard from './Profilecard';
 import { getAccessToken } from "./accessToken";
 import jwtDecode from 'jwt-decode';
 import {useUserContext} from './userContext';
+import { BiChevronRight } from 'react-icons/bi';
 
 const OppematerjalidKuvamine = () =>  {
 
@@ -12,6 +13,13 @@ const OppematerjalidKuvamine = () =>  {
     const [oppematerjalid, setOppematerjalid] = useState([]);
     const [haveData, setHaveData] = useState(false);
     const [isPdf, setIsPdf] = useState(false);
+
+    const linkStyle = {
+        textDecoration: "none",
+        fontSize: "2em",
+        color: "rgb(18, 18, 18)",
+        fontWeight: "bold"
+    };
 
     useEffect(() => {
         if(userId !== undefined) {
@@ -47,24 +55,32 @@ const OppematerjalidKuvamine = () =>  {
     return (
       <section className="profile-oppematerjal">
         <Switch>
-          <Profilecard/>
+            <Profilecard/>
         </Switch>
-        {haveData ? oppematerjalid.map((oppematerjal, index) => {
-            return (
-
-                <div>
-                    {/* <h3>{oppematerjal.oppematerjal_nimi}</h3> */}
-                    <Link to={process.env.PUBLIC_URL + "uploads/files/" + oppematerjal.oppematerjal_failinimi} target="_blank">{oppematerjal.oppematerjal_nimi}</Link>
-                    <h4>{oppematerjal.oppematerjal_kirjeldus}</h4>
-                </div>
-                
-            );
-        }): <h2>Sul ei ole veel õppematerjale lisatud!</h2>}
-
-    <NavLink className="profile-button" to="/lisa-oppematerjal">Lisa õppematerjal</NavLink>
-        
-
-      
+        <div className="educational-top">
+            <div>
+                <NavLink id="add-educational" className="profile-button" to="/lisa-oppematerjal">Lisa õppematerjal</NavLink>
+            </div>
+            <div>
+            {haveData ? oppematerjalid.map((oppematerjal, index) => {
+                return (
+                    <div className="educational-wrapper">
+                        <div className="educational-docs">
+                            {/* <h3>{oppematerjal.oppematerjal_nimi}</h3> */}
+                            <div className="educational-1">
+                                <Link to={process.env.PUBLIC_URL + "uploads/files/" + oppematerjal.oppematerjal_failinimi} target="_blank" className="educational-title" style={linkStyle}>{oppematerjal.oppematerjal_nimi}</Link>
+                                <p id="educational-desc">{oppematerjal.oppematerjal_kirjeldus}</p>
+                            </div>
+                            <div className="educational-2">
+                                <BiChevronRight id="educational-icon"/>
+                            </div>
+                        </div>
+                    </div>   
+                );
+            }): <h2>Sul ei ole veel õppematerjale lisatud!</h2>}
+            </div>
+        </div>
+         
       </section>
   )
 }  

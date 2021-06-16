@@ -113,6 +113,17 @@ const Header = () => {
         //setLoggedIn(false);
     }
 
+    const burgerAway = () => {
+        if(window.innerWidth > 776 && showHamburger == true) {
+            setShowHamburger(false);
+        }
+    }
+    useEffect(() => {
+        window.addEventListener("resize", burgerAway);
+    }
+
+    )
+
     return (
         <header>
             <div className="navbar-content">
