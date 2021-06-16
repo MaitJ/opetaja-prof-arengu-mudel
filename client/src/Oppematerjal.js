@@ -4,11 +4,9 @@ import Profilecard from './Profilecard';
 import {useUserContext} from './userContext';
 import { toast } from 'react-toastify';
 
-
 require('dotenv').config()
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL;
-
 
 const Oppematerjal = () =>  {
 

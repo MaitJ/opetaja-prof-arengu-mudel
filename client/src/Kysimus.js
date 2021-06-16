@@ -94,6 +94,13 @@ const Kysimus = ({kysimus, setKysimusteVastused, kysimusteVastused}) => {
         return false;
     };
 
+    const getHalfFeedback = () => {
+        if (kysimusteVastused[kysimus.kysimus_id - 1].enesehinnang !== undefined) {
+            return kysimusteVastused[kysimus.kysimus_id - 1].enesehinnang;
+        }
+        return ""
+    };
+
     return(
         <article className="kysimus-plokk">
             <p className="kysimus">{kysimus.kysimus_tekst}</p>
@@ -112,7 +119,7 @@ const Kysimus = ({kysimus, setKysimusteVastused, kysimusteVastused}) => {
             </div>
             {soovitused.length > 0 && kuvaSoovitused()}
             <label className="enesehinnang-label">Enesehinnang:</label>
-            <textarea id="enesehinnangText" className="enesehinnangText" onChange={(e) => setEnesehinnang(e)} rows="4" cols="50"></textarea>
+            <textarea id="enesehinnangText" className="enesehinnangText" onChange={(e) => setEnesehinnang(e)} rows="4" cols="50" value={getHalfFeedback()}></textarea>
         </article>
     );
 }
