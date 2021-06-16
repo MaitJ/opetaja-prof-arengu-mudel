@@ -9,7 +9,7 @@ const KysimustikudKuvamine = () => {
                 <Profilecard/>
             </Switch>
             <section className='about'>
-                <h2>Siia tuleb taidetud kysimustike kuvamine</h2>
+                <h2>Siia tuleb täidetud küsimustike kuvamine</h2>
                 
             </section>
         </section>

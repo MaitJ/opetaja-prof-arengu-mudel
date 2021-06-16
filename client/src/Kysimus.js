@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+require('dotenv').config()
 
-const soovitusAPI = "http://localhost:3001/getSoovitused/";
+const SERVER_URL = process.env.REACT_APP_SERVER_URL
+
 
 const kysimusteValikud = [{
-    valik_tekst: "Halvasti",
-    value: 1
+    valik_tekst: "Hästi",
+    value: 3
 },
 {
     valik_tekst: "Keskmiselt",
     value: 2
 },
 {
-    valik_tekst: "Hasti",
-    value: 3
+    valik_tekst: "Halvasti",
+    value: 1
 }];
 
 const Kysimus = ({kysimus, setKysimusteVastused, kysimusteVastused}) => {
@@ -30,7 +32,7 @@ const Kysimus = ({kysimus, setKysimusteVastused, kysimusteVastused}) => {
             console.log(err);
         })
         */
-        axios.post(soovitusAPI, {kysimusid: kysimus.kysimus_id}).then((response) => {
+        axios.post(`${SERVER_URL}/getSoovitused/`, {kysimusid: kysimus.kysimus_id}).then((response) => {
             setSoovitused((prevState) => {
                 return [...prevState, response.data]});
         })

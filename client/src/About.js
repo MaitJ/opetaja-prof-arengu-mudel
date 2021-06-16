@@ -1,7 +1,6 @@
 import React from 'react'; 
 import Profilecard from './Profilecard';
-import { NavLink } from "react-router-dom";
-import {Switch, Route} from 'react-router-dom';
+import {Switch} from 'react-router-dom';
 
 const About = () => {
     return (

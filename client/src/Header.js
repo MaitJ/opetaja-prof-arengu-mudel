@@ -1,22 +1,21 @@
-import React, {useState, useEffect, useRef, ReactDOM, Component} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
-import { setAccessToken } from "./accessToken";
-import { getAccessToken } from "./accessToken";
 import axios from 'axios';
-import jwtDecode from 'jwt-decode';
 import {useHistory} from 'react-router-dom';
 import { IoIosArrowDown } from "react-icons/io";
 import { BsFillBellFill } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
 import {useUserContext} from './userContext';
 import { GoThreeBars } from "react-icons/go";
+require('dotenv').config()
 
+const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 const Header = () => {
 
     const history = useHistory();
 
-    const { userEmail, userId, accessToken, setAccessToken, setUserEmail } = useUserContext();
+    const { userEmail, userId, accessToken, setAccessToken, setUserEmail} = useUserContext();
     const [isLogged, setIsLogged] = useState(true);
     const [loggedIn, setLoggedIn] = useState(false);
     const [body, setBody] = useState();
@@ -30,7 +29,7 @@ const Header = () => {
     useEffect(() => {
         if(userId !== undefined) {
             setIsLogged(true);
-            axios.post('http://localhost:3001/getKasutaja', {
+            axios.post(`${SERVER_URL}/getKasutaja`, {
                 kasutajaid: userId
             }).then((response) => {
                 setProfiilAndmed(response.data);
@@ -178,7 +177,7 @@ const Header = () => {
                     <button onClick={contactRouteChange}>Kontakt</button>
                 </div>
                 <div id="drop-3" onClick = {toggleDrop}>
-                <button onClick={async () => {await logout(); setAccessToken(""); setUserEmail(""); console.log(accessToken + "See on getaccestoken")}}>Logi valja</button>
+                <button onClick={async () => {await logout(); setAccessToken(""); setUserEmail(""); localStorage.removeItem('loggedIn'); console.log(accessToken + "See on getaccestoken")}}>Logi välja</button>
                 </div>
             </div>
             }

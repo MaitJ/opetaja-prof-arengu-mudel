@@ -1,10 +1,11 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { NavLink, Switch, Link } from "react-router-dom";
 import Profilecard from './Profilecard';
-import { getAccessToken } from "./accessToken";
-import jwtDecode from 'jwt-decode';
 import {useUserContext} from './userContext';
+require('dotenv').config()
+
+const SERVER_URL = process.env.REACT_APP_SERVER_URL
 import { BiChevronRight } from 'react-icons/bi';
 import { ImCross } from 'react-icons/im';
 
@@ -22,6 +23,7 @@ const OppematerjalidKuvamine = () =>  {
         fontWeight: "bold",
     };
 
+
     const addEducationalStyle = {
         textDecoration: "none",
         fontSize: "1.5em",
@@ -32,13 +34,24 @@ const OppematerjalidKuvamine = () =>  {
     }
 
 
+    const deleteOppematerjal = (index) => {
+        axios.post('http://localhost:3001/deleteFile', {
+                fileId: oppematerjalid[index].oppematerjal_id
+            }).then((response) => {
+                console.log(response);
+                
+            }).catch((error) => {
+                console.log(error);
+            })
+           
+            window.location.reload();
+    }
+
     useEffect(() => {
         if(userId !== undefined) {
-            axios.post('http://localhost:3001/getOppematerjalid', {
+            axios.post(`${SERVER_URL}/getOppematerjalid`, {
                 kasutajaid: userId
             }).then((response) => {
-                //console.log("RESPUNSE: " + JSON.stringify(response.data));
-                //console.log("RAW: " + response.data[0].oppematerjal_id);
                 setOppematerjalid(response.data);
             })
         }
@@ -80,8 +93,9 @@ const OppematerjalidKuvamine = () =>  {
                             {/* <h3>{oppematerjal.oppematerjal_nimi}</h3> */}
                      
                             <div className="educational-1">
+
                                 <div className="educational-0">
-                                    <button id="educational-delete"><ImCross /></button>
+                                    <button id="educational-delete" onClick={() => deleteOppematerjal(index)}><ImCross /></button>
                                 </div>
                                 <div>
                                     <Link to={process.env.PUBLIC_URL + "uploads/files/" + oppematerjal.oppematerjal_failinimi} target="_blank" className="educational-title" style={linkStyle}>{oppematerjal.oppematerjal_nimi}</Link>
@@ -89,7 +103,8 @@ const OppematerjalidKuvamine = () =>  {
                                 </div>
                             </div>
                             <div className="educational-2">
-                                <BiChevronRight id="educational-icon"/>
+           
+                            <Link to={process.env.PUBLIC_URL + "uploads/files/" + oppematerjal.oppematerjal_failinimi} target="_blank" className="educational-title" style={linkStyle}><BiChevronRight id="educational-icon"/></Link>
                             </div>
                         </div>
                     </div>   

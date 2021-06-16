@@ -1,17 +1,11 @@
 import axios from 'axios';
 import {useEffect, useState} from 'react';
-import { setAccessToken } from "./accessToken";
-import { getAccessToken } from "./accessToken";
-import jwtDecode from 'jwt-decode';
-import { NavLink, Switch } from "react-router-dom";
-import env from 'react-dotenv';
-import Profilecard from './Profilecard';
+import { NavLink} from "react-router-dom";
 import {useUserContext} from './userContext';
-//import {useUserIdContext} from './App.js';
+import { ToastContainer, toast } from 'react-toastify';
 require('dotenv').config();
+const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
-const currentProfileId = 21;
-const profileUrl = "http://localhost:3001/getKasutaja";
 
 const Profile = () => {
 
@@ -23,14 +17,30 @@ const Profile = () => {
     const [job, setJob] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
-    const [changeStatus, setChangeStatus] = useState("");
+    const [changeStatus, setChangeStatus] = useState();
     const [selectedFile, setSelectedFile] = useState();
     //const [profiilAndmed, setProfiilAndmed] = useState({});
-    const [profilePic, setProfilePic] = useState({});
-    const [imageAddr, setImageAddr] = useState();
     const [havePicture, setHavePicture] = useState(false);
+    
 
     const {userId} = useUserContext();
+
+    // const notify = () => {
+    //     if(changeStatus == true) {
+    //         toast.success('Andmete salvestamine õnnestus!', {
+    //             position: "top-right",
+    //             autoClose: 5000,
+    //             hideProgressBar: false,
+    //             closeOnClick: false,
+    //             pauseOnHover: true,
+    //             draggable: true,
+    //             progress: undefined,
+    //         });
+    //     } else {
+            
+    //     }
+       
+    // }
 
     const fileUpload = (e) => {
         
@@ -44,13 +54,14 @@ const Profile = () => {
 
         console.log("SEE ON KASUTAJAID JAH: " + userId);
 
-        fetch("http://localhost:3001/uploadimage", {
+        fetch(`${SERVER_URL}/uploadimage`, {
             method: "POST",
             body: data,
         })
         .then((result) => {
             console.log("File Sent Successful");
             console.log(result.data + "ON KASUTAJA DATA");
+           
         })
         .catch((err) => {
             console.log(err);
@@ -61,7 +72,7 @@ const Profile = () => {
 
     useEffect(() => {
         if(userId !== undefined) {
-            axios.post('http://localhost:3001/getKasutaja', {
+            axios.post(`${SERVER_URL}/getKasutaja`, {
                 kasutajaid: userId
             }).then((response) => {
                 setProfiilAndmed(response.data);
@@ -89,7 +100,7 @@ const Profile = () => {
     }
     
     const changeProfile = () => {
-        axios.post('http://localhost:3001/changeprofile', {
+        axios.post(`${SERVER_URL}/changeprofile`, {
             email: email,
             phone: phone,
             job: job,
@@ -98,26 +109,64 @@ const Profile = () => {
             userid: userId
         }).then((response) => {
             console.log("SEE ON RESPONSE: " + JSON.stringify(response.data));
+            console.log("Response code: " + response.status);
             if (JSON.stringify(response.data.msg)) {
-                setChangeStatus("Andmete salvestamine õnnestus!");
+                setChangeStatus(true);
+                if (response.status == 200) {
+                    toast.success('Andmete salvestamine õnnestus!', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: false,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    });
+                } else {
+                    toast.error('Midagi läks valesti!', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: false,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        });  
+                }
+                
                 console.log("SEE ON CHANGESTATUS: " + changeStatus);
             }
             
             //history.push("/login");
-            window.location.reload();
+            //window.location.reload();
         }, (error) => {
             console.log(error);
-            setChangeStatus("Midagi läks valesti!");
+            setChangeStatus(false);
         })
 
-        axios.post('http://localhost:3001/useridtest', {
+        axios.post(`${SERVER_URL}/useridtest`, {
             kasutajaid: userId
         }).then((response) => {
             console.log("SEE RESPONSE: " + JSON.stringify(response.data));
         })
     }
 
-    //console.log(JSON.stringify(profilePic) + "SEE ON PROFILEPIC");
+    // useEffect(() => {
+    //     if (changeStatus) {
+    //         toast.success('Andmete salvestamine õnnestus!', {
+    //             position: "top-right",
+    //             autoClose: 5000,
+    //             hideProgressBar: false,
+    //             closeOnClick: false,
+    //             pauseOnHover: true,
+    //             draggable: true,
+    //             progress: undefined,
+    //         });
+    //     }
+
+       
+    // }, [changeStatus])
+
 
     return(
         <section className="profile-container">
@@ -166,7 +215,8 @@ const Profile = () => {
                 </label>
                 <br/>
                 <button id="register-button" className="reg-but" type='submit' onClick={changeProfile}>Salvesta</button>
-                <h5>{changeStatus}</h5>
+                
+                {/* <h5>{changeStatus}</h5> */}
             </section>
         </section>
         </section>

@@ -4,6 +4,8 @@ import validator from 'validator';
 import {useHistory} from 'react-router-dom';
 import './css/Login.css';
 import { Link } from "react-router-dom";
+require('dotenv').config()
+const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 const Register = () => {
 
@@ -27,7 +29,7 @@ const Register = () => {
 
     const register = () => {
         if(!passwordErr && !emailErr) {
-            axios.post('http://localhost:3001/register', {
+            axios.post(`${SERVER_URL}/register`, {
                 email: emailReg,
                 password: passwordReg,
                 phone: phoneReg,

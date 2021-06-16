@@ -1,11 +1,14 @@
-import React, { Component, useState } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import { NavLink, Switch } from "react-router-dom";
 import Profilecard from './Profilecard';
-import { getAccessToken } from "./accessToken";
-import jwtDecode from 'jwt-decode';
 import {useUserContext} from './userContext';
-import {NotificationContainer, NotificationManager} from 'react-notifications';
+import { toast } from 'react-toastify';
+
+
+require('dotenv').config()
+
+const SERVER_URL = process.env.REACT_APP_SERVER_URL;
+
 
 const Oppematerjal = () =>  {
 
@@ -16,26 +19,26 @@ const Oppematerjal = () =>  {
 
   const {userId} = useUserContext();
 
-  const createNotification = (type) => {
-    return () => {
-      switch (type) {
-        case 'info':
-          NotificationManager.info('Info message');
-          break;
-        case 'success':
-          NotificationManager.success('Success message', 'Title here');
-          break;
-        case 'warning':
-          NotificationManager.warning('Warning message', 'Close after 3000ms', 3000);
-          break;
-        case 'error':
-          NotificationManager.error('Error message', 'Click me!', 5000, () => {
-            alert('callback');
-          });
-          break;
-      }
-    };
-  };
+  // const createNotification = (type) => {
+  //   return () => {
+  //     switch (type) {
+  //       case 'info':
+  //         NotificationManager.info('Info message');
+  //         break;
+  //       case 'success':
+  //         NotificationManager.success('Success message', 'Title here');
+  //         break;
+  //       case 'warning':
+  //         NotificationManager.warning('Warning message', 'Close after 3000ms', 3000);
+  //         break;
+  //       case 'error':
+  //         NotificationManager.error('Error message', 'Click me!', 5000, () => {
+  //           alert('callback');
+  //         });
+  //         break;
+  //     }
+  //   };
+  // };
   
 
   const onFileChange = (e) => {
@@ -81,13 +84,36 @@ const Oppematerjal = () =>  {
 
     console.log("SEE ON KASUTAJAID JAH: " + userId);
 
-    fetch("http://localhost:3001/uploadfile", {
+    fetch(`${SERVER_URL}/uploadfile`, {
         method: "POST",
         body: data,
     })
     .then((result) => {
-        console.log("File Sent Successful");
-        console.log(result.data + "ON KASUTAJA DATA");
+      console.log("File Sent Successful");
+      console.log(result.data + "ON KASUTAJA DATA");
+      console.log(result.status + "SEE ON STAATUS");
+      if (result.status == 200) {
+        toast.success('Faili üleslaadimine õnnestus!', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      } else {
+        toast.error('Midagi läks valesti!', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });  
+      }
+        
     })
     .catch((err) => {
         console.log(err);

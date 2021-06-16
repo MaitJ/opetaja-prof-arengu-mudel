@@ -107,7 +107,8 @@ exports.uploadImage = async (req, res) => {
         let data = {};
         data.image = result[0].profiilipilt;
         //var image = result[0].profiilipilt;
-        res.send(data);
+        res.status(200).send(data);
+        //res.send(data);
       }
     })
   })
