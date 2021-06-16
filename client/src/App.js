@@ -11,10 +11,6 @@ import {UserProvider} from './userContext';
 // const userIdContext = React.createContext();
 
 function App() {
-
-
-  
-
   return (
     <React.Fragment>
       <UserProvider>

@@ -1,36 +1,9 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { getAccessToken, setAccessToken } from "./accessToken";
-import jwt_decode from "jwt-decode";
-import jwtDecode from 'jwt-decode';
 
-
-// const isTokenValid = () => {
-//   token = getAccessToken();
-
-//   if (!token) {
-//     return true;
-//   }
-
-//   try {
-//     const exp = jwtDecode(token);
-//     if (Date.now() >= exp * 1000) {
-//       return false;
-//     } else {
-//       return true;
-//     }
-//   } catch {
-//     return false;
-//   }
-//   }
-// }
-
-// const token = getAccessToken();
-// const exp = jwtDecode(token);
-// console.log(exp);
 
 ReactDOM.render(
   <React.StrictMode>

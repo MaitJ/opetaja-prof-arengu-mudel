@@ -1,7 +1,5 @@
 import React from "react";
 import { Redirect, Route } from "react-router-dom";
-import {useUserContext} from './userContext';
-import { useState, useEffect } from "react";
 
 
 function ProtectedRoute({ component: Component, ...restOfProps }) {
