@@ -7,7 +7,7 @@ require('dotenv').config()
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 import { BiChevronRight } from 'react-icons/bi';
-import { ImCross } from 'react-icons/im';
+import {ImCross} from 'react-icons/im';
 
 const OppematerjalidKuvamine = () =>  {
 
@@ -22,7 +22,6 @@ const OppematerjalidKuvamine = () =>  {
         color: "rgb(18, 18, 18)",
         fontWeight: "bold",
     };
-
 
     const addEducationalStyle = {
         textDecoration: "none",
@@ -77,7 +76,7 @@ const OppematerjalidKuvamine = () =>  {
     // console.log(oppematerjalid[0].oppematerjal_failinimi);
   
     return (
-      <section className="profile-oppematerjal">
+        <section className="profile-oppematerjal">
         <Switch>
             <Profilecard/>
         </Switch>
