@@ -6,16 +6,16 @@ const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 
 const kysimusteValikud = [{
-    valik_tekst: "Halvasti",
-    value: 1
+    valik_tekst: "Hästi",
+    value: 3
 },
 {
     valik_tekst: "Keskmiselt",
     value: 2
 },
 {
-    valik_tekst: "Hasti",
-    value: 3
+    valik_tekst: "Halvasti",
+    value: 1
 }];
 
 const Kysimus = ({kysimus, setKysimusteVastused, kysimusteVastused}) => {

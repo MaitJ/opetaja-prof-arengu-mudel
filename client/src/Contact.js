@@ -1,12 +1,16 @@
 import React, {useState} from 'react';
 import { Switch } from 'react-router';
 import Profilecard from './Profilecard';
+import { toast } from 'react-toastify';
 
 
 const Contact = () => {
     const [status, setStatus] = useState("Submit");
     const [msgStatus, setMsgStatus] = useState(false);
     const [contactMessage, setContactMessage] = useState('Something went wrong');
+    const [name, setName] = useState();
+    const [email, setEmail] = useState();
+    const [message, setMessage] = useState();
 
 
     const handleSubmit = async (e) => {
@@ -25,15 +29,34 @@ const Contact = () => {
                 "Content-Type": "application/json;charset=utf-8",
         },
         body: JSON.stringify(details),
+        
+      }).then((result) => {
+        setStatus("Submit");
+        if (result.status == 200) {
+            setContactMessage('Kiri saadetud!');
+            setMsgStatus(true);
+            toast.success('Kiri saadetud!', {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: false,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+            });
+          } else {
+            toast.error('Midagi läks valesti!', {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: false,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+            });  
+          }
       });
-      setStatus("Submit");
-      let result = await response.json();
-      console.log(result.status);
-      if(result.status == "Message Sent") {
-        setContactMessage('Kiri saadetud!');
-        setMsgStatus(true);
-
-      };
+      
     };
 
     return(
@@ -53,7 +76,7 @@ const Contact = () => {
                         <label>Email</label>
                         <input type="email" id='email' name='email' placeholder='E-mail'/>
                         <label>Teema</label>
-                        <textarea id="s6num" name="s6num" rows="6" cols="80"></textarea>
+                        <textarea id="message" name="message" rows="6" cols="80"></textarea>
                         <button className="contact-button" type='submit' id='button' value='Submit'>Saada</button>
                     </section>
                 </section>

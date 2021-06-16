@@ -93,6 +93,8 @@ exports.uploadFile = async (req, res) => {
           if (error) {
             console.log(error);
             throw error;
+          } else {
+            res.status(200);
           }
   
             db.commit(function(err) {
@@ -102,8 +104,24 @@ exports.uploadFile = async (req, res) => {
                 });
               }
               console.log('success!');
+              res.status(200).send();
             });
         });
       })
     });
 };
+
+exports.deleteFile = (req, res) => {
+  const fileId = req.body.fileId;
+
+  db.query(`DELETE FROM oppematerjal WHERE oppematerjal_id=${fileId}`, (error, result) => {
+    if(error) {
+      console.log(error);
+      throw error;
+    }
+
+
+  });
+
+
+}

@@ -5,12 +5,13 @@ import {useUserContext} from './userContext';
 function ProtectedRoute({ component: Component, ...restOfProps }) {
   
   const {userId, isLoggedIn} = useUserContext();
+  const isAuth = localStorage.getItem('loggedIn');
 
   return (
     <Route
       {...restOfProps}
       render={(props) =>
-        isLoggedIn ? <Component {...props} /> : <Redirect to="/login" />
+        isAuth ? <Component {...props} /> : <Redirect to="/login" />
       }
     />
   );

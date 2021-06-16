@@ -3,7 +3,6 @@ from selenium.webdriver.common.keys import Keys
 import time
 import random
 
-
 kysimusVastusStart = 0;
 
 inputValue = input("Mis vastuseid sisestada? (0-2, r - random): ")
@@ -20,6 +19,7 @@ email = input("Sisesta veebilehe kasutajanimi: ")
 password = input("Sisesta veebilehe kasutaja parool: ")
 
 driver = webdriver.Firefox()
+
 driver.get('http://138.68.68.210:3000')
 
 driver.find_element_by_id("email").send_keys(email)

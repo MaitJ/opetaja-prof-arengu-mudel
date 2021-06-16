@@ -22,6 +22,19 @@ const OppematerjalidKuvamine = () =>  {
         fontWeight: "bold"
     };
 
+    const deleteOppematerjal = (index) => {
+        axios.post('http://localhost:3001/deleteFile', {
+                fileId: oppematerjalid[index].oppematerjal_id
+            }).then((response) => {
+                console.log(response);
+                
+            }).catch((error) => {
+                console.log(error);
+            })
+           
+            window.location.reload();
+    }
+
     useEffect(() => {
         if(userId !== undefined) {
             axios.post(`${SERVER_URL}/getOppematerjalid`, {
@@ -69,9 +82,11 @@ const OppematerjalidKuvamine = () =>  {
                             <div className="educational-1">
                                 <Link to={process.env.PUBLIC_URL + "uploads/files/" + oppematerjal.oppematerjal_failinimi} target="_blank" className="educational-title" style={linkStyle}>{oppematerjal.oppematerjal_nimi}</Link>
                                 <p id="educational-desc">{oppematerjal.oppematerjal_kirjeldus}</p>
+                                
                             </div>
                             <div className="educational-2">
-                                <BiChevronRight id="educational-icon"/>
+                            <button onClick={() => deleteOppematerjal(index)}>Kustuta</button>
+                            <Link to={process.env.PUBLIC_URL + "uploads/files/" + oppematerjal.oppematerjal_failinimi} target="_blank" className="educational-title" style={linkStyle}><BiChevronRight id="educational-icon"/></Link>
                             </div>
                         </div>
                     </div>   
