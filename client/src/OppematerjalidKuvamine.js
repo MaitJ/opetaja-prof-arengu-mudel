@@ -7,6 +7,7 @@ require('dotenv').config()
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 import { BiChevronRight } from 'react-icons/bi';
+import { ImCross } from 'react-icons/im';
 
 const OppematerjalidKuvamine = () =>  {
 
@@ -19,8 +20,19 @@ const OppematerjalidKuvamine = () =>  {
         textDecoration: "none",
         fontSize: "2em",
         color: "rgb(18, 18, 18)",
-        fontWeight: "bold"
+        fontWeight: "bold",
     };
+
+
+    const addEducationalStyle = {
+        textDecoration: "none",
+        fontSize: "1.5em",
+        color: "#fff",
+        borderRadius: "15px",
+        backgroundColor: "#459157",
+        padding: "1em"
+    }
+
 
     const deleteOppematerjal = (index) => {
         axios.post('http://localhost:3001/deleteFile', {
@@ -71,21 +83,27 @@ const OppematerjalidKuvamine = () =>  {
         </Switch>
         <div className="educational-top">
             <div>
-                <NavLink id="add-educational" className="profile-button" to="/lisa-oppematerjal">Lisa õppematerjal</NavLink>
+                <NavLink className="add-educational" style={addEducationalStyle} to="/lisa-oppematerjal">Lisa õppematerjal</NavLink>
             </div>
-            <div>
+            <div id="educational-content">
             {haveData ? oppematerjalid.map((oppematerjal, index) => {
                 return (
                     <div className="educational-wrapper">
                         <div className="educational-docs">
                             {/* <h3>{oppematerjal.oppematerjal_nimi}</h3> */}
+                     
                             <div className="educational-1">
-                                <Link to={process.env.PUBLIC_URL + "uploads/files/" + oppematerjal.oppematerjal_failinimi} target="_blank" className="educational-title" style={linkStyle}>{oppematerjal.oppematerjal_nimi}</Link>
-                                <p id="educational-desc">{oppematerjal.oppematerjal_kirjeldus}</p>
-                                
+
+                                <div className="educational-0">
+                                    <button id="educational-delete" onClick={() => deleteOppematerjal(index)}><ImCross /></button>
+                                </div>
+                                <div>
+                                    <Link to={process.env.PUBLIC_URL + "uploads/files/" + oppematerjal.oppematerjal_failinimi} target="_blank" className="educational-title" style={linkStyle}>{oppematerjal.oppematerjal_nimi}</Link>
+                                    <p id="educational-desc">{oppematerjal.oppematerjal_kirjeldus}</p>
+                                </div>
                             </div>
                             <div className="educational-2">
-                            <button onClick={() => deleteOppematerjal(index)}>Kustuta</button>
+           
                             <Link to={process.env.PUBLIC_URL + "uploads/files/" + oppematerjal.oppematerjal_failinimi} target="_blank" className="educational-title" style={linkStyle}><BiChevronRight id="educational-icon"/></Link>
                             </div>
                         </div>

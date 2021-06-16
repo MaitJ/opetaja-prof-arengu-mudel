@@ -160,8 +160,8 @@ const Header = () => {
                         <h3><NavLink id="navbar-name" to="/profile" style={buttonStyleSecondary}>{profiilAndmed.eesnimi}</NavLink></h3>
                         <button id="dropdown-button" onClick = {wrapperToggleDrop}><IoIosArrowDown /></button>
                     </div>
-                </div> : <div className='nav-item'>
-                            <NavLink to="/login" style={buttonStyle}>Logi sisse</NavLink>
+                </div> : <div>
+                            <NavLink to="/login" id="login-button-2" style={buttonStyleSecondary}>Logi sisse</NavLink>
                             </div>
                         
                 }
