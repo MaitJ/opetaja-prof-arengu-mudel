@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { NavLink, Switch } from "react-router-dom";
 import Profilecard from './Profilecard';
 import {useUserContext} from './userContext';
+import {NotificationContainer, NotificationManager} from 'react-notifications';
 require('dotenv').config()
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL;
-import {NotificationContainer, NotificationManager} from 'react-notifications';
 
 const Oppematerjal = () =>  {
 

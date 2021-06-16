@@ -4,7 +4,7 @@ import {useUserContext} from './userContext';
 
 function ProtectedRoute({ component: Component, ...restOfProps }) {
   
-  const {userId, isLoggedIn} = useUserContext();
+  const {isLoggedIn} = useUserContext();
 
   return (
     <Route
