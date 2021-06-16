@@ -6,6 +6,7 @@ import { getAccessToken } from "./accessToken";
 import jwtDecode from 'jwt-decode';
 import {useUserContext} from './userContext';
 import { BiChevronRight } from 'react-icons/bi';
+import {ImCross} from 'react-icons/im';
 
 const OppematerjalidKuvamine = () =>  {
 
@@ -20,6 +21,15 @@ const OppematerjalidKuvamine = () =>  {
         color: "rgb(18, 18, 18)",
         fontWeight: "bold"
     };
+
+    const addEducationalStyle = {
+        textDecoration: "none",
+        fontSize: "1.5em",
+        color: "#fff",
+        borderRadius: "15px",
+        backgroundColor: "#459157",
+        padding: "1em"
+    }
 
     useEffect(() => {
         if(userId !== undefined) {
@@ -53,23 +63,29 @@ const OppematerjalidKuvamine = () =>  {
     // console.log(oppematerjalid[0].oppematerjal_failinimi);
   
     return (
-      <section className="profile-oppematerjal">
+        <section className="profile-oppematerjal">
         <Switch>
             <Profilecard/>
         </Switch>
         <div className="educational-top">
             <div>
-                <NavLink id="add-educational" className="profile-button" to="/lisa-oppematerjal">Lisa õppematerjal</NavLink>
+                <NavLink className="add-educational" style={addEducationalStyle} to="/lisa-oppematerjal">Lisa õppematerjal</NavLink>
             </div>
-            <div>
+            <div id="educational-content">
             {haveData ? oppematerjalid.map((oppematerjal, index) => {
                 return (
                     <div className="educational-wrapper">
                         <div className="educational-docs">
                             {/* <h3>{oppematerjal.oppematerjal_nimi}</h3> */}
+                     
                             <div className="educational-1">
-                                <Link to={process.env.PUBLIC_URL + "uploads/files/" + oppematerjal.oppematerjal_failinimi} target="_blank" className="educational-title" style={linkStyle}>{oppematerjal.oppematerjal_nimi}</Link>
-                                <p id="educational-desc">{oppematerjal.oppematerjal_kirjeldus}</p>
+                                <div className="educational-0">
+                                    <button id="educational-delete"><ImCross /></button>
+                                </div>
+                                <div>
+                                    <Link to={process.env.PUBLIC_URL + "uploads/files/" + oppematerjal.oppematerjal_failinimi} target="_blank" className="educational-title" style={linkStyle}>{oppematerjal.oppematerjal_nimi}</Link>
+                                    <p id="educational-desc">{oppematerjal.oppematerjal_kirjeldus}</p>
+                                </div>
                             </div>
                             <div className="educational-2">
                                 <BiChevronRight id="educational-icon"/>

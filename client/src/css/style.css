@@ -95,15 +95,14 @@ display:none;
 }
 
 @media only screen and (min-width: 777px) {
-    #hamburger-icon {
-        display: none;
-    }
-
+#hamburger-icon {
+display:none;
+}
 
 .hamburger-menu {
 display:none;
 }
-
+}
 
 #hamburger-icon {
 color:#fff;
@@ -147,7 +146,7 @@ margin:auto;
 text-align:left;
 }
 
-.profile-container-1,.profile-data-1 {
+.profile-container-1,.profile-data-header {
 margin-top:20px;
 padding-top:20px;
 padding-bottom:20px;
@@ -213,7 +212,6 @@ font-size:22px;
 
 .profile-oppematerjal,.profile-container,.profile-contact,.profile-about,.profile-kysimustik {
 display:flex;
-flex-wrap:wrap;
 }
 
 .back-button-container,.about,.profile-data,.profile-edit-data,.contact,.kysimustik-container,.oppematerjal-container-1 {
@@ -319,67 +317,18 @@ margin-bottom:20vh;
 text-align:center;
 }
 
-.profile-edit-data,label,.email-input {
+.profile-edit-data, label, .email-input {
 display:block;
 }
 
 @media screen and (min-width: 480px) {
-    .register {
-      padding: 60px 0;
-    }
-  
-    .register form {
-      margin: 0 auto;
-      max-width: 320px;
-    }
-  }
-
-  @media (max-width: 800px) {
-
-    .profile-card{
-        min-width: 100%;
-    }
-
-    .profile-container {   
-      flex-direction: flex;
-      flex-wrap: wrap;
-    }
-
-    .profile-card, .back-button-container, .about, .profile-data-header, .contact, .kysimustik-container {
-      flex: 100%;
-    }
-  
-    .profile-data, .profile-edit-data, .kysimustik-container, .about{
-      margin: 0 auto;
-    }
-
-    .contact{
-        margin: auto;
-    }
-  }
-
-  /* My profile elements */
-
-  .dropdown {
-    display: inline-block;
-    background-color: #eeeeee;
-    position: absolute;
-    right: 1rem;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 15px;
-    top: 8vh;
-
-}
-.dropdown div{
-    font-size: 1em;
+.register {
+padding:60px 0;
 }
 
-.profile-data,.profile-edit-data,.kysimustik-container,.about {
+.register form {
 margin:0 auto;
-}
-
-.contact {
-margin:auto;
+max-width:320px;
 }
 }
 
@@ -388,7 +337,7 @@ display:inline-block;
 background-color:#eee;
 position:absolute;
 right:1rem;
-box-shadow:5px 5px 10px rgba(0,0,0,0.3);
+box-shadow:0px 4px 8px 0px rgba(0,0,0,0.2);
 border-radius:15px;
 top:8vh;
 }
@@ -435,7 +384,7 @@ text-align:center;
 padding:10px;
 right:3.5rem;
 border-radius:15px;
-box-shadow:5px 5px 10px rgba(0,0,0,0.3);
+box-shadow:0px 4px 8px 0px rgba(0,0,0,0.2);
 color:#414141;
 }
 
@@ -597,106 +546,114 @@ display:none;
 }
 
 @media screen and (min-width: 480px) {
-    .register {
-      padding: 60px 0;
-    }
-  
-    .register form {
-      margin: 0 auto;
-      max-width: 320px;
-    }
+.register {
+padding:60px 0;
+}
+
+.register form {
+margin:0 auto;
+max-width:320px;
+}
+}
+
+@media (max-width: 800px) {
+.profile-card,.kysimustik-container {
+min-width:100%;
+}
+
+.profile-button {
+min-width:97.9%;
+}
+
+.profile-container {
+flex-direction:flex;
+flex-wrap:wrap;
+}
+
+.profile-card,.about,.profile-data-1,.contact,.kysimustik-container,.oppematerjal-container-1,.profile-container-1 {
+flex:100%;
+min-width:100%;
+margin:auto;
+}
+
+.profile-data,.profile-edit-data,.kysimustik-container,.about {
+margin:0 auto;
+}
+
+.contact {
+margin:auto;
+}
+
+.profile-oppematerjal,.profile-container,.profile-contact,.profile-about,.profile-kysimustik {
+  display: block ;
   }
 
-  @media (max-width: 800px) {
+}
 
-    .profile-card, .kysimustik-container{
-        min-width: 100%;
-    }
+/* Õppematerjalid */
+.educational-top {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-    .profile-button{
-        min-width: 97.9%;
-    }
 
-    .profile-container {   
-      flex-direction: flex;
-      flex-wrap: wrap;
-    }
+.educational-docs {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    padding: 3em;
+    max-width: 40em;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
 
-    .profile-card, .about, .profile-data-header, .contact, .kysimustik-container, .oppematerjal-container-1, .profile-container-1 {
-      flex: 100%;
-      min-width: 100%;
-      margin: auto;
-    }
-  
-    .profile-data, .profile-edit-data, .kysimustik-container, .about{
-      margin: 0 auto;
-    }
-    
-    .contact{
-        margin: auto;
-    }
-
-  }
-  /* Õppematerjalid */
- 
-  .educational-top {
-      display: block;
-  }
-
-  #add-educational {
-      max-width: 10em;
-      padding: 1em;
-      border-radius: 10px;
-      margin-top: 1em;
-  }
-
-  .educational-wrapper {
-      display: block;
-  }
-
-  .educational-docs {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 2em;
-      margin-bottom: 2em;
-      margin-left: 2em;
-      padding: 2em;
-      max-width: 30em;
-      background-color: #ededed;
-      border-radius: 15px;
-      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
-  }
-
-    #educational-icon:hover {
+  #educational-icon:hover {
     cursor: pointer;
-  }
+}
 
-  .educational-1 {
-      text-align: left;
-  }
+.educational-1 {
+  display: flex;
+    text-align: left;
+}
 
-  .educational-2 {
-      align-self: center;
-      margin-top: 10px;
-      font-size: 3em;
-  }
+.educational-2 {
+    align-self: center;
+    margin-top: 10px;
+    font-size: 3em;
+}
 
-  #educational-desc {
+#educational-desc {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+#educational-icon {
     color: rgba(0, 0, 0, 0.7);
-  }
+    margin-right: 0;
+}
+.add-educational {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top: 2em;
+  max-width: 10em;
+  width: 100%;
+}
 
-  #educational-icon {
-      color: rgba(0, 0, 0, 0.7);
-  }
-
-  @media  (max-width: 600px) {
-      .educational-docs {
-          align-items: center;
-          margin-left: 1em;
-          width: 20em;
-      }
-      .educational-2 {
-          display: none;
-      }
-  }
+#login-button-2 {
+  margin-right: 1em;
+}
+#educational-delete {
+  background: none;
+  border: none;
+  opacity: 0.2;
+  font-size: 1em;
+  top: 0;
+  margin-right: 2em;
+}
+button#educational-delete:hover {
+  color: red;
+  opacity: 0.5;
 }
