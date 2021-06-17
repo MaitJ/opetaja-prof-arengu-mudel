@@ -4,11 +4,10 @@ import { NavLink, Switch, Link } from "react-router-dom";
 import Profilecard from './Profilecard';
 import {useUserContext} from './userContext';
 import { BiChevronRight } from 'react-icons/bi';
+import {ImCross} from 'react-icons/im';
 require('dotenv').config()
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
-import { BiChevronRight } from 'react-icons/bi';
-import {ImCross} from 'react-icons/im';
 
 const OppematerjalidKuvamine = () =>  {
 
@@ -35,7 +34,7 @@ const OppematerjalidKuvamine = () =>  {
 
 
     const deleteOppematerjal = (index) => {
-        axios.post('http://localhost:3001/deleteFile', {
+        axios.post(`${SERVER_URL}/deleteFile`, {
                 fileId: oppematerjalid[index].oppematerjal_id
             }).then((response) => {
                 console.log(response);
