@@ -1,3 +1,0 @@
-INSERT INTO Tagasiside (tagasiside_tekst, kysimusteplokk_id) VALUES
-("Õpetajana võimestad õppijat  ja oled tema arengupartner. Toetad tähenduslikku õppimist ja läbi selle õppija potentsiaali, tuginedes riiklikes õppekavades seatud eesmärkidele. Teed koostööd kolleegidega, jagad häid praktikaid ning nõustad kolleege. Juhid õppeprotsessi analüüsiprotsesse ning panustad õppeasustuse sisesse arenguvestluste süsteemi. Arendad süsteemselt  oma kutseoskusi ja oled kursis haridusuuendustega.", 1),
-("", 1)
