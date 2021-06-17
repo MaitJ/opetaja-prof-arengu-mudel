@@ -38,12 +38,6 @@ const Profilecard = () => {
         }
     }, [profiilAndmed]);
 
-    // useEffect(() => {
-        
-    // }, [profiilAndmed]);
-
-
-    console.log(havePicture);
 
     return(
         <React.Fragment>
