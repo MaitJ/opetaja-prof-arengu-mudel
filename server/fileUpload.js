@@ -12,6 +12,14 @@ var storageFile = multer.diskStorage({
       cb(null, file.fieldname + '-' + Date.now() + '.pdf')
     } else if (file.mimetype === 'video/mp4') {
       cb(null, file.fieldname + '-' + Date.now() + '.mp4')
+    } else if (file.mimetype === 'audio/mpeg') {
+      cb(null, file.fieldname + '-' + Date.now() + '.mp3')
+    } else if(file.mimetype === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
+      cb(null, file.fieldname + '-' + Date.now() + 'docx')  
+    } else if(file.mimetype === 'application/vnd.openxmlformats-officedocument.presentationml.presentation') {
+      cb(null, file.fieldname + '-' + Date.now() + '.pptx')
+    } else if(file.mimetype === 'application/vnd.ms-excel') {
+      cb(null, file.fieldname + '-' + Date.now() + '.xls')
     }
   }
 })

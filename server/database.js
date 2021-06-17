@@ -1,10 +1,10 @@
 const mysql = require('mysql');
 
 exports.db = mysql.createConnection({
-  user: "opprofmudeluser",
+  user: "root",
   host: "localhost",
-  password: "0pProfMudel10!",
-  database: "opprofmudeldb2"
+  password: "admin",
+  database: "opetajaprofareng2"
 });
 
   

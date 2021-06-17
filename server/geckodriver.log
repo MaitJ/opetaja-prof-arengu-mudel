@@ -9861,3 +9861,25 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 ###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
 
+1623911299056	geckodriver	INFO	Listening on 127.0.0.1:60754
+1623911302138	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Test8\\AppData\\Local\\Temp\\rust_mozprofileOKVmYX"
+1623911353287	geckodriver	INFO	Listening on 127.0.0.1:65318
+1623911356368	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Test8\\AppData\\Local\\Temp\\rust_mozprofileFgPKt0"
+1623911356942	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Test8\\AppData\\Local\\Temp\\rust_mozprofileFgPKt0\\search.json.mozlz4", (void 0)))
+1623911360252	Marionette	INFO	Listening on port 65326
+1623911360583	Marionette	WARN	TLS certificate errors will be ignored for this session
+1623911380630	Marionette	INFO	Stopped listening on port 65326
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1623911406130	geckodriver	INFO	Listening on 127.0.0.1:61857
+1623911409234	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Test8\\AppData\\Local\\Temp\\rust_mozprofile4aLeN0"
+1623911410231	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Test8\\AppData\\Local\\Temp\\rust_mozprofile4aLeN0\\search.json.mozlz4", (void 0)))
+1623911413770	Marionette	INFO	Listening on port 61865
+1623911414128	Marionette	WARN	TLS certificate errors will be ignored for this session
+1623911471810	Marionette	INFO	Stopped listening on port 61865
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+

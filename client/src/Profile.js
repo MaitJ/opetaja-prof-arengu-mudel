@@ -1,12 +1,15 @@
 import axios from 'axios';
 import {useEffect, useState} from 'react';
-import { BrowserRouter as Switch } from 'react-router-dom';
+import { setAccessToken } from "./accessToken";
+import { getAccessToken } from "./accessToken";
+import { BrowserRouter as Router, Link, Redirect, Route, Switch } from 'react-router-dom';
+import jwtDecode from 'jwt-decode';
+import env from 'react-dotenv';
+import { NavLink } from "react-router-dom";
 import Profilecard from './Profilecard';
 
 import {useUserContext} from './userContext';
 require('dotenv').config();
-
-const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 const Profile = () => {
 
@@ -16,7 +19,7 @@ const Profile = () => {
 
     useEffect(() => {
         if(userId !== undefined) {
-            axios.post(`${SERVER_URL}/getKasutaja`, {
+            axios.post('http://localhost:3001/getKasutaja', {
                 kasutajaid: userId
             }).then((response) => {
                 setProfiilAndmed(response.data);
@@ -26,18 +29,6 @@ const Profile = () => {
         }
         
     }, [userId]);
-
-    // useEffect (() => {
-    
-    //     const token = getAccessToken();
-
-    //     if (!token) {
-    //         return true
-    //     } else {
-    //         const {id} = jwtDecode(token);
-    //         setUserId(id);
-    //     }
-    // })
 
     useEffect(() => {
         console.log(profiilAndmed);
