@@ -33,7 +33,7 @@ Projekti kavandamisega alustati 2021 kevadsemester ning koodi hakati kirjutama j
 
 ## Paigaldusjuhised
 
-### 1. Andmebaasi ylesseadmine
+### 1. Andmebaasi ülesseadmine
 <img src="gitimages/abpilt.png" width="800" height="500"/>
 
 "" asemele lisage enda andmed ja eemaldage ka ""
