@@ -1,4 +1,4 @@
-# Opetaja professionaalse arengu mudel (TLU Suveprakika projekt)
+# Õpetaja professionaalse arengu mudel (TLÜ Suvepraktika projekt)
 
 ## Pildid rakendusest
 
@@ -6,13 +6,13 @@
 <img src="gitimages/opetajaprof_2.PNG" width="800" height="400"/>
 <img src="gitimages/opetajaprof_3.PNG" width="800" height="400"/>
 
-## Mis on meie rakenduse eesm2rk?
-* Lihtsustada 6petajate enesearendus protsessi
-* Anda koolidele lihtsam viis 6pejajaid hinnata
-* Luua opetajatele lihtne viis kandideerida koolidesse
+## Mis on meie rakenduse eesmärk?
+* Lihtsustada õpetajate enesearendus protsessi
+* Anda koolidele lihtsam viis õpetajaid hinnata
+* Luua õpetajatele lihtne viis kandideerida koolidesse
 
 ## Projektist endast
-Projekt on loodud TLU Digitehnoloogia Instituudi 6pilaste poolt ning loodi Tarkvaraarenduse projekti kursuse raames.
+Projekt on loodud TLÜ Digitehnoloogia Instituudi õpilaste poolt ning loodi Tarkvaraarenduse projekti kursuse raames.
 Projekti kavandamisega alustati 2021 kevadsemester ning koodi hakati kirjutama juunis 2021. 
 
 ## Kasutatud tehnoloogiad
@@ -38,31 +38,31 @@ Projekti kavandamisega alustati 2021 kevadsemester ning koodi hakati kirjutama j
 
 "" asemele lisage enda andmed ja eemaldage ka ""
 
-1. Tommata alla repo k2suga: `git clone https://github.com/MaitJ/opetaja-prof-arengu-mudel.git`.
+1. Kloonige repositoorium käsuga: `git clone https://github.com/MaitJ/opetaja-prof-arengu-mudel.git`.
 1. Installeerige andmebaas `sudo apt-get install mariadb-server`.
-1. K2ivitage mysql: `sudo mysql -u root`.
-1. Looge uus kasutaja ab's: `CREATE USER '"kasutajanimi"'@'localhost' IDENTIFIED BY '"parool"'` (asenda "" read oma andmetega).
+1. Käivitage mysql: `sudo mysql -u root`.
+1. Looge uus kasutaja andmebaasis: `CREATE USER '"kasutajanimi"'@'localhost' IDENTIFIED BY '"parool"'` (asenda "" read oma andmetega).
 1. Tekita uus andmebaas: `CREATE DATABASE "andmebaasi nimi";` "" asemele ab nimi.
-1. Anna uuele kasutajale oigused `GRANT ALL PRIVILEGES ON "andmebaasi nimi".* TO '"andmebaasi kasutaja"'@'localhost';` ("" asenda oma andmetega)
-1. Uuenda oigused `FLUSH PRIVILEGES;` ja `EXIT;`
-1. Mine kausta `/server` ning lisa andmebaasi tabelid k2suga: `sudo mysql -u root "loodud andmebaasi nimi" < andmebaasitabelidsql.sql`
+1. Anna uuele kasutajale õigused `GRANT ALL PRIVILEGES ON "andmebaasi nimi".* TO '"andmebaasi kasutaja"'@'localhost';` ("" asenda oma andmetega)
+1. Uuenda õigused `FLUSH PRIVILEGES;` ja `EXIT;`
+1. Mine kausta `/server` ning lisa andmebaasi tabelid käsuga: `sudo mysql -u root "loodud andmebaasi nimi" < andmebaasitabelidsql.sql`
 1. Lisa kasutajarollid: `sudo mysql -u root "loodud andmebaasi nimi" < kasutajarollidsql.txt`
-1. Lisa kysimustik ja kysimused kaustast `/kysimustik` k2suga: `sudo mysql -u root "loodud andmebaasi nimi" < ks_tegevusnaitajad_tase7.txt`
-1. Lisa tagasisided k2suga: `sudo mysql -u root "loodud andmebaasi nimi" < tagasisidekirjed.txt`
+1. Lisa küsimustik ja küsimused kaustast `/kysimustik` k2suga: `sudo mysql -u root "loodud andmebaasi nimi" < ks_tegevusnaitajad_tase7.txt`
+1. Lisa tagasisided käsuga: `sudo mysql -u root "loodud andmebaasi nimi" < tagasisidekirjed.txt`
 
-### 2. Serveri ja kliendi k2ivitamine
-1. Navigeerida `/server` kausta ja sisestada k2sk `npm install`.
+### 2. Serveri ja kliendi käivitamine
+1. Navigeerida `/server` kausta ja sisestada käsk `npm install`.
 1. Vahetada failis `/server/database.js` read `user: "", password: "", database: ""` vastavalt eelmises sektsioonis loodud andmetega
-1. Installeerimise l6pus `node index.js`, et k2ivitada server.
+1. Installeerimise lõpus `node index.js`, et k2ivitada server.
 1. Navigeerida `/client` kausta ja muuta failis `.env` rida `REACT_APP_SERVER_URL=...` ... asemele sisestage serveri ip aadress koos pordiga.
-1. `/client` kaustas k2ivitada k2sk npm install.
-1. Installeerimise l6pus saab k2ivitada kliendi k2suga `npm start`.
-1. Veebilehele saab ligi aadressilt `endaipaadress:3000`
+1. `/client` kaustas käivitada käsk npm install.
+1. Installeerimise lõpus saab käivitada kliendi käsuga `npm start`.
+1. Veebilehele saab ligi aadressilt `endaipaadress (tavaliselt localhost) :3000`
 
 ## Automaattest
-Kysimustiku testimiseks valmistasin ka automaattesti, millega on v6imalik kontrollida kas veebileht sisestab andmebaasi andmed oigesse kohta ja yleyldiselt kas kysimustik tootab otsast l6puni.
-Enne testi k2ivitamist tuleks muuta `kysimustikTest.py` failis rida serverURL enda serveri ip aadressi vastu
-Test asub `/server` kaustas ning saab k2ivitada k2suga `python kysimustikTest.py`
+Küsimustiku testimiseks valmistasime ka automaattesti, millega on võimalik kontrollida kas veebileht sisestab andmebaasi andmed õigesse kohta ja üleüldiselt, kas küsimustik töötab otsast lõpuni.
+Enne testi käivitamist tuleks muuta `kysimustikTest.py` failis rida serverURL enda serveri ip aadressi vastu
+Test asub `/server` kaustas ning seda saab käivitada käsuga `python kysimustikTest.py`
 
 ## License
 
