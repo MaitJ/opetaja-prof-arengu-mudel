@@ -2,9 +2,9 @@
 
 ## Pildid rakendusest
 
-<img src="gitimages/opetajaprof_1.png" width="800" height="400"/>
-<img src="gitimages/opetajaprof_2.png" width="800" height="400"/>
-<img src="gitimages/opetajaprof_3.png" width="800" height="400"/>
+<img src="gitimages/opetajaprof_1.PNG" width="800" height="400"/>
+<img src="gitimages/opetajaprof_2.PNG" width="800" height="400"/>
+<img src="gitimages/opetajaprof_3.PNG" width="800" height="400"/>
 
 ## Mis on meie rakenduse eesm2rk?
 * Lihtsustada 6petajate enesearendus protsessi
